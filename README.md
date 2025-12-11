@@ -1,34 +1,101 @@
-# open-science-catalog-metadata
+# PolarScope: Antarctic & Southern Ocean Data Gateway
 
-## About Open Science Catalog
+## About
 
-The Open Science Data Catalog ([https://opensciencedata.esa.int](https://opensciencedata.esa.int/)) is an ESA Open Science activity aiming to provide enhance the discoverability and use of the various scientific and value-added results (i.e. data, code, documentation) achieved in Earth System Science research activities funded by ESA Earth Observation. The Open Science Data Catalog provides open access for the scientific community to geoscience products (based on EO data from ESA and non-ESA missions and other geospatial information and models) across the whole spectrum of Earth Science domains. 
-The Open Science Data Catalog adheres to FAIR principles and promotes reproducibility of scientific studies. The Open Science Data Catalog makes use of various Open-Source geospatial technologies such as pycsw, PySTAC, and OpenLayers and tries to contribute back to these projects in terms of software and standardisation.
+PolarScope is an open-access digital resource dedicated to Earth Observation (remote sensing) and in-situ data for Antarctica and the Southern Ocean. This platform provides a user-friendly interface for data discovery and selection, with integrated guidance, tutorials, and visualization tools tailored for students and Early Career Researchers (ECRs).
 
-Discover Open Science Data Catalog and access products and project's description at[: Open Science Data Catalog](https://opensciencedata.esa.int/).
+**Project Team:** Md Rony Golder (Curtin U), Peter Struton (UTAS), David Antoine (Curtin U)
 
-Open Science Data Catalog documentation contains:
+## Objectives
 
-- The [User Guide](https://github.com/EOEPCA/open-science-catalog-metadata/wiki/User-Guide%E2%80%90v.1.0.0) - Starting point for New Users and Contributors
-- [Release Notes](https://github.com/EOEPCA/open-science-catalog-metadata/wiki/Release-notes-%E2%80%90-v.1.0.0)
-- [Operators Guide](https://github.com/EOEPCA/open-science-catalog-metadata/wiki/Operators-guide-%E2%80%90-v1.0.0)
+This repository is the development hub for building a comprehensive data gateway that will:
 
-### Functionalities
+- Provide easy access to Antarctic and Southern Ocean Earth Observation and in-situ datasets
+- Integrate searchable metadata with interactive visualization tools
+- Support Early Career Researchers with tutorials and example workflows
+- Combine both satellite and in-situ datasets into a single unified interface
 
-- Provide contribution to the ESA EO Open Science framework
-- Catalogue of geoscience products, datasets and resources output by scientific research Projects funded by ESA EO
-- Discovery and access for geospatial products
-- Unified metadata across heterogeneous sources
-- Common dictionary
-- Discovery & Access to data + documentation (+ code)
-- Open to community curation & contribution
-- Synoptic view for EO gap analysis
+## Background
 
-### This repository 
+Building on successful regional prototypes for Western Australia (CSIEM-Satellite and CSIEM-Leaflet), PolarScope extends these approaches to the Antarctic and Southern Ocean. Unlike existing portals such as ESA's Open Science Data Catalogue and SOOSmap, PolarScope directly integrates both satellite and in-situ datasets with example notebooks that guide users in accessing and visualizing data for the polar region.
 
-This repository holds metadata all themes, variables, projects and products discoverable by Open Science Catalog Frontend. Each update to metadata is handled via [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). This pull request allows for reviewers to see the changes to be applied in advance and to provide reviews as comments. If appropriate, the changes can be merged with the main branch of the repository. 
-When a Pull Request is merged, the continuous integration pipeline is run, which triggers the building of a STAC catalog representing the Open Science Data Catalogue on the Static Catalog component.
+## Features
 
-The design document describes the architecture of Open Science Catalog and its design: [https://docs.google.com/document/d/144d-ACMG\_AzWtP6HohR1A7ltHGNY6NkhWmH9EyJb\_vA/](https://docs.google.com/document/d/144d-ACMG_AzWtP6HohR1A7ltHGNY6NkhWmH9EyJb_vA/)
+- **Searchable Database:** Antarctic and Southern Ocean Earth Observation and in-situ datasets
+- **Interactive Visualization:** Built-in tools for data exploration and analysis
+- **Documentation:** Comprehensive wiki with guidance and best practices
+- **Tutorials:** Step-by-step examples for data access and visualization
+- **Example Notebooks:** Ready-to-use workflows for common use cases
 
-To add a new product, the metadata corresponding to data set to be uploaded to the catalogue must be provided in a [STAC](https://github.com/radiantearth/stac-spec) .json file format. 
+## Data Catalogue Structure
+
+The catalogue organizes Antarctic and Southern Ocean satellite observations and in-situ data into three themes: **Atmosphere**, **Ocean**, and **Cryosphere**.
+
+### Data Prioritization
+
+1. **Ocean colour datasets** - Starting with GlobColour (OC-CCI and Copernicus)
+2. **Temperature data** - From the UK Met Office
+3. **Wind products** - From CCMP
+4. **Ice-related datasets** - ICESat-2, OSI SAF, and NSIDC sea ice products
+5. **Additional missions** - Sentinel series, CryoSat-2, Aeolus, PACE, Aura, SWOT, Jason-3, MetOp, GCOM-W
+
+### In-situ Data Sources
+
+- Argo floats
+- Antarctic research stations (e.g., BAS, AAD)
+- Ice Mass Balance Buoys
+
+### Parameters Covered
+
+- Sea ice concentration
+- Chlorophyll-a
+- Sea surface temperature
+- Ocean colour
+- Snow cover
+- Ozone profiles
+- Sea surface height
+- Ice thickness
+
+### Data Specifications
+
+- **Spatial Resolution:** 300m (Sentinel-3) to 50 km (SMOS or GCOM-W)
+- **Temporal Resolution:** Daily (e.g., Sentinel-3, PACE) to monthly composites (e.g., CryoSat-2)
+- **Data Formats:** NetCDF, HDF
+- **Temporal Coverage:** Examples include 1979–present for NSIDC
+- **Access Methods:** Copernicus Marine Toolbox, NASA Earthdata, API, FTP server
+
+### Metadata Features
+
+- Data format (e.g., NetCDF, HDF)
+- Temporal coverage
+- File size
+- Data access links
+- Processing level
+- Sensor details (e.g., SRAL, OLCI, ATLAS)
+- Provider information (e.g., ESA, NASA)
+
+## Repository Structure
+
+```plaintext
+├── database/          # Metadata catalogue and database schemas
+├── web/              # Web front-end application
+├── tutorials/        # Example notebooks and tutorials
+├── wiki/             # Documentation and guidance
+└── visualization/    # Data visualization tools and components
+```
+
+## Getting Started
+
+(Coming soon)
+
+## Contributing
+
+We welcome contributions from the Antarctic and Southern Ocean research community. Please see our contributing guidelines for more information.
+
+## License
+
+(To be determined)
+
+## Contact
+
+For questions or collaboration inquiries, please contact the project team.
