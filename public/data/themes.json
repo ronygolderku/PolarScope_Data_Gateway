@@ -1,0 +1,17 @@
+[
+  {
+    "id": "atmosphere",
+    "title": "Atmosphere",
+    "image": "/src/assets/EO_Atmosphere.webp"
+  },
+  {
+    "id": "cryosphere",
+    "title": "Cryosphere",
+    "image": "/src/assets/EO_Cryosphere.webp"
+  },
+  {
+    "id": "oceans",
+    "title": "Oceans",
+    "image": "/src/assets/EO_Oceans.webp"
+  }
+]
