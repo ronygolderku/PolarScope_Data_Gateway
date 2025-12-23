@@ -31,7 +31,7 @@ const HomeLayout = () => {
             </svg>
           </label>
           <div className="px-4 text-3xl font-bold text-secondary">
-            Open Science Catalog
+            PolarScope: Antarctic & Southern Ocean Data Gateway
           </div>
         </nav>
         {/* Page content here */}
