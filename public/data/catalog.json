@@ -1,0 +1,15 @@
+{
+  "type": "Catalog",
+  "id": "root",
+  "stac_version": "1.0.0",
+  "description": "Open Science Catalog of Antarctic & Southern Ocean datasets",
+  "links": [
+    {
+      "rel": "child",
+      "href": "themes/catalog.json",
+      "type": "application/json",
+      "title": "Themes"
+    }
+  ],
+  "title": "Open Science Catalog"
+}
