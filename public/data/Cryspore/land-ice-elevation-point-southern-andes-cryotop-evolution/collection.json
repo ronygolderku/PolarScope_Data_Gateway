@@ -1,0 +1,120 @@
+{
+  "type": "Collection",
+  "id": "land-ice-elevation-point-southern-andes-cryotop-evolution",
+  "stac_version": "1.0.0",
+  "description": "Point product containing a cloud of elevations with an associated uncertainty in geo spatial units. The thematic point product is published on a monthly basis once the Uncertainty calculation is complete.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "ftp://science-pds.cryosat.esa.int/TEMPO_SWATH_POINT/",
+      "title": "Access"
+    },
+    {
+      "rel": "via",
+      "href": "https://cryotempo-eolis.org/wp-content/uploads/2021/12/CryoTempo-ThematicProduct-ProductHandbook_Issue2.1.pdf",
+      "title": "Documentation"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/cryotop-evolution/collection.json",
+      "type": "application/json",
+      "title": "Project: CryoTop Evolution"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/glacier-elevation-ice-sheet-elevation/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Glacier Elevation/Ice Sheet Elevation"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/cryosat/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: CryoSat"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/land-ice-elevation-point-southern-andes-cryotop-evolution/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "cryotop-evolution",
+  "osc:status": "ongoing",
+  "osc:region": "Southern Andes",
+  "osc:type": "product",
+  "created": "2021-12-01T00:00:00Z",
+  "cf:parameter": [
+    {
+      "name": "land_ice_elevation"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "glacier-elevation-ice-sheet-elevation"
+  ],
+  "osc:missions": [
+    "cryosat"
+  ],
+  "updated": "2024-09-12T20:32:06.223108Z",
+  "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Southern Andes_Cryosat",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -75.0,
+          -56.0,
+          -67.0,
+          -26.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2010-01-01T00:00:00Z",
+          "2021-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Glaciers/Ice Sheets",
+    "Glacier Elevation/Ice Sheet Elevation",
+    "Cryospheric Indicators",
+    "Glacial Measurements",
+    "Sea Ice"
+  ]
+}

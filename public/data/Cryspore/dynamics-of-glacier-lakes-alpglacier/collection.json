@@ -1,0 +1,121 @@
+{
+  "type": "Collection",
+  "id": "dynamics-of-glacier-lakes-alpglacier",
+  "stac_version": "1.0.0",
+  "description": "Dynamics of glacier lakes. Most of the database has been submitted to Pangaea, where the submission is being processed. Some parts of the database fall under the copyright of the Swiss national institute for topography and were therefore only provided as point shapefiles instead of polygons. All the necessary information to reconstruct the study are provided.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1002/esp.5195",
+      "title": "Documentation"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/alpglacier/collection.json",
+      "type": "application/json",
+      "title": "Project: AlpGlacier"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/glacier-motion-ice-sheet-motion/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Glacier Motion/Ice Sheet Motion"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/sentinel-1/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: Sentinel-1"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/sentinel-2/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: Sentinel-2"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/dynamics-of-glacier-lakes-alpglacier/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "alpglacier",
+  "osc:status": "planned",
+  "osc:region": "Switzerland",
+  "osc:type": "product",
+  "cf:parameter": [
+    {
+      "name": "glacial_lakes_dynamics"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "glacier-motion-ice-sheet-motion"
+  ],
+  "osc:missions": [
+    "sentinel-1",
+    "sentinel-2"
+  ],
+  "updated": "2024-09-12T20:32:06.214108Z",
+  "title": "Dynamics of glacier lakes_SwissAlps_S1/2",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          5.95591129,
+          45.81799493,
+          10.49229402,
+          47.80846475
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2016-01-01T00:00:00Z",
+          "2016-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Glaciers/Ice Sheets",
+    "Glacier Motion/Ice Sheet Motion",
+    "Cryospheric Indicators",
+    "Glacial Measurements",
+    "Sea Ice"
+  ]
+}
