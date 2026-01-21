@@ -101,7 +101,7 @@ const Home = () => {
           return (
             <div
               key={theme.title}
-              onClick={() => navigate(`/theme/${folder}`)}
+              onClick={() => navigate(`/themes/${folder}`)}
               className="group relative h-72 w-full overflow-hidden rounded-xl cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300"
             >
               {/* Background Image */}
