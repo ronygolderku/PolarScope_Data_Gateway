@@ -1,0 +1,120 @@
+{
+  "type": "Collection",
+  "id": "swath-elelvation-antarctic-ice-sheet-cryotop-evolution",
+  "stac_version": "1.0.0",
+  "description": "These files are surface elevation determined from swath processing of data acquired by the interferometric radar altimeter CryoSat-2. The data have been collected and processed over the Antarctic Ice Sheet between 2011 and 2016. These data have been processed by the University of Edinburgh and are made publicly available as part of the European Space Agency funded project CryoTop and CryoTop Evolution involving the University of Edinburgh, isardSat UK, University of Leeds-CPOM, ENVEO.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://data.bas.ac.uk/full-record.php?id=GB/NERC/BAS/PDC/01136",
+      "title": "Access"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5285/926b5321-408f-4560-b72d-f38bbe97ac21",
+      "title": "DOI"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/stse-cryosat-cryotop-evolution/collection.json",
+      "type": "application/json",
+      "title": "Project: CryoSat+ CryoTop Evolution"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/digital-elevation-terrain-model-dem/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Digital Elevation/Terrain Model (DEM)"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/cryosat-2/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: CryoSat-2"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/swath-elelvation-antarctic-ice-sheet-cryotop-evolution/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "stse-cryosat-cryotop-evolution",
+  "osc:status": "ongoing",
+  "osc:region": "Antarctica",
+  "osc:type": "product",
+  "created": "2019-02-07T00:00:00Z",
+  "sci:doi": "10.5285/926b5321-408f-4560-b72d-f38bbe97ac21",
+  "cf:parameter": [
+    {
+      "name": "swath_elevation_ice_sheet"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "digital-elevation-terrain-model-dem"
+  ],
+  "osc:missions": [
+    "cryosat-2"
+  ],
+  "updated": "2024-09-12T20:32:06.233108Z",
+  "title": "Swath elevation_Antarctic ice Sheet_2011-2016_CryoSat-2",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -80.0,
+          180.0,
+          -61.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2011-01-01T00:00:00Z",
+          "2016-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Topography",
+    "Terrain Elevation",
+    "Digital Elevation/Terrain Model (DEM)"
+  ]
+}
