@@ -3,6 +3,8 @@ import HomeLayout from "../Layouts/HomeLayout";
 import Home from "../Pages/Home";
 import CatalogList from "../Pages/CatalogList";
 import CatalogDetails from "../Pages/CatalogDetails";
+import Metrics from "../Pages/Metrics";
+import Catalog from "../Pages/Catalog";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ export const router = createBrowserRouter([
       {
         path: "products/*",
         Component: CatalogDetails,
+      },
+      {
+        path: "metrics",
+        Component: Metrics,
+      },
+      {
+        path: "catalog",
+        Component: Catalog,
       },
     ],
   },
