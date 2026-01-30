@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FaBook, FaChartBar, FaHome, FaSearch, FaBars, FaChevronLeft } from "react-icons/fa";
+import {
+  FaBook,
+  FaChartBar,
+  FaHome,
+  FaSearch,
+  FaBars,
+  FaChevronLeft,
+} from "react-icons/fa";
 import { NavLink, Outlet, useLocation } from "react-router";
 
 const HomeLayout = () => {
@@ -32,7 +39,7 @@ const HomeLayout = () => {
   };
 
   return (
-    <div className={`drawer ${isSidebarOpen ? 'lg:drawer-open' : ''} mx-auto`}>
+    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto`}>
       <input
         id="my-drawer-4"
         type="checkbox"
@@ -42,7 +49,7 @@ const HomeLayout = () => {
       />
       <div className="drawer-content transition-all duration-300">
         {/* Navbar */}
-        <nav className="navbar w-full bg-base-300">
+        <nav className="navbar sticky top-0 z-5 w-full bg-base-300">
           <button
             aria-label="toggle sidebar"
             className="btn btn-square btn-ghost"
@@ -72,7 +79,7 @@ const HomeLayout = () => {
               <NavLink
                 to="/"
                 end
-                className={({ isActive }) => isActive ? "active" : ""}
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 <FaHome /> Homepage
@@ -94,7 +101,7 @@ const HomeLayout = () => {
             <li>
               <NavLink
                 to="/metrics"
-                className={({ isActive }) => isActive ? "active" : ""}
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 <FaChartBar /> Metrics
@@ -105,7 +112,7 @@ const HomeLayout = () => {
             <li>
               <NavLink
                 to="/search"
-                className={({ isActive }) => isActive ? "active" : ""}
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 <FaSearch /> Search

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaChartBar, FaSearch } from "react-icons/fa";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Home = () => {
   const [themes, setThemes] = useState([]);
@@ -12,11 +12,11 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         const childThemes = data.links.filter((link) => link.rel === "child");
-       setThemes(childThemes);
+        setThemes(childThemes);
       })
       .catch((err) => console.error("Error loading JSON:", err));
   }, []);
-   console.log(themes)
+  console.log(themes);
   return (
     <div className="min-h-screen bg-base-100 p-6 md:p-12">
       {/* Hero/Header Section */}
@@ -46,7 +46,7 @@ const Home = () => {
         <p className="mt-2">
           Explore the catalog, consisting of{" "}
           <a
-            href=""
+            href="/catalog"
             className="underline font-semibold text-green-600 hover:text-green-800"
           >
             Themes
@@ -81,10 +81,10 @@ const Home = () => {
         </p>
 
         <div className="flex gap-4 mt-6">
-          <button className="btn btn-neutral btn-sm rounded-md shadow-md capitalize">
+          <Link to={"/metrics"} className="btn btn-outline btn-neutral btn-sm rounded-md shadow-md capitalize">
             <FaChartBar></FaChartBar>
             Metrics
-          </button>
+          </Link>
           <button className="btn btn-outline btn-neutral btn-sm rounded-md capitalize">
             <FaSearch></FaSearch>
             Search
@@ -93,7 +93,7 @@ const Home = () => {
       </header>
 
       {/* Themes Grid */}
-       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {themes.map((theme) => {
           const folder = theme.href.split("/")[1]; // atmosphere, cryosphere, oceans
           const imgPath = `/data/themes/${folder}/EO_${theme.title}.webp`;
@@ -109,7 +109,6 @@ const Home = () => {
                 src={imgPath}
                 alt={theme.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-               
               />
 
               {/* Gradient Overlay & Text */}
