@@ -19,6 +19,7 @@ const CatalogList = () => {
   // 'asc' or 'desc'
   const [sortOrder, setSortOrder] = useState("asc");
   const [isExpanded, setIsExpanded] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch(`/data/themes/${themeId}/catalog.json`)
@@ -74,6 +75,11 @@ const CatalogList = () => {
       ? aTitle.localeCompare(bTitle)
       : bTitle.localeCompare(aTitle);
   });
+
+  const filteredAndSortedProducts = sortedProducts.filter((product) =>
+    product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.description?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">
@@ -170,7 +176,7 @@ const CatalogList = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex items-center gap-2">
             <h2 className="text-2xl font-bold text-secondary">Catalogs</h2>
-            <span className="badge badge-neutral">{products.length}</span>
+            <span className="badge badge-neutral">{filteredAndSortedProducts.length}</span>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -213,6 +219,8 @@ const CatalogList = () => {
             type="text"
             placeholder="Filter catalogs by title, description or keywords"
             className="input input-bordered w-full"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <select className="select select-bordered w-full md:max-w-xs">
             <option disabled selected>
@@ -226,7 +234,7 @@ const CatalogList = () => {
         <div
           className={`grid ${viewMode === "tiles" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"} gap-6`}
         >
-          {sortedProducts.map((item, index) => {
+          {filteredAndSortedProducts.map((item, index) => {
             const productPath = item.href
               .replace("../../products/", "")
               .replace("/collection.json", "");

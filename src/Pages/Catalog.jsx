@@ -14,6 +14,7 @@ const Catalog = () => {
   const [catalogInfo, setCatalogInfo] = useState(null);
   const [viewMode, setViewMode] = useState("list");
   const [sortOrder, setSortOrder] = useState("asc");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     // Fetch Themes Catalog as the MAIN info for this page
@@ -57,6 +58,11 @@ const Catalog = () => {
       ? aTitle.localeCompare(bTitle)
       : bTitle.localeCompare(aTitle);
   });
+
+  const filteredAndSortedThemes = sortedThemes.filter((theme) =>
+    theme.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    theme.description?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">
@@ -122,7 +128,7 @@ const Catalog = () => {
           <div className="flex items-center gap-2">
             <h2 className="text-2xl font-bold text-gray-700">Catalogs</h2>
             <span className="badge badge-neutral rounded-full text-xs">
-              {themes.length}
+              {filteredAndSortedThemes.length}
             </span>
           </div>
 
@@ -166,13 +172,15 @@ const Catalog = () => {
             type="text"
             placeholder="Filter catalogs by title, description or keywords"
             className="input input-bordered w-full pl-10"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
         <div
           className={`grid ${viewMode === "tiles" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"} gap-6`}
         >
-          {sortedThemes.map((theme, index) => (
+          {filteredAndSortedThemes.map((theme, index) => (
             <div
               key={index}
               onClick={() => navigate(`/themes/${theme.id}`)}

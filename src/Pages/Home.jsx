@@ -85,10 +85,10 @@ const Home = () => {
             <FaChartBar></FaChartBar>
             Metrics
           </Link>
-          <button className="btn btn-outline btn-neutral btn-sm rounded-md capitalize">
+          <Link to={"/search"} className="btn btn-outline btn-neutral btn-sm rounded-md capitalize">
             <FaSearch></FaSearch>
             Search
-          </button>
+          </Link>
         </div>
       </header>
 
