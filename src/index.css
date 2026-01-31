@@ -9,8 +9,8 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #CAEB66;
-  --color-secondary: #03373D;
+  --color-primary: #009d9a;
+  --color-secondary: #003366;
  } 
  
  body{
@@ -19,12 +19,17 @@
   font-style: normal;
   }  
 
-  /* .menu a.active {
-      text-decoration: underline;
-      color: green;
-  }  */
-   
-  .menu a{
-    margin: 5px;
-    text-decoration: none;
-  }
+
+/* Menu styling */
+.menu li > a {
+  margin: 5px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+/* Active link styling */
+.menu li > a.active {
+  background-color:  #E5E7EB; 
+  color: #000000  !important; 
+  
+}
