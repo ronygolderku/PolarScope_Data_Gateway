@@ -8,6 +8,7 @@ import {
   FaChevronLeft,
 } from "react-icons/fa";
 import { NavLink, Outlet, useLocation } from "react-router";
+import aseasLogo from "../assets/Aseaslogo.jpg";
 
 const HomeLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 1024);
@@ -73,6 +74,18 @@ const HomeLayout = () => {
           onClick={closeSidebar}
         ></label>
         <div className="flex min-h-full flex-col items-start bg-base-200 w-64">
+          {/* Logo Section */}
+          <div className="w-full p-6 pb-4 flex flex-col items-center border-b border-gray-300">
+            <img
+              src={aseasLogo}
+              alt="ACEAS Logo"
+              className="w-full h-auto object-contain mb-3"
+            />
+            <h3 className="text-sm font-bold text-center text-gray-700 leading-tight">
+              Australian Center of Excellence in Antarctic Science
+            </h3>
+          </div>
+
           <ul className="menu w-full grow">
             {/* Home */}
             <li>
@@ -119,6 +132,16 @@ const HomeLayout = () => {
               </NavLink>
             </li>
           </ul>
+
+          {/* Footer Section */}
+          <div className="w-full p-4 border-t border-gray-300 text-center">
+            <p className="text-xs text-gray-600">
+              © 2026 ACEAS
+            </p>
+            <p className="text-xs text-gray-500 mt-1">
+              PolarScope Data Gateway
+            </p>
+          </div>
         </div>
       </div>
     </div>
