@@ -12,16 +12,32 @@ const Home = () => {
   // JSON data fetch korar jonno
   useEffect(() => {
     setLoading(true);
+    const startTime = Date.now();
+    
     fetch("/data/themes/catalog.json")
       .then((res) => res.json())
       .then((data) => {
         const childThemes = data.links.filter((link) => link.rel === "child");
         setThemes(childThemes);
-        setLoading(false);
+        
+        // Minimum 2 seconds loading time ensure kora
+        const elapsedTime = Date.now() - startTime;
+        const remainingTime = Math.max(0, 2000 - elapsedTime);
+        
+        setTimeout(() => {
+          setLoading(false);
+        }, remainingTime);
       })
       .catch((err) => {
         console.error("Error loading JSON:", err);
-        setLoading(false);
+        
+        // Error hole o 2 seconds por loading off kora
+        const elapsedTime = Date.now() - startTime;
+        const remainingTime = Math.max(0, 2000 - elapsedTime);
+        
+        setTimeout(() => {
+          setLoading(false);
+        }, remainingTime);
       });
   }, []);
   console.log(themes);
