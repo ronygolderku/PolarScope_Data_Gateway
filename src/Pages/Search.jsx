@@ -32,7 +32,8 @@ const Search = () => {
   // Filter results based on debounced search term
   const results = useMemo(() => {
     if (!debouncedSearchTerm.trim()) {
-      return [];
+      // Show all products if no search term
+      return allProducts;
     }
 
     const searchLower = debouncedSearchTerm.toLowerCase();
@@ -75,14 +76,13 @@ const Search = () => {
               className="input input-bordered w-full pl-12 text-lg h-12 rounded-lg"
             />
             <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-           
           </form>
         </div>
 
         {/* Results Section */}
         {(loading || isDataLoading) && <Loading />}
 
-        {!loading && !isDataLoading && searched && results.length === 0 && (
+        {!loading && !isDataLoading && results.length === 0 && searched && (
           <div className=" bg-opacity-20 border border-gray-200 text-gray-500 p-6 rounded-lg text-center">
             <p className="text-lg font-semibold">No products found</p>
             <p className="text-sm mt-2">
@@ -94,7 +94,9 @@ const Search = () => {
         {!loading && !isDataLoading && results.length > 0 && (
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold text-gray-900">Results</h2>
+              <h2 className="text-2xl font-bold text-gray-900">
+                {searched ? "Search Results" : "All Products"}
+              </h2>
               <span className="badge badge-neutral text-base">{results.length}</span>
             </div>
 
@@ -169,9 +171,9 @@ const Search = () => {
           </div>
         )}
 
-        {!searched && (
+        {!loading && !isDataLoading && allProducts.length === 0 && (
           <div className="text-center py-12 text-gray-500">
-            <p className="text-lg">Enter a search term to get started</p>
+            <p className="text-lg">No products available</p>
           </div>
         )}
       </div>
