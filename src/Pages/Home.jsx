@@ -2,22 +2,34 @@ import React, { useEffect, useState } from "react";
 import { FaChartBar, FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import homepageImg from "../assets/homepage.png";
+import Loading from "./Loading";
 
 const Home = () => {
   const [themes, setThemes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   // JSON data fetch korar jonno
   useEffect(() => {
+    setLoading(true);
     fetch("/data/themes/catalog.json")
       .then((res) => res.json())
       .then((data) => {
         const childThemes = data.links.filter((link) => link.rel === "child");
         setThemes(childThemes);
+        setLoading(false);
       })
-      .catch((err) => console.error("Error loading JSON:", err));
+      .catch((err) => {
+        console.error("Error loading JSON:", err);
+        setLoading(false);
+      });
   }, []);
   console.log(themes);
+  
+  if (loading) {
+    return <Loading />;
+  }
+  
   return (
     <div className="min-h-screen relative">
       {/* Background Image */}

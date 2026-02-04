@@ -1,98 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 import { FaSearch } from "react-icons/fa";
+import Loading from "./Loading";
+import { useProductData } from "../context/ProductDataContext";
+import { useDebounce } from "../hooks/useDebounce";
 
 const Search = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const initialQuery = searchParams.get("q") || "";
 
+  const { allProducts, isLoading: isDataLoading, fetchAllProducts } = useProductData();
+  
   const [searchTerm, setSearchTerm] = useState(initialQuery);
-  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+  
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
-  // Fetch all products when component mounts or search term changes
+  // Fetch all products on mount
   useEffect(() => {
-    if (!initialQuery) return;
-    performSearch(initialQuery);
-  }, [initialQuery]);
+    if (!searched && initialQuery) {
+      setSearched(true);
+      setLoading(true);
+      fetchAllProducts().then(() => setLoading(false));
+    } else {
+      fetchAllProducts();
+    }
+  }, []);
 
-  const performSearch = async (query) => {
-    if (!query.trim()) {
-      setResults([]);
-      setSearched(false);
-      return;
+  // Filter results based on debounced search term
+  const results = useMemo(() => {
+    if (!debouncedSearchTerm.trim()) {
+      return [];
     }
 
-    setLoading(true);
-    setSearched(true);
-
-    try {
-      const themesRes = await fetch("/data/themes/catalog.json");
-      const themesData = await themesRes.json();
-      const themeLinks = themesData.links.filter(
-        (link) => link.rel === "child",
+    const searchLower = debouncedSearchTerm.toLowerCase();
+    return allProducts.filter((product) => {
+      return (
+        product.title?.toLowerCase().includes(searchLower) ||
+        product.description?.toLowerCase().includes(searchLower) ||
+        product.keywords?.some((k) =>
+          k.toLowerCase().includes(searchLower),
+        )
       );
-
-      const allProducts = [];
-
-      for (const themeLink of themeLinks) {
-        const themePath = themeLink.href.replace("./", "/data/themes/");
-        const themeRes = await fetch(themePath);
-        const themeCatalog = await themeRes.json();
-        const themeName = themeCatalog.title;
-
-        const productLinks = themeCatalog.links.filter(
-          (link) => link.rel === "child",
-        );
-
-        for (const prodLink of productLinks) {
-          const prodPathRelative = prodLink.href;
-          const prodPath = prodPathRelative
-            .replace("../../", "/data/")
-            .replace("../", "/data/");
-
-          try {
-            const prodRes = await fetch(prodPath);
-            const prodData = await prodRes.json();
-            allProducts.push({
-              ...prodData,
-              productPath: prodData.id,
-              themeName: themeName,
-            });
-          } catch (err) {
-            console.error("Error fetching product:", err);
-          }
-        }
-      }
-
-      // Filter products by search term (title, description, keywords)
-      const filtered = allProducts.filter((product) => {
-        const searchLower = query.toLowerCase();
-        return (
-          product.title?.toLowerCase().includes(searchLower) ||
-          product.description?.toLowerCase().includes(searchLower) ||
-          product.keywords?.some((k) =>
-            k.toLowerCase().includes(searchLower),
-          )
-        );
-      });
-
-      setResults(filtered);
-    } catch (err) {
-      console.error("Search error:", err);
-      setResults([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+    });
+  }, [debouncedSearchTerm, allProducts]);
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
+      setSearched(true);
       navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
-      performSearch(searchTerm);
     }
   };
 
@@ -116,23 +75,14 @@ const Search = () => {
               className="input input-bordered w-full pl-12 text-lg h-12 rounded-lg"
             />
             <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-            <button
-              type="submit"
-              className="absolute right-2 top-1/2 -translate-y-1/2 btn btn-sm btn-primary rounded-md"
-            >
-              Search
-            </button>
+           
           </form>
         </div>
 
         {/* Results Section */}
-        {loading && (
-          <div className="flex justify-center py-12">
-            <span className="loading loading-spinner loading-lg text-primary"></span>
-          </div>
-        )}
+        {(loading || isDataLoading) && <Loading />}
 
-        {!loading && searched && results.length === 0 && (
+        {!loading && !isDataLoading && searched && results.length === 0 && (
           <div className=" bg-opacity-20 border border-gray-200 text-gray-500 p-6 rounded-lg text-center">
             <p className="text-lg font-semibold">No products found</p>
             <p className="text-sm mt-2">
@@ -141,7 +91,7 @@ const Search = () => {
           </div>
         )}
 
-        {!loading && results.length > 0 && (
+        {!loading && !isDataLoading && results.length > 0 && (
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <h2 className="text-2xl font-bold text-gray-900">Results</h2>

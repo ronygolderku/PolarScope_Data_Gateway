@@ -12,6 +12,8 @@ import {
 import { MapContainer, TileLayer, Rectangle } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import Loading from "./Loading";
+import { useProductData } from "../context/ProductDataContext";
 
 // Fix for default marker icon in leaflet
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
@@ -269,6 +271,8 @@ const Metrics = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [themes, setThemes] = useState([]);
 
+  const { allProducts, isLoading: isDataLoading, hasLoaded, fetchAllProducts } = useProductData();
+
   // Filters
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedIds, setExpandedIds] = useState(new Set());
@@ -286,9 +290,10 @@ const Metrics = () => {
   );
 
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = async () => {
+      setLoading(true);
       try {
-        // Fetch Themes to discover products
+        // Fetch themes
         const themesRes = await fetch("/data/themes/catalog.json");
         const themesData = await themesRes.json();
         const themeLinks = themesData.links.filter(
@@ -308,57 +313,24 @@ const Metrics = () => {
         const themesDetails = await Promise.all(themesDetailsProms);
         setThemes(themesDetails);
 
-        const allProductsProms = themeLinks.map(async (themeLink) => {
-          const themePath = themeLink.href.replace("./", "/data/themes/");
-          const themeRes = await fetch(themePath);
-          const themeCatalog = await themeRes.json();
-          const themeId = themeCatalog.id;
-
-          const productLinks = themeCatalog.links.filter(
-            (link) => link.rel === "child",
+        // Fetch all products using context
+        const fetchedProducts = await fetchAllProducts();
+        if (fetchedProducts && fetchedProducts.length > 0) {
+          // Sort by Title (Alphabetical)
+          const sorted = [...fetchedProducts].sort((a, b) =>
+            a.title.localeCompare(b.title)
           );
-
-          const themeProductsProms = productLinks.map(async (prodLink) => {
-            const prodPathRelative = prodLink.href;
-            const prodPath = prodPathRelative
-              .replace("../../", "/data/")
-              .replace("../", "/data/");
-
-            try {
-              const prodRes = await fetch(prodPath);
-              const prodData = await prodRes.json();
-              return {
-                ...prodData,
-                rawLink: prodLink.href,
-                productPath: prodData.id,
-                themeId: themeId,
-              };
-            } catch (err) {
-              return null;
-            }
-          });
-          return Promise.all(themeProductsProms);
-        });
-
-        const nested = await Promise.all(allProductsProms);
-        const flat = nested.flat().filter((p) => p !== null);
-        // Unique by ID
-        const unique = Array.from(
-          new Map(flat.map((item) => [item.id, item])).values(),
-        );
-
-        // Sort by Title (Alphabetical)
-        unique.sort((a, b) => a.title.localeCompare(b.title));
-
-        setProducts(unique);
-        setLoading(false);
+          setProducts(sorted);
+        }
       } catch (err) {
-        console.error("Failed to load products", err);
+        console.error("Failed to load data", err);
+      } finally {
         setLoading(false);
       }
     };
-    fetchData();
-  }, []);
+
+    loadData();
+  }, [fetchAllProducts]);
 
   // Helper to toggle accordion
   const toggleExpand = (id) => {
@@ -381,11 +353,7 @@ const Metrics = () => {
   }, [products, searchTerm, selectedTheme]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex justify-center items-center bg-white">
-        <span className="loading loading-spinner loading-lg text-[#009d9a]"></span>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (

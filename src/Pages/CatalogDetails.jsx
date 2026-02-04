@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { MapContainer, TileLayer, Rectangle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Loading from "./Loading";
 
 const CatalogDetails = () => {
   const location = useLocation();
@@ -19,11 +20,7 @@ const CatalogDetails = () => {
   }, [productPath]);
 
   if (!data) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <Loading />;
   }
 
   // Helper to get formatted date

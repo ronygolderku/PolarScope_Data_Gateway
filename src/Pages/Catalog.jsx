@@ -7,16 +7,19 @@ import {
   FaSortAmountUp,
   FaBook,
 } from "react-icons/fa";
+import Loading from "./Loading";
 
 const Catalog = () => {
   const navigate = useNavigate();
   const [themes, setThemes] = useState([]);
   const [catalogInfo, setCatalogInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState("list");
   const [sortOrder, setSortOrder] = useState("asc");
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    setLoading(true);
     // Fetch Themes Catalog as the MAIN info for this page
     fetch(`/data/themes/catalog.json`)
       .then((res) => res.json())
@@ -47,8 +50,12 @@ const Catalog = () => {
           }),
         );
         setThemes(themesWithDetails);
+        setLoading(false);
       })
-      .catch((err) => console.error("Error fetching themes:", err));
+      .catch((err) => {
+        console.error("Error fetching themes:", err);
+        setLoading(false);
+      });
   }, []);
 
   const sortedThemes = [...themes].sort((a, b) => {
@@ -63,6 +70,10 @@ const Catalog = () => {
     theme.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
     theme.description?.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">

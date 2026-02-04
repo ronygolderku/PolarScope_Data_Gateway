@@ -6,6 +6,7 @@ import {
   FaSortAmountDown,
   FaSortAmountUp,
 } from "react-icons/fa";
+import Loading from "./Loading";
 
 const CatalogList = () => {
   // atmosphere / cryosphere / oceans
@@ -14,6 +15,7 @@ const CatalogList = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [themeInfo, setThemeInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
   // 'list' or 'tiles'
   const [viewMode, setViewMode] = useState("list");
   // 'asc' or 'desc'
@@ -22,6 +24,7 @@ const CatalogList = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    setLoading(true);
     fetch(`/data/themes/${themeId}/catalog.json`)
       .then((res) => res.json())
       .then(async (data) => {
@@ -54,8 +57,12 @@ const CatalogList = () => {
         );
 
         setProducts(productsWithDetails);
+        setLoading(false);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, [themeId]);
 
   // Helper to get image based on themeId
@@ -80,6 +87,10 @@ const CatalogList = () => {
     product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.description?.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">
