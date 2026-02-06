@@ -105,7 +105,7 @@ const CoverageModal = ({ product, onClose }) => {
           </div>
 
           {/* Right Panel: Map */}
-          <div className="w-full md:w-2/3 bg-gray-50 relative min-h-[400px]">
+          <div className="w-full md:w-2/3 bg-gray-50 relative h-[280px] sm:h-[360px] md:h-auto md:min-h-[400px]">
             <MapContainer
               bounds={bounds}
               style={{ height: "100%", width: "100%" }}
@@ -173,7 +173,7 @@ const ProductRow = ({
     <div className="border-b border-gray-200 hover:bg-gray-50 transition-colors group">
       <div className="flex items-stretch h-12">
         {/* Name & Accordion Toggle */}
-        <div className="w-[350px] min-w-[350px] border-r border-gray-100 p-2 pl-4 flex items-center gap-3 relative bg-white z-10">
+        <div className="w-[220px] min-w-[220px] sm:w-[280px] sm:min-w-[280px] lg:w-[350px] lg:min-w-[350px] border-r border-gray-100 p-2 pl-4 flex items-center gap-3 relative bg-white z-10">
           <button
             onClick={onToggle}
             className="p-1 rounded hover:bg-gray-200 text-gray-500 transition-colors"
@@ -209,7 +209,7 @@ const ProductRow = ({
         </div>
 
         {/* Coverage Icon */}
-        <div className="w-[80px] min-w-[80px] border-l border-gray-100 flex items-center justify-center bg-white">
+        <div className="w-[64px] min-w-[64px] sm:w-[72px] sm:min-w-[72px] lg:w-[80px] lg:min-w-[80px] border-l border-gray-100 flex items-center justify-center bg-white">
           <button
             className="text-gray-400 hover:text-[#009d9a] transition-colors p-2"
             title="View Coverage Map"
@@ -374,9 +374,9 @@ const Metrics = () => {
           </div>
 
           {/* Controls Row */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
             {/* Search */}
-            <div className="relative w-full max-w-sm">
+            <div className="relative w-full sm:max-w-sm">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
@@ -388,12 +388,12 @@ const Metrics = () => {
             </div>
 
             {/* Filters */}
-            <select className="select select-sm select-bordered rounded-sm text-xs w-32 bg-white">
+            <select className="select select-sm select-bordered rounded-sm text-xs w-full sm:w-32 bg-white">
               <option selected>Global</option>
             </select>
 
             <select
-              className="select select-sm select-bordered rounded-sm text-xs w-40 bg-white capitalize"
+              className="select select-sm select-bordered rounded-sm text-xs w-full sm:w-40 bg-white capitalize"
               value={selectedTheme}
               onChange={(e) => setSelectedTheme(e.target.value)}
             >
@@ -414,39 +414,41 @@ const Metrics = () => {
         </div>
 
         {/* Timeline Axis Header */}
-        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-gray-100 bg-gray-50">
-          <div className="flex text-xs font-bold text-gray-500 h-10 items-center">
-            <div className="w-[350px] pl-4">Name</div>
-            <div className="flex-1 relative h-full overflow-hidden">
-              {/* Ticks */}
-              <div className="absolute inset-0 flex items-center pointer-events-none">
-                {YEARS_ARRAY.map((year) => {
-                  const left = ((year - MIN_YEAR) / TOTAL_YEARS) * 100;
-                  return (
-                    <div
-                      key={year}
-                      className="absolute h-full flex flex-col justify-end pb-1 border-l border-gray-200"
-                      style={{ left: `${left}%` }}
-                    >
-                      <span className="pl-1 text-[10px] opacity-70">
-                        {year}
-                      </span>
-                    </div>
-                  );
-                })}
+        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-gray-100 bg-gray-50 overflow-x-auto">
+          <div className="min-w-[900px]">
+            <div className="flex text-xs font-bold text-gray-500 h-10 items-center">
+              <div className="w-[220px] sm:w-[280px] lg:w-[350px] pl-4">Name</div>
+              <div className="flex-1 relative h-full overflow-hidden">
+                {/* Ticks */}
+                <div className="absolute inset-0 flex items-center pointer-events-none">
+                  {YEARS_ARRAY.map((year) => {
+                    const left = ((year - MIN_YEAR) / TOTAL_YEARS) * 100;
+                    return (
+                      <div
+                        key={year}
+                        className="absolute h-full flex flex-col justify-end pb-1 border-l border-gray-200"
+                        style={{ left: `${left}%` }}
+                      >
+                        <span className="pl-1 text-[10px] opacity-70">
+                          {year}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
+              <div className="w-[64px] sm:w-[72px] lg:w-[80px] text-center">Cov.</div>
             </div>
-            <div className="w-[80px] text-center">Cov.</div>
           </div>
         </div>
       </div>
 
       {/* Timeline Content */}
-      <div className="flex-1 max-w-[1920px] mx-auto w-full px-4 md:px-8 pb-10">
+      <div className="flex-1 max-w-[1920px] mx-auto w-full px-4 md:px-8 pb-10 overflow-x-auto">
         {/* Items */}
-        <div className="border border-gray-200 border-t-0 rounded-b bg-white relative">
+        <div className="min-w-[900px] border border-gray-200 border-t-0 rounded-b bg-white relative">
           {/* Vertical Grid Lines (Background) */}
-          <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-430px)] ml-[350px]">
+          <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-284px)] sm:w-[calc(100%-352px)] lg:w-[calc(100%-430px)] ml-[220px] sm:ml-[280px] lg:ml-[350px]">
             {YEARS_ARRAY.map((year) => {
               const left = ((year - MIN_YEAR) / TOTAL_YEARS) * 100;
               return (

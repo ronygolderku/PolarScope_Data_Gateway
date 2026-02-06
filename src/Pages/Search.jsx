@@ -105,14 +105,14 @@ const Search = () => {
                 <div
                   key={product.id}
                   onClick={() => navigate(`/products/${product.productPath}`)}
-                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden"
                 >
-                  <div className="flex flex-col md:flex-row justify-between md:items-start gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-blue-900 group-hover:text-blue-700 mb-2">
+                  <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 min-w-0">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-xl font-bold text-blue-900 group-hover:text-blue-700 mb-2 break-words">
                         {product.title}
                       </h3>
-                      <p className="text-gray-700 text-sm leading-relaxed line-clamp-2 mb-3">
+                      <p className="text-gray-700 text-sm leading-relaxed line-clamp-2 mb-3 break-words">
                         {product.description || "No description available"}
                       </p>
 
@@ -129,7 +129,7 @@ const Search = () => {
                             {product.keywords.slice(0, 3).map((keyword, i) => (
                               <span
                                 key={i}
-                                className="badge badge-sm badge-neutral text-xs"
+                                className="badge badge-sm badge-neutral text-xs max-w-full break-all"
                               >
                                 {keyword}
                               </span>
@@ -144,7 +144,7 @@ const Search = () => {
                       </div>
                     </div>
 
-                    <div className="md:text-right space-y-2">
+                    <div className="md:text-right space-y-2 min-w-0">
                       <div className="text-xs text-gray-600">
                         <span className="font-semibold">Temporal:</span>
                         <br />
