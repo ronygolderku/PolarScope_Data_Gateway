@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "seafloor-topography",
+  "stac_version": "1.0.0",
+  "description": "General elevation pattern of the land surface or the ocean bottom. Also refer to as bathymetry, the study and mapping of sea floor elevations and the variations of water depth; the topography of the sea floor.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/b6b51058-1111-4498-a9ac-e1515270fb27?gtm_keyword=SEAFLOOR%20TOPOGRAPHY&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/seafloor-topography/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.241832Z",
+  "keywords": [],
+  "title": "Seafloor Topography"
+}

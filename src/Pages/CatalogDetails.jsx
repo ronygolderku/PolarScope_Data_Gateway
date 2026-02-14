@@ -8,16 +8,68 @@ const CatalogDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [data, setData] = useState(null);
+  const [childItems, setChildItems] = useState([]);
+  const [childSearchTerm, setChildSearchTerm] = useState("");
+  const [childSortOrder, setChildSortOrder] = useState("asc");
 
-  // /products/cloud-op-livas
-  const productPath = location.pathname.replace("/products/", "");
+  // Detect catalog type and item path from URL
+  // e.g., /products/cloud-op-livas or /eo-missions/aeolus or /variables/aerosol
+  const pathParts = location.pathname.split("/").filter(Boolean);
+  const catalogType = pathParts[0]; // products, eo-missions, variables
+  const itemPath = pathParts.slice(1).join("/"); // cloud-op-livas, aeolus, etc.
 
   useEffect(() => {
-    fetch(`/data/products/${productPath}/collection.json`)
+    setData(null);
+    setChildItems([]);
+
+    // Determine file type based on catalog
+    const fileName = catalogType === "products" ? "collection.json" : "catalog.json";
+    const fetchPath = `/data/${catalogType}/${itemPath}/${fileName}`;
+
+    fetch(fetchPath)
       .then((res) => res.json())
-      .then((json) => setData(json))
+      .then(async (json) => {
+        setData(json);
+
+        if (catalogType === "products") {
+          return;
+        }
+
+        const childLinks = (json.links || []).filter((link) => link.rel === "child");
+        if (childLinks.length === 0) {
+          return;
+        }
+
+        const baseUrl = new URL(`/data/${catalogType}/${itemPath}/`, window.location.origin);
+
+        const itemsWithDetails = await Promise.all(
+          childLinks.map(async (link) => {
+            try {
+              const resolvedPath = new URL(link.href, baseUrl).pathname;
+              const childRes = await fetch(resolvedPath);
+              const details = await childRes.json();
+
+              return {
+                ...link,
+                id: details.id,
+                title: details.title || link.title,
+                description: details.description,
+                extent: details.extent,
+              };
+            } catch (err) {
+              console.error("Error fetching child details:", err);
+              return {
+                ...link,
+                title: link.title,
+              };
+            }
+          }),
+        );
+
+        setChildItems(itemsWithDetails);
+      })
       .catch((err) => console.error(err));
-  }, [productPath]);
+  }, [catalogType, itemPath]);
 
   if (!data) {
     return <Loading />;
@@ -26,6 +78,24 @@ const CatalogDetails = () => {
   // Helper to get formatted date
   const formatDate = (dateStr) => {
     return dateStr ? new Date(dateStr).toLocaleString() : "Unknown";
+  };
+
+  const sortedChildItems = [...childItems].sort((a, b) => {
+    const aTitle = a.title || "";
+    const bTitle = b.title || "";
+    return childSortOrder === "asc"
+      ? aTitle.localeCompare(bTitle)
+      : bTitle.localeCompare(aTitle);
+  });
+
+  const filteredChildItems = sortedChildItems.filter((item) =>
+    item.title?.toLowerCase().includes(childSearchTerm.toLowerCase()) ||
+    item.description?.toLowerCase().includes(childSearchTerm.toLowerCase())
+  );
+
+  const getProductIdFromHref = (href = "") => {
+    const match = href.match(/products\/([^/]+)\//);
+    return match?.[1] || "";
   };
 
   // Extract bbox safely
@@ -68,7 +138,20 @@ const CatalogDetails = () => {
             Up
           </button>
           <button
-            onClick={() => navigate(`/themes/${productPath.split("-")[0]}`)}
+            onClick={() => {
+              // Navigate back based on catalog type
+              if (catalogType === "products") {
+                // Try to find theme from data
+                const theme = data?.themes?.[0]?.concepts?.[0]?.id;
+                if (theme) {
+                  navigate(`/themes/${theme}`);
+                } else {
+                  navigate(`/${catalogType}`);
+                }
+              } else {
+                navigate(`/${catalogType}`);
+              }
+            }}
             className="btn btn-xs btn-outline rounded-sm"
           >
             Overview
@@ -103,45 +186,50 @@ const CatalogDetails = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mt-4">
-            <div>
-              <span className="font-bold">License</span>:{" "}
-              {data.license || "Unknown"}
-            </div>
-            <div>
-              <span className="font-bold">Temporal Extent</span>:{" "}
-              {data.extent?.temporal?.interval?.[0]?.[0]
-                ? new Date(
-                    data.extent.temporal.interval[0][0],
-                  ).toLocaleDateString()
-                : "Unknown"}{" "}
-              -{" "}
-              {data.extent?.temporal?.interval?.[0]?.[1]
-                ? new Date(
-                    data.extent.temporal.interval[0][1],
-                  ).toLocaleDateString()
-                : "Present"}
-            </div>
+            {data.license && (
+              <div>
+                <span className="font-semibold">License</span>:{" "}
+                {data.license}
+              </div>
+            )}
+            {data.extent?.temporal?.interval?.[0] && (
+              <div>
+                <span className="font-semibold">Temporal Extent</span>:{" "}
+                {data.extent.temporal.interval[0][0]
+                  ? new Date(
+                      data.extent.temporal.interval[0][0],
+                    ).toLocaleDateString()
+                  : "Unknown"}{" "}
+                -{" "}
+                {data.extent.temporal.interval[0][1]
+                  ? new Date(
+                      data.extent.temporal.interval[0][1],
+                    ).toLocaleDateString()
+                  : "Present"}
+              </div>
+            )}
           </div>
 
-          {/* Map */}
-          <div className="h-[400px] w-full border border-gray-300 rounded shadow-sm relative z-0">
-            {/*MapContainer needs specific height */}
-            <MapContainer
-              bounds={bounds}
-              scrollWheelZoom={false}
-              style={{ height: "100%", width: "100%" }}
-              className="z-0"
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Rectangle
+          {/* Map - only show if spatial extent exists */}
+          {data.extent?.spatial?.bbox?.[0] && (
+            <div className="h-[400px] w-full border border-gray-300 rounded shadow-sm relative z-0">
+              <MapContainer
                 bounds={bounds}
-                pathOptions={{ color: "blue", weight: 1, fillOpacity: 0.2 }}
-              />
-            </MapContainer>
-          </div>
+                scrollWheelZoom={false}
+                style={{ height: "100%", width: "100%" }}
+                className="z-0"
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Rectangle
+                  bounds={bounds}
+                  pathOptions={{ color: "blue", weight: 1, fillOpacity: 0.2 }}
+                />
+              </MapContainer>
+            </div>
+          )}
 
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-2">
@@ -184,105 +272,192 @@ const CatalogDetails = () => {
               </div>
             </div>
 
-            {/* Cf Table */}
-            <div className="mb-6">
-              <h3 className="font-bold text-gray-700 mb-2">Cf</h3>
-              <div className="overflow-x-auto border border-gray-200 rounded">
-                <table className="table table-xs w-full">
-                  <tbody>
-                    <tr className="bg-gray-50">
-                      <td className="font-semibold w-24">Parameter</td>
-                      <td className="break-all">
-                        {data["cf:parameter"]?.[0]?.name || "N/A"}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+            {/* Cf Table - only show if cf:parameter exists */}
+            {data["cf:parameter"]?.[0]?.name && (
+              <div className="mb-6">
+                <h3 className="font-bold text-gray-700 mb-2">Cf</h3>
+                <div className="overflow-x-auto border border-gray-200 rounded">
+                  <table className="table table-xs w-full">
+                    <tbody>
+                      <tr className="bg-gray-50">
+                        <td className="font-semibold w-24">Parameter</td>
+                        <td className="break-all">
+                          {data["cf:parameter"][0].name}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Open Science Catalog Table */}
-            <div>
-              <h3 className="font-bold text-gray-700 mb-2">
-                Open Science Catalog
-              </h3>
-              <div className="overflow-x-auto border border-gray-200 rounded">
-                <table className="table table-xs w-full">
-                  <tbody>
-                    <tr className="bg-gray-50 border-b border-gray-100">
-                      <td className="font-semibold w-24">Project</td>
-                      <td className="text-blue-600 font-semibold">
-                        {data["osc:project"] || "Unknown"}
-                      </td>
-                    </tr>
-                    <tr className="bg-white border-b border-gray-100">
-                      <td className="font-semibold">Status</td>
-                      <td>{data["osc:status"] || "Unknown"}</td>
-                    </tr>
-                    <tr className="bg-gray-50 border-b border-gray-100">
-                      <td className="font-semibold">Region</td>
-                      <td>{data["osc:region"] || "Global"}</td>
-                    </tr>
-                    <tr className="bg-white border-b border-gray-100">
-                      <td className="font-semibold">Type</td>
-                      <td>{data["osc:type"] || "Product"}</td>
-                    </tr>
-                    <tr className="bg-gray-50 border-b border-gray-100">
-                      <td className="font-semibold">Variables</td>
-                      <td>{data["osc:variables"]?.join(", ") || "N/A"}</td>
-                    </tr>
-                    <tr className="bg-white">
-                      <td className="font-semibold">Missions</td>
-                      <td>{data["osc:missions"]?.join(", ") || "N/A"}</td>
-                    </tr>
-                  </tbody>
-                </table>
+            {/* Open Science Catalog Table - only show if osc fields exist */}
+            {(data["osc:project"] || data["osc:status"] || data["osc:region"] || data["osc:type"] || data["osc:variables"] || data["osc:missions"]) && (
+              <div>
+                <h3 className="font-bold text-gray-700 mb-2">
+                  Open Science Catalog
+                </h3>
+                <div className="overflow-x-auto border border-gray-200 rounded">
+                  <table className="table table-xs w-full">
+                    <tbody>
+                      {data["osc:project"] && (
+                        <tr className="bg-gray-50 border-b border-gray-100">
+                          <td className="font-semibold w-24">Project</td>
+                          <td className="text-blue-600 font-semibold">
+                            {data["osc:project"]}
+                          </td>
+                        </tr>
+                      )}
+                      {data["osc:status"] && (
+                        <tr className="bg-white border-b border-gray-100">
+                          <td className="font-semibold">Status</td>
+                          <td>{data["osc:status"]}</td>
+                        </tr>
+                      )}
+                      {data["osc:region"] && (
+                        <tr className="bg-gray-50 border-b border-gray-100">
+                          <td className="font-semibold">Region</td>
+                          <td>{data["osc:region"]}</td>
+                        </tr>
+                      )}
+                      {data["osc:type"] && (
+                        <tr className="bg-white border-b border-gray-100">
+                          <td className="font-semibold">Type</td>
+                          <td>{data["osc:type"]}</td>
+                        </tr>
+                      )}
+                      {data["osc:variables"] && (
+                        <tr className="bg-gray-50 border-b border-gray-100">
+                          <td className="font-semibold">Variables</td>
+                          <td>{data["osc:variables"].join(", ")}</td>
+                        </tr>
+                      )}
+                      {data["osc:missions"] && (
+                        <tr className="bg-white">
+                          <td className="font-semibold">Missions</td>
+                          <td>{data["osc:missions"].join(", ")}</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Additional Resources */}
-          <div>
-            <h3 className="text-lg font-bold text-blue-900 mb-2">
-              Additional Resources
-            </h3>
-            <div className="text-sm space-y-2">
-              <div>
-                <span className="font-semibold">Related resource</span>
+          {(data["osc:project"] || data.themes || data["osc:missions"] || data.links) && (
+            <div>
+              <h3 className="text-lg font-bold text-blue-900 mb-2">
+                Additional Resources
+              </h3>
+              <div className="text-sm space-y-2">
+                {(data["osc:project"] || data.themes || data["osc:missions"]) && (
+                  <>
+                    <div>
+                      <span className="font-semibold">Related resource</span>
+                    </div>
+                    <ul className="list-disc list-inside pl-2 text-gray-600">
+                      {data["osc:project"] && (
+                        <li>Project: {data["osc:project"]}</li>
+                      )}
+                      {data.themes?.find((t) => t.concepts?.[0]?.id) && (
+                        <li>
+                          Theme:{" "}
+                          {data.themes.find((t) => t.concepts?.[0]?.id).concepts[0].id}
+                        </li>
+                      )}
+                      {data["osc:missions"]?.[0] && (
+                        <li>EO Mission: {data["osc:missions"][0]}</li>
+                      )}
+                    </ul>
+                  </>
+                )}
+                {data.links?.filter((l) => l.rel === "via" || l.rel === "self").length > 0 && (
+                  <>
+                    <div className="mt-2">
+                      <span className="font-semibold">Source metadata</span>
+                    </div>
+                    <ul className="list-disc list-inside pl-2 text-gray-600">
+                      {data.links
+                        .filter((l) => l.rel === "via" || l.rel === "self")
+                        .map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-blue-600 hover:underline"
+                            >
+                              {link.title || "Link"}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
+                  </>
+                )}
               </div>
-              <ul className="list-disc list-inside pl-2 text-gray-600">
-                <li>Project: {data["osc:project"] || "Unknown"}</li>
-
-                <li>
-                  Theme:{" "}
-                  {data.themes?.find((t) => t.concepts?.[0]?.id)?.concepts[0]
-                    .id || "Unknown"}
-                </li>
-                <li>EO Mission: {data["osc:missions"]?.[0] || "N/A"}</li>
-              </ul>
-              <div className="mt-2">
-                <span className="font-semibold">Source metadata</span>
-              </div>
-              <ul className="list-disc list-inside pl-2 text-gray-600">
-                {data.links
-                  ?.filter((l) => l.rel === "via" || l.rel === "self")
-                  .map((link, idx) => (
-                    <li key={idx}>
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
-                        {link.title || "Link"}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
             </div>
-          </div>
+          )}
         </div>
       </div>
+
+      {catalogType !== "products" && childItems.length > 0 && (
+        <div className="space-y-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-secondary">Products</h2>
+              <span className="badge badge-neutral text-xs">
+                {filteredChildItems.length}
+              </span>
+            </div>
+            <div className="join">
+              <button
+                className={`btn btn-sm join-item ${childSortOrder === "asc" ? "btn-active" : ""}`}
+                onClick={() => setChildSortOrder("asc")}
+              >
+                A-Z
+              </button>
+              <button
+                className={`btn btn-sm join-item ${childSortOrder === "desc" ? "btn-active" : ""}`}
+                onClick={() => setChildSortOrder("desc")}
+              >
+                Z-A
+              </button>
+            </div>
+          </div>
+
+          <input
+            type="text"
+            placeholder="Filter products by title or description"
+            className="input input-bordered w-full"
+            value={childSearchTerm}
+            onChange={(e) => setChildSearchTerm(e.target.value)}
+          />
+
+          <div className="grid grid-cols-1 gap-6">
+            {filteredChildItems.map((item, index) => {
+              const productId = item.id || getProductIdFromHref(item.href);
+              const navPath = productId ? `/products/${productId}` : "";
+
+              return (
+                <div
+                  key={index}
+                  onClick={() => navPath && navigate(navPath)}
+                  className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-gray-300 bg-white p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-primary group`}
+                >
+                  <h3 className="font-bold text-lg mb-2 text-blue-900 group-hover:text-blue-700">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 line-clamp-3">
+                    {item.description || "No description available."}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

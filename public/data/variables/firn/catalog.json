@@ -1,0 +1,59 @@
+{
+  "type": "Catalog",
+  "id": "firn",
+  "stac_version": "1.0.0",
+  "description": "Rounded, well-bonded snow that is older han one year (from NSIDC glossary). A permeable aggregate of small ice grains with densities greater than 0.55 up to 0.82 where begins glacial ice.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/6159b9d9-4aa5-4dec-8146-0e47751449ff?gtm_keyword=FIRN&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/firn-retention/collection.json",
+      "type": "application/json",
+      "title": "Firn Retention (ESA POLAR+ 4D Greenland Experimental Dataset)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/firn/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.219831Z",
+  "keywords": [],
+  "title": "Firn"
+}

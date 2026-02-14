@@ -1,0 +1,59 @@
+{
+  "type": "Catalog",
+  "id": "carbon-flux",
+  "stac_version": "1.0.0",
+  "description": "Carbon flux refers to the direction and rate of transfer, or flows, of carbon between Earth's carbon pools such as the oceans, atmosphere,land, other living things. Carbon fluxes can be natural exchanges, such as land-atmosphere and ocean-atmosphere fluxes, or anthropogenic exchanges, such as urban carbon fluxes.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/53fb0557-9f7f-4504-b0e8-adf329146c52?gtm_keyword=CARBON%20FLUX&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/gross-net-carbon-flux-lpf-vad3emecum/collection.json",
+      "type": "application/json",
+      "title": "Gross and net Carbon Flux Estimates_Fluxcom2.0 Carbon"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/carbon-flux/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/atmosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Atmosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "atmosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.209831Z",
+  "keywords": [],
+  "title": "Carbon Flux"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "alpha-particles-differential-directional-flux",
+  "stac_version": "1.0.0",
+  "description": "The differential directional flux of alpha particles refers to the number of alpha particles passing through a unit area per unit time, per unit solid angle, and per unit energy interval. This measurement is often expressed in units such as particles per square centimeter per second per steradian per MeV (particles/cm²/s/sr/MeV). Flux is often expressed in 'integral form' as particles per unit area per unit time (e.g. electrons cm-2s-1) above a certain threshold energy. The directional flux is the differential with respect to solid angle (e.g. particles cm-2 steradian-1s-1) while the 'differential' flux is differential with respect to energy (e.g. particles cm-2 MeV-1s-1). In some cases fluxes are also treated as a differential with respect to Linear Energy Transfer. (source: https://ecss.nl/item/?glossary_id=1609)",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://space.oscar.wmo.int/variables/view/alpha_particles_differential_directional_flux",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/alpha-particles-differential-directional-flux/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Magnetosphere Ionosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "magnetosphere-ionosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.205831Z",
+  "keywords": [],
+  "title": "Alpha particles differential directional flux"
+}

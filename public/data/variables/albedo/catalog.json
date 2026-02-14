@@ -1,0 +1,113 @@
+{
+  "type": "Catalog",
+  "id": "albedo",
+  "stac_version": "1.0.0",
+  "description": "Albedo is the ratio of the radiation (radiant energy or luminous energy) reflected by a surface to that incident on it. Snow and cloud surfaces have a high albedo, because most of the energy of the visible solar spectrum is reflected. Vegetation and ocean surfaces have low albedo, because they absorb a large fraction of the energy. Clouds are the chief cause of variations in the Earth's albedo.The land surface albedo is the ratio of the radiant flux reflected from Earth's surface to the incident flux. It is a key forcing parameter controlling the partitioning of radiative energy between the atmospheric and surface. In the case of vegetation, a reference surface is typically defined at or near the top of the canopy and must be specified explicitly. Surface albedo depends on natural variations, highly variable in space and time as a result of terrestrial properties changes, and with illumination conditions and human activities and is a sensitive indicator of environmental vulnerability.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/48c16952-b6e0-40cd-b6dd-7cdbf5a443a1?gtm_keyword=ALBEDO&gtm_scheme=Earth%20Science;https://gcos.wmo.int/en/essential-climate-variables/albedo",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/albedo-circas/collection.json",
+      "type": "application/json",
+      "title": "Albedo_Regional_S3A/SLSTR"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/broadband-albedo-arctic-sice/collection.json",
+      "type": "application/json",
+      "title": "Broadband albedo_Arctic_S3"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/broadband-albedo-greenland-s34science-snow/collection.json",
+      "type": "application/json",
+      "title": "Broadband albedo_Greenland_S3"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/snow-albedo-europe-alps-alpsnow/collection.json",
+      "type": "application/json",
+      "title": "Snow albedo for European Alps_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/snow-grain-diameter-arctic-sice/collection.json",
+      "type": "application/json",
+      "title": "Snow grain diameter_Arctic_S3"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/spectral-albedo-arctic-sice/collection.json",
+      "type": "application/json",
+      "title": "Spectral albedo_Arctic_S3"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/spectral-albedo-greenland-s34science-snow/collection.json",
+      "type": "application/json",
+      "title": "Spectral albedo_Greenland_S3"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/albedo/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/atmosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Atmosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Magnetosphere Ionosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "atmosphere"
+        },
+        {
+          "id": "cryosphere"
+        },
+        {
+          "id": "magnetosphere-ionosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.832131Z",
+  "keywords": [],
+  "title": "Albedo"
+}

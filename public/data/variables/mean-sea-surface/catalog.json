@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "mean-sea-surface",
+  "stac_version": "1.0.0",
+  "description": "The mean sea surface is the displacement of the sea surface relative to a mathematical model of the earth and it closely follows the geoid.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/70082342-c777-49e9-88e5-a4a77728d3cc?gtm_keyword=MEAN%20SEA%20SURFACE&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/mean-sea-surface/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.230831Z",
+  "keywords": [],
+  "title": "Mean Sea Surface"
+}

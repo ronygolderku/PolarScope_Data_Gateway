@@ -1,0 +1,89 @@
+{
+  "type": "Catalog",
+  "id": "diffuse-attenuation-coefficient-dac",
+  "stac_version": "1.0.0",
+  "description": "Indicator of water turbidity and vertical processes in the ocean, extracted from ocean colour observation (WMO OSCAR). The diffuse attenuation coefficient (K490) is an indicator of the turbidity of the water column - how visible light in the blue-green part of the spectrum penetrates the water column. It is directly related to the presence of scattering particles in the water column. (https://disc.gsfc.nasa.gov/information/glossary/)",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://space.oscar.wmo.int/variables/view/ocean_diffuse_attenuation_coefficient_dac",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://disc.gsfc.nasa.gov/information/glossary?title=Giovanni%20Parameter%20Definitions:%20Diffuse%20Attenuation%20Coefficient,%20K490",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/diffuse-attenuation-aeolus-innovation-color/collection.json",
+      "type": "application/json",
+      "title": "Diffuse attenuation: Kd_Global_AEOLUS"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/mean-spectral-dac-for-320-nm-423nm-in-the-atlantic-ocean/collection.json",
+      "type": "application/json",
+      "title": "Mean spectral DAC avg for 320-338.5nm (UVAB) 356.5 - 390 nm (UVA) & 390 - 423 nm in the Atlantic Ocean from S5P (TROPOMI)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/mean-spectral-dac-from-318-to952nm-of-underwater-light-profiles-rv-polarstern-cruise-ps113/collection.json",
+      "type": "application/json",
+      "title": "Mean spectral DAC from 318-952nm of light profiles measured at discrete stations (RV Polarstern cruise PS113) "
+    },
+    {
+      "rel": "child",
+      "href": "../../products/mean-spectral-dac-from-320-to917nm-from-radiometric-underwater-light-transmission-profiles/collection.json",
+      "type": "application/json",
+      "title": "Mean spectral DAC from 320-917nm from light transmission profiles by an undulating platform towed behind the ship"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/4dmed-2d-pft-kd/collection.json",
+      "type": "application/json",
+      "title": "ESA 4DMED-SEA - Phytoplankton Functional Types (PFT) and Diffuse Attenuation Coefficients (Kd) (L3, 8 km, monthly, 2019–2021)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/diffuse-attenuation-coefficient-dac/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.834131Z",
+  "keywords": [],
+  "title": "Diffuse Attenuation Coefficient (DAC)"
+}

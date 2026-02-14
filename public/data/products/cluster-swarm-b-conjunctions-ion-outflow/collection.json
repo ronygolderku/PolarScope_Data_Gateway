@@ -1,0 +1,121 @@
+{
+  "type": "Collection",
+  "id": "cluster-swarm-b-conjunctions-ion-outflow",
+  "stac_version": "1.0.0",
+  "description": "CSV file with a list of all conjunctions between Swarm-Bravo and Cluster-4. Conjunctions were identified by NASA's <<Satellite Situation Center Web>> Query tool in Nov 2018.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "http://swarmoutflow.w.uib.no/files/2020/05/Cluster4-swarmAConjs-2014-2017_NaNless_noDubs.txt",
+      "title": "Access"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/swarm-coupling-high-low-atmosphere-interactions-ion-outflow/collection.json",
+      "type": "application/json",
+      "title": "Project: Swarm+ Outflow"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Magnetosphere Ionosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/magnetic-fields-magnetic-currents/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Magnetic Fields/Magnetic Currents"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/geomagnetic-indices/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Geomagnetic Indices"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/swarm/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: SWARM"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/cluster-swarm-b-conjunctions-ion-outflow/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "swarm-coupling-high-low-atmosphere-interactions-ion-outflow",
+  "osc:status": "ongoing",
+  "osc:region": "Global",
+  "osc:type": "product",
+  "created": "2020-05-07T00:00:00Z",
+  "cf:parameter": [
+    {
+      "name": "cluster_swarm_b_conjunctions"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "magnetosphere-ionosphere"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "magnetic-fields-magnetic-currents",
+    "geomagnetic-indices"
+  ],
+  "osc:missions": [
+    "swarm"
+  ],
+  "updated": "2024-09-12T20:32:06.213108Z",
+  "title": "Cluster/Swarm B conjunctions",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -90.0,
+          180.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2014-01-01T00:00:00Z",
+          "2017-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Ionosphere/Magnetosphere Dynamics",
+    "Magnetic Fields/Magnetic Currents",
+    "Sun-Earth Interactions",
+    "Geomagnetic Indices"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "aphotic-photic-zone",
+  "stac_version": "1.0.0",
+  "description": "Aphotic zone in the ocean, beneath the photic zone, where light intensities are not sufficient to enable photosynthetic production. Photic zone is the illuminated zone of the ocean where light intensities are sufficient for photosynthetic primary production. Also known as the euphotic zone.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/4e8943e7-daf9-41f2-8a5e-b415b82e6381?gtm_keyword=APHOTIC/PHOTIC%20ZONE&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/aphotic-photic-zone/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.205831Z",
+  "keywords": [],
+  "title": "Aphotic/Photic Zone"
+}

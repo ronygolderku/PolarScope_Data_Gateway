@@ -1,0 +1,77 @@
+{
+  "type": "Catalog",
+  "id": "fronts",
+  "stac_version": "1.0.0",
+  "description": "Sharp temperature boundaries between water masses.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/22b339b5-1af5-46e3-8191-d93729001eeb?gtm_keyword=FRONTS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/oceanic-current-fronts-world-ocean-circulation-WE/collection.json",
+      "type": "application/json",
+      "title": "Oceanic Fronts Western Europe"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/oceanic-current-fronts-world-ocean-circulation-NA/collection.json",
+      "type": "application/json",
+      "title": "Oceanic Fronts North Atlantic"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/oceanic-current-fronts-world-ocean-circulation-AGLHS-HR/collection.json",
+      "type": "application/json",
+      "title": "Oceanic HR Fronts Agulhas"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/oceanic-current-fronts-world-ocean-circulation-AGLHS-LR/collection.json",
+      "type": "application/json",
+      "title": "Oceanic LR Fronts Agulhas"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/fronts/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.221831Z",
+  "keywords": [],
+  "title": "Fronts"
+}

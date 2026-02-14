@@ -1,0 +1,68 @@
+{
+  "type": "Catalog",
+  "id": "saltwater-intrusion",
+  "stac_version": "1.0.0",
+  "description": "The intrusion of saline marine water into fresh groundwater supplies along coasts, often due to the extraction of fresh groundwater for human consumption.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/4a11a257-99c6-4f87-8884-2a2aa46a49fa?gtm_keyword=SALTWATER%20INTRUSION&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/dffe5a35-09af-4413-bdd3-a5aedfeb49cc?gtm_keyword=SALTWATER%20INTRUSION&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/saltwater-intrusion/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "land"
+        },
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.839131Z",
+  "keywords": [],
+  "title": "Saltwater Intrusion"
+}

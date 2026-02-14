@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "satellite-orbits-revolution",
+  "stac_version": "1.0.0",
+  "description": "Pertaining to the determination of variations in orbital paths of man-made satellites, and to the calculation of the orbits of future satellites.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/71278ba7-9a13-43ba-9ec3-62ae2b39de88?gtm_keyword=SATELLITE%20ORBITS/REVOLUTION&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/satellite-orbits-revolution/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "solid-earth"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.240832Z",
+  "keywords": [],
+  "title": "Satellite Orbits/Revolution"
+}

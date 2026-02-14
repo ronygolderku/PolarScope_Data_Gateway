@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "normalised-difference-vegetation-index-ndvi",
+  "stac_version": "1.0.0",
+  "description": "Difference between maximum (in NIR) and minimum (around the Red) vegetation reflectance, normalised to the summation.  Representative of total biomass, supportive for computing LAI if not directly measured",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://space.oscar.wmo.int/variables/view/normalised_difference_vegetation_index_ndvi",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/normalised-difference-vegetation-index-ndvi/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "land"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.233831Z",
+  "keywords": [],
+  "title": "Normalised Difference Vegetation Index (NDVI)"
+}

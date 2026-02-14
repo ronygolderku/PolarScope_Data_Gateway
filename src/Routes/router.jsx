@@ -17,11 +17,43 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
+        path: "themes",
+        Component: CatalogList,
+      },
+      {
         path: "themes/:themeId",
         Component: CatalogList,
       },
       {
+        path: "eo-missions",
+        Component: CatalogList,
+      },
+      {
+        path: "variables",
+        Component: CatalogList,
+      },
+      {
+        path: "projects",
+        Component: CatalogList,
+      },
+      {
+        path: "projects/*",
+        Component: CatalogDetails,
+      },
+      {
+        path: "products",
+        Component: CatalogList,
+      },
+      {
         path: "products/*",
+        Component: CatalogDetails,
+      },
+      {
+        path: "eo-missions/*",
+        Component: CatalogDetails,
+      },
+      {
+        path: "variables/*",
         Component: CatalogDetails,
       },
       {

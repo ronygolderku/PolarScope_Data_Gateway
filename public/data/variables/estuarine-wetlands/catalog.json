@@ -1,0 +1,59 @@
+{
+  "type": "Catalog",
+  "id": "estuarine-wetlands",
+  "stac_version": "1.0.0",
+  "description": "Areas of marsh grasses and reeds along coasts and estuaries where the ground is covered by high tides but drained at low tide.[Nebel, Bernard J.and Richard T. Wright. Environmental Science-the Way the World Works. 1998. Prentice-Hall, Inc. Upper Saddle River, New Jersey.]",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/3e924e3a-eb5d-4f81-8981-1b9f622ddc82?gtm_keyword=ESTUARINE%20WETLANDS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/0e1f3f95-58b5-4f10-b239-850c66ed55ff?gtm_keyword=ESTUARINE%20WETLANDS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/estuarine-wetlands/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "land"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.835131Z",
+  "keywords": [],
+  "title": "Estuarine Wetlands"
+}

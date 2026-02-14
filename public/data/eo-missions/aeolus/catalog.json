@@ -1,0 +1,58 @@
+{
+  "type": "Catalog",
+  "id": "aeolus",
+  "stac_version": "1.0.0",
+  "description": "Aeolus or ADM - Atmospheric Dynamics Mission was an ESA (European Space Agency) Earth Explorer Core Mission -a science-oriented mission within its Living Planet Program. The primary objective was to provide wind profile measurements for an improved analysis of the global three-dimensional wind field. The aim of the mission was to provide global observations of wind profiles with a vertical resolution that could satisfy the accuracy requirements of WMO (World Meteorological Organization). Such knowledge was crucial to the understanding of the atmospheric dynamics, including the global transport of energy, water, aerosols, chemicals and other airborne materials - to be able to deal with many aspects of climate research and climate and weather prediction. ADM-Aeolus represented a demonstration project for the Global Climate Observing System (GCOS).Atmospheric Dynamics Mission (Earth Explorer Core Mission).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://database.eohandbook.com/database/missionsummary.aspx?missionID=377",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/cdom-aeolus-innovation-color/collection.json",
+      "type": "application/json",
+      "title": "Chromophoric Dissolved Organic Matter (CDOM) absorption_Global_AEOLUS"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/diffuse-attenuation-aeolus-innovation-color/collection.json",
+      "type": "application/json",
+      "title": "Diffuse attenuation: Kd_Global_AEOLUS"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/lidar-aerosol-aeolus-swails/collection.json",
+      "type": "application/json",
+      "title": "AOD (Aerosol Optical Depth) estimates from LARISSA"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/particulate-backscatter-aeolus-innovation-color/collection.json",
+      "type": "application/json",
+      "title": "Particulate backscatter: bbp_Global_AEOLUS"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "EO Missions"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/eo-missions/aeolus/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.171831Z",
+  "keywords": [],
+  "title": "AEOLUS"
+}

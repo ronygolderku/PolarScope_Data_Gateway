@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "deep-convective-cloud-systems",
+  "stac_version": "1.0.0",
+  "description": "Also called Mesoscale Convective System- A cloud system that occurs in connection with an ensemble of thunderstorms and produces a contiguous precipitation area on the order of 100 km or more in horizontal scale in at least one direction.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/879cccd4-d375-40f6-8bee-6f58efd2dd61?gtm_keyword=DEEP%20CONVECTIVE%20CLOUD%20SYSTEMS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/deep-convective-cloud-systems/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/atmosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Atmosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "atmosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.214831Z",
+  "keywords": [],
+  "title": "Deep Convective Cloud Systems"
+}

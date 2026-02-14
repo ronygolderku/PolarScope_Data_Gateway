@@ -1,0 +1,65 @@
+{
+  "type": "Catalog",
+  "id": "snow-depth",
+  "stac_version": "1.0.0",
+  "description": "Pertaining to the thickness of snow pack throughout the year.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/47bc8942-6fdd-4173-bf38-209e933d843f?gtm_keyword=SNOW%20DEPTH&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/snow-depth-europe-alps-alpsnow/collection.json",
+      "type": "application/json",
+      "title": "Snow depth for European Alps_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/southern-ocean-sit-from-cryosat-2/collection.json",
+      "type": "application/json",
+      "title": "Southern Ocean sea ice thickness from CryoSat-2"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/snow-depth/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.243832Z",
+  "keywords": [],
+  "title": "Snow Depth"
+}

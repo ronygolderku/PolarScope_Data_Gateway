@@ -1,0 +1,65 @@
+{
+  "type": "Catalog",
+  "id": "surface-temperature",
+  "stac_version": "1.0.0",
+  "description": "Surface air temperature has profound and widespread impacts on both natural systems and on human lives and activities. It affects health, agriculture, energy demand and much more. Extremes of surface air temperature, both heat waves and extreme cold periods, are particular important for human health. Surface air temperature provides a key indicator of climate change, contributing to the \"global surface temperature record\". A goal of limiting changes in global surface temperature provides the measure for the Paris climate agreement. ",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcos.wmo.int/en/essential-climate-variables/surface-temperature/",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/atmosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Atmosphere"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/esa-cci-permafrost/collection.json",
+      "type": "application/json",
+      "title": "esa-cci-permafrost"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/surface-temperature/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "atmosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2025-03-17T14:30:23.263437+00:00",
+  "keywords": [],
+  "title": "Surface Temperature"
+}

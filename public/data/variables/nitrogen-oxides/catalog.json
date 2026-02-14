@@ -1,0 +1,68 @@
+{
+  "type": "Catalog",
+  "id": "nitrogen-oxides",
+  "stac_version": "1.0.0",
+  "description": "The concentration of Nitrogen Oxides (NOx) in the atmosphere. Nitrogen Oxides - NOx (pronounced \"nox\") are produced from high temperature combustion in air. They are nitrogen oxide and nitrogen dioxide.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/e82ebd1c-8241-4ca0-95a9-a6e1432519cd?gtm_keyword=NITROGEN%20OXIDES&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/e5563c99-0fb6-43a9-8e20-6b47b1144394?gtm_keyword=NITROGEN%20OXIDES&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/nitrogen-oxides/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/atmosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Atmosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "atmosphere"
+        },
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.838131Z",
+  "keywords": [],
+  "title": "Nitrogen Oxides"
+}

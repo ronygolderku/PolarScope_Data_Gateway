@@ -1,0 +1,118 @@
+{
+  "type": "Catalog",
+  "id": "glonass",
+  "stac_version": "1.0.0",
+  "description": "GLONASS or \"Global Navigation Satellite System\", is a space-based satellite navigation system operating in the radionavigation-satellite service. It provides an alternative to GPS and is the second navigational system in operation with global coverage and of comparable precision. Manufacturers of GPS devices say that adding GLONASS made more satellites available to them, meaning positions can be fixed more quickly and accurately, especially in built-up areas where the view to some GPS satellites is obscured by buildings. Smartphones generally tend to use the same chipsets and the versions used since 2015 receive GLONASS signals and positioning information along with GPS. Since 2012, GLONASS was the second most used positioning system in mobile phones after GPS. The system has the advantage that smartphone users receive a more accurate reception identifying location to within 2 meters.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://glonass-iac.ru/en/about_glonass/",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/absolute-sea-level-heights-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "SL-ABS: Absolute Sea Level Heights_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/electronic-delay-correction-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "COR-EC2: ECR Electronic Delay Correction_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/geodynamic-corrections-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "COR-GC: Geodynamic Corrections_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/geoid-heights-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "GEO-HGT: Geoid Heights_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/gnss-positioning-solution-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "GNSS-POS: GNSS positioning solution_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/ionospheric-delays-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "COR-ID: Ionospheric Delays_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/s1-corrections-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "COR-SC: Sentinel-1 Systematic Effects Corrections_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/sar-observation-solution-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "SAR-OBS: Observation Solution_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/sar-positioning-solution-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "SAR-POS: SAR Positioning Solution_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/sar-raw-measurements-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "PTA-OBS: SAR Raw Measurements_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/sea-surface-heights-corrected-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "TG-SSH: Corrected Sea Surface Height at Tide Gauge Stations_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/target-locations-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "PTA-RES: Extracted Target Locations_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/tide-gauge-heights-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "TG-HGT: Tide Gauge Heights_Baltics_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/tropospheric-delays-baltics-sar-hsu/collection.json",
+      "type": "application/json",
+      "title": "COR-TD: Tropospheric Delays_Baltics_Multimission"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "EO Missions"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/eo-missions/glonass/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.172831Z",
+  "keywords": [],
+  "title": "GLONASS"
+}

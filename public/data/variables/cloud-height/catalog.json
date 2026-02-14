@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "cloud-height",
+  "stac_version": "1.0.0",
+  "description": "In weather observations, the height of the cloud base above local terrain.  In satellite remote sensing, cloud height is often referred to as the height of the cloud top above local terrain or above mean sea level. Also can be defined as the vertical distance from the cloud base to the cloud top; more commonly referred to as the \"thickness\" or \"depth\" of the cloud. ",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/57292a97-19be-4fae-b2f7-9fa0a3629b53?gtm_keyword=CLOUD%20HEIGHT&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/cloud-height/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/atmosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Atmosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "atmosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.211831Z",
+  "keywords": [],
+  "title": "Cloud Height"
+}

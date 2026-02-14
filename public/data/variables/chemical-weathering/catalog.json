@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "chemical-weathering",
+  "stac_version": "1.0.0",
+  "description": "Pertaining to the breakdown of an existing rock or mineral through chemical, as opposed to physical, means; i.e., dissolution of limestone by acidic groundwater.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/7e140a1e-385d-4dd3-8b08-6239b082e35e?gtm_keyword=CHEMICAL%20WEATHERING&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/chemical-weathering/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "solid-earth"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.210831Z",
+  "keywords": [],
+  "title": "Chemical Weathering"
+}

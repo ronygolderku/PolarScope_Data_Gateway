@@ -1,0 +1,59 @@
+{
+  "type": "Catalog",
+  "id": "icebergs",
+  "stac_version": "1.0.0",
+  "description": "A massive piece of ice of greatly varying shape, protruding 5 m or more above sea- level, which has broken away from a glacier and which may be afloat or aground. They may be described as tabular, domed, pinnacled, wedged, drydocked or blocky. Sizes of icebergs are classed as small, medium, large and very large. [Canadian Ice Service - Environment Canada: http://www.cis.ec.gc.ca/manice/chp1_eng.htm]",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/4d95ccc8-3ef9-40df-85e7-db36cb815499?gtm_keyword=ICEBERGS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/1151dc7e-7441-4a21-95b6-1d03a1053f60?gtm_keyword=ICEBERGS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/icebergs/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.837131Z",
+  "keywords": [],
+  "title": "Icebergs"
+}

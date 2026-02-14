@@ -1,0 +1,83 @@
+{
+  "type": "Catalog",
+  "id": "barrier-islands",
+  "stac_version": "1.0.0",
+  "description": "A coastal landform and a type of barrier system, are relatively narrow strips of sand that parallel the mainland coast. They usually occur in chains, consisting of anything from a few islands to more than a dozen. Elongate sand bar formed parallel to the shore in areas of considerable sediment flux, but separated from shore by a lagoon, and pierced at intervals by inlets through which the sea communicates with lagoon and river.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/128db882-0522-4a5e-ac69-81d05986a645?gtm_keyword=BARRIER%20ISLANDS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/7e28f2e0-a641-4085-be07-366ed6e701f4?gtm_keyword=BARRIER%20ISLANDS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/6e3135e9-6be6-4995-a5df-022f6a0cf45b?gtm_keyword=BARRIER%20ISLANDS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/barrier-islands/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        },
+        {
+          "id": "solid-earth"
+        },
+        {
+          "id": "land"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.833131Z",
+  "keywords": [],
+  "title": "Barrier Islands"
+}

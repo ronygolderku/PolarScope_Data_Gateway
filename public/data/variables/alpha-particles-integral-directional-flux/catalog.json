@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "alpha-particles-integral-directional-flux",
+  "stac_version": "1.0.0",
+  "description": "An alpha particle has positive charge and consists of two protons and two neutrons (the nucleus of a helium atom). Flux is the rate of flow through a reference surface, measured in particles per unit area.The directional flux is the flux limited to a certain solid angle as a function of the direction (pitch angle).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://space.oscar.wmo.int/variables/view/alpha_particles_integral_directional_flux",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/alpha-particles-integral-directional-flux/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Magnetosphere Ionosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "magnetosphere-ionosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.205831Z",
+  "keywords": [],
+  "title": "Alpha particles integral directional flux"
+}

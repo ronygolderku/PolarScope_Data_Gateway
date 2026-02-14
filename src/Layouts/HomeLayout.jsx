@@ -7,7 +7,7 @@ import {
   FaBars,
   FaChevronLeft,
 } from "react-icons/fa";
-import { NavLink, Outlet, useLocation } from "react-router";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 import aseasLogo from "../assets/Aseaslogo.jpg";
 
 const HomeLayout = () => {
@@ -75,7 +75,7 @@ const HomeLayout = () => {
         ></label>
         <div className="flex min-h-full flex-col items-start bg-base-200 w-64">
           {/* Logo Section */}
-          <div className="w-full p-6 pb-4 flex flex-col items-center border-b border-gray-300">
+          <Link to="/" className="w-full p-6 pb-4 flex flex-col items-center border-b border-gray-300">
             <img
               src={aseasLogo}
               alt="ACEAS Logo"
@@ -84,7 +84,7 @@ const HomeLayout = () => {
             <h3 className="text-sm font-bold text-center text-gray-700 leading-tight">
               Australian Center of Excellence in Antarctic Science
             </h3>
-          </div>
+          </Link>
 
           <ul className="menu w-full grow">
             {/* Home */}

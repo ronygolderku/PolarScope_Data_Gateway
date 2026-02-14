@@ -1,0 +1,62 @@
+{
+  "type": "Catalog",
+  "id": "glacial-landforms",
+  "stac_version": "1.0.0",
+  "description": "Landforms created by the action of glaciers. Most of glacial landforms today were created by the movement of large ice sheets during the Quaternary glaciations.Landforms created by the action of glaciers. Most of glacial landforms today were created by the movement of large ice sheets during the Quaternary glaciations.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/3c78951a-0293-4fb0-baff-ec7372fe784d?gtm_keyword=GLACIAL%20LANDFORMS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/glacial-landforms/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "solid-earth"
+        },
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.221831Z",
+  "keywords": [],
+  "title": "Glacial Landforms"
+}

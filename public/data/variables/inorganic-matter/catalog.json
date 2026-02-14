@@ -1,0 +1,77 @@
+{
+  "type": "Catalog",
+  "id": "inorganic-matter",
+  "stac_version": "1.0.0",
+  "description": "Dissolved or particulate substances that are not hydrocarbons or hydrocarbon derivatives. Variables such as dissolved inorganic matter (DIM) or particulate inorganic matter (PIM) are included as detailed variables under inorganic matter.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/e848dbd1-b70a-4820-a630-98bd642ae357?gtm_keyword=INORGANIC%20MATTER&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/b9cfc6af-a424-42b9-8e89-6b332262e841?gtm_keyword=INORGANIC%20MATTER&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/6cf87a79-e8b0-4ff1-9039-f3ad1f1f17a7?gtm_keyword=INORGANIC%20MATTER&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/9bdac7db-be34-4eed-91bc-28f6628ed044?gtm_keyword=INORGANIC%20MATTER&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+        "rel": "child",
+        "href": "../../products/coastal-carbon-mapper-reflectance-water-quality-data/collection.json",
+        "type": "application/json",
+        "title": "Spectral reflectance and associated water quality parameters measured from coastal waters of the Baltic Sea in 2023–2024"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/inorganic-matter/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.837131Z",
+  "keywords": [],
+  "title": "Inorganic Matter"
+}

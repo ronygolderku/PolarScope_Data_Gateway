@@ -1,0 +1,65 @@
+{
+  "type": "Catalog",
+  "id": "ionosphere-magnetosphere-dynamics",
+  "stac_version": "1.0.0",
+  "description": "Refers to dynamic processess of the Earth's ionosphere and solar magnetosphere triggered by solar events. The magnetosphere is the magnetic cavity surrounding the earth, carved out of the passing solar wind by virtue of the geomagnetic field, which prevents, or at least impedes, the direct entry of the solar wind plasma into the cavity. The ionosphere is the region of the earth's upper atmosphere containing a small percentage of free electrons and ions produced by photoionization of the constituents of the atmosphere by solar ultraviolet radiation at very short wavelengths (l.t.1000 angstroms). The ionosphere significantly influences radiowave propagation of frequencies less than about 30 MHz.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/3a942e8a-d2f2-42bf-9e83-b7b3793b100e?gtm_keyword=IONOSPHERE/MAGNETOSPHERE%20DYNAMICS&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/addit-earthquake-tsunami-tool-costo/collection.json",
+      "type": "application/json",
+      "title": "ADDTID: An Alternative Tool for Studying Earthquake/Tsunami Signatures in the Ionosphere_Japan_SWARM"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/model-ionosphere-4dionosphere/collection.json",
+      "type": "application/json",
+      "title": "Semi-empiric model of ionosphere processes_SWARM"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/ionosphere-magnetosphere-dynamics/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Magnetosphere Ionosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "magnetosphere-ionosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.226831Z",
+  "keywords": [],
+  "title": "Ionosphere/Magnetosphere Dynamics"
+}

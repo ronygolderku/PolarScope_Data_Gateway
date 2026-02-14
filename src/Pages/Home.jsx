@@ -85,13 +85,31 @@ const Home = () => {
               esa.int, for the majority of cases. This catalog provides the metadata
               and links to the data as it exists in those many other locations.
             </p>
-            <p className="mt-2 text-gray-700">
+            <p className="mt-2 text-gray-700 space-x-2">
               Explore the catalog, consisting of{" "}
               <Link
-                to="/catalog"
+                to="/eo-missions"
+                className="underline font-semibold text-secondary hover:text-primary"
+              >
+                EO Missions
+              </Link>
+              <Link
+                to="/themes"
                 className="underline font-semibold text-secondary hover:text-primary"
               >
                 Themes
+              </Link>
+              <Link
+                to="/products"
+                className="underline font-semibold text-secondary hover:text-primary"
+              >
+                Products
+              </Link>
+              <Link
+                to="/variables"
+                className="underline font-semibold text-secondary hover:text-primary"
+              >
+                Variables
               </Link>
             </p>
             <p className="mt-2 text-gray-700">

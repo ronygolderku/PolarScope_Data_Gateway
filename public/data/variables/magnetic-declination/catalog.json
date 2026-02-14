@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "magnetic-declination",
+  "stac_version": "1.0.0",
+  "description": "Pertaining to the angle, expressed in degrees east or west, to indicate the direction of magnetic north from true north.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/all/f311eac7-5c85-4a8f-90c2-abcff3eec92d?gtm_keyword=MAGNETIC%20DECLINATION&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/magnetic-declination/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "solid-earth"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.229831Z",
+  "keywords": [],
+  "title": "Magnetic Declination"
+}

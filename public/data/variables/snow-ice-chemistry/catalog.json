@@ -1,0 +1,59 @@
+{
+  "type": "Catalog",
+  "id": "snow-ice-chemistry",
+  "stac_version": "1.0.0",
+  "description": "Refers to the chemical composition of snow and ice as determined from snow cores, ice cores, and snow pits.[Goudie, Andrew. 1997. The Encyclopedic Dictionary of Physical Geography. Blackwell Publishing, Malden, Massachusetts.]",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/9a3b0d9b-4409-439f-b23d-c07590ff919e?gtm_keyword=SNOW/ICE%20CHEMISTRY&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/dfe4b154-84e0-4005-81ce-90daf38c06e3?gtm_keyword=SNOW/ICE%20CHEMISTRY&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/snow-ice-chemistry/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/cryosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Cryosphere"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "cryosphere"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-09-12T20:23:29.840131Z",
+  "keywords": [],
+  "title": "Snow/Ice Chemistry"
+}

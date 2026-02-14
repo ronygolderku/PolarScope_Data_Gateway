@@ -1,0 +1,40 @@
+{
+  "type": "Catalog",
+  "id": "gosat",
+  "stac_version": "1.0.0",
+  "description": "GOSAT (Greenhouse gases Observing Satellite) / Ibuki) is a mission within the Global Change Observation Mission (GCOM) program of Japan. This mission monitors Greenhouse Gases (GHGs) sources and sinks on a subcontinental scale.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://database.eohandbook.com/database/missionsummary.aspx?missionID=458",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/water-vapour-isotopologues-lpf-weather/collection.json",
+      "type": "application/json",
+      "title": "GOSAT PBL XH2O and Stable Water Vapour Isotopologues_Global"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "EO Missions"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/eo-missions/gosat/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.173831Z",
+  "keywords": [],
+  "title": "GOSAT"
+}

@@ -1,0 +1,136 @@
+{
+  "type": "Collection",
+  "id": "webgeodyn-py-4d-earth-swarm",
+  "stac_version": "1.0.0",
+  "description": "Webgeodyn is a Python package that provides web-based visualisations for Gauss coefficients of magnetic field and core flow. It can be installed and run locally on a variety of data formats. The tool is deployed on the website https://geodyn.univ-grenoble-alpes.fr to show visualisations on several magnetic field and core flow models (CHAOS, COV-OBS, pygeodyn results...).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gricad-gitlab.univ-grenoble-alpes.fr/Geodynamo/webgeodyn",
+      "title": "Access"
+    },
+    {
+      "rel": "via",
+      "href": "https://geodynamo.gricad-pages.univ-grenoble-alpes.fr/webgeodyn/index.html",
+      "title": "Documentation"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/the-4d-earth-swarm-project/collection.json",
+      "type": "application/json",
+      "title": "Project: 4D-Earth SWARM"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Magnetosphere Ionosphere"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/magnetic-fields-magnetic-currents/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Magnetic Fields/Magnetic Currents"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/geomagnetic-indices/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Geomagnetic Indices"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/swarm/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: SWARM"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/webgeodyn-py-4d-earth-swarm/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "the-4d-earth-swarm-project",
+  "osc:status": "ongoing",
+  "osc:region": "Global",
+  "osc:type": "product",
+  "created": "2021-09-10T00:00:00Z",
+  "version": "0.10.2",
+  "cf:parameter": [
+    {
+      "name": "webgeodyn_py"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "solid-earth"
+        },
+        {
+          "id": "magnetosphere-ionosphere"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "magnetic-fields-magnetic-currents",
+    "geomagnetic-indices"
+  ],
+  "osc:missions": [
+    "swarm"
+  ],
+  "updated": "2024-09-12T20:32:06.252108Z",
+  "title": "Webgeodyn Python package",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -90.0,
+          180.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Ionosphere/Magnetosphere Dynamics",
+    "Magnetic Fields/Magnetic Currents",
+    "Sun-Earth Interactions",
+    "Geomagnetic Indices"
+  ]
+}

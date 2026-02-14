@@ -1,0 +1,70 @@
+{
+  "type": "Catalog",
+  "id": "ers-2",
+  "stac_version": "1.0.0",
+  "description": "ERS-2 (European Remote Sensing Satellite -2) was launched in April 1995, the ERS-2 was an enhancement of the previous ERS-1 mission. ERS-2 provided microwave spectrum environmental monitoring across a range of disciplines (oceans, polar ice, forestry).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://database.eohandbook.com/database/missionsummary.aspx?missionID=221",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/baltic-sea-level-baltic-seal/collection.json",
+      "type": "application/json",
+      "title": "Baltic Sea Level_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/hydrodynamic-model-baltic-seal/collection.json",
+      "type": "application/json",
+      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/ocean-freshwater-flux-arctic-theme3/collection.json",
+      "type": "application/json",
+      "title": "Ocean freshwater fluxes_Arctic_Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/subglacial-lake-drainage-4dantarctica/collection.json",
+      "type": "application/json",
+      "title": "Subglacial Lake Drainage and Filling Antarctica Multimission"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/grounding-line-position-antarctica/collection.json",
+      "type": "application/json",
+      "title": "Grounding line position: MEaSUREs Antarctic Grounding Line from Differential Satellite Radar Interferometry, v.2"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/sec-antarctic-ice-sheet/collection.json",
+      "type": "application/json",
+      "title": "Surface Elevation Change (SEC) of the Antarctic Ice Sheet"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "EO Missions"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/eo-missions/ers-2/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.172831Z",
+  "keywords": [],
+  "title": "ERS-2"
+}

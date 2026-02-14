@@ -18,42 +18,50 @@ const Catalog = () => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [searchTerm, setSearchTerm] = useState("");
 
+  const handleCatalogClick = (catalog) => {
+    // Navigate to catalog page for all types
+    navigate(`/${catalog.id}`);
+  };
+
   useEffect(() => {
     setLoading(true);
-    // Fetch Themes Catalog as the MAIN info for this page
-    fetch(`/data/themes/catalog.json`)
+    // Fetch ROOT Catalog (main catalog.json)
+    fetch(`/data/catalog.json`)
       .then((res) => res.json())
       .then(async (data) => {
         setCatalogInfo(data);
         const childLinks = data.links.filter((link) => link.rel === "child");
 
-        // Fetch details for each theme
-        const themesWithDetails = await Promise.all(
+        // Fetch details for each catalog
+        const catalogsWithDetails = await Promise.all(
           childLinks.map(async (link) => {
-            const themePath = link.href.replace("./", "/data/themes/");
+            const catalogPath = link.href.replace("./", "/data/");
             try {
-              const res = await fetch(themePath);
+              const res = await fetch(catalogPath);
               const details = await res.json();
+              
               return {
                 ...link,
                 id: details.id,
-                title: details.title,
+                title: details.title || link.title,
                 description: details.description,
                 updated: details.updated,
-                
-                image: `/data/themes/${details.id}/EO_${details.title}.webp`,
               };
             } catch (e) {
-              console.error("Failed to fetch theme details", e);
-              return link;
+              console.error("Failed to fetch catalog details", e);
+              return {
+                ...link,
+                title: link.title,
+                description: "",
+              };
             }
           }),
         );
-        setThemes(themesWithDetails);
+        setThemes(catalogsWithDetails);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetching themes:", err);
+        console.error("Error fetching catalog:", err);
         setLoading(false);
       });
   }, []);
@@ -82,21 +90,12 @@ const Catalog = () => {
         <div className="flex justify-between items-start">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-              {catalogInfo?.title || "Themes"}
+              {catalogInfo?.title || "Open Science Catalog"}
             </h1>
             <div className="text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-gray-400">in</span>
-              <span className="text-[#009d9a] font-semibold">
-                Open Science Catalog
-              </span>
-              <div className="flex gap-1 ml-4">
-                <button className="btn btn-xs btn-outline rounded-sm flex items-center gap-1">
-                  Up
-                </button>
-                <button className="btn btn-xs btn-outline rounded-sm flex items-center gap-1">
-                  <FaBook className="text-xs" /> Overview
-                </button>
-              </div>
+              <button className="btn btn-xs btn-outline rounded-sm flex items-center gap-1">
+                <FaBook className="text-xs" /> Overview
+              </button>
             </div>
           </div>
           <button className="btn btn-sm btn-outline gap-2 hidden md:flex">
@@ -191,10 +190,10 @@ const Catalog = () => {
         <div
           className={`grid ${viewMode === "tiles" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"} gap-6`}
         >
-          {filteredAndSortedThemes.map((theme, index) => (
+          {filteredAndSortedThemes.map((catalog, index) => (
             <div
               key={index}
-              onClick={() => navigate(`/themes/${theme.id}`)}
+              onClick={() => handleCatalogClick(catalog)}
               className={`cursor-pointer bg-white group ${
                 viewMode === "list"
                   ? "flex flex-col md:flex-row gap-6 border-b border-gray-100 last:border-0 pb-6 hover:bg-gray-50 transition-colors"
@@ -203,25 +202,14 @@ const Catalog = () => {
             >
               <div className={`flex-1 ${viewMode === "list" ? "" : ""}`}>
                 <h3
-                  className={`font-bold text-lg mb-2 text-[#003366] group-hover:text-[#009d9a] capitalize ${viewMode === "list" ? "text-xl" : ""}`}
+                  className={`font-bold text-lg mb-2 text-[#003366] group-hover:text-[#009d9a] ${viewMode === "list" ? "text-xl" : ""}`}
                 >
-                  {theme.title}
+                  {catalog.title}
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed line-clamp-3 mb-3">
-                  {theme.description || "No description available."}
+                  {catalog.description || "No description available."}
                 </p>
               </div>
-
-              {/* Image in List View (Right Side) */}
-              {viewMode === "list" && theme.image && (
-                <div className="w-full md:w-48 h-32 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
-                  <img
-                    src={theme.image}
-                    alt={theme.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              )}
             </div>
           ))}
         </div>

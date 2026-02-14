@@ -1,0 +1,52 @@
+{
+  "type": "Catalog",
+  "id": "numerical-models",
+  "stac_version": "1.0.0",
+  "description": "Numerical models are essential tools for understanding the complex and dynamic nature of the natural environment. The ability to evaluate how well these models represent reality is critical in their use and future development.Typically, numerical models are evaluated against observations from a variety of different sources (E.g. Sensor networks or satellite data) with global metrics often employed to assess how well the model captures the overall behaviour of the system (Gleckler et al., 2008; Pincus et al., 2008). (source: https://doi.org/10.1016/j.envsoft.2021.104993)",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://doi.org/10.1016/j.envsoft.2021.104993",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/model-based-cdom-baltic-sealabio/collection.json",
+      "type": "application/json",
+      "title": "Model based Colored Dissolved Organic Matter (CDOM) _Baltics_Model"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/bedrock-topography-antarctica-bedmachine/collection.json",
+      "type": "application/json",
+      "title": "Bedrock topography: MEaSUREs BedMachine Antarctica v.3"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/d13c-ch4-signatures-smart-ch4/collection.json",
+      "type": "application/json",
+      "title": "Global δ13C(CH4) Source Signatures"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "EO Missions"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/eo-missions/numerical-models/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.173831Z",
+  "keywords": [],
+  "title": "Numerical models"
+}

@@ -1,0 +1,126 @@
+{
+  "type": "Collection",
+  "id": "database-of-labelled-sentinel-1-interferograms-v20",
+  "stac_version": "1.0.0",
+  "description": "A database of labelled Sentinel-1 data featuring examples of volcanic unrest. Part of this work was carried out in the frame of the project Volcano Monitoring using Deep Learning (https://eo4society.esa.int/projects/vmdl/ ), under the Living Planet Fellowship programme of, and funded by, the European Space Agency. Disclaimer: the view expressed here can in no way be taken to reflect the official opinion of the European Space Agency. ",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://github.com/matthew-gaddes/VolcNet",
+      "title": "Access"
+    },
+    {
+      "rel": "via",
+      "href": "https://doi.org/10.31223/X5CW2J",
+      "title": "Documentation"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/volcano-monitoring-using-deep-learning/collection.json",
+      "type": "application/json",
+      "title": "Project: (LPF) VMDL"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/solid-earth/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Solid Earth"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/volcano-occurrences/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Volcano Occurrences"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/volcano-predictions/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Volcano Predictions"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/sentinel-1/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: Sentinel-1"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/database-of-labelled-sentinel-1-interferograms-v20/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "volcano-monitoring-using-deep-learning",
+  "osc:status": "ongoing",
+  "osc:region": "Global",
+  "osc:type": "product",
+  "created": "2021-12-01T00:00:00Z",
+  "cf:parameter": [
+    {
+      "name": "sentinel_1_interferograms"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "solid-earth"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "volcano-occurrences",
+    "volcano-predictions"
+  ],
+  "osc:missions": [
+    "sentinel-1"
+  ],
+  "updated": "2024-09-12T20:32:06.213108Z",
+  "title": "Database of labelled Sentinel-1 interferograms - v.2.0",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -90.0,
+          180.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2020-06-23T00:00:00Z",
+          "2022-07-01T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Tectonics",
+    "Volcanic Activity",
+    "Volcano Predictions",
+    "Volcano Occurrences"
+  ]
+}

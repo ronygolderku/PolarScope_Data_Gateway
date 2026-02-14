@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate, useLocation } from "react-router";
 import {
   FaThLarge,
   FaList,
@@ -9,10 +9,12 @@ import {
 import Loading from "./Loading";
 
 const CatalogList = () => {
-  // atmosphere / cryosphere / oceans
   const { themeId } = useParams();
-
+  const location = useLocation();
   const navigate = useNavigate();
+  
+  // Detect catalog type from URL path
+  const catalogType = themeId ? 'themes' : location.pathname.split("/")[1];
   const [products, setProducts] = useState([]);
   const [themeInfo, setThemeInfo] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -25,33 +27,59 @@ const CatalogList = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/data/themes/${themeId}/catalog.json`)
+    
+    // Build catalog path based on type
+    const catalogPath = themeId 
+      ? `/data/themes/${themeId}/catalog.json`
+      : `/data/${catalogType}/catalog.json`;
+    
+    fetch(catalogPath)
       .then((res) => res.json())
       .then(async (data) => {
         setThemeInfo(data);
         const childLinks = data.links.filter((link) => link.rel === "child");
 
-        // Fetch details for each child to get the description
+        // Fetch details for each child
         const productsWithDetails = await Promise.all(
           childLinks.map(async (link) => {
             try {
-              const productPath = link.href
-                .replace("../../products/", "")
-                .replace("/collection.json", "");
+              let itemPath;
+              
+              // Handle different catalog types
+              if (themeId) {
+                // Theme products
+                const productPath = link.href
+                  .replace("../../products/", "")
+                  .replace("/collection.json", "");
+                itemPath = `/data/products/${productPath}/collection.json`;
+              } else {
+                // Direct catalog items
+                itemPath = link.href.replace("./", `/data/${catalogType}/`);
+              }
 
-              const res = await fetch(
-                `/data/products/${productPath}/collection.json`,
-              );
+              const res = await fetch(itemPath);
               const details = await res.json();
+              
+              // For themes catalog, add image
+              let image = null;
+              if (catalogType === "themes" && !themeId) {
+                image = `/data/${catalogType}/${details.id}/EO_${details.title}.webp`;
+              }
+              
               return {
                 ...link,
+                id: details.id,
                 title: details.title || link.title,
                 description: details.description,
-                extent: details.extent, 
+                extent: details.extent,
+                image: image,
               };
             } catch (err) {
-              console.error("Error fetching product details:", err);
-              return link;
+              console.error("Error fetching details:", err);
+              return {
+                ...link,
+                title: link.title,
+              };
             }
           }),
         );
@@ -63,12 +91,15 @@ const CatalogList = () => {
         console.error(err);
         setLoading(false);
       });
-  }, [themeId]);
+  }, [themeId, catalogType]);
 
   // Helper to get image based on themeId
   const getThemeImage = () => {
     if (!themeInfo) return "";
-    return `/data/themes/${themeId}/EO_${themeInfo.title}.webp`;
+    if (themeId) {
+      return `/data/themes/${themeId}/EO_${themeInfo.title}.webp`;
+    }
+    return "";
   };
 
   const toggleReadMore = () => {
@@ -97,7 +128,7 @@ const CatalogList = () => {
       {/* Header Section */}
       <div className="space-y-4">
         <h1 className="text-3xl md:text-4xl font-bold capitalize text-gray-900 border-l-8 border-primary pl-4">
-          {themeInfo?.title || themeId}
+          {themeInfo?.title || catalogType}
         </h1>
         <div className="text-sm text-gray-500 pl-6 flex flex-wrap gap-2 items-center">
           <span>
@@ -151,13 +182,15 @@ const CatalogList = () => {
         </div>
 
         <div className="flex-1 flex flex-col order-3 lg:order-none">
-          <div className="bg-gray-100 p-2 border border-gray-200 rounded-md shadow-sm h-full max-h-[400px] overflow-hidden">
-            <img
-              src={getThemeImage()}
-              alt={themeId}
-              className="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-105"
-            />
-          </div>
+          {themeId && (
+            <div className="bg-gray-100 p-2 border border-gray-200 rounded-md shadow-sm h-full max-h-[400px] overflow-hidden">
+              <img
+                src={getThemeImage()}
+                alt={themeId}
+                className="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          )}
         </div>
       </div>
 
@@ -246,26 +279,37 @@ const CatalogList = () => {
           className={`grid ${viewMode === "tiles" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"} gap-6`}
         >
           {filteredAndSortedProducts.map((item, index) => {
-            const productPath = item.href
-              .replace("../../products/", "")
-              .replace("/collection.json", "");
+            // Determine navigation path
+            let navPath = "";
+            if (themeId) {
+              const productPath = item.href
+                .replace("../../products/", "")
+                .replace("/collection.json", "");
+              navPath = `/products/${productPath}`;
+            } else if (catalogType === "themes") {
+              navPath = `/themes/${item.id}`;
+            } else if (catalogType === "eo-missions" || catalogType === "variables" || catalogType === "projects" || catalogType === "products") {
+              navPath = `/${catalogType}/${item.id}`;
+            }
 
             return (
               <div
                 key={index}
-                onClick={() => navigate(`/products/${productPath}`)}
-                className={`cursor-pointer rounded-lg border border-gray-300 bg-white p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-primary group`}
+                onClick={() => navPath && navigate(navPath)}
+                className={`${navPath ? 'cursor-pointer' : ''} rounded-lg border border-gray-300 bg-white p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-primary group ${
+                  viewMode === "list" ? "flex flex-col md:flex-row gap-6" : ""
+                }`}
               >
-                <h3 className="font-bold text-lg mb-2 text-blue-900 group-hover:text-blue-700">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-700 line-clamp-3 mb-3">
-                  {item.description || "No description available."}
-                </p>
+                <div className="flex-1">
+                  <h3 className="font-bold text-lg mb-2 text-blue-900 group-hover:text-blue-700 capitalize">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 line-clamp-3 mb-3">
+                    {item.description || "No description available."}
+                  </p>
 
-                <div className="text-xs text-gray-500 mt-2">
-                  {item.extent?.temporal?.interval?.[0] ? (
-                    <>
+                  {item.extent?.temporal?.interval?.[0] && (
+                    <div className="text-xs text-gray-500 mt-2">
                       {new Date(
                         item.extent.temporal.interval[0][0],
                       ).toLocaleString()}{" "}
@@ -275,11 +319,23 @@ const CatalogList = () => {
                             item.extent.temporal.interval[0][1],
                           ).toLocaleString()
                         : "Present"}
-                    </>
-                  ) : (
-                    "Date not available"
+                    </div>
                   )}
                 </div>
+                
+                {/* Image for themes in list view */}
+                {viewMode === "list" && item.image && (
+                  <div className="w-full md:w-48 h-32 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             );
           })}

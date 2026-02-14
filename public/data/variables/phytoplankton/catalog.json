@@ -1,0 +1,86 @@
+{
+  "type": "Catalog",
+  "id": "phytoplankton",
+  "stac_version": "1.0.0",
+  "description": "Phytoplankton is the plant portion of the plankton, the plant community in marine and freshwater situations, that floats free in the water and contains many species of algae and diatoms",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/235996b1-b1a8-4c20-bb1f-711fb1a0c952?gtm_keyword=PHYTOPLANKTON&gtm_scheme=Earth%20Science",
+      "type": "text/html",
+      "title": "Description"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/global-marine-phytoplankton-carbon-bicep/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Total Phytoplankton Carbon dataset (9 km, OC-CCI v5)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-global-total-phytoplankton-carbon-dataset-9-km-oc-cci-v42/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Total Phytoplankton Carbon dataset (9 km, OC-CCI v4.2)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/phytoplankton-pigment-concentration-and-phytoplankton-groups-polarstern-cruise-ps113/collection.json",
+      "type": "application/json",
+      "title": "Phytoplankton pigment concentration and phytoplankton groups measured on water samples (POLARSTERN cruise PS113)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/phytoplankton-pigment-concentrations-polarstern-cruise-ps121/collection.json",
+      "type": "application/json",
+      "title": "Phytoplankton pigment concentrations during POLARSTERN cruise PS121 from North Sea to Fram in August to September 2019"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/phytoplankton/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        },
+        {
+          "id": "land"
+        }
+      ]
+    }
+  ],
+  "updated": "2024-08-27T17:27:42.237832Z",
+  "keywords": [],
+  "title": "Phytoplankton"
+}
