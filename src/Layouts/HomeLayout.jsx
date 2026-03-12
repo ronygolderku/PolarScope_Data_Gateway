@@ -35,7 +35,9 @@ const HomeLayout = () => {
     return (
       location.pathname.startsWith("/catalog") ||
       location.pathname.startsWith("/themes") ||
-      location.pathname.startsWith("/products")
+      location.pathname.startsWith("/products") ||
+      location.pathname.startsWith("/eo-missions") ||
+      location.pathname.startsWith("/variables")
     );
   };
 

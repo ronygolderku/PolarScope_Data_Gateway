@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate, useLocation } from "react-router";
 import {
   FaThLarge,
@@ -24,6 +24,7 @@ const CatalogList = () => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedKeyword, setSelectedKeyword] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -72,6 +73,7 @@ const CatalogList = () => {
                 title: details.title || link.title,
                 description: details.description,
                 extent: details.extent,
+                keywords: details.keywords || [],
                 image: image,
               };
             } catch (err) {
@@ -106,6 +108,15 @@ const CatalogList = () => {
     setIsExpanded(!isExpanded);
   };
 
+  const allKeywords = useMemo(() => {
+    if (catalogType !== "products" || themeId) return [];
+    const kwSet = new Set();
+    products.forEach((p) => {
+      if (p.keywords) p.keywords.forEach((k) => kwSet.add(k));
+    });
+    return [...kwSet].sort();
+  }, [products, catalogType, themeId]);
+
   const sortedProducts = [...products].sort((a, b) => {
     const aTitle = a.title || "";
     const bTitle = b.title || "";
@@ -114,10 +125,14 @@ const CatalogList = () => {
       : bTitle.localeCompare(aTitle);
   });
 
-  const filteredAndSortedProducts = sortedProducts.filter((product) =>
-    product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.description?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredAndSortedProducts = sortedProducts.filter((product) => {
+    const matchesSearch =
+      product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description?.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesKeyword =
+      !selectedKeyword || product.keywords?.includes(selectedKeyword);
+    return matchesSearch && matchesKeyword;
+  });
 
   if (loading) {
     return <Loading />;
@@ -138,8 +153,16 @@ const CatalogList = () => {
             </span>
           </span>
           <span className="hidden md:inline mx-2">|</span>
-          <button className="btn btn-xs btn-outline rounded-sm">Up</button>
-          <button className="btn btn-xs btn-outline rounded-sm">
+          <button
+            onClick={() => navigate(themeId ? "/themes" : "/catalog")}
+            className="btn btn-xs btn-outline rounded-sm"
+          >
+            Up
+          </button>
+          <button
+            onClick={() => navigate("/catalog")}
+            className="btn btn-xs btn-outline rounded-sm"
+          >
             Overview
           </button>
         </div>
@@ -266,13 +289,20 @@ const CatalogList = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <select className="select select-bordered w-full md:max-w-xs">
-            <option disabled selected>
-              Select keywords
-            </option>
-            <option>Keyword 1</option>
-            <option>Keyword 2</option>
-          </select>
+          {catalogType === "products" && !themeId && (
+            <select
+              className="select select-bordered w-full md:max-w-xs"
+              value={selectedKeyword}
+              onChange={(e) => setSelectedKeyword(e.target.value)}
+            >
+              <option value="">Select keywords</option>
+              {allKeywords.map((kw) => (
+                <option key={kw} value={kw}>
+                  {kw}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
 
         <div

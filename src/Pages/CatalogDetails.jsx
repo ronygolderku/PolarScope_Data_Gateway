@@ -132,7 +132,7 @@ const CatalogDetails = () => {
           </span>
           <span className="hidden md:inline mx-2">|</span>
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate(`/${catalogType}`)}
             className="btn btn-xs btn-outline rounded-sm"
           >
             Up
