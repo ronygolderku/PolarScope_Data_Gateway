@@ -8,7 +8,7 @@ import {
   FaChevronLeft,
 } from "react-icons/fa";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
-import aseasLogo from "../assets/Aseaslogo.jpg";
+import aceasLogo from "../assets/ACEAS-Logo.png";
 
 const HomeLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 1024);
@@ -77,20 +77,20 @@ const HomeLayout = () => {
         ></label>
         <div className="flex min-h-full flex-col items-start bg-base-200 w-64">
           {/* Logo Section */}
-          <Link to="/" className="w-full p-6 pb-4 flex flex-col items-center border-b border-gray-300">
-            <img
-              src={aseasLogo}
-              alt="ACEAS Logo"
-              className="w-full h-auto object-contain mb-3"
-            />
-            <h3 className="text-sm font-bold text-center text-gray-700 leading-tight">
-              Australian Center of Excellence in Antarctic Science
-            </h3>
+          <Link to="/" className="w-full p-3 flex justify-center border-b border-base-300">
+            <div className="w-full  rounded-lg bg-secondary p-1 shadow-sm">
+              <img
+                src={aceasLogo}
+                alt="ACEAS Logo"
+                className="w-full max-h-28 h-auto rounded-md object-contain"
+              
+              />
+            </div>
           </Link>
 
           <ul className="menu w-full grow">
             {/* Home */}
-            <li>
+            <li>j
               <NavLink
                 to="/"
                 end
@@ -136,7 +136,7 @@ const HomeLayout = () => {
           </ul>
 
           {/* Footer Section */}
-          <div className="w-full p-4 border-t border-gray-300 text-center">
+          <div className="w-full p-4 border-t border-base-300 text-center">
             <p className="text-xs text-gray-600">
               © 2026 ACEAS
             </p>
