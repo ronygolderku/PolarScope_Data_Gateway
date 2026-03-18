@@ -6,6 +6,7 @@ import {
   FaSearch,
   FaBars,
   FaChevronLeft,
+  FaGlobe,
 } from "react-icons/fa";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import aceasLogo from "../assets/ACEAS-Logo.png";
@@ -90,7 +91,7 @@ const HomeLayout = () => {
 
           <ul className="menu w-full grow">
             {/* Home */}
-            <li>j
+            <li>
               <NavLink
                 to="/"
                 end
@@ -131,6 +132,17 @@ const HomeLayout = () => {
                 onClick={handleLinkClick}
               >
                 <FaSearch /> Search
+              </NavLink>
+            </li>
+
+            {/* Map */}
+            <li>
+              <NavLink
+                to="/map"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
+              >
+                <FaGlobe /> Map
               </NavLink>
             </li>
           </ul>

@@ -6,6 +6,7 @@ import CatalogDetails from "../Pages/CatalogDetails";
 import Metrics from "../Pages/Metrics";
 import Catalog from "../Pages/Catalog";
 import Search from "../Pages/Search";
+import MapPage from "../Pages/Map"; // Renamed from Map to avoid JS Map constructor conflict
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: "search",
         Component: Search,
+      },
+      {
+        path: "map",
+        Component: MapPage,
       },
     ],
   },
