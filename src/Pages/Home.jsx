@@ -111,6 +111,12 @@ const Home = () => {
               >
                 Variables
               </Link>
+              <Link
+                to="#"
+                className="underline font-semibold text-secondary hover:text-primary"
+              >
+                 BGC Argo
+              </Link>
             </p>
             <p className="mt-2 text-gray-700">
               Choose a theme below to explore available products/projects or
