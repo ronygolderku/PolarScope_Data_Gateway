@@ -43,7 +43,7 @@ const HomeLayout = () => {
   };
 
   return (
-    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto`}>
+    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto h-screen overflow-hidden`}>
       <input
         id="my-drawer-4"
         type="checkbox"
@@ -51,7 +51,7 @@ const HomeLayout = () => {
         checked={isSidebarOpen}
         onChange={toggleSidebar}
       />
-      <div className="drawer-content transition-all duration-300">
+      <div className="drawer-content transition-all duration-300 h-screen flex flex-col overflow-hidden">
         {/* Navbar */}
         <nav className="navbar sticky top-0 z-5 w-full bg-base-300">
           <button
@@ -67,7 +67,9 @@ const HomeLayout = () => {
         </nav>
 
         {/* Page content */}
-        <Outlet />
+        <div className="flex-1 min-h-0 overflow-hidden">
+          <Outlet />
+        </div>
       </div>
 
       <div className="drawer-side z-50">
