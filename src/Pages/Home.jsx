@@ -138,12 +138,12 @@ const Home = () => {
             <p className="text-gray-700">
               If you have any questions or feedback regarding Open Science Catalog,
               please contact us at{" "}
-              <Link
-                to=""
+              <a
+                href="mailto:communications@antarcticscience.utas.edu.au"
                 className="underline font-semibold text-secondary hover:text-primary"
               >
-                opensciencedata@esa.int.
-              </Link>
+                communications@antarcticscience.utas.edu.au
+              </a>
             </p>
 
             <div className="flex flex-wrap gap-4 mt-6">
