@@ -35,24 +35,18 @@ const MapPage = () => {
   );
 
   return (
-    <div className="h-full w-full bg-white">
+    <div className="h-full w-full bg-white overflow-hidden">
       <MapContainer
         crs={southPolarCRS}
-        bounds={[
-          [-90, -180],
-          [-55, 180],
-        ]}
-        boundsOptions={{ padding: [16, 16] }}
-        maxBounds={[
-          [-90, -180],
-          [-50, 180],
-        ]}
-        maxBoundsViscosity={1.0}
-        zoom={3}
-        minZoom={0}
+        center={[-90, 0]}
+        zoom={3.8}
+        minZoom={3}
         maxZoom={8}
+        zoomSnap={0.1}
+        zoomDelta={0.2}
         style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={true}
+        dragging={true}
       >
         <TileLayer
           attribution='Source: Esri, Earthstar Geographics'
