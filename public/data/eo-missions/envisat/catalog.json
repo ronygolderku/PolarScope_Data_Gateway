@@ -52,11 +52,7 @@
       "type": "application/json",
       "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",

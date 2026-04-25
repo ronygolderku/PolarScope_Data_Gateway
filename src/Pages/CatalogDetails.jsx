@@ -80,6 +80,21 @@ const CatalogDetails = () => {
     return dateStr ? new Date(dateStr).toLocaleString() : "Unknown";
   };
 
+  const getUpPath = () => {
+    if (location.state?.from) {
+      return location.state.from;
+    }
+
+    if (catalogType === "products") {
+      const theme = data?.themes?.[0]?.concepts?.[0]?.id;
+      if (theme) {
+        return `/themes/${theme}`;
+      }
+    }
+
+    return `/${catalogType}`;
+  };
+
   const sortedChildItems = [...childItems].sort((a, b) => {
     const aTitle = a.title || "";
     const bTitle = b.title || "";
@@ -132,7 +147,7 @@ const CatalogDetails = () => {
           </span>
           <span className="hidden md:inline mx-2">|</span>
           <button
-            onClick={() => navigate(`/${catalogType}`)}
+            onClick={() => navigate(getUpPath())}
             className="btn btn-xs btn-outline rounded-sm"
           >
             Up

@@ -72,6 +72,7 @@ const CatalogList = () => {
                 id: details.id,
                 title: details.title || link.title,
                 description: details.description,
+                region: details["osc:region"],
                 extent: details.extent,
                 keywords: details.keywords || [],
                 image: image,
@@ -325,7 +326,7 @@ const CatalogList = () => {
             return (
               <div
                 key={index}
-                onClick={() => navPath && navigate(navPath)}
+                onClick={() => navPath && navigate(navPath, { state: { from: location.pathname } })}
                 className={`${navPath ? 'cursor-pointer' : ''} rounded-lg border border-gray-300 bg-white p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-primary group ${
                   viewMode === "list" ? "flex flex-col md:flex-row gap-6" : ""
                 }`}
@@ -338,19 +339,31 @@ const CatalogList = () => {
                     {item.description || "No description available."}
                   </p>
 
-                  {item.extent?.temporal?.interval?.[0] && (
-                    <div className="text-xs text-gray-500 mt-2">
-                      {new Date(
-                        item.extent.temporal.interval[0][0],
-                      ).toLocaleString()}{" "}
-                      -{" "}
-                      {item.extent.temporal.interval[0][1]
-                        ? new Date(
-                            item.extent.temporal.interval[0][1],
-                          ).toLocaleString()
-                        : "Present"}
-                    </div>
-                  )}
+                    {(item.extent?.temporal?.interval?.[0] || item.region) && (
+                      <div className="mt-2 flex items-center justify-between gap-3 text-xs text-gray-500">
+                        <div className="min-w-0">
+                          {item.extent?.temporal?.interval?.[0] && (
+                            <span>
+                              {new Date(
+                                item.extent.temporal.interval[0][0],
+                              ).toLocaleString()}{" "}
+                              -{" "}
+                              {item.extent.temporal.interval[0][1]
+                                ? new Date(
+                                    item.extent.temporal.interval[0][1],
+                                  ).toLocaleString()
+                                : "Present"}
+                            </span>
+                          )}
+                        </div>
+                        {item.region && (
+                          <div className="flex-shrink-0 text-right">
+                            <span className="font-semibold text-gray-600"></span>{" "}
+                            <span className="text-gray-700">{item.region}</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                 </div>
                 
                 {/* Image for themes in list view */}
