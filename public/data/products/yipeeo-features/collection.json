@@ -34,7 +34,6 @@
       "type": "application/json",
       "title": "EO Mission: Sentinel-2"
     },
-
     {
       "rel": "related",
       "href": "../../eo-missions/sentinel-1/catalog.json",

@@ -1,4 +1,3 @@
-
 {
   "type": "Catalog",
   "id": "oceans",
@@ -30,34 +29,9 @@
     },
     {
       "rel": "child",
-      "href": "../../products/absolute-sea-level-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SL-ABS: Absolute Sea Level Heights_Baltics_Multimission"
-    },
-
-    {
-      "rel": "child",
       "href": "../../products/albedo-circas/collection.json",
       "type": "application/json",
       "title": "Albedo_Regional_S3A/SLSTR"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/baltic-sea-level-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Level_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/baltic-sea-surface-salinity-l3-baltic-salinity-dynamics/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Surface Salinity L3 maps (V.2.0)_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/baltic-sea-surface-salinity-l4-baltic-salinity-dynamics/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Surface Salinity L4 maps (V.2.0)_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -90,16 +64,16 @@
       "title": "ESA 4DMED-SEA - Mediterranean Sea Gridded L4 4DvarNET (1/20°) Sea Surface Heights And Derived Variables"
     },
     {
-        "rel": "child",
-        "href": "../../products/4dmed-t-s-geo-150/collection.json",
-        "type": "application/json",
-        "title": "ESA 4DMED-SEA - Neural Network and objective analysis reconstruction of 3D Mediterranean physical fields from surface satellite and in situ observations at 1/24 deg"  
+      "rel": "child",
+      "href": "../../products/4dmed-t-s-geo-150/collection.json",
+      "type": "application/json",
+      "title": "ESA 4DMED-SEA - Neural Network and objective analysis reconstruction of 3D Mediterranean physical fields from surface satellite and in situ observations at 1/24 deg"
     },
     {
-        "rel": "child",
-        "href": "../../products/4dmed-t-s-geo-a-150/collection.json",
-        "type": "application/json",
-        "title": "ESA 4DMED-SEA - Chlorophyll-a, Temperature, Salinity, Density, and Geostrophic Velocities from the surface down to 150 m"  
+      "rel": "child",
+      "href": "../../products/4dmed-t-s-geo-a-150/collection.json",
+      "type": "application/json",
+      "title": "ESA 4DMED-SEA - Chlorophyll-a, Temperature, Salinity, Density, and Geostrophic Velocities from the surface down to 150 m"
     },
     {
       "rel": "child",
@@ -175,45 +149,15 @@
     },
     {
       "rel": "child",
-      "href": "../../products/earth-energy-imballance-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Earth Energy Imballance (EEI)_GRACE/GRACE-FO"
-    },
-    {
-      "rel": "child",
       "href": "../../products/eddy-census-eo4sibs/collection.json",
       "type": "application/json",
       "title": "Eddy census"
     },
     {
       "rel": "child",
-      "href": "../../products/electronic-delay-correction-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-EC2: ECR Electronic Delay Correction_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/eo-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "EO based Color Disolved Organic Matter_Baltics_S3"
-    },
-    {
-      "rel": "child",
       "href": "../../products/export-production-bicep/collection.json",
       "type": "application/json",
       "title": "Monthly Global Export Production based on Dunne et al 2005 dataset (9 km, OC-CCI v4.2)"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/geodynamic-corrections-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-GC: Geodynamic Corrections_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/geoid-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "GEO-HGT: Geoid Heights_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -241,12 +185,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/gnss-positioning-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "GNSS-POS: GNSS positioning solution_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/gridded-surface-current-world-ocean-circulation/collection.json",
       "type": "application/json",
       "title": "Gridded Surface Current Oceans Agulhas"
@@ -268,24 +206,6 @@
       "href": "../../products/hr-tidal-atlas-arctic-ocean-cp4o/collection.json",
       "type": "application/json",
       "title": "Arctide2017_High-resolution tidal atlas_Arctic Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/hydrodynamic-model-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/in-situ-sealabio/collection.json",
-      "type": "application/json",
-      "title": "In-situ measurements_Baltics"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/ionospheric-delays-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-ID: Ionospheric Delays_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -391,12 +311,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/model-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "Model based Colored Dissolved Organic Matter (CDOM) _Baltics_Model"
-    },
-    {
-      "rel": "child",
       "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
       "type": "application/json",
       "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v4.2)"
@@ -475,12 +389,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/ocean-heat-content-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Global Ocean Heat Content (GOHC)_GRACE/GRACE-FO"
-    },
-    {
-      "rel": "child",
       "href": "../../products/oceanic-total-alkalinity-and-dissolved-inorganic-carbon-oceansoda/collection.json",
       "type": "application/json",
       "title": "Results and analysis of oceanic total alkalinity and dissolved inorganic carbon estimated from space borne, interpolated in situ, climatological and Earth system model data."
@@ -529,30 +437,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/s1-corrections-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-SC: Sentinel-1 Systematic Effects Corrections_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/sar-observation-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SAR-OBS: Observation Solution_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/sar-positioning-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SAR-POS: SAR Positioning Solution_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/sar-raw-measurements-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "PTA-OBS: SAR Raw Measurements_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/satellite-altimeter-polar-ocean-cp4o/collection.json",
       "type": "application/json",
       "title": "Satellite LRM, SAR, SARIN polar altimeter product_Polar Ocean_Cryosat"
@@ -595,12 +479,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/sea-surface-heights-corrected-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "TG-SSH: Corrected Sea Surface Height at Tide Gauge Stations_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/sea-surface-salinity-europe-smos-med/collection.json",
       "type": "application/json",
       "title": "L4 Interpolated Sea Surface Salinity_Europe_SMOS"
@@ -625,18 +503,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/target-locations-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "PTA-RES: Extracted Target Locations_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/tide-gauge-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "TG-HGT: Tide Gauge Heights_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/total-surface-current-north-atlantic-world-ocean-circulation/collection.json",
       "type": "application/json",
       "title": "Total surface current North Atlantic"
@@ -646,12 +512,6 @@
       "href": "../../products/total-surface-current-tropical-atlantic-world-ocean-circulation/collection.json",
       "type": "application/json",
       "title": "Total surface current Tropical Atlantic"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/tropospheric-delays-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-TD: Tropospheric Delays_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -715,21 +575,9 @@
     },
     {
       "rel": "child",
-      "href": "../../products/coastal-carbon-mapper-carbon-fractions-data/collection.json",
+      "href": "../../products/waposal-waves/collection.json",
       "type": "application/json",
-      "title": "Carbon fractions (TOC, DOC, DIC) measured from coastal waters of the Baltic Sea in 2023-2024"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/coastal-carbon-mapper-reflectance-water-quality-data/collection.json",
-      "type": "application/json",
-      "title": "Spectral reflectance and associated water quality parameters measured from coastal waters of the Baltic Sea in 2023–2024"
-    },
-    {
-        "rel": "child",
-        "href": "../../products/waposal-waves/collection.json",
-        "type": "application/json",
-        "title": "High-resolution WAPOSAL wave period and wave power density from Sentinel-3 A/B, CryoSat-2, and SAMOSA+ retracker"
+      "title": "High-resolution WAPOSAL wave period and wave power density from Sentinel-3 A/B, CryoSat-2, and SAMOSA+ retracker"
     },
     {
       "rel": "parent",

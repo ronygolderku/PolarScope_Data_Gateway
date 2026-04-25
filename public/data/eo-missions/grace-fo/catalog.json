@@ -18,13 +18,11 @@
     },
     {
       "rel": "child",
-      "href": "../../products/earth-energy-imballance-baltic-seal/collection.json",
       "type": "application/json",
       "title": "Earth Energy Imballance (EEI)_GRACE/GRACE-FO"
     },
     {
       "rel": "child",
-      "href": "../../products/ocean-heat-content-baltic-seal/collection.json",
       "type": "application/json",
       "title": "Global Ocean Heat Content (GOHC)_GRACE/GRACE-FO"
     },

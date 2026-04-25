@@ -94,17 +94,11 @@
       "type": "application/json",
       "title": "ESA 4DMED-SEA - Chlorophyll-a, Temperature, Salinity, Density, and Geostrophic Velocities from the surface down to 150 m"
     },
-      {
+    {
       "rel": "child",
       "href": "./swot-east-greenland-current/collection.json",
       "type": "application/json",
       "title": "SWOT-BFNQG East Greenland Current"
-    },
-    {
-      "rel": "child",
-      "href": "./absolute-sea-level-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SL-ABS: Absolute Sea Level Heights_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -147,24 +141,6 @@
       "href": "./albedo-circas/collection.json",
       "type": "application/json",
       "title": "Albedo_Regional_S3A/SLSTR"
-    },
-    {
-      "rel": "child",
-      "href": "./baltic-sea-level-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Level_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "./baltic-sea-surface-salinity-l3-baltic-salinity-dynamics/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Surface Salinity L3 maps (V.2.0)_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "./baltic-sea-surface-salinity-l4-baltic-salinity-dynamics/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Surface Salinity L4 maps (V.2.0)_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -384,33 +360,15 @@
     },
     {
       "rel": "child",
-      "href": "./earth-energy-imballance-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Earth Energy Imballance (EEI)_GRACE/GRACE-FO"
-    },
-    {
-      "rel": "child",
       "href": "./eddy-census-eo4sibs/collection.json",
       "type": "application/json",
       "title": "Eddy census"
     },
     {
       "rel": "child",
-      "href": "./electronic-delay-correction-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-EC2: ECR Electronic Delay Correction_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "./elevation-and-elevation-change-antarctic-cryotop-evolution/collection.json",
       "type": "application/json",
       "title": "Swath-derived elevation and elevation change_Antarctic ice Sheet_2011-2016_CryoSat-2"
-    },
-    {
-      "rel": "child",
-      "href": "./eo-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "EO based Color Disolved Organic Matter_Baltics_S3"
     },
     {
       "rel": "child",
@@ -432,21 +390,9 @@
     },
     {
       "rel": "child",
-      "href": "./geodynamic-corrections-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-GC: Geodynamic Corrections_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "./geodynamo-simulation-4d-earth-swarm/collection.json",
       "type": "application/json",
       "title": "Geodynamo simulation data_Earth core"
-    },
-    {
-      "rel": "child",
-      "href": "./geoid-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "GEO-HGT: Geoid Heights_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -495,12 +441,6 @@
       "href": "./global-particulate-organic-carbon-v5-bicep/collection.json",
       "type": "application/json",
       "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
-    },
-    {
-      "rel": "child",
-      "href": "./gnss-positioning-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "GNSS-POS: GNSS positioning solution_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -594,12 +534,6 @@
     },
     {
       "rel": "child",
-      "href": "./hydrodynamic-model-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "./ice-sheet-antarctica-l1b-spice/collection.json",
       "type": "application/json",
       "title": "Ice Sheets_Antarctica_Sentinel-2 Performance Improvement_Level 1B"
@@ -627,18 +561,6 @@
       "href": "./ice-shelf-antarctica-cryosmos/collection.json",
       "type": "application/json",
       "title": "Ice shelf product_Antarctica_SMOS"
-    },
-    {
-      "rel": "child",
-      "href": "./in-situ-sealabio/collection.json",
-      "type": "application/json",
-      "title": "In-situ measurements_Baltics"
-    },
-    {
-      "rel": "child",
-      "href": "./ionospheric-delays-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-ID: Ionospheric Delays_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -876,12 +798,6 @@
     },
     {
       "rel": "child",
-      "href": "./model-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "Model based Colored Dissolved Organic Matter (CDOM) _Baltics_Model"
-    },
-    {
-      "rel": "child",
       "href": "./model-ionosphere-4dionosphere/collection.json",
       "type": "application/json",
       "title": "Semi-empiric model of ionosphere processes_SWARM"
@@ -969,12 +885,6 @@
       "href": "./ocean-freshwater-flux-arctic-theme3/collection.json",
       "type": "application/json",
       "title": "Ocean freshwater fluxes_Arctic_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "./ocean-heat-content-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Global Ocean Heat Content (GOHC)_GRACE/GRACE-FO"
     },
     {
       "rel": "child",
@@ -1098,33 +1008,9 @@
     },
     {
       "rel": "child",
-      "href": "./s1-corrections-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-SC: Sentinel-1 Systematic Effects Corrections_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "./s2l2a-uncertainty-sr-lpf-l2arut/collection.json",
       "type": "application/json",
       "title": "S2 L2A uncertainty_Surface reflectance estimates_S2"
-    },
-    {
-      "rel": "child",
-      "href": "./sar-observation-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SAR-OBS: Observation Solution_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "./sar-positioning-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SAR-POS: SAR Positioning Solution_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "./sar-raw-measurements-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "PTA-OBS: SAR Raw Measurements_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -1221,12 +1107,6 @@
       "href": "./sea-level-variability-lpf-ovalie/collection.json",
       "type": "application/json",
       "title": "Atmospherically-forced and chaotic interannual variability of the sea level and its components over 1993-2015 from the OCCIPUT ensemble simulations"
-    },
-    {
-      "rel": "child",
-      "href": "./sea-surface-heights-corrected-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "TG-SSH: Corrected Sea Surface Height at Tide Gauge Stations_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -1524,12 +1404,6 @@
     },
     {
       "rel": "child",
-      "href": "./target-locations-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "PTA-RES: Extracted Target Locations_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "./tccas-sodankylae/collection.json",
       "type": "application/json",
       "title": "Terrestrial Carbon Community Assimilation System: Database for Lapland and Sodankyla region"
@@ -1545,12 +1419,6 @@
       "href": "./tccas-netherlands/collection.json",
       "type": "application/json",
       "title": "Terrestrial Carbon Community Assimilation System: Database for the Netherlands region (including Reusel)"
-    },
-    {
-      "rel": "child",
-      "href": "./tide-gauge-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "TG-HGT: Tide Gauge Heights_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -1599,12 +1467,6 @@
       "href": "./total-surface-current-tropical-atlantic-world-ocean-circulation/collection.json",
       "type": "application/json",
       "title": "Total surface current Tropical Atlantic"
-    },
-    {
-      "rel": "child",
-      "href": "./tropospheric-delays-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-TD: Tropospheric Delays_Baltics_Multimission"
     },
     {
       "rel": "child",
@@ -1949,34 +1811,22 @@
       "title": "Sentinel-3 AMPLI Ice Sheet Elevation"
     },
     {
-        "rel": "child",
-        "href": "./coastal-carbon-mapper-carbon-fractions-data/collection.json",
-        "type": "application/json",
-        "title": "Carbon fractions (TOC, DOC, DIC) measured from coastal waters of the Baltic Sea in 2023-2024"
+      "rel": "child",
+      "href": "./d13c-ch4-signatures-smart-ch4/collection.json",
+      "type": "application/json",
+      "title": "Global δ13C(CH4) Source Signatures"
     },
     {
-        "rel": "child",
-        "href": "./coastal-carbon-mapper-reflectance-water-quality-data/collection.json",
-        "type": "application/json",
-        "title": "Spectral reflectance and associated water quality parameters measured from coastal waters of the Baltic Sea in 2023–2024"
+      "rel": "child",
+      "href": "./polar-lakes-s1-s2-antarctica/collection.json",
+      "type": "application/json",
+      "title": "PolarLakes - Sentinel-1/2 - Antarctica, Bi-weekly/Annually"
     },
     {
-        "rel": "child",
-        "href": "./d13c-ch4-signatures-smart-ch4/collection.json",
-        "type": "application/json",
-        "title": "Global δ13C(CH4) Source Signatures"
-    },
-    {
-        "rel": "child",
-        "href": "./polar-lakes-s1-s2-antarctica/collection.json",
-        "type": "application/json",
-        "title": "PolarLakes - Sentinel-1/2 - Antarctica, Bi-weekly/Annually"
-    },
-    {
-        "rel": "child",
-        "href": "./sentinel1-amazonas-forest-loss/collection.json",
-        "type": "application/json",
-        "title": "Sentinel-1 for Science Amazonas - Forest Loss Maps"
+      "rel": "child",
+      "href": "./sentinel1-amazonas-forest-loss/collection.json",
+      "type": "application/json",
+      "title": "Sentinel-1 for Science Amazonas - Forest Loss Maps"
     },
     {
       "rel": "self",

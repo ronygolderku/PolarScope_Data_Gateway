@@ -22,16 +22,12 @@
       "type": "application/json",
       "title": "Cryosphere"
     },
-  
-    
     {
       "rel": "child",
       "href": "./oceans/catalog.json",
       "type": "application/json",
       "title": "Oceans"
     },
-   
-    
     {
       "rel": "self",
       "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/themes/catalog.json",

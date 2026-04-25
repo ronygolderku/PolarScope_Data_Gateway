@@ -83,10 +83,10 @@
     "spatial": {
       "bbox": [
         [
-          -180.0,
-          -90.0,
-          180.0,
-          90.0
+          -180,
+          -90,
+          180,
+          90
         ]
       ]
     },
@@ -99,7 +99,7 @@
       ]
     }
   },
-    "license": "CC-BY-SA-4.0",
+  "license": "CC-BY-SA-4.0",
   "keywords": [
     "sea ice",
     "polar"

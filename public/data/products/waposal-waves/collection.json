@@ -2,7 +2,6 @@
   "type": "Collection",
   "id": "waposal-waves",
   "stac_version": "1.1.0",
-  "description": "Wave power density, zero-crossing wave period, and significant wave height product obtained along track based on Sentinel-3 A/B and Cryosat-2 altimeter data processed by SAMOSA+ retracker. The products cover the Atlantic coast of Europe, Madeira, the French Polynesian archipelagos, the Azores, the Canary Islands, the Mediterranean and Baltic Seas, and the coastal zone of French Guiana.",
   "links": [
     {
       "rel": "root",
@@ -23,9 +22,9 @@
       "title": "Project: WAPOSAL"
     },
     {
-        "rel": "cite-as",
-        "href": "https://doi.org/10.57780/ESA-1AB8CF3",
-        "title": "DOI"
+      "rel": "cite-as",
+      "href": "https://doi.org/10.57780/ESA-1AB8CF3",
+      "title": "DOI"
     },
     {
       "rel": "related",

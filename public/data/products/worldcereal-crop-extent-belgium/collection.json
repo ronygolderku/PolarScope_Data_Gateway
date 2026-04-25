@@ -2721,10 +2721,10 @@
     "worldcereal-cropland-extent-postprocessed.tif": {
       "href": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-25020410530548a7aef81c62faebd127/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/94d1faa4ea6e53dae38129f85ea2e72a/worldcereal-cropland-extent-postprocessed.tif?expires=1739274740",
       "proj:bbox": [
-        647210.0,
-        5676650.0,
-        661110.0,
-        5685720.0
+        647210,
+        5676650,
+        661110,
+        5685720
       ],
       "proj:epsg": 32631,
       "proj:shape": [
@@ -2735,41 +2735,41 @@
         {
           "name": "classification",
           "statistics": {
-            "maximum": 1.0,
+            "maximum": 1,
             "mean": 0.20881235474685,
-            "minimum": 0.0,
+            "minimum": 0,
             "stddev": 0.40646002909502,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         },
         {
           "name": "probability",
           "statistics": {
-            "maximum": 100.0,
+            "maximum": 100,
             "mean": 87.618582091328,
-            "minimum": 51.0,
+            "minimum": 51,
             "stddev": 9.4378604749319,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         },
         {
           "name": "probability_other",
           "statistics": {
-            "maximum": 100.0,
+            "maximum": 100,
             "mean": 73.260664852903,
-            "minimum": 1.0,
+            "minimum": 1,
             "stddev": 32.092614946838,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         },
         {
           "name": "probability_cropland",
           "statistics": {
-            "maximum": 99.0,
+            "maximum": 99,
             "mean": 26.739335147097,
-            "minimum": 0.0,
+            "minimum": 0,
             "stddev": 32.092614946838,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         }
       ],
@@ -2782,10 +2782,10 @@
     "worldcereal-cropland-extent.tif": {
       "href": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-25020410530548a7aef81c62faebd127/results/assets/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/db10cabc11ea947c7b1d78dac38dae53/worldcereal-cropland-extent.tif?expires=1739274740",
       "proj:bbox": [
-        647210.0,
-        5676650.0,
-        661110.0,
-        5685720.0
+        647210,
+        5676650,
+        661110,
+        5685720
       ],
       "proj:epsg": 32631,
       "proj:shape": [
@@ -2796,41 +2796,41 @@
         {
           "name": "classification",
           "statistics": {
-            "maximum": 1.0,
+            "maximum": 1,
             "mean": 0.21644206134541,
-            "minimum": 0.0,
+            "minimum": 0,
             "stddev": 0.4118190080921,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         },
         {
           "name": "probability",
           "statistics": {
-            "maximum": 100.0,
+            "maximum": 100,
             "mean": 87.654939598486,
-            "minimum": 50.0,
+            "minimum": 50,
             "stddev": 12.373357966188,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         },
         {
           "name": "probability_other",
           "statistics": {
-            "maximum": 100.0,
+            "maximum": 100,
             "mean": 73.260664852904,
-            "minimum": 1.0,
+            "minimum": 1,
             "stddev": 32.092614946837,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         },
         {
           "name": "probability_cropland",
           "statistics": {
-            "maximum": 99.0,
+            "maximum": 99,
             "mean": 26.739335147098,
-            "minimum": 0.0,
+            "minimum": 0,
             "stddev": 32.092614946838,
-            "valid_percent": 100.0
+            "valid_percent": 100
           }
         }
       ],

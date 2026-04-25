@@ -18,18 +18,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/baltic-sea-surface-salinity-l3-baltic-salinity-dynamics/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Surface Salinity L3 maps (V.2.0)_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/baltic-sea-surface-salinity-l4-baltic-salinity-dynamics/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Surface Salinity L4 maps (V.2.0)_Baltics_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/bedrock-topography-antarctica-cryosmos/collection.json",
       "type": "application/json",
       "title": "Bedrock topography and/or geothermal heat flux_Antarctica_GOCE"

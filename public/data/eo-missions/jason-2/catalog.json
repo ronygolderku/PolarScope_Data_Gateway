@@ -18,13 +18,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/baltic-sea-level-baltic-seal/collection.json",
-      "type": "application/json",
-      "title": "Baltic Sea Level_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/hydrodynamic-model-baltic-seal/collection.json",
       "type": "application/json",
       "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
     },

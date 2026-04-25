@@ -1564,7 +1564,7 @@
       "type": "application/json",
       "title": "Dead Wood"
     },
-      {
+    {
       "rel": "child",
       "href": "./dead-wood-fuel-moisture-content/catalog.json",
       "type": "application/json",

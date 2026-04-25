@@ -18,39 +18,28 @@
     },
     {
       "rel": "child",
-      "href": "../../products/absolute-sea-level-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SL-ABS: Absolute Sea Level Heights_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/earth-energy-imballance-baltic-seal/collection.json",
       "type": "application/json",
       "title": "Earth Energy Imballance (EEI)_GRACE/GRACE-FO"
     },
     {
       "rel": "child",
-      "href": "../../products/electronic-delay-correction-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-EC2: ECR Electronic Delay Correction_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/geodynamic-corrections-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-GC: Geodynamic Corrections_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/geoid-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "GEO-HGT: Geoid Heights_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/gnss-positioning-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "GNSS-POS: GNSS positioning solution_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
@@ -60,9 +49,7 @@
     },
     {
       "rel": "child",
-      "href": "../../products/ionospheric-delays-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-ID: Ionospheric Delays_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
@@ -78,27 +65,19 @@
     },
     {
       "rel": "child",
-      "href": "../../products/s1-corrections-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-SC: Sentinel-1 Systematic Effects Corrections_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/sar-observation-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SAR-OBS: Observation Solution_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/sar-positioning-solution-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "SAR-POS: SAR Positioning Solution_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/sar-raw-measurements-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "PTA-OBS: SAR Raw Measurements_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
@@ -126,27 +105,19 @@
     },
     {
       "rel": "child",
-      "href": "../../products/sea-surface-heights-corrected-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "TG-SSH: Corrected Sea Surface Height at Tide Gauge Stations_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/target-locations-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "PTA-RES: Extracted Target Locations_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/tide-gauge-heights-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "TG-HGT: Tide Gauge Heights_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/tropospheric-delays-baltics-sar-hsu/collection.json",
-      "type": "application/json",
-      "title": "COR-TD: Tropospheric Delays_Baltics_Multimission"
+      "type": "application/json"
     },
     {
       "rel": "child",

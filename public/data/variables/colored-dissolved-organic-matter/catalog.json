@@ -24,27 +24,16 @@
     },
     {
       "rel": "child",
-      "href": "../../products/eo-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "EO based Color Disolved Organic Matter_Baltics_S3"
+      "type": "application/json"
     },
     {
       "rel": "child",
       "href": "../../products/in-situ-sealabio/collection.json",
-      "type": "application/json",
-      "title": "In-situ measurements_Baltics"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/model-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "Model based Colored Dissolved Organic Matter (CDOM) _Baltics_Model"
-    },
-    {
-        "rel": "child",
-        "href": "../../products/coastal-carbon-mapper-reflectance-water-quality-data/collection.json",
-        "type": "application/json",
-        "title": "Spectral reflectance and associated water quality parameters measured from coastal waters of the Baltic Sea in 2023–2024"
+      "type": "application/json"
     },
     {
       "rel": "parent",

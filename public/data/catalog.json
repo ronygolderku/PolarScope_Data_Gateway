@@ -10,7 +10,6 @@
       "type": "application/json",
       "title": "Open Science Catalog"
     },
-   
     {
       "rel": "child",
       "href": "./themes/catalog.json",
@@ -35,8 +34,6 @@
       "type": "application/json",
       "title": "Products"
     },
-   
-   
     {
       "rel": "self",
       "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/catalog.json",

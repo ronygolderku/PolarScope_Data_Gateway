@@ -18,9 +18,7 @@
     },
     {
       "rel": "child",
-      "href": "../../products/model-based-cdom-baltic-sealabio/collection.json",
-      "type": "application/json",
-      "title": "Model based Colored Dissolved Organic Matter (CDOM) _Baltics_Model"
+      "type": "application/json"
     },
     {
       "rel": "child",
