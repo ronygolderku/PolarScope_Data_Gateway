@@ -29,12 +29,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/basal-melt-monthly/collection.json",
-      "type": "application/json",
-      "title": "Basal Melt (ESA POLAR+ 4D Greenland Experimental Dataset)"
-    },
-    {
-      "rel": "child",
       "href": "../../products/albedo-circas/collection.json",
       "type": "application/json",
       "title": "Albedo_Regional_S3A/SLSTR"
@@ -45,60 +39,21 @@
       "type": "application/json",
       "title": "SWOT-BFNQG East Greenland Current"
     },
-    {
-      "rel": "child",
-      "href": "../../products/basin-runoff-sur-water/collection.json",
-      "type": "application/json",
-      "title": "Basin Run Off and Surface Water (ESA POLAR+ 4D Greenland Experimental Dataset)"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/bathymetry-arctic-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Bathymetry_Arctic_Cryosat"
-    },
+    
     {
       "rel": "child",
       "href": "../../products/bedrock-topography-antarctica-cryosmos/collection.json",
       "type": "application/json",
       "title": "Bedrock topography and/or geothermal heat flux_Antarctica_GOCE"
     },
-    {
-      "rel": "child",
-      "href": "../../products/binary-wet-snow-s14science-snow/collection.json",
-      "type": "application/json",
-      "title": "Binary wet snow extent products"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/broadband-albedo-arctic-sice/collection.json",
-      "type": "application/json",
-      "title": "Broadband albedo_Arctic_S3"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/broadband-albedo-greenland-s34science-snow/collection.json",
-      "type": "application/json",
-      "title": "Broadband albedo_Greenland_S3"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/dynamics-of-glacier-lakes-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Dynamics of glacier lakes_SwissAlps_S1/2"
-    },
+ 
     {
       "rel": "child",
       "href": "../../products/elevation-and-elevation-change-antarctic-cryotop-evolution/collection.json",
       "type": "application/json",
       "title": "Swath-derived elevation and elevation change_Antarctic ice Sheet_2011-2016_CryoSat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/firn-retention/collection.json",
-      "type": "application/json",
-      "title": "Firn Retention (ESA POLAR+ 4D Greenland Experimental Dataset)"
-    },
+    
     {
       "rel": "child",
       "href": "../../products/geothermal-heat-flux-4dantarctica/collection.json",
@@ -111,23 +66,12 @@
       "type": "application/json",
       "title": "Mountain glacier elevation and elevation change_Global_Cryosat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/glacier-surface-flow-velocity-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Glacier surface flow velocity_SwissAlps_S2"
-    },
+    
     {
       "rel": "child",
       "href": "../../products/gravity-anomalies-goce-airborne-4dantarctica/collection.json",
       "type": "application/json",
       "title": "Gravity anomalies from GOCE and airborne data"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/hr-tidal-atlas-arctic-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Arctide2017_High-resolution tidal atlas_Arctic Ocean_Cryosat"
     },
     {
       "rel": "child",
@@ -147,12 +91,7 @@
       "type": "application/json",
       "title": "Internal ice-sheet temperature_Antarctica_SMOS"
     },
-    {
-      "rel": "child",
-      "href": "../../products/ice-sheet-topography-elevation-change-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Ice Sheet_gridded topography_rates of surface elevation change_Greenland_Cryosat-2"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/ice-shelf-antarctica-cryosmos/collection.json",
@@ -165,132 +104,23 @@
       "type": "application/json",
       "title": "Land Ice Elevation Thematic Gridded Product_Antarctica_Cryosat"
     },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-arctic-canada-north-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Arctic Canada North_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-arctic-canada-south-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Arctic Canada South_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-greenland-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Greenland_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-iceland-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Iceland_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-russian-arctic-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Russian Arctic_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-southern-andes-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Southern Andes_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-grid-svalbard-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Gridded Product_Svalbard_Cryosat"
-    },
+   
+    
+    
     {
       "rel": "child",
       "href": "../../products/land-ice-elevation-point-antarctica-cryotop-evolution/collection.json",
       "type": "application/json",
       "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Antarctica_Cryosat"
     },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-arctic-canada-north-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Arctic Canada North_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-arctic-canada-south-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Arctic Canada South_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-greenland-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Greenland_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-iceland-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Iceland_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-russian-arctic-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Russian Arctic_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-southern-andes-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Southern Andes_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/land-ice-elevation-point-svalbard-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Land Ice Elevation Thematic Point Product(EOLIS POINTS)_Svalbard_Cryosat"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/lithosphere-density-temperature-viscosity-goce-antarctica/collection.json",
       "type": "application/json",
       "title": "Density, Temperature, and Viscosity Structure of the Antarctic Lithosphere_Antarctica_GOCE"
     },
-    {
-      "rel": "child",
-      "href": "../../products/lr-satellite-altimeter-open-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Low Resolution Mode satellite altimeter product _Open Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/nrt-sice-rasters-greenland-arctic-sice/collection.json",
-      "type": "application/json",
-      "title": "NRT SICE rasters for Greenland_Arctic_S3"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/rdsar-satellite-sar-altimeter-open-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "RDSAR Satellite SAR altimeter product_Open Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-altimeter-polar-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite LRM, SAR, SARIN polar altimeter product_Polar Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-sar-altimeter-coastal-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite SAR altimeter product_Coastal Ocean_Cryosat"
-    },
+  
     {
       "rel": "child",
       "href": "../../products/satellite-sar-altimeter-open-ocean-cp4o/collection.json",
@@ -309,24 +139,14 @@
       "type": "application/json",
       "title": "Satellite SARIN altimeter product_Coastal Ocean_Cryosat"
     },
-    {
-      "rel": "child",
-      "href": "../../products/sea-ice-and-snow-volume-north-sea-stse-arctic-yopp/collection.json",
-      "type": "application/json",
-      "title": "Sea ice volume and snow volume_Prior and posterior uncertainties_North Sea_Cryosat-2"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/sea-ice-clima-snow-depth-lpf-cassis/collection.json",
       "type": "application/json",
       "title": "Sea ice freeboard and thickness_TFMRA50 and AMSR climatology snow depth_Antarctic_CryoSat-2/SARAL"
     },
-    {
-      "rel": "child",
-      "href": "../../products/sea-ice-phys-ocean-lpf-arcticsummit/collection.json",
-      "type": "application/json",
-      "title": "Sea ice and physical oceanography_Arctic_CryoSat-2 Baseline-C Level 1b waveform observations"
-    },
+    
     {
       "rel": "child",
       "href": "../../products/sea-ice-retracker-clima-snow-depth-lpf-cassis/collection.json",
@@ -351,84 +171,11 @@
       "type": "application/json",
       "title": "Sea ice freeboard and thickness_TFMRA50 and ASD snow depth_Antarctic_CryoSat-2/SARAL"
     },
-    {
-      "rel": "child",
-      "href": "../../products/sea-ice-thickness-lpf-arcticsummit/collection.json",
-      "type": "application/json",
-      "title": "Sea ice thickness_monthly_Oct 2010-July 2020Arctic_CryoSat-2 Baseline-D observations"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/slope-instabilities-glacier-forefields-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Slope instabilities in glacier forefields_SwissAlps_S1/2"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-albedo-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow albedo for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-area-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow area extent for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-cover-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Snow cover on glaciers_SwissAlps_S1/2"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-depth-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow depth for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-grain-diameter-arctic-sice/collection.json",
-      "type": "application/json",
-      "title": "Snow grain diameter_Arctic_S3"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-grain-diameter-greenland-s34science-snow/collection.json",
-      "type": "application/json",
-      "title": "Snow grain diameter_Greenland_S3"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-grain-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow grain size for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-liquid-water-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow liquid water content (wet snow) for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-water-equivalent-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow water equivalent for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/spectral-albedo-arctic-sice/collection.json",
-      "type": "application/json",
-      "title": "Spectral albedo_Arctic_S3"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/spectral-albedo-greenland-s34science-snow/collection.json",
-      "type": "application/json",
-      "title": "Spectral albedo_Greenland_S3"
-    },
+    
+    
+    
+   
+    
     {
       "rel": "child",
       "href": "../../products/subglacial-lake-drainage-4dantarctica/collection.json",
@@ -441,12 +188,7 @@
       "type": "application/json",
       "title": "Sublacial Lake Volumes (ESA POLAR+ 4D Greenland Experimantal Dataset"
     },
-    {
-      "rel": "child",
-      "href": "../../products/subglacial-melt-maps/collection.json",
-      "type": "application/json",
-      "title": "Subglacial Melt Maps"
-    },
+ 
     {
       "rel": "child",
       "href": "../../products/supraglacial-lakes-west-4dantarctica/collection.json",
@@ -561,12 +303,7 @@
       "type": "application/json",
       "title": "Southern Ocean sea ice thickness from CryoSat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/sentinel3-ampli-ice-sheet-elevation/collection.json",
-      "type": "application/json",
-      "title": "Sentinel-3 AMPLI Ice Sheet Elevation"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/polar-lakes-s1-s2-antarctica/collection.json",
