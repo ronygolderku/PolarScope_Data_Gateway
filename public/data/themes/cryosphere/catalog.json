@@ -33,12 +33,6 @@
       "type": "application/json",
       "title": "Albedo_Regional_S3A/SLSTR"
     },
-    {
-      "rel": "child",
-      "href": "../../products/swot-east-greenland-current/collection.json",
-      "type": "application/json",
-      "title": "SWOT-BFNQG East Greenland Current"
-    },
     
     {
       "rel": "child",
@@ -121,24 +115,14 @@
       "title": "Density, Temperature, and Viscosity Structure of the Antarctic Lithosphere_Antarctica_GOCE"
     },
   
-    {
-      "rel": "child",
-      "href": "../../products/satellite-sar-altimeter-open-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite SAR altimeter product_Open Ocean_Cryosat"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/satellite-sar-altimeter-sea-floor-cp4o/collection.json",
       "type": "application/json",
       "title": "Satellite SAR altimeter product_Sea Floor Mapping_Oceania_Cryosat"
     },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-sarin-altimeter-coastal-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite SARIN altimeter product_Coastal Ocean_Cryosat"
-    },
+  
    
     {
       "rel": "child",
@@ -170,23 +154,12 @@
       "href": "../../products/sea-ice-snow-depth-lpf-cassis/collection.json",
       "type": "application/json",
       "title": "Sea ice freeboard and thickness_TFMRA50 and ASD snow depth_Antarctic_CryoSat-2/SARAL"
-    },
-    
-    
-    
-   
-    
+    },    
     {
       "rel": "child",
       "href": "../../products/subglacial-lake-drainage-4dantarctica/collection.json",
       "type": "application/json",
       "title": "Subglacial Lake Drainage and Filling Antarctica Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/subglacial-lake-volumes/collection.json",
-      "type": "application/json",
-      "title": "Sublacial Lake Volumes (ESA POLAR+ 4D Greenland Experimantal Dataset"
     },
  
     {
@@ -195,24 +168,14 @@
       "type": "application/json",
       "title": "Supraglacial lakes and channels in West Antarctica and Antarctic Peninsula during January 2017 (v.1.1)"
     },
-    {
-      "rel": "child",
-      "href": "../../products/supraglacial-storage-and-drainage-lake-features-mapped-by-sentinel1/collection.json",
-      "type": "application/json",
-      "title": "Supraglacial Storage and Drainage - Lake Features Mapped by Sentinel-1"
-    },
+  
     {
       "rel": "child",
       "href": "../../products/surface-elevation-change-lpf-mitap/collection.json",
       "type": "application/json",
       "title": "Surface elevation changes Antarctic Peninsula <70°S between 2013 and 2017 Antarctica TanDEM-X"
     },
-    {
-      "rel": "child",
-      "href": "../../products/surface-melt-detection-from-active-microwave-ascat-melt/collection.json",
-      "type": "application/json",
-      "title": "Surface Melt Detection from Active Microwave - ASCAT Melt Product"
-    },
+  
     {
       "rel": "child",
       "href": "../../products/surface-melting-antarctica-cryosmos/collection.json",
@@ -225,18 +188,8 @@
       "type": "application/json",
       "title": "Swath elevation_Antarctic ice Sheet_2011-2016_CryoSat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/swath-elelvation-greenland-ice-sheet-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Swath elevation_Greenland Ice Sheet_2011-2016_CryoSat-2"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/total-basin-runoff/collection.json",
-      "type": "application/json",
-      "title": "Total Basin Run Off (ESA POLAR+ 4D Greenland Experimental Dataset)"
-    },
+  
+    
     {
       "rel": "child",
       "href": "../../products/wet-troposphere-correction-cryosat-cp4o/collection.json",
