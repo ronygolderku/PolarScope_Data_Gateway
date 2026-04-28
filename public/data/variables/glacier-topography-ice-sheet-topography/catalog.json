@@ -34,12 +34,7 @@
       "type": "application/json",
       "title": "Ice Sheets_Antarctica_Sentinel-2 Performance Improvement_Level 3"
     },
-    {
-      "rel": "child",
-      "href": "../../products/ice-sheet-topography-elevation-change-cryotop-evolution/collection.json",
-      "type": "application/json",
-      "title": "Ice Sheet_gridded topography_rates of surface elevation change_Greenland_Cryosat-2"
-    },
+  
     {
       "rel": "parent",
       "href": "../catalog.json",

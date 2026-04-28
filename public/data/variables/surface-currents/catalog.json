@@ -46,18 +46,7 @@
       "type": "application/json",
       "title": "Level 4, geostrophic currents, multi-mission gridded merged products for a period of 1 year, 0.0625°*0.0625°, daily"
     },
-    {
-      "rel": "child",
-      "href": "../../products/total-surface-current-north-atlantic-world-ocean-circulation/collection.json",
-      "type": "application/json",
-      "title": "Total surface current North Atlantic"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/total-surface-current-tropical-atlantic-world-ocean-circulation/collection.json",
-      "type": "application/json",
-      "title": "Total surface current Tropical Atlantic"
-    },
+   
     {
       "rel": "parent",
       "href": "../catalog.json",
