@@ -38,12 +38,6 @@
       "href": "../../themes/cryosphere/catalog.json",
       "type": "application/json",
       "title": "Theme: Cryosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/land/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Land"
     }
   ],
   "stac_extensions": [

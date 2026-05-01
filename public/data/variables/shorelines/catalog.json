@@ -44,18 +44,6 @@
       "href": "../../themes/oceans/catalog.json",
       "type": "application/json",
       "title": "Theme: Oceans"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/land/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Land"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/solid-earth/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Solid Earth"
     }
   ],
   "stac_extensions": [

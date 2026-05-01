@@ -35,12 +35,6 @@
     },
     {
       "rel": "related",
-      "href": "../../themes/solid-earth/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Solid Earth"
-    },
-    {
-      "rel": "related",
       "href": "../../themes/cryosphere/catalog.json",
       "type": "application/json",
       "title": "Theme: Cryosphere"

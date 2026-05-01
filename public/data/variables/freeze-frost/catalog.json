@@ -32,12 +32,6 @@
       "href": "../../themes/atmosphere/catalog.json",
       "type": "application/json",
       "title": "Theme: Atmosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/land/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Land"
     }
   ],
   "stac_extensions": [

@@ -41,21 +41,9 @@
     },
     {
       "rel": "related",
-      "href": "../../themes/land/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Land"
-    },
-    {
-      "rel": "related",
       "href": "../../themes/cryosphere/catalog.json",
       "type": "application/json",
       "title": "Theme: Cryosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Magnetosphere Ionosphere"
     },
     {
       "rel": "related",

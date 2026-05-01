@@ -34,18 +34,8 @@
       "type": "application/json",
       "title": "High resolution phytoplankton Chl-a data obtained by undulating platform towed behind the ship (POLARSTERN cruise PS113)"
     },
-    {
-      "rel": "child",
-      "href": "../../products/l3-chla-daily-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 3 Chl-a, 300m daily and monthly"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4-chla-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 4 Ocean Colour products Chl-a, 300m, daily"
-    },
+ 
+  
     {
       "rel": "child",
       "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
@@ -64,18 +54,7 @@
       "type": "application/json",
       "title": "Secchi Disk depth_Global Oceans_Multimission"
     },
-    {
-      "rel": "child",
-      "href": "../../products/4dmed-t-s-geo-a-150/collection.json",
-      "type": "application/json",
-      "title": "ESA 4DMED-SEA - Chlorophyll-a, Temperature, Salinity, Density, and Geostrophic Velocities from the surface down to 150 m"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/4dmed-3d-prim-prod-150/collection.json",
-      "type": "application/json",
-      "title": "ESA 4DMED-SEA - Primary Production estimated from chlorophyll and temperature 3D fields at 1/24° from the surface down to 150 m"
-    },
+   
     {
       "rel": "parent",
       "href": "../catalog.json",

@@ -54,12 +54,6 @@
     },
     {
       "rel": "child",
-      "href": "./above-ground-biomass/catalog.json",
-      "type": "application/json",
-      "title": "Above-Ground Biomass"
-    },
-    {
-      "rel": "child",
       "href": "./absolute-dynamic-topography/catalog.json",
       "type": "application/json",
       "title": "Absolute Dynamic Topography"
@@ -81,12 +75,6 @@
       "href": "./accumulated-precipitation-over-24-h/catalog.json",
       "type": "application/json",
       "title": "Accumulated precipitation (over 24 h)"
-    },
-    {
-      "rel": "child",
-      "href": "./acid-deposition/catalog.json",
-      "type": "application/json",
-      "title": "Acid Deposition"
     },
     {
       "rel": "child",
@@ -141,18 +129,6 @@
       "href": "./advection/catalog.json",
       "type": "application/json",
       "title": "Advection"
-    },
-    {
-      "rel": "child",
-      "href": "./aeolian-landforms/catalog.json",
-      "type": "application/json",
-      "title": "Aeolian Landforms"
-    },
-    {
-      "rel": "child",
-      "href": "./aeolian-processes/catalog.json",
-      "type": "application/json",
-      "title": "Aeolian Processes"
     },
     {
       "rel": "child",
@@ -270,18 +246,6 @@
     },
     {
       "rel": "child",
-      "href": "./afforestation-reforestation/catalog.json",
-      "type": "application/json",
-      "title": "Afforestation/Reforestation"
-    },
-    {
-      "rel": "child",
-      "href": "./agricultural-expansion/catalog.json",
-      "type": "application/json",
-      "title": "Agricultural Expansion"
-    },
-    {
-      "rel": "child",
       "href": "./air-pressure-near-surface/catalog.json",
       "type": "application/json",
       "title": "Air pressure (near surface)"
@@ -324,30 +288,6 @@
     },
     {
       "rel": "child",
-      "href": "./alpha-particle-flux/catalog.json",
-      "type": "application/json",
-      "title": "Alpha Particle Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./alpha-particles-differential-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Alpha particles differential directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./alpha-particles-integral-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Alpha particles integral directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./alpine-tundra/catalog.json",
-      "type": "application/json",
-      "title": "Alpine/Tundra"
-    },
-    {
-      "rel": "child",
       "href": "./ambient-noise/catalog.json",
       "type": "application/json",
       "title": "Ambient Noise"
@@ -378,18 +318,6 @@
     },
     {
       "rel": "child",
-      "href": "./anthropogenic-greenhouse-gas-fluxes/catalog.json",
-      "type": "application/json",
-      "title": "Anthropogenic Greenhouse Gas Fluxes"
-    },
-    {
-      "rel": "child",
-      "href": "./anthropogenic-water-use/catalog.json",
-      "type": "application/json",
-      "title": "Anthropogenic Water Use"
-    },
-    {
-      "rel": "child",
       "href": "./anticyclones-cyclones/catalog.json",
       "type": "application/json",
       "title": "Anticyclones/Cyclones"
@@ -408,33 +336,9 @@
     },
     {
       "rel": "child",
-      "href": "./aquatic-ecosystems/catalog.json",
-      "type": "application/json",
-      "title": "Aquatic Ecosystems"
-    },
-    {
-      "rel": "child",
-      "href": "./aquifer-recharge/catalog.json",
-      "type": "application/json",
-      "title": "Aquifer Recharge"
-    },
-    {
-      "rel": "child",
-      "href": "./aquifers/catalog.json",
-      "type": "application/json",
-      "title": "Aquifers"
-    },
-    {
-      "rel": "child",
       "href": "./arctic-oscillation/catalog.json",
       "type": "application/json",
       "title": "Arctic Oscillation"
-    },
-    {
-      "rel": "child",
-      "href": "./ash-dust-composition/catalog.json",
-      "type": "application/json",
-      "title": "Ash/Dust Composition"
     },
     {
       "rel": "child",
@@ -522,18 +426,6 @@
     },
     {
       "rel": "child",
-      "href": "./aurora/catalog.json",
-      "type": "application/json",
-      "title": "Aurora"
-    },
-    {
-      "rel": "child",
-      "href": "./aurorae/catalog.json",
-      "type": "application/json",
-      "title": "Aurorae"
-    },
-    {
-      "rel": "child",
       "href": "./avalanche/catalog.json",
       "type": "application/json",
       "title": "Avalanche"
@@ -576,33 +468,9 @@
     },
     {
       "rel": "child",
-      "href": "./bed-elevation/catalog.json",
-      "type": "application/json",
-      "title": "Bed Elevation"
-    },
-    {
-      "rel": "child",
-      "href": "./bedrock-lithology/catalog.json",
-      "type": "application/json",
-      "title": "Bedrock Lithology"
-    },
-    {
-      "rel": "child",
       "href": "./benthic-heat-flow/catalog.json",
       "type": "application/json",
       "title": "Benthic Heat Flow"
-    },
-    {
-      "rel": "child",
-      "href": "./benthic/catalog.json",
-      "type": "application/json",
-      "title": "Benthic"
-    },
-    {
-      "rel": "child",
-      "href": "./biochemical-release/catalog.json",
-      "type": "application/json",
-      "title": "Biochemical Release"
     },
     {
       "rel": "child",
@@ -618,33 +486,9 @@
     },
     {
       "rel": "child",
-      "href": "./biogeochemical-processes/catalog.json",
-      "type": "application/json",
-      "title": "Biogeochemical Processes"
-    },
-    {
-      "rel": "child",
-      "href": "./biological-hazards/catalog.json",
-      "type": "application/json",
-      "title": "Biological Hazards"
-    },
-    {
-      "rel": "child",
       "href": "./bioluminescence/catalog.json",
       "type": "application/json",
       "title": "Bioluminescence"
-    },
-    {
-      "rel": "child",
-      "href": "./biomass-burning/catalog.json",
-      "type": "application/json",
-      "title": "Biomass Burning"
-    },
-    {
-      "rel": "child",
-      "href": "./biomass/catalog.json",
-      "type": "application/json",
-      "title": "Biomass"
     },
     {
       "rel": "child",
@@ -705,12 +549,6 @@
       "href": "./buoy-position/catalog.json",
       "type": "application/json",
       "title": "Buoy Position"
-    },
-    {
-      "rel": "child",
-      "href": "./burned-area/catalog.json",
-      "type": "application/json",
-      "title": "Burned Area"
     },
     {
       "rel": "child",
@@ -834,18 +672,6 @@
     },
     {
       "rel": "child",
-      "href": "./calcium/catalog.json",
-      "type": "application/json",
-      "title": "Calcium"
-    },
-    {
-      "rel": "child",
-      "href": "./canopy-characteristics/catalog.json",
-      "type": "application/json",
-      "title": "Canopy Characteristics"
-    },
-    {
-      "rel": "child",
       "href": "./carbon-dioxide-methane-other-greenhouse-gases/catalog.json",
       "type": "application/json",
       "title": "Carbon Dioxide, Methane & Other Greenhouse Gases"
@@ -891,18 +717,6 @@
       "href": "./carbonyl-sulfide/catalog.json",
       "type": "application/json",
       "title": "Carbonyl Sulfide"
-    },
-    {
-      "rel": "child",
-      "href": "./carcinogens/catalog.json",
-      "type": "application/json",
-      "title": "Carcinogens"
-    },
-    {
-      "rel": "child",
-      "href": "./cation-exchange-capacity/catalog.json",
-      "type": "application/json",
-      "title": "Cation Exchange Capacity"
     },
     {
       "rel": "child",
@@ -972,30 +786,6 @@
     },
     {
       "rel": "child",
-      "href": "./chemical-decomposition/catalog.json",
-      "type": "application/json",
-      "title": "Chemical Decomposition"
-    },
-    {
-      "rel": "child",
-      "href": "./chemical-fixation/catalog.json",
-      "type": "application/json",
-      "title": "Chemical Fixation"
-    },
-    {
-      "rel": "child",
-      "href": "./chemical-spills/catalog.json",
-      "type": "application/json",
-      "title": "Chemical Spills"
-    },
-    {
-      "rel": "child",
-      "href": "./chemical-weathering/catalog.json",
-      "type": "application/json",
-      "title": "Chemical Weathering"
-    },
-    {
-      "rel": "child",
       "href": "./chlorinated-hydrocarbons/catalog.json",
       "type": "application/json",
       "title": "Chlorinated Hydrocarbons"
@@ -1041,12 +831,6 @@
       "href": "./cirrus-cloud-systems/catalog.json",
       "type": "application/json",
       "title": "Cirrus Cloud Systems"
-    },
-    {
-      "rel": "child",
-      "href": "./civil-disturbance/catalog.json",
-      "type": "application/json",
-      "title": "Civil Disturbance"
     },
     {
       "rel": "child",
@@ -1308,12 +1092,6 @@
     },
     {
       "rel": "child",
-      "href": "./co2-flux/catalog.json",
-      "type": "application/json",
-      "title": "CO2 flux"
-    },
-    {
-      "rel": "child",
       "href": "./co2-mole-fraction-bg/catalog.json",
       "type": "application/json",
       "title": "CO2 Mole fraction (BG)"
@@ -1338,39 +1116,15 @@
     },
     {
       "rel": "child",
-      "href": "./coal/catalog.json",
-      "type": "application/json",
-      "title": "Coal"
-    },
-    {
-      "rel": "child",
       "href": "./coastal-elevation/catalog.json",
       "type": "application/json",
       "title": "Coastal Elevation"
     },
     {
       "rel": "child",
-      "href": "./coastal-landforms/catalog.json",
-      "type": "application/json",
-      "title": "Coastal Landforms"
-    },
-    {
-      "rel": "child",
-      "href": "./coastal-processes/catalog.json",
-      "type": "application/json",
-      "title": "Coastal Processes"
-    },
-    {
-      "rel": "child",
       "href": "./coastal-sea-level-tide/catalog.json",
       "type": "application/json",
       "title": "Coastal sea level (tide)"
-    },
-    {
-      "rel": "child",
-      "href": "./coastlines/catalog.json",
-      "type": "application/json",
-      "title": "Coastlines"
     },
     {
       "rel": "child",
@@ -1410,33 +1164,9 @@
     },
     {
       "rel": "child",
-      "href": "./conservation/catalog.json",
-      "type": "application/json",
-      "title": "Conservation"
-    },
-    {
-      "rel": "child",
-      "href": "./contaminant-levels-spills/catalog.json",
-      "type": "application/json",
-      "title": "Contaminant Levels/Spills"
-    },
-    {
-      "rel": "child",
       "href": "./continental-margins/catalog.json",
       "type": "application/json",
       "title": "Continental Margins"
-    },
-    {
-      "rel": "child",
-      "href": "./contour-maps/catalog.json",
-      "type": "application/json",
-      "title": "Contour Maps"
-    },
-    {
-      "rel": "child",
-      "href": "./control-surveys/catalog.json",
-      "type": "application/json",
-      "title": "Control Surveys"
     },
     {
       "rel": "child",
@@ -1464,75 +1194,9 @@
     },
     {
       "rel": "child",
-      "href": "./core-processes/catalog.json",
-      "type": "application/json",
-      "title": "Core Processes"
-    },
-    {
-      "rel": "child",
-      "href": "./corona-holes/catalog.json",
-      "type": "application/json",
-      "title": "Corona Holes"
-    },
-    {
-      "rel": "child",
-      "href": "./corona/catalog.json",
-      "type": "application/json",
-      "title": "Corona"
-    },
-    {
-      "rel": "child",
-      "href": "./coronal-mass-ejections/catalog.json",
-      "type": "application/json",
-      "title": "Coronal Mass Ejections"
-    },
-    {
-      "rel": "child",
       "href": "./cos/catalog.json",
       "type": "application/json",
       "title": "COS"
-    },
-    {
-      "rel": "child",
-      "href": "./cosmic-ray-neutron-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Cosmic ray neutron flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./cosmic-ray-neutron-flux/catalog.json",
-      "type": "application/json",
-      "title": "Cosmic ray neutron flux"
-    },
-    {
-      "rel": "child",
-      "href": "./cosmic-rays/catalog.json",
-      "type": "application/json",
-      "title": "Cosmic Rays"
-    },
-    {
-      "rel": "child",
-      "href": "./crown/catalog.json",
-      "type": "application/json",
-      "title": "Crown"
-    },
-    {
-      "rel": "child",
-      "href": "./crustal-motion-horizontal-and-vertical/catalog.json",
-      "type": "application/json",
-      "title": "Crustal motion (horizontal and vertical)"
-    },
-    {
-      "rel": "child",
-      "href": "./crustal-motion/catalog.json",
-      "type": "application/json",
-      "title": "Crustal Motion"
-    },
-    {
-      "rel": "child",
-      "href": "./crustal-plates-positioning/catalog.json",
-      "type": "application/json",
-      "title": "Crustal plates positioning"
     },
     {
       "rel": "child",
@@ -1542,63 +1206,9 @@
     },
     {
       "rel": "child",
-      "href": "./cyclones/catalog.json",
-      "type": "application/json",
-      "title": "Cyclones"
-    },
-    {
-      "rel": "child",
-      "href": "./dead-foliage/catalog.json",
-      "type": "application/json",
-      "title": "Dead Foliage"
-    },
-    {
-      "rel": "child",
-      "href": "./dead-foliage-fuel-moisture-content/catalog.json",
-      "type": "application/json",
-      "title": "Dead Foliage Fuel Moisture Content"
-    },
-    {
-      "rel": "child",
-      "href": "./dead-wood/catalog.json",
-      "type": "application/json",
-      "title": "Dead Wood"
-    },
-    {
-      "rel": "child",
-      "href": "./dead-wood-fuel-moisture-content/catalog.json",
-      "type": "application/json",
-      "title": "Dead Wood Fuel Moisture Content"
-    },
-    {
-      "rel": "child",
-      "href": "./deciduous-vegetation/catalog.json",
-      "type": "application/json",
-      "title": "Deciduous Vegetation"
-    },
-    {
-      "rel": "child",
       "href": "./deep-convective-cloud-systems/catalog.json",
       "type": "application/json",
       "title": "Deep Convective Cloud Systems"
-    },
-    {
-      "rel": "child",
-      "href": "./defoliants/catalog.json",
-      "type": "application/json",
-      "title": "Defoliants"
-    },
-    {
-      "rel": "child",
-      "href": "./deforestation/catalog.json",
-      "type": "application/json",
-      "title": "Deforestation"
-    },
-    {
-      "rel": "child",
-      "href": "./degradation/catalog.json",
-      "type": "application/json",
-      "title": "Degradation"
     },
     {
       "rel": "child",
@@ -1611,12 +1221,6 @@
       "href": "./deltas/catalog.json",
       "type": "application/json",
       "title": "Deltas"
-    },
-    {
-      "rel": "child",
-      "href": "./denitrification-rate/catalog.json",
-      "type": "application/json",
-      "title": "Denitrification Rate"
     },
     {
       "rel": "child",
@@ -1635,18 +1239,6 @@
       "href": "./desalinization/catalog.json",
       "type": "application/json",
       "title": "Desalinization"
-    },
-    {
-      "rel": "child",
-      "href": "./desertification/catalog.json",
-      "type": "application/json",
-      "title": "Desertification"
-    },
-    {
-      "rel": "child",
-      "href": "./deserts/catalog.json",
-      "type": "application/json",
-      "title": "Deserts"
     },
     {
       "rel": "child",
@@ -1680,12 +1272,6 @@
     },
     {
       "rel": "child",
-      "href": "./digital-elevation-terrain-model-dem/catalog.json",
-      "type": "application/json",
-      "title": "Digital Elevation/Terrain Model (DEM)"
-    },
-    {
-      "rel": "child",
       "href": "./dimethyl-sulfide/catalog.json",
       "type": "application/json",
       "title": "Dimethyl Sulfide"
@@ -1695,18 +1281,6 @@
       "href": "./dinitrogen-pentoxide/catalog.json",
       "type": "application/json",
       "title": "Dinitrogen Pentoxide"
-    },
-    {
-      "rel": "child",
-      "href": "./discharge/catalog.json",
-      "type": "application/json",
-      "title": "Discharge"
-    },
-    {
-      "rel": "child",
-      "href": "./dispersion/catalog.json",
-      "type": "application/json",
-      "title": "Dispersion"
     },
     {
       "rel": "child",
@@ -1758,12 +1332,6 @@
     },
     {
       "rel": "child",
-      "href": "./dominant-species/catalog.json",
-      "type": "application/json",
-      "title": "Dominant Species"
-    },
-    {
-      "rel": "child",
       "href": "./dominant-wave-direction/catalog.json",
       "type": "application/json",
       "title": "Dominant wave direction"
@@ -1794,12 +1362,6 @@
     },
     {
       "rel": "child",
-      "href": "./drainage/catalog.json",
-      "type": "application/json",
-      "title": "Drainage"
-    },
-    {
-      "rel": "child",
       "href": "./droplet-size/catalog.json",
       "type": "application/json",
       "title": "Droplet Size"
@@ -1815,12 +1377,6 @@
       "href": "./dry-tropospheric-correction/catalog.json",
       "type": "application/json",
       "title": "Dry Tropospheric Correction"
-    },
-    {
-      "rel": "child",
-      "href": "./dunes/catalog.json",
-      "type": "application/json",
-      "title": "Dunes"
     },
     {
       "rel": "child",
@@ -1842,12 +1398,6 @@
     },
     {
       "rel": "child",
-      "href": "./earth-rotation/catalog.json",
-      "type": "application/json",
-      "title": "Earth Rotation"
-    },
-    {
-      "rel": "child",
       "href": "./earth-surface-albedo/catalog.json",
       "type": "application/json",
       "title": "Earth surface albedo"
@@ -1857,24 +1407,6 @@
       "href": "./earth-surface-short-wave-bidirectional-reflectance/catalog.json",
       "type": "application/json",
       "title": "Earth surface short-wave bidirectional reflectance"
-    },
-    {
-      "rel": "child",
-      "href": "./earthquake-magnitude-intensity/catalog.json",
-      "type": "application/json",
-      "title": "Earthquake Magnitude/Intensity"
-    },
-    {
-      "rel": "child",
-      "href": "./earthquake-occurrences/catalog.json",
-      "type": "application/json",
-      "title": "Earthquake Occurrences"
-    },
-    {
-      "rel": "child",
-      "href": "./earthquake-predictions/catalog.json",
-      "type": "application/json",
-      "title": "Earthquake Predictions"
     },
     {
       "rel": "child",
@@ -1914,69 +1446,9 @@
     },
     {
       "rel": "child",
-      "href": "./electric-field/catalog.json",
-      "type": "application/json",
-      "title": "Electric Field"
-    },
-    {
-      "rel": "child",
       "href": "./electric-fields-electric-currents/catalog.json",
       "type": "application/json",
       "title": "Electric Fields/Electric Currents"
-    },
-    {
-      "rel": "child",
-      "href": "./electrical-conductivity/catalog.json",
-      "type": "application/json",
-      "title": "Electrical Conductivity"
-    },
-    {
-      "rel": "child",
-      "href": "./electrical-field/catalog.json",
-      "type": "application/json",
-      "title": "Electrical Field"
-    },
-    {
-      "rel": "child",
-      "href": "./electron-density/catalog.json",
-      "type": "application/json",
-      "title": "Electron Density"
-    },
-    {
-      "rel": "child",
-      "href": "./electron-differential-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Electron differential directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./electron-flux-density/catalog.json",
-      "type": "application/json",
-      "title": "Electron flux density"
-    },
-    {
-      "rel": "child",
-      "href": "./electron-flux-energy-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Electron flux energy spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./electron-flux/catalog.json",
-      "type": "application/json",
-      "title": "Electron Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./electron-integral-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Electron integral directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./electrostatic-charge/catalog.json",
-      "type": "application/json",
-      "title": "Electrostatic charge"
     },
     {
       "rel": "child",
@@ -1992,33 +1464,9 @@
     },
     {
       "rel": "child",
-      "href": "./energetic-neutral-atom-ena/catalog.json",
-      "type": "application/json",
-      "title": "Energetic Neutral Atom (ENA)"
-    },
-    {
-      "rel": "child",
-      "href": "./energy-deposition/catalog.json",
-      "type": "application/json",
-      "title": "Energy Deposition"
-    },
-    {
-      "rel": "child",
       "href": "./enso-precipitation-index/catalog.json",
       "type": "application/json",
       "title": "Enso Precipitation Index"
-    },
-    {
-      "rel": "child",
-      "href": "./entrainment/catalog.json",
-      "type": "application/json",
-      "title": "Entrainment"
-    },
-    {
-      "rel": "child",
-      "href": "./environmental-vulnerability-index-evi/catalog.json",
-      "type": "application/json",
-      "title": "Environmental Vulnerability Index (EVI)"
     },
     {
       "rel": "child",
@@ -2034,42 +1482,6 @@
     },
     {
       "rel": "child",
-      "href": "./estuarine-wetlands/catalog.json",
-      "type": "application/json",
-      "title": "Estuarine Wetlands"
-    },
-    {
-      "rel": "child",
-      "href": "./estuary/catalog.json",
-      "type": "application/json",
-      "title": "Estuary"
-    },
-    {
-      "rel": "child",
-      "href": "./eutrophication/catalog.json",
-      "type": "application/json",
-      "title": "Eutrophication"
-    },
-    {
-      "rel": "child",
-      "href": "./euv-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "EUV flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./euv-flux/catalog.json",
-      "type": "application/json",
-      "title": "EUV flux"
-    },
-    {
-      "rel": "child",
-      "href": "./euv-sky-image/catalog.json",
-      "type": "application/json",
-      "title": "EUV sky image"
-    },
-    {
-      "rel": "child",
       "href": "./evaporation/catalog.json",
       "type": "application/json",
       "title": "Evaporation"
@@ -2079,18 +1491,6 @@
       "href": "./evapotranspiration/catalog.json",
       "type": "application/json",
       "title": "Evapotranspiration"
-    },
-    {
-      "rel": "child",
-      "href": "./evergreen-vegetation/catalog.json",
-      "type": "application/json",
-      "title": "Evergreen Vegetation"
-    },
-    {
-      "rel": "child",
-      "href": "./exotic-vegetation/catalog.json",
-      "type": "application/json",
-      "title": "Exotic Vegetation"
     },
     {
       "rel": "child",
@@ -2118,57 +1518,9 @@
     },
     {
       "rel": "child",
-      "href": "./famine/catalog.json",
-      "type": "application/json",
-      "title": "Famine"
-    },
-    {
-      "rel": "child",
-      "href": "./fault-movement-direction/catalog.json",
-      "type": "application/json",
-      "title": "Fault Movement Direction"
-    },
-    {
-      "rel": "child",
-      "href": "./fault-movement-rate/catalog.json",
-      "type": "application/json",
-      "title": "Fault Movement Rate"
-    },
-    {
-      "rel": "child",
-      "href": "./fault-movement/catalog.json",
-      "type": "application/json",
-      "title": "Fault Movement"
-    },
-    {
-      "rel": "child",
       "href": "./finite-size-lyapunov-exponent/catalog.json",
       "type": "application/json",
       "title": "Finite-size Lyapunov Exponent"
-    },
-    {
-      "rel": "child",
-      "href": "./fire-fractional-cover/catalog.json",
-      "type": "application/json",
-      "title": "Fire fractional cover"
-    },
-    {
-      "rel": "child",
-      "href": "./fire-radiative-power/catalog.json",
-      "type": "application/json",
-      "title": "Fire radiative power"
-    },
-    {
-      "rel": "child",
-      "href": "./fire-temperature/catalog.json",
-      "type": "application/json",
-      "title": "Fire temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./fire-weather-index/catalog.json",
-      "type": "application/json",
-      "title": "Fire Weather Index"
     },
     {
       "rel": "child",
@@ -2208,123 +1560,15 @@
     },
     {
       "rel": "child",
-      "href": "./floods/catalog.json",
-      "type": "application/json",
-      "title": "Floods"
-    },
-    {
-      "rel": "child",
       "href": "./fluorescence/catalog.json",
       "type": "application/json",
       "title": "Fluorescence"
     },
     {
       "rel": "child",
-      "href": "./fluvial-landforms/catalog.json",
-      "type": "application/json",
-      "title": "Fluvial Landforms"
-    },
-    {
-      "rel": "child",
-      "href": "./fluvial-processes/catalog.json",
-      "type": "application/json",
-      "title": "Fluvial Processes"
-    },
-    {
-      "rel": "child",
-      "href": "./foes/catalog.json",
-      "type": "application/json",
-      "title": "foEs"
-    },
-    {
-      "rel": "child",
-      "href": "./fof2/catalog.json",
-      "type": "application/json",
-      "title": "foF2"
-    },
-    {
-      "rel": "child",
       "href": "./fog/catalog.json",
       "type": "application/json",
       "title": "Fog"
-    },
-    {
-      "rel": "child",
-      "href": "./folds/catalog.json",
-      "type": "application/json",
-      "title": "Folds"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-composition-vegetation-structure/catalog.json",
-      "type": "application/json",
-      "title": "Forest Composition/Vegetation Structure"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-conservation/catalog.json",
-      "type": "application/json",
-      "title": "Forest Conservation"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-fire-danger-index/catalog.json",
-      "type": "application/json",
-      "title": "Forest Fire Danger Index"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-mensuration/catalog.json",
-      "type": "application/json",
-      "title": "Forest Mensuration"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-products-commodities/catalog.json",
-      "type": "application/json",
-      "title": "Forest Products/Commodities"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-protection/catalog.json",
-      "type": "application/json",
-      "title": "Forest Protection"
-    },
-    {
-      "rel": "child",
-      "href": "./forest-yields/catalog.json",
-      "type": "application/json",
-      "title": "Forest Yields"
-    },
-    {
-      "rel": "child",
-      "href": "./forests/catalog.json",
-      "type": "application/json",
-      "title": "Forests"
-    },
-    {
-      "rel": "child",
-      "href": "./fossil-fuel-burning/catalog.json",
-      "type": "application/json",
-      "title": "Fossil Fuel Burning"
-    },
-    {
-      "rel": "child",
-      "href": "./fraction-of-absorbed-par-fapar/catalog.json",
-      "type": "application/json",
-      "title": "Fraction of Absorbed PAR (FAPAR)"
-    },
-    {
-      "rel": "child",
-      "href": "./fraction-of-absorbed-photosynthetically-active-radiation-fapar/catalog.json",
-      "type": "application/json",
-      "title": "Fraction Of Absorbed Photosynthetically Active Radiation (FAPAR)"
-    },
-    {
-      "rel": "child",
-      "href": "./fraction-of-vegetated-land/catalog.json",
-      "type": "application/json",
-      "title": "Fraction of vegetated land"
     },
     {
       "rel": "child",
@@ -2337,12 +1581,6 @@
       "href": "./freeboard/catalog.json",
       "type": "application/json",
       "title": "Freeboard"
-    },
-    {
-      "rel": "child",
-      "href": "./freeze-frost-probability/catalog.json",
-      "type": "application/json",
-      "title": "Freeze/Frost Probability"
     },
     {
       "rel": "child",
@@ -2382,24 +1620,6 @@
     },
     {
       "rel": "child",
-      "href": "./fresh-water-river-discharge/catalog.json",
-      "type": "application/json",
-      "title": "Fresh Water River Discharge"
-    },
-    {
-      "rel": "child",
-      "href": "./freshwater-runoff/catalog.json",
-      "type": "application/json",
-      "title": "Freshwater Runoff"
-    },
-    {
-      "rel": "child",
-      "href": "./freshwater-springs/catalog.json",
-      "type": "application/json",
-      "title": "Freshwater Springs"
-    },
-    {
-      "rel": "child",
       "href": "./fronts/catalog.json",
       "type": "application/json",
       "title": "Fronts"
@@ -2412,69 +1632,9 @@
     },
     {
       "rel": "child",
-      "href": "./gamma-ray-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Gamma-ray flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./gamma-ray-flux/catalog.json",
-      "type": "application/json",
-      "title": "Gamma-ray flux"
-    },
-    {
-      "rel": "child",
-      "href": "./gas-explosions-leaks/catalog.json",
-      "type": "application/json",
-      "title": "Gas Explosions/Leaks"
-    },
-    {
-      "rel": "child",
-      "href": "./gas-flaring/catalog.json",
-      "type": "application/json",
-      "title": "Gas Flaring"
-    },
-    {
-      "rel": "child",
-      "href": "./gas-hydrates/catalog.json",
-      "type": "application/json",
-      "title": "Gas Hydrates"
-    },
-    {
-      "rel": "child",
       "href": "./gelbstoff/catalog.json",
       "type": "application/json",
       "title": "Gelbstoff"
-    },
-    {
-      "rel": "child",
-      "href": "./geoid/catalog.json",
-      "type": "application/json",
-      "title": "Geoid"
-    },
-    {
-      "rel": "child",
-      "href": "./geomagnetic-field/catalog.json",
-      "type": "application/json",
-      "title": "Geomagnetic field"
-    },
-    {
-      "rel": "child",
-      "href": "./geomagnetic-forecasts/catalog.json",
-      "type": "application/json",
-      "title": "Geomagnetic Forecasts"
-    },
-    {
-      "rel": "child",
-      "href": "./geomagnetic-indices/catalog.json",
-      "type": "application/json",
-      "title": "Geomagnetic Indices"
-    },
-    {
-      "rel": "child",
-      "href": "./geomagnetic-induction/catalog.json",
-      "type": "application/json",
-      "title": "Geomagnetic Induction"
     },
     {
       "rel": "child",
@@ -2490,21 +1650,9 @@
     },
     {
       "rel": "child",
-      "href": "./geothermal-energy/catalog.json",
-      "type": "application/json",
-      "title": "Geothermal Energy"
-    },
-    {
-      "rel": "child",
       "href": "./geothermal-heat-flux/catalog.json",
       "type": "application/json",
       "title": "Geothermal Heat Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./geothermal-temperature/catalog.json",
-      "type": "application/json",
-      "title": "Geothermal Temperature"
     },
     {
       "rel": "child",
@@ -2610,45 +1758,9 @@
     },
     {
       "rel": "child",
-      "href": "./grasslands/catalog.json",
-      "type": "application/json",
-      "title": "Grasslands"
-    },
-    {
-      "rel": "child",
-      "href": "./gravitational-field/catalog.json",
-      "type": "application/json",
-      "title": "Gravitational Field"
-    },
-    {
-      "rel": "child",
-      "href": "./gravity-anomalies/catalog.json",
-      "type": "application/json",
-      "title": "Gravity Anomalies"
-    },
-    {
-      "rel": "child",
-      "href": "./gravity-field/catalog.json",
-      "type": "application/json",
-      "title": "Gravity field"
-    },
-    {
-      "rel": "child",
-      "href": "./gravity-gradients/catalog.json",
-      "type": "application/json",
-      "title": "Gravity gradients"
-    },
-    {
-      "rel": "child",
       "href": "./gravity-waves/catalog.json",
       "type": "application/json",
       "title": "Gravity Waves"
-    },
-    {
-      "rel": "child",
-      "href": "./gravity/catalog.json",
-      "type": "application/json",
-      "title": "Gravity"
     },
     {
       "rel": "child",
@@ -2658,27 +1770,9 @@
     },
     {
       "rel": "child",
-      "href": "./ground-water/catalog.json",
-      "type": "application/json",
-      "title": "Ground water"
-    },
-    {
-      "rel": "child",
       "href": "./grounding-line/catalog.json",
       "type": "application/json",
       "title": "Grounding Line"
-    },
-    {
-      "rel": "child",
-      "href": "./groundwater-chemistry/catalog.json",
-      "type": "application/json",
-      "title": "Groundwater Chemistry"
-    },
-    {
-      "rel": "child",
-      "href": "./groundwater/catalog.json",
-      "type": "application/json",
-      "title": "Groundwater"
     },
     {
       "rel": "child",
@@ -2691,12 +1785,6 @@
       "href": "./gyres/catalog.json",
       "type": "application/json",
       "title": "Gyres"
-    },
-    {
-      "rel": "child",
-      "href": "./h-f/catalog.json",
-      "type": "application/json",
-      "title": "h'F"
     },
     {
       "rel": "child",
@@ -2784,12 +1872,6 @@
     },
     {
       "rel": "child",
-      "href": "./heat/catalog.json",
-      "type": "application/json",
-      "title": "Heat"
-    },
-    {
-      "rel": "child",
       "href": "./heating-degree-days/catalog.json",
       "type": "application/json",
       "title": "Heating Degree Days"
@@ -2802,48 +1884,6 @@
     },
     {
       "rel": "child",
-      "href": "./heavy-ion-angular-flux-energy-and-mass-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Heavy ion angular flux energy and mass spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./heavy-ion-differential-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Heavy ion differential directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./heavy-ion-flux-energy-and-mass-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Heavy ion flux energy and mass spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./heavy-ion-integral-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Heavy ion integral directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./heavy-metals-concentration/catalog.json",
-      "type": "application/json",
-      "title": "Heavy Metals Concentration"
-    },
-    {
-      "rel": "child",
-      "href": "./heavy-metals/catalog.json",
-      "type": "application/json",
-      "title": "Heavy Metals"
-    },
-    {
-      "rel": "child",
-      "href": "./heavy-nuclei-flux/catalog.json",
-      "type": "application/json",
-      "title": "Heavy Nuclei Flux"
-    },
-    {
-      "rel": "child",
       "href": "./height-of-the-top-of-pbl/catalog.json",
       "type": "application/json",
       "title": "Height of the top of PBL"
@@ -2853,24 +1893,6 @@
       "href": "./height-of-the-tropopause/catalog.json",
       "type": "application/json",
       "title": "Height of the tropopause"
-    },
-    {
-      "rel": "child",
-      "href": "./heliospheric-image/catalog.json",
-      "type": "application/json",
-      "title": "Heliospheric image"
-    },
-    {
-      "rel": "child",
-      "href": "./high-live-fuel-moisture-content/catalog.json",
-      "type": "application/json",
-      "title": "High Live Fuel Moisture Content"
-    },
-    {
-      "rel": "child",
-      "href": "./hmf2/catalog.json",
-      "type": "application/json",
-      "title": "hmF2"
     },
     {
       "rel": "child",
@@ -2889,24 +1911,6 @@
       "href": "./humidity/catalog.json",
       "type": "application/json",
       "title": "Humidity"
-    },
-    {
-      "rel": "child",
-      "href": "./hurricanes/catalog.json",
-      "type": "application/json",
-      "title": "Hurricanes"
-    },
-    {
-      "rel": "child",
-      "href": "./hydration/catalog.json",
-      "type": "application/json",
-      "title": "Hydration"
-    },
-    {
-      "rel": "child",
-      "href": "./hydraulic-conductivity/catalog.json",
-      "type": "application/json",
-      "title": "Hydraulic Conductivity"
     },
     {
       "rel": "child",
@@ -2955,18 +1959,6 @@
       "href": "./hydrometeor-type/catalog.json",
       "type": "application/json",
       "title": "Hydrometeor type"
-    },
-    {
-      "rel": "child",
-      "href": "./hydropattern/catalog.json",
-      "type": "application/json",
-      "title": "Hydropattern"
-    },
-    {
-      "rel": "child",
-      "href": "./hydroperiod/catalog.json",
-      "type": "application/json",
-      "title": "Hydroperiod"
     },
     {
       "rel": "child",
@@ -3096,45 +2088,9 @@
     },
     {
       "rel": "child",
-      "href": "./igneous-rocks/catalog.json",
-      "type": "application/json",
-      "title": "Igneous Rocks"
-    },
-    {
-      "rel": "child",
-      "href": "./importance-value/catalog.json",
-      "type": "application/json",
-      "title": "Importance Value"
-    },
-    {
-      "rel": "child",
       "href": "./incoming-solar-radiation/catalog.json",
       "type": "application/json",
       "title": "Incoming Solar Radiation"
-    },
-    {
-      "rel": "child",
-      "href": "./index-of-biotic-integrity/catalog.json",
-      "type": "application/json",
-      "title": "Index Of Biotic Integrity"
-    },
-    {
-      "rel": "child",
-      "href": "./indigenous-vegetation/catalog.json",
-      "type": "application/json",
-      "title": "Indigenous Vegetation"
-    },
-    {
-      "rel": "child",
-      "href": "./industrial-emissions/catalog.json",
-      "type": "application/json",
-      "title": "Industrial Emissions"
-    },
-    {
-      "rel": "child",
-      "href": "./infiltration/catalog.json",
-      "type": "application/json",
-      "title": "Infiltration"
     },
     {
       "rel": "child",
@@ -3162,12 +2118,6 @@
     },
     {
       "rel": "child",
-      "href": "./interplanetary-magnetic-field/catalog.json",
-      "type": "application/json",
-      "title": "Interplanetary magnetic field"
-    },
-    {
-      "rel": "child",
       "href": "./intertidal-zone/catalog.json",
       "type": "application/json",
       "title": "Intertidal Zone"
@@ -3180,69 +2130,9 @@
     },
     {
       "rel": "child",
-      "href": "./ion-chemistry-ionization/catalog.json",
-      "type": "application/json",
-      "title": "Ion Chemistry/Ionization"
-    },
-    {
-      "rel": "child",
-      "href": "./ion-exchange/catalog.json",
-      "type": "application/json",
-      "title": "Ion Exchange"
-    },
-    {
-      "rel": "child",
-      "href": "./ion-flux/catalog.json",
-      "type": "application/json",
-      "title": "Ion Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./ionosphere-magnetosphere-dynamics/catalog.json",
-      "type": "application/json",
-      "title": "Ionosphere/Magnetosphere Dynamics"
-    },
-    {
-      "rel": "child",
-      "href": "./ionospheric-plasma-density/catalog.json",
-      "type": "application/json",
-      "title": "Ionospheric plasma density"
-    },
-    {
-      "rel": "child",
-      "href": "./ionospheric-plasma-velocity/catalog.json",
-      "type": "application/json",
-      "title": "Ionospheric plasma velocity"
-    },
-    {
-      "rel": "child",
-      "href": "./ionospheric-radio-absorption/catalog.json",
-      "type": "application/json",
-      "title": "Ionospheric Radio Absorption"
-    },
-    {
-      "rel": "child",
-      "href": "./ionospheric-scintillation/catalog.json",
-      "type": "application/json",
-      "title": "Ionospheric Scintillation"
-    },
-    {
-      "rel": "child",
-      "href": "./ionospheric-vertical-total-electron-content-vtec/catalog.json",
-      "type": "application/json",
-      "title": "Ionospheric Vertical Total Electron Content (VTEC)"
-    },
-    {
-      "rel": "child",
       "href": "./irradiance/catalog.json",
       "type": "application/json",
       "title": "Irradiance"
-    },
-    {
-      "rel": "child",
-      "href": "./irrigation-water-use/catalog.json",
-      "type": "application/json",
-      "title": "Irrigation Water Use"
     },
     {
       "rel": "child",
@@ -3252,45 +2142,9 @@
     },
     {
       "rel": "child",
-      "href": "./islands/catalog.json",
-      "type": "application/json",
-      "title": "Islands"
-    },
-    {
-      "rel": "child",
-      "href": "./isostatic-rebound/catalog.json",
-      "type": "application/json",
-      "title": "Isostatic Rebound"
-    },
-    {
-      "rel": "child",
       "href": "./isotopes/catalog.json",
       "type": "application/json",
       "title": "Isotopes"
-    },
-    {
-      "rel": "child",
-      "href": "./karst-landforms/catalog.json",
-      "type": "application/json",
-      "title": "Karst Landforms"
-    },
-    {
-      "rel": "child",
-      "href": "./karst-landscape/catalog.json",
-      "type": "application/json",
-      "title": "Karst Landscape"
-    },
-    {
-      "rel": "child",
-      "href": "./karst-processes/catalog.json",
-      "type": "application/json",
-      "title": "Karst Processes"
-    },
-    {
-      "rel": "child",
-      "href": "./lacustrine-wetlands/catalog.json",
-      "type": "application/json",
-      "title": "Lacustrine Wetlands"
     },
     {
       "rel": "child",
@@ -3300,141 +2154,15 @@
     },
     {
       "rel": "child",
-      "href": "./lake-area/catalog.json",
-      "type": "application/json",
-      "title": "Lake area"
-    },
-    {
-      "rel": "child",
       "href": "./lake-ice/catalog.json",
       "type": "application/json",
       "title": "Lake Ice"
     },
     {
       "rel": "child",
-      "href": "./lake-level/catalog.json",
-      "type": "application/json",
-      "title": "Lake level"
-    },
-    {
-      "rel": "child",
-      "href": "./lake-surface-temperature/catalog.json",
-      "type": "application/json",
-      "title": "Lake Surface Temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./lakes-reservoirs/catalog.json",
-      "type": "application/json",
-      "title": "Lakes/Reservoirs"
-    },
-    {
-      "rel": "child",
-      "href": "./land-cover/catalog.json",
-      "type": "application/json",
-      "title": "Land cover"
-    },
-    {
-      "rel": "child",
-      "href": "./land-heat-capacity/catalog.json",
-      "type": "application/json",
-      "title": "Land Heat Capacity"
-    },
-    {
-      "rel": "child",
-      "href": "./land-productivity/catalog.json",
-      "type": "application/json",
-      "title": "Land Productivity"
-    },
-    {
-      "rel": "child",
-      "href": "./land-resources/catalog.json",
-      "type": "application/json",
-      "title": "Land Resources"
-    },
-    {
-      "rel": "child",
-      "href": "./land-subsidence/catalog.json",
-      "type": "application/json",
-      "title": "Land Subsidence"
-    },
-    {
-      "rel": "child",
-      "href": "./land-surface-temperature/catalog.json",
-      "type": "application/json",
-      "title": "Land Surface Temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./land-surface-topography/catalog.json",
-      "type": "application/json",
-      "title": "Land surface topography"
-    },
-    {
-      "rel": "child",
-      "href": "./land-use-classes/catalog.json",
-      "type": "application/json",
-      "title": "Land Use Classes"
-    },
-    {
-      "rel": "child",
-      "href": "./land-use-land-cover-classification/catalog.json",
-      "type": "application/json",
-      "title": "Land Use/Land Cover Classification"
-    },
-    {
-      "rel": "child",
-      "href": "./landscape-patterns/catalog.json",
-      "type": "application/json",
-      "title": "Landscape Patterns"
-    },
-    {
-      "rel": "child",
-      "href": "./landscape-processes/catalog.json",
-      "type": "application/json",
-      "title": "Landscape Processes"
-    },
-    {
-      "rel": "child",
-      "href": "./landslides/catalog.json",
-      "type": "application/json",
-      "title": "Landslides"
-    },
-    {
-      "rel": "child",
-      "href": "./lava-composition-texture/catalog.json",
-      "type": "application/json",
-      "title": "Lava Composition/Texture"
-    },
-    {
-      "rel": "child",
       "href": "./leads/catalog.json",
       "type": "application/json",
       "title": "Leads"
-    },
-    {
-      "rel": "child",
-      "href": "./leaf-area-index-lai/catalog.json",
-      "type": "application/json",
-      "title": "Leaf Area Index (LAI)"
-    },
-    {
-      "rel": "child",
-      "href": "./leaf-characteristics/catalog.json",
-      "type": "application/json",
-      "title": "Leaf Characteristics"
-    },
-    {
-      "rel": "child",
-      "href": "./length-of-freeze-free-period/catalog.json",
-      "type": "application/json",
-      "title": "Length Of Freeze Free Period"
-    },
-    {
-      "rel": "child",
-      "href": "./light-transmission/catalog.json",
-      "type": "application/json",
-      "title": "Light Transmission"
     },
     {
       "rel": "child",
@@ -3447,36 +2175,6 @@
       "href": "./liquid-water-equivalent/catalog.json",
       "type": "application/json",
       "title": "Liquid Water Equivalent"
-    },
-    {
-      "rel": "child",
-      "href": "./lithospheric-plate-motion/catalog.json",
-      "type": "application/json",
-      "title": "Lithospheric Plate Motion"
-    },
-    {
-      "rel": "child",
-      "href": "./litter-characteristics/catalog.json",
-      "type": "application/json",
-      "title": "Litter Characteristics"
-    },
-    {
-      "rel": "child",
-      "href": "./live-fuel-moisture-content/catalog.json",
-      "type": "application/json",
-      "title": "Live Fuel Moisture Content"
-    },
-    {
-      "rel": "child",
-      "href": "./live-leaf/catalog.json",
-      "type": "application/json",
-      "title": "Live Leaf"
-    },
-    {
-      "rel": "child",
-      "href": "./live-wood/catalog.json",
-      "type": "application/json",
-      "title": "Live Wood"
     },
     {
       "rel": "child",
@@ -3504,27 +2202,9 @@
     },
     {
       "rel": "child",
-      "href": "./low-live-fuel-moisture-content/catalog.json",
-      "type": "application/json",
-      "title": "Low Live Fuel Moisture Content"
-    },
-    {
-      "rel": "child",
       "href": "./madden-julian-oscillation/catalog.json",
       "type": "application/json",
       "title": "Madden-Julian Oscillation"
-    },
-    {
-      "rel": "child",
-      "href": "./magma-composition-texture/catalog.json",
-      "type": "application/json",
-      "title": "Magma Composition/Texture"
-    },
-    {
-      "rel": "child",
-      "href": "./magnesium/catalog.json",
-      "type": "application/json",
-      "title": "Magnesium"
     },
     {
       "rel": "child",
@@ -3534,51 +2214,9 @@
     },
     {
       "rel": "child",
-      "href": "./magnetic-declination/catalog.json",
-      "type": "application/json",
-      "title": "Magnetic Declination"
-    },
-    {
-      "rel": "child",
-      "href": "./magnetic-fields-magnetic-currents/catalog.json",
-      "type": "application/json",
-      "title": "Magnetic Fields/Magnetic Currents"
-    },
-    {
-      "rel": "child",
-      "href": "./magnetic-inclination/catalog.json",
-      "type": "application/json",
-      "title": "Magnetic Inclination"
-    },
-    {
-      "rel": "child",
-      "href": "./magnetic-intensity/catalog.json",
-      "type": "application/json",
-      "title": "Magnetic Intensity"
-    },
-    {
-      "rel": "child",
-      "href": "./magnetic-storms/catalog.json",
-      "type": "application/json",
-      "title": "Magnetic Storms"
-    },
-    {
-      "rel": "child",
-      "href": "./major-elements/catalog.json",
-      "type": "application/json",
-      "title": "Major Elements"
-    },
-    {
-      "rel": "child",
       "href": "./mangroves/catalog.json",
       "type": "application/json",
       "title": "Mangroves"
-    },
-    {
-      "rel": "child",
-      "href": "./marine-geochemical-processes/catalog.json",
-      "type": "application/json",
-      "title": "Marine Geochemical Processes"
     },
     {
       "rel": "child",
@@ -3609,12 +2247,6 @@
       "href": "./marine-obstructions/catalog.json",
       "type": "application/json",
       "title": "Marine Obstructions"
-    },
-    {
-      "rel": "child",
-      "href": "./marine-wetlands/catalog.json",
-      "type": "application/json",
-      "title": "Marine Wetlands"
     },
     {
       "rel": "child",
@@ -3660,24 +2292,6 @@
     },
     {
       "rel": "child",
-      "href": "./metals/catalog.json",
-      "type": "application/json",
-      "title": "Metals"
-    },
-    {
-      "rel": "child",
-      "href": "./metamorphic-rocks/catalog.json",
-      "type": "application/json",
-      "title": "Metamorphic Rocks"
-    },
-    {
-      "rel": "child",
-      "href": "./meteorites/catalog.json",
-      "type": "application/json",
-      "title": "Meteorites"
-    },
-    {
-      "rel": "child",
       "href": "./meteorological-optical-range-mor-surface/catalog.json",
       "type": "application/json",
       "title": "Meteorological Optical Range (MOR) (surface)"
@@ -3708,24 +2322,6 @@
     },
     {
       "rel": "child",
-      "href": "./microflora/catalog.json",
-      "type": "application/json",
-      "title": "Microflora"
-    },
-    {
-      "rel": "child",
-      "href": "./microfossil/catalog.json",
-      "type": "application/json",
-      "title": "Microfossil"
-    },
-    {
-      "rel": "child",
-      "href": "./micronutrients-trace-elements/catalog.json",
-      "type": "application/json",
-      "title": "Micronutrients/Trace Elements"
-    },
-    {
-      "rel": "child",
       "href": "./microphytoplankton-carbon/catalog.json",
       "type": "application/json",
       "title": "Microphytoplankton Carbon"
@@ -3735,18 +2331,6 @@
       "href": "./mid-ocean-ridges/catalog.json",
       "type": "application/json",
       "title": "Mid-Ocean Ridges"
-    },
-    {
-      "rel": "child",
-      "href": "./mineraloids/catalog.json",
-      "type": "application/json",
-      "title": "Mineraloids"
-    },
-    {
-      "rel": "child",
-      "href": "./minor-elements/catalog.json",
-      "type": "application/json",
-      "title": "Minor Elements"
     },
     {
       "rel": "child",
@@ -3771,24 +2355,6 @@
       "href": "./monsoons/catalog.json",
       "type": "application/json",
       "title": "Monsoons"
-    },
-    {
-      "rel": "child",
-      "href": "./montane-habitats/catalog.json",
-      "type": "application/json",
-      "title": "Montane Habitats"
-    },
-    {
-      "rel": "child",
-      "href": "./montane-lake/catalog.json",
-      "type": "application/json",
-      "title": "Montane Lake"
-    },
-    {
-      "rel": "child",
-      "href": "./mountain-snow-line-shift/catalog.json",
-      "type": "application/json",
-      "title": "Mountain Snow Line Shift"
     },
     {
       "rel": "child",
@@ -3852,27 +2418,9 @@
     },
     {
       "rel": "child",
-      "href": "./natural-gas/catalog.json",
-      "type": "application/json",
-      "title": "Natural Gas"
-    },
-    {
-      "rel": "child",
-      "href": "./neotectonics/catalog.json",
-      "type": "application/json",
-      "title": "Neotectonics"
-    },
-    {
-      "rel": "child",
       "href": "./net-radiation/catalog.json",
       "type": "application/json",
       "title": "Net Radiation"
-    },
-    {
-      "rel": "child",
-      "href": "./neutral-particle-flux/catalog.json",
-      "type": "application/json",
-      "title": "Neutral Particle Flux"
     },
     {
       "rel": "child",
@@ -3912,24 +2460,6 @@
     },
     {
       "rel": "child",
-      "href": "./nir-swir-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "NIR/SWIR flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./nir-swir-flux/catalog.json",
-      "type": "application/json",
-      "title": "NIR/SWIR flux"
-    },
-    {
-      "rel": "child",
-      "href": "./nir-swir-sky-image/catalog.json",
-      "type": "application/json",
-      "title": "NIR/SWIR sky image"
-    },
-    {
-      "rel": "child",
       "href": "./nitrate-particles/catalog.json",
       "type": "application/json",
       "title": "Nitrate Particles"
@@ -3951,12 +2481,6 @@
       "href": "./nitric-oxide/catalog.json",
       "type": "application/json",
       "title": "Nitric Oxide"
-    },
-    {
-      "rel": "child",
-      "href": "./nitrogen-compounds/catalog.json",
-      "type": "application/json",
-      "title": "Nitrogen Compounds"
     },
     {
       "rel": "child",
@@ -4044,21 +2568,9 @@
     },
     {
       "rel": "child",
-      "href": "./non-metallic-minerals/catalog.json",
-      "type": "application/json",
-      "title": "Non-Metallic Minerals"
-    },
-    {
-      "rel": "child",
       "href": "./non-methane-hydrocarbons-volatile-organic-compounds/catalog.json",
       "type": "application/json",
       "title": "Non-Methane Hydrocarbons/Volatile Organic Compounds"
-    },
-    {
-      "rel": "child",
-      "href": "./normalised-difference-vegetation-index-ndvi/catalog.json",
-      "type": "application/json",
-      "title": "Normalised Difference Vegetation Index (NDVI)"
     },
     {
       "rel": "child",
@@ -4155,12 +2667,6 @@
       "href": "./ocean-contaminants/catalog.json",
       "type": "application/json",
       "title": "Ocean Contaminants"
-    },
-    {
-      "rel": "child",
-      "href": "./ocean-crust-deformation/catalog.json",
-      "type": "application/json",
-      "title": "Ocean Crust Deformation"
     },
     {
       "rel": "child",
@@ -4350,12 +2856,6 @@
     },
     {
       "rel": "child",
-      "href": "./oxidation-reduction/catalog.json",
-      "type": "application/json",
-      "title": "Oxidation/Reduction"
-    },
-    {
-      "rel": "child",
       "href": "./oxygen/catalog.json",
       "type": "application/json",
       "title": "Oxygen"
@@ -4386,81 +2886,15 @@
     },
     {
       "rel": "child",
-      "href": "./paleomagnetism/catalog.json",
-      "type": "application/json",
-      "title": "Paleomagnetism"
-    },
-    {
-      "rel": "child",
-      "href": "./palmer-drought-crop-moisture-index/catalog.json",
-      "type": "application/json",
-      "title": "Palmer Drought Crop Moisture Index"
-    },
-    {
-      "rel": "child",
-      "href": "./palmer-drought-severity-index/catalog.json",
-      "type": "application/json",
-      "title": "Palmer Drought Severity Index"
-    },
-    {
-      "rel": "child",
-      "href": "./palmer-hydrological-drought-index/catalog.json",
-      "type": "application/json",
-      "title": "Palmer Hydrological Drought Index"
-    },
-    {
-      "rel": "child",
-      "href": "./palmer-z-index/catalog.json",
-      "type": "application/json",
-      "title": "Palmer Z Index"
-    },
-    {
-      "rel": "child",
-      "href": "./palustrine-wetlands/catalog.json",
-      "type": "application/json",
-      "title": "Palustrine Wetlands"
-    },
-    {
-      "rel": "child",
       "href": "./pan/catalog.json",
       "type": "application/json",
       "title": "PAN"
     },
     {
       "rel": "child",
-      "href": "./particle-composition/catalog.json",
-      "type": "application/json",
-      "title": "Particle Composition"
-    },
-    {
-      "rel": "child",
-      "href": "./particle-density/catalog.json",
-      "type": "application/json",
-      "title": "Particle Density"
-    },
-    {
-      "rel": "child",
-      "href": "./particle-distribution-functions/catalog.json",
-      "type": "application/json",
-      "title": "Particle Distribution Functions"
-    },
-    {
-      "rel": "child",
       "href": "./particle-flux/catalog.json",
       "type": "application/json",
       "title": "Particle Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./particle-speed/catalog.json",
-      "type": "application/json",
-      "title": "Particle Speed"
-    },
-    {
-      "rel": "child",
-      "href": "./particle-temperature/catalog.json",
-      "type": "application/json",
-      "title": "Particle Temperature"
     },
     {
       "rel": "child",
@@ -4506,24 +2940,6 @@
     },
     {
       "rel": "child",
-      "href": "./peatlands/catalog.json",
-      "type": "application/json",
-      "title": "Peatlands"
-    },
-    {
-      "rel": "child",
-      "href": "./pelagic/catalog.json",
-      "type": "application/json",
-      "title": "Pelagic"
-    },
-    {
-      "rel": "child",
-      "href": "./percolation/catalog.json",
-      "type": "application/json",
-      "title": "Percolation"
-    },
-    {
-      "rel": "child",
       "href": "./periglacial-processes/catalog.json",
       "type": "application/json",
       "title": "Periglacial Processes"
@@ -4536,12 +2952,6 @@
     },
     {
       "rel": "child",
-      "href": "./petroleum-hydrocarbons/catalog.json",
-      "type": "application/json",
-      "title": "Petroleum Hydrocarbons"
-    },
-    {
-      "rel": "child",
       "href": "./ph/catalog.json",
       "type": "application/json",
       "title": "Ph"
@@ -4551,12 +2961,6 @@
       "href": "./phosphate/catalog.json",
       "type": "application/json",
       "title": "Phosphate"
-    },
-    {
-      "rel": "child",
-      "href": "./phosphorous/catalog.json",
-      "type": "application/json",
-      "title": "Phosphorous"
     },
     {
       "rel": "child",
@@ -4620,24 +3024,6 @@
     },
     {
       "rel": "child",
-      "href": "./plankton/catalog.json",
-      "type": "application/json",
-      "title": "Plankton"
-    },
-    {
-      "rel": "child",
-      "href": "./plate-boundaries/catalog.json",
-      "type": "application/json",
-      "title": "Plate Boundaries"
-    },
-    {
-      "rel": "child",
-      "href": "./plate-tectonics-stress/catalog.json",
-      "type": "application/json",
-      "title": "Plate Tectonics Stress"
-    },
-    {
-      "rel": "child",
       "href": "./plate-tectonics/catalog.json",
       "type": "application/json",
       "title": "Plate Tectonics"
@@ -4668,27 +3054,9 @@
     },
     {
       "rel": "child",
-      "href": "./pollen/catalog.json",
-      "type": "application/json",
-      "title": "Pollen"
-    },
-    {
-      "rel": "child",
       "href": "./polynyas/catalog.json",
       "type": "application/json",
       "title": "Polynyas"
-    },
-    {
-      "rel": "child",
-      "href": "./potability/catalog.json",
-      "type": "application/json",
-      "title": "Potability"
-    },
-    {
-      "rel": "child",
-      "href": "./potassium/catalog.json",
-      "type": "application/json",
-      "title": "Potassium"
     },
     {
       "rel": "child",
@@ -4701,12 +3069,6 @@
       "href": "./potential-temperature/catalog.json",
       "type": "application/json",
       "title": "Potential Temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./precipitation-amount/catalog.json",
-      "type": "application/json",
-      "title": "Precipitation Amount"
     },
     {
       "rel": "child",
@@ -4752,12 +3114,6 @@
     },
     {
       "rel": "child",
-      "href": "./prescribed-burns-fires/catalog.json",
-      "type": "application/json",
-      "title": "Prescribed Burns/Fires"
-    },
-    {
-      "rel": "child",
       "href": "./pressure-anomalies/catalog.json",
       "type": "application/json",
       "title": "Pressure Anomalies"
@@ -4776,24 +3132,6 @@
     },
     {
       "rel": "child",
-      "href": "./proton-differential-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Proton differential directional flux"
-    },
-    {
-      "rel": "child",
-      "href": "./proton-flux/catalog.json",
-      "type": "application/json",
-      "title": "Proton Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./proton-integral-directional-flux/catalog.json",
-      "type": "application/json",
-      "title": "Proton integral directional flux"
-    },
-    {
-      "rel": "child",
       "href": "./psc-occurrence/catalog.json",
       "type": "application/json",
       "title": "PSC occurrence"
@@ -4806,12 +3144,6 @@
     },
     {
       "rel": "child",
-      "href": "./pyroclastics-composition-texture/catalog.json",
-      "type": "application/json",
-      "title": "Pyroclastics Composition/Texture"
-    },
-    {
-      "rel": "child",
       "href": "./quasi-biennial-oscillation/catalog.json",
       "type": "application/json",
       "title": "Quasi-Biennial Oscillation"
@@ -4821,12 +3153,6 @@
       "href": "./radiance/catalog.json",
       "type": "application/json",
       "title": "Radiance"
-    },
-    {
-      "rel": "child",
-      "href": "./radiation-dose-rate/catalog.json",
-      "type": "application/json",
-      "title": "Radiation Dose Rate"
     },
     {
       "rel": "child",
@@ -4848,18 +3174,6 @@
     },
     {
       "rel": "child",
-      "href": "./radio-waves/catalog.json",
-      "type": "application/json",
-      "title": "Radio-waves"
-    },
-    {
-      "rel": "child",
-      "href": "./radioactive-elements/catalog.json",
-      "type": "application/json",
-      "title": "Radioactive Elements"
-    },
-    {
-      "rel": "child",
       "href": "./radiocarbon/catalog.json",
       "type": "application/json",
       "title": "Radiocarbon"
@@ -4872,45 +3186,9 @@
     },
     {
       "rel": "child",
-      "href": "./rebound-direction/catalog.json",
-      "type": "application/json",
-      "title": "Rebound Direction"
-    },
-    {
-      "rel": "child",
-      "href": "./rebound-rate/catalog.json",
-      "type": "application/json",
-      "title": "Rebound Rate"
-    },
-    {
-      "rel": "child",
-      "href": "./reclamation-revegetation-restoration/catalog.json",
-      "type": "application/json",
-      "title": "Reclamation/Revegetation/Restoration"
-    },
-    {
-      "rel": "child",
-      "href": "./reef/catalog.json",
-      "type": "application/json",
-      "title": "Reef"
-    },
-    {
-      "rel": "child",
-      "href": "./reference-fields/catalog.json",
-      "type": "application/json",
-      "title": "Reference Fields"
-    },
-    {
-      "rel": "child",
       "href": "./reflectance/catalog.json",
       "type": "application/json",
       "title": "Reflectance"
-    },
-    {
-      "rel": "child",
-      "href": "./reforestation-revegetation/catalog.json",
-      "type": "application/json",
-      "title": "Reforestation/Revegetation"
     },
     {
       "rel": "child",
@@ -4938,18 +3216,6 @@
     },
     {
       "rel": "child",
-      "href": "./riparian-wetlands/catalog.json",
-      "type": "application/json",
-      "title": "Riparian Wetlands"
-    },
-    {
-      "rel": "child",
-      "href": "./river-discharge/catalog.json",
-      "type": "application/json",
-      "title": "River discharge"
-    },
-    {
-      "rel": "child",
       "href": "./river-ice-depth-extent/catalog.json",
       "type": "application/json",
       "title": "River Ice Depth/Extent"
@@ -4959,18 +3225,6 @@
       "href": "./river-ice/catalog.json",
       "type": "application/json",
       "title": "River Ice"
-    },
-    {
-      "rel": "child",
-      "href": "./rivers-streams/catalog.json",
-      "type": "application/json",
-      "title": "Rivers/Streams"
-    },
-    {
-      "rel": "child",
-      "href": "./rock-age-determinations/catalog.json",
-      "type": "application/json",
-      "title": "Rock Age Determinations"
     },
     {
       "rel": "child",
@@ -4992,12 +3246,6 @@
     },
     {
       "rel": "child",
-      "href": "./rotational-motion-variations/catalog.json",
-      "type": "application/json",
-      "title": "Rotational Motion/Variations"
-    },
-    {
-      "rel": "child",
       "href": "./runoff/catalog.json",
       "type": "application/json",
       "title": "Runoff"
@@ -5007,12 +3255,6 @@
       "href": "./sahel-standardized-rainfall/catalog.json",
       "type": "application/json",
       "title": "Sahel Standardized Rainfall"
-    },
-    {
-      "rel": "child",
-      "href": "./saline-lakes/catalog.json",
-      "type": "application/json",
-      "title": "Saline Lakes"
     },
     {
       "rel": "child",
@@ -5031,24 +3273,6 @@
       "href": "./sargassum/catalog.json",
       "type": "application/json",
       "title": "Sargassum"
-    },
-    {
-      "rel": "child",
-      "href": "./satellite-orbits-revolution/catalog.json",
-      "type": "application/json",
-      "title": "Satellite Orbits/Revolution"
-    },
-    {
-      "rel": "child",
-      "href": "./satellite-soil-moisture-index/catalog.json",
-      "type": "application/json",
-      "title": "Satellite Soil Moisture Index"
-    },
-    {
-      "rel": "child",
-      "href": "./savannas/catalog.json",
-      "type": "application/json",
-      "title": "Savannas"
     },
     {
       "rel": "child",
@@ -5268,39 +3492,9 @@
     },
     {
       "rel": "child",
-      "href": "./sediments/catalog.json",
-      "type": "application/json",
-      "title": "Sediments"
-    },
-    {
-      "rel": "child",
       "href": "./seiches/catalog.json",
       "type": "application/json",
       "title": "Seiches"
-    },
-    {
-      "rel": "child",
-      "href": "./seismic-body-waves/catalog.json",
-      "type": "application/json",
-      "title": "Seismic Body Waves"
-    },
-    {
-      "rel": "child",
-      "href": "./seismic-surface-waves/catalog.json",
-      "type": "application/json",
-      "title": "Seismic Surface Waves"
-    },
-    {
-      "rel": "child",
-      "href": "./severe-storms/catalog.json",
-      "type": "application/json",
-      "title": "Severe Storms"
-    },
-    {
-      "rel": "child",
-      "href": "./sewage-disposal/catalog.json",
-      "type": "application/json",
-      "title": "Sewage Disposal"
     },
     {
       "rel": "child",
@@ -5337,12 +3531,6 @@
       "href": "./shortwave-radiation/catalog.json",
       "type": "application/json",
       "title": "Shortwave Radiation"
-    },
-    {
-      "rel": "child",
-      "href": "./shrubland-scrub/catalog.json",
-      "type": "application/json",
-      "title": "Shrubland/Scrub"
     },
     {
       "rel": "child",
@@ -5472,153 +3660,9 @@
     },
     {
       "rel": "child",
-      "href": "./soil-absorption/catalog.json",
-      "type": "application/json",
-      "title": "Soil Absorption"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-bulk-density/catalog.json",
-      "type": "application/json",
-      "title": "Soil Bulk Density"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-classification/catalog.json",
-      "type": "application/json",
-      "title": "Soil Classification"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-color/catalog.json",
-      "type": "application/json",
-      "title": "Soil Color"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-compaction/catalog.json",
-      "type": "application/json",
-      "title": "Soil Compaction"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-consistence/catalog.json",
-      "type": "application/json",
-      "title": "Soil Consistence"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-depth/catalog.json",
-      "type": "application/json",
-      "title": "Soil Depth"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-erosion/catalog.json",
-      "type": "application/json",
-      "title": "Soil Erosion"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-fertility/catalog.json",
-      "type": "application/json",
-      "title": "Soil Fertility"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-gas-air/catalog.json",
-      "type": "application/json",
-      "title": "Soil Gas/Air"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-heat-budget/catalog.json",
-      "type": "application/json",
-      "title": "Soil Heat Budget"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-horizons-profile/catalog.json",
-      "type": "application/json",
-      "title": "Soil Horizons/Profile"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-impedance/catalog.json",
-      "type": "application/json",
-      "title": "Soil Impedance"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-infiltration/catalog.json",
-      "type": "application/json",
-      "title": "Soil Infiltration"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-moisture-at-surface/catalog.json",
-      "type": "application/json",
-      "title": "Soil moisture at surface"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-moisture-in-the-roots-region/catalog.json",
-      "type": "application/json",
-      "title": "Soil moisture  (in the roots region)"
-    },
-    {
-      "rel": "child",
       "href": "./soil-moisture/catalog.json",
       "type": "application/json",
       "title": "Soil Moisture"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-ph/catalog.json",
-      "type": "application/json",
-      "title": "Soil PH"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-plasticity/catalog.json",
-      "type": "application/json",
-      "title": "Soil Plasticity"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-porosity/catalog.json",
-      "type": "application/json",
-      "title": "Soil Porosity"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-productivity/catalog.json",
-      "type": "application/json",
-      "title": "Soil Productivity"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-respiration/catalog.json",
-      "type": "application/json",
-      "title": "Soil Respiration"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-rooting-depth/catalog.json",
-      "type": "application/json",
-      "title": "Soil Rooting Depth"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-salinity-soil-sodicity/catalog.json",
-      "type": "application/json",
-      "title": "Soil Salinity/Soil Sodicity"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-structure/catalog.json",
-      "type": "application/json",
-      "title": "Soil Structure"
     },
     {
       "rel": "child",
@@ -5628,141 +3672,9 @@
     },
     {
       "rel": "child",
-      "href": "./soil-texture/catalog.json",
-      "type": "application/json",
-      "title": "Soil Texture"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-type/catalog.json",
-      "type": "application/json",
-      "title": "Soil type"
-    },
-    {
-      "rel": "child",
-      "href": "./soil-water-holding-capacity/catalog.json",
-      "type": "application/json",
-      "title": "Soil Water Holding Capacity"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-active-regions/catalog.json",
-      "type": "application/json",
-      "title": "Solar Active Regions"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-activity/catalog.json",
-      "type": "application/json",
-      "title": "Solar Activity"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-ca-ii-k-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar Ca II-K image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-coronagraphic-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar coronagraphic image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-electric-field/catalog.json",
-      "type": "application/json",
-      "title": "Solar electric field"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-euv-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Solar EUV flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-euv-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar EUV flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-euv-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar EUV image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-flares/catalog.json",
-      "type": "application/json",
-      "title": "Solar Flares"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-gamma-ray-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Solar gamma-ray flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-gamma-ray-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar gamma-ray flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-h-alpha-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar H-alpha image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-imagery/catalog.json",
-      "type": "application/json",
-      "title": "Solar Imagery"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-induced-chlorophyll-fluorescence-sif/catalog.json",
-      "type": "application/json",
-      "title": "Solar-induced chlorophyll fluorescence (SIF)"
-    },
-    {
-      "rel": "child",
       "href": "./solar-irradiance/catalog.json",
       "type": "application/json",
       "title": "Solar Irradiance"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-lyman-alpha-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar Lyman-alpha flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-lyman-alpha-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar Lyman-alpha image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-magnetic-field/catalog.json",
-      "type": "application/json",
-      "title": "Solar magnetic field"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-oscillations/catalog.json",
-      "type": "application/json",
-      "title": "Solar Oscillations"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-prominences-solar-filaments/catalog.json",
-      "type": "application/json",
-      "title": "Solar Prominences/Solar Filaments"
     },
     {
       "rel": "child",
@@ -5772,141 +3684,9 @@
     },
     {
       "rel": "child",
-      "href": "./solar-radio-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Solar radio flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-radio-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar radio flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-radio-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar radio image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-radio-wave-emissions/catalog.json",
-      "type": "application/json",
-      "title": "Solar Radio Wave Emissions"
-    },
-    {
-      "rel": "child",
       "href": "./solar-spectral-irradiance/catalog.json",
       "type": "application/json",
       "title": "Solar spectral irradiance"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-synoptic-maps/catalog.json",
-      "type": "application/json",
-      "title": "Solar Synoptic Maps"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-ultraviolet-emissions/catalog.json",
-      "type": "application/json",
-      "title": "Solar Ultraviolet Emissions"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-uv-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Solar UV flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-uv-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar UV flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-uv-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar UV image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-velocity-fields/catalog.json",
-      "type": "application/json",
-      "title": "Solar Velocity Fields"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-vis-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Solar VIS flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-vis-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar VIS flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-vis-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar VIS image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-white-light-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar white light image"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-wind-density/catalog.json",
-      "type": "application/json",
-      "title": "Solar wind density"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-wind-temperature/catalog.json",
-      "type": "application/json",
-      "title": "Solar wind temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-wind-velocity/catalog.json",
-      "type": "application/json",
-      "title": "Solar wind velocity"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-wind/catalog.json",
-      "type": "application/json",
-      "title": "Solar Wind"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-x-ray-emissions/catalog.json",
-      "type": "application/json",
-      "title": "Solar X-Ray Emissions"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-x-ray-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "Solar X-ray flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-x-ray-flux/catalog.json",
-      "type": "application/json",
-      "title": "Solar X-ray flux"
-    },
-    {
-      "rel": "child",
-      "href": "./solar-x-ray-image/catalog.json",
-      "type": "application/json",
-      "title": "Solar X-ray image"
     },
     {
       "rel": "child",
@@ -5922,21 +3702,9 @@
     },
     {
       "rel": "child",
-      "href": "./spread-f/catalog.json",
-      "type": "application/json",
-      "title": "Spread F"
-    },
-    {
-      "rel": "child",
       "href": "./stable-isotopes/catalog.json",
       "type": "application/json",
       "title": "Stable Isotopes"
-    },
-    {
-      "rel": "child",
-      "href": "./stage-height/catalog.json",
-      "type": "application/json",
-      "title": "Stage Height"
     },
     {
       "rel": "child",
@@ -5970,12 +3738,6 @@
     },
     {
       "rel": "child",
-      "href": "./strain/catalog.json",
-      "type": "application/json",
-      "title": "Strain"
-    },
-    {
-      "rel": "child",
       "href": "./stratigraphic-sequence/catalog.json",
       "type": "application/json",
       "title": "Stratigraphic Sequence"
@@ -5997,12 +3759,6 @@
       "href": "./streamfunctions/catalog.json",
       "type": "application/json",
       "title": "Streamfunctions"
-    },
-    {
-      "rel": "child",
-      "href": "./sub-atomic-particle-flux/catalog.json",
-      "type": "application/json",
-      "title": "Sub-Atomic Particle Flux"
     },
     {
       "rel": "child",
@@ -6042,12 +3798,6 @@
     },
     {
       "rel": "child",
-      "href": "./sudden-stratospheric-warming-ssw/catalog.json",
-      "type": "application/json",
-      "title": "Sudden Stratospheric Warming (SSW)"
-    },
-    {
-      "rel": "child",
       "href": "./sulfate-particles/catalog.json",
       "type": "application/json",
       "title": "Sulfate Particles"
@@ -6072,21 +3822,9 @@
     },
     {
       "rel": "child",
-      "href": "./sulfur/catalog.json",
-      "type": "application/json",
-      "title": "Sulfur"
-    },
-    {
-      "rel": "child",
       "href": "./sunshine/catalog.json",
       "type": "application/json",
       "title": "Sunshine"
-    },
-    {
-      "rel": "child",
-      "href": "./sunspots/catalog.json",
-      "type": "application/json",
-      "title": "Sunspots"
     },
     {
       "rel": "child",
@@ -6102,12 +3840,6 @@
     },
     {
       "rel": "child",
-      "href": "./surface-moisture-index/catalog.json",
-      "type": "application/json",
-      "title": "Surface Moisture Index"
-    },
-    {
-      "rel": "child",
       "href": "./surface-pressure/catalog.json",
       "type": "application/json",
       "title": "Surface Pressure"
@@ -6117,12 +3849,6 @@
       "href": "./surface-radiation-budget/catalog.json",
       "type": "application/json",
       "title": "Surface Radiation Budget"
-    },
-    {
-      "rel": "child",
-      "href": "./surface-roughness/catalog.json",
-      "type": "application/json",
-      "title": "Surface Roughness"
     },
     {
       "rel": "child",
@@ -6141,18 +3867,6 @@
       "href": "./surface-temperature/catalog.json",
       "type": "application/json",
       "title": "Surface Temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./surface-water-chemistry/catalog.json",
-      "type": "application/json",
-      "title": "Surface Water Chemistry"
-    },
-    {
-      "rel": "child",
-      "href": "./surface-water-processes-measurements/catalog.json",
-      "type": "application/json",
-      "title": "Surface Water Processes/Measurements"
     },
     {
       "rel": "child",
@@ -6180,12 +3894,6 @@
     },
     {
       "rel": "child",
-      "href": "./swamps/catalog.json",
-      "type": "application/json",
-      "title": "Swamps"
-    },
-    {
-      "rel": "child",
       "href": "./swells/catalog.json",
       "type": "application/json",
       "title": "Swells"
@@ -6195,18 +3903,6 @@
       "href": "./talik/catalog.json",
       "type": "application/json",
       "title": "Talik"
-    },
-    {
-      "rel": "child",
-      "href": "./tectonic-landforms/catalog.json",
-      "type": "application/json",
-      "title": "Tectonic Landforms"
-    },
-    {
-      "rel": "child",
-      "href": "./tectonic-processes/catalog.json",
-      "type": "application/json",
-      "title": "Tectonic Processes"
     },
     {
       "rel": "child",
@@ -6258,12 +3954,6 @@
     },
     {
       "rel": "child",
-      "href": "./thermal-conductivity/catalog.json",
-      "type": "application/json",
-      "title": "Thermal Conductivity"
-    },
-    {
-      "rel": "child",
       "href": "./thermocline/catalog.json",
       "type": "application/json",
       "title": "Thermocline"
@@ -6300,21 +3990,9 @@
     },
     {
       "rel": "child",
-      "href": "./topographic-effects/catalog.json",
-      "type": "application/json",
-      "title": "Topographic Effects"
-    },
-    {
-      "rel": "child",
       "href": "./topographic-waves/catalog.json",
       "type": "application/json",
       "title": "Topographic Waves"
-    },
-    {
-      "rel": "child",
-      "href": "./topographical-relief-maps/catalog.json",
-      "type": "application/json",
-      "title": "Topographical Relief Maps"
     },
     {
       "rel": "child",
@@ -6327,12 +4005,6 @@
       "href": "./total-alkalinity-at/catalog.json",
       "type": "application/json",
       "title": "Total alkalinity (AT)"
-    },
-    {
-      "rel": "child",
-      "href": "./total-dissolved-solids/catalog.json",
-      "type": "application/json",
-      "title": "Total Dissolved Solids"
     },
     {
       "rel": "child",
@@ -6366,18 +4038,6 @@
     },
     {
       "rel": "child",
-      "href": "./total-surface-water/catalog.json",
-      "type": "application/json",
-      "title": "Total Surface Water"
-    },
-    {
-      "rel": "child",
-      "href": "./toxic-chemicals/catalog.json",
-      "type": "application/json",
-      "title": "Toxic Chemicals"
-    },
-    {
-      "rel": "child",
       "href": "./trace-elements-trace-metals/catalog.json",
       "type": "application/json",
       "title": "Trace Elements/Trace Metals"
@@ -6405,18 +4065,6 @@
       "href": "./transmittance/catalog.json",
       "type": "application/json",
       "title": "Transmittance"
-    },
-    {
-      "rel": "child",
-      "href": "./tree-line-shift/catalog.json",
-      "type": "application/json",
-      "title": "Tree Line Shift"
-    },
-    {
-      "rel": "child",
-      "href": "./tree-rings/catalog.json",
-      "type": "application/json",
-      "title": "Tree Rings"
     },
     {
       "rel": "child",
@@ -6486,12 +4134,6 @@
     },
     {
       "rel": "child",
-      "href": "./typhoons/catalog.json",
-      "type": "application/json",
-      "title": "Typhoons"
-    },
-    {
-      "rel": "child",
       "href": "./ultraviolet-radiation/catalog.json",
       "type": "application/json",
       "title": "Ultraviolet Radiation"
@@ -6546,66 +4188,6 @@
     },
     {
       "rel": "child",
-      "href": "./urbanization-urban-sprawl/catalog.json",
-      "type": "application/json",
-      "title": "Urbanization/Urban Sprawl"
-    },
-    {
-      "rel": "child",
-      "href": "./uv-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "UV flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./uv-flux/catalog.json",
-      "type": "application/json",
-      "title": "UV flux"
-    },
-    {
-      "rel": "child",
-      "href": "./uv-sky-image/catalog.json",
-      "type": "application/json",
-      "title": "UV sky image"
-    },
-    {
-      "rel": "child",
-      "href": "./vegetation-cover/catalog.json",
-      "type": "application/json",
-      "title": "Vegetation Cover"
-    },
-    {
-      "rel": "child",
-      "href": "./vegetation-index/catalog.json",
-      "type": "application/json",
-      "title": "Vegetation Index"
-    },
-    {
-      "rel": "child",
-      "href": "./vegetation-optical-depth/catalog.json",
-      "type": "application/json",
-      "title": "Vegetation Optical Depth"
-    },
-    {
-      "rel": "child",
-      "href": "./vegetation-species/catalog.json",
-      "type": "application/json",
-      "title": "Vegetation Species"
-    },
-    {
-      "rel": "child",
-      "href": "./vegetation-type/catalog.json",
-      "type": "application/json",
-      "title": "Vegetation type"
-    },
-    {
-      "rel": "child",
-      "href": "./vegetation-water-content/catalog.json",
-      "type": "application/json",
-      "title": "Vegetation Water Content"
-    },
-    {
-      "rel": "child",
       "href": "./vertical-profiles/catalog.json",
       "type": "application/json",
       "title": "Vertical Profiles"
@@ -6630,24 +4212,6 @@
     },
     {
       "rel": "child",
-      "href": "./vis-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "VIS flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./vis-flux/catalog.json",
-      "type": "application/json",
-      "title": "VIS flux"
-    },
-    {
-      "rel": "child",
-      "href": "./vis-sky-image/catalog.json",
-      "type": "application/json",
-      "title": "VIS sky image"
-    },
-    {
-      "rel": "child",
       "href": "./visibility/catalog.json",
       "type": "application/json",
       "title": "Visibility"
@@ -6660,63 +4224,15 @@
     },
     {
       "rel": "child",
-      "href": "./volcanic-activity/catalog.json",
-      "type": "application/json",
-      "title": "Volcanic Activity"
-    },
-    {
-      "rel": "child",
-      "href": "./volcanic-eruptions/catalog.json",
-      "type": "application/json",
-      "title": "Volcanic Eruptions"
-    },
-    {
-      "rel": "child",
-      "href": "./volcanic-gases/catalog.json",
-      "type": "application/json",
-      "title": "Volcanic Gases"
-    },
-    {
-      "rel": "child",
-      "href": "./volcanic-unrest/catalog.json",
-      "type": "application/json",
-      "title": "Volcanic unrest"
-    },
-    {
-      "rel": "child",
-      "href": "./volcano-occurrences/catalog.json",
-      "type": "application/json",
-      "title": "Volcano Occurrences"
-    },
-    {
-      "rel": "child",
-      "href": "./volcano-predictions/catalog.json",
-      "type": "application/json",
-      "title": "Volcano Predictions"
-    },
-    {
-      "rel": "child",
       "href": "./vorticity/catalog.json",
       "type": "application/json",
       "title": "Vorticity"
     },
     {
       "rel": "child",
-      "href": "./water-channels/catalog.json",
-      "type": "application/json",
-      "title": "Water Channels"
-    },
-    {
-      "rel": "child",
       "href": "./water-depth/catalog.json",
       "type": "application/json",
       "title": "Water Depth"
-    },
-    {
-      "rel": "child",
-      "href": "./water-ion-concentrations/catalog.json",
-      "type": "application/json",
-      "title": "Water Ion Concentrations"
     },
     {
       "rel": "child",
@@ -6744,27 +4260,9 @@
     },
     {
       "rel": "child",
-      "href": "./water-table-depth/catalog.json",
-      "type": "application/json",
-      "title": "Water Table Depth"
-    },
-    {
-      "rel": "child",
-      "href": "./water-table/catalog.json",
-      "type": "application/json",
-      "title": "Water Table"
-    },
-    {
-      "rel": "child",
       "href": "./water-temperature/catalog.json",
       "type": "application/json",
       "title": "Water Temperature"
-    },
-    {
-      "rel": "child",
-      "href": "./water-trace-elements/catalog.json",
-      "type": "application/json",
-      "title": "Water Trace Elements"
     },
     {
       "rel": "child",
@@ -6783,18 +4281,6 @@
       "href": "./water-vapor/catalog.json",
       "type": "application/json",
       "title": "Water Vapor"
-    },
-    {
-      "rel": "child",
-      "href": "./water-yield/catalog.json",
-      "type": "application/json",
-      "title": "Water Yield"
-    },
-    {
-      "rel": "child",
-      "href": "./watershed-characteristics/catalog.json",
-      "type": "application/json",
-      "title": "Watershed Characteristics"
     },
     {
       "rel": "child",
@@ -6858,12 +4344,6 @@
     },
     {
       "rel": "child",
-      "href": "./weathering/catalog.json",
-      "type": "application/json",
-      "title": "Weathering"
-    },
-    {
-      "rel": "child",
       "href": "./weighted-anomaly-standardized-precipitation-index/catalog.json",
       "type": "application/json",
       "title": "Weighted Anomaly Standardized Precipitation Index"
@@ -6888,18 +4368,6 @@
     },
     {
       "rel": "child",
-      "href": "./wetland-extent/catalog.json",
-      "type": "application/json",
-      "title": "Wetland extent"
-    },
-    {
-      "rel": "child",
-      "href": "./wetlands/catalog.json",
-      "type": "application/json",
-      "title": "Wetlands"
-    },
-    {
-      "rel": "child",
       "href": "./whiteout/catalog.json",
       "type": "application/json",
       "title": "Whiteout"
@@ -6921,12 +4389,6 @@
       "href": "./wind-driven-circulation/catalog.json",
       "type": "application/json",
       "title": "Wind-Driven Circulation"
-    },
-    {
-      "rel": "child",
-      "href": "./wind-gust/catalog.json",
-      "type": "application/json",
-      "title": "Wind gust"
     },
     {
       "rel": "child",
@@ -6984,231 +4446,9 @@
     },
     {
       "rel": "child",
-      "href": "./x-ray-flux-spectrum/catalog.json",
-      "type": "application/json",
-      "title": "X-ray flux spectrum"
-    },
-    {
-      "rel": "child",
-      "href": "./x-ray-flux/catalog.json",
-      "type": "application/json",
-      "title": "X-Ray Flux"
-    },
-    {
-      "rel": "child",
-      "href": "./x-ray-sky-image/catalog.json",
-      "type": "application/json",
-      "title": "X-ray sky image"
-    },
-    {
-      "rel": "child",
-      "href": "./zooplankton/catalog.json",
-      "type": "application/json",
-      "title": "Zooplankton"
-    },
-    {
-      "rel": "child",
-      "href": "./surface-reflectance/catalog.json",
-      "type": "application/json",
-      "title": "Surface Reflectance"
-    },
-    {
-      "rel": "child",
       "href": "./extreme-weather/catalog.json",
       "type": "application/json",
       "title": "Extreme Weather"
-    },
-    {
-      "rel": "child",
-      "href": "./gross-primary-productivity/catalog.json",
-      "type": "application/json",
-      "title": "Gross Primary Productivity (GPP)"
-    },
-    {
-      "rel": "child",
-      "href": "./above-ground-agricultural-biomass/catalog.json",
-      "type": "application/json",
-      "title": "Above Ground Agricultural Biomass"
-    },
-    {
-      "rel": "child",
-      "href": "./actual-evapotranspiration/catalog.json",
-      "type": "application/json",
-      "title": "Actual Evapotranspiration"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-residue-cover-percentage/catalog.json",
-      "type": "application/json",
-      "title": "Crop Residue Cover Percentage"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-rotation-sequence/catalog.json",
-      "type": "application/json",
-      "title": "Crop Rotation Sequence"
-    },
-    {
-      "rel": "child",
-      "href": "./surface-soil-moisture/catalog.json",
-      "type": "application/json",
-      "title": "Surface Soil Moisture"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-type-area-estimate/catalog.json",
-      "type": "application/json",
-      "title": "Crop Type Area Estimate"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-type-masks/catalog.json",
-      "type": "application/json",
-      "title": "Crop Type Masks"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-yield-estimation/catalog.json",
-      "type": "application/json",
-      "title": "Crop Yield Estimation"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-yield-forecast/catalog.json",
-      "type": "application/json",
-      "title": "Crop Yield Forecast"
-    },
-    {
-      "rel": "child",
-      "href": "./current-crop-stage/catalog.json",
-      "type": "application/json",
-      "title": "Current Crop Stage"
-    },
-    {
-      "rel": "child",
-      "href": "./degree-growing-days/catalog.json",
-      "type": "application/json",
-      "title": "Degree Growing Days"
-    },
-    {
-      "rel": "child",
-      "href": "./field-boundaries/catalog.json",
-      "type": "application/json",
-      "title": "Field Boundaries"
-    },
-    {
-      "rel": "child",
-      "href": "./fractional-cover/catalog.json",
-      "type": "application/json",
-      "title": "Fractional Cover"
-    },
-    {
-      "rel": "child",
-      "href": "./irrigated-cropland-map/catalog.json",
-      "type": "application/json",
-      "title": "Irrigated Cropland Map"
-    },
-    {
-      "rel": "child",
-      "href": "./managed-grasslands-mask/catalog.json",
-      "type": "application/json",
-      "title": "Managed Grasslands Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./non-perennial-cover-crop-utilization-mask/catalog.json",
-      "type": "application/json",
-      "title": "Non-Perennial Cover Crop Utilization Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./reference-crop-calendars/catalog.json",
-      "type": "application/json",
-      "title": "Reference Crop Calendars"
-    },
-    {
-      "rel": "child",
-      "href": "./reference-evapotranspiration/catalog.json",
-      "type": "application/json",
-      "title": "Reference Evapotranspiration"
-    },
-    {
-      "rel": "child",
-      "href": "./seasonal-dynamics-surface-water-availability/catalog.json",
-      "type": "application/json",
-      "title": "Seasonal Dynamics of Surface Water Availability"
-    },
-    {
-      "rel": "child",
-      "href": "./root-zone-soil-moisture/catalog.json",
-      "type": "application/json",
-      "title": "Root Zone Soil Moisture"
-    },
-    {
-      "rel": "child",
-      "href": "./precipitation/catalog.json",
-      "type": "application/json",
-      "title": "Precipitation"
-    },
-    {
-      "rel": "child",
-      "href": "./water-productivity/catalog.json",
-      "type": "application/json",
-      "title": "Water Productivity"
-    },
-    {
-      "rel": "child",
-      "href": "./seasonal-fallow-mask/catalog.json",
-      "type": "application/json",
-      "title": "Seasonal Fallow Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./rangelands-mask/catalog.json",
-      "type": "application/json",
-      "title": "Rangelands Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./rangeland-condition-assessment/catalog.json",
-      "type": "application/json",
-      "title": "Rangeland Condition Assessment"
-    },
-    {
-      "rel": "child",
-      "href": "./perennial-cropland-mask/catalog.json",
-      "type": "application/json",
-      "title": "Perennial Cropland Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./non-perennial-cropland-mask/catalog.json",
-      "type": "application/json",
-      "title": "Non-Perennial Cropland Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./cropland-mask/catalog.json",
-      "type": "application/json",
-      "title": "Cropland Mask"
-    },
-    {
-      "rel": "child",
-      "href": "./crop-condition-assessment/catalog.json",
-      "type": "application/json",
-      "title": "Crop Condition Assessment"
-    },
-    {
-      "rel": "child",
-      "href": "./agriculture-mask/catalog.json",
-      "type": "application/json",
-      "title": "Agriculture Mask"
-    },
-    {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "Open Science Catalog"
     },
     {
       "rel": "child",
@@ -7242,9 +4482,15 @@
     },
     {
       "rel": "child",
-      "href": "./tree-cover-change/catalog.json",
+      "href": "./sea-surface-temperature/catalog.json",
       "type": "application/json",
-      "title": "Tree Cover Change"
+      "title": "Sea Surface Temperature"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
     },
     {
       "rel": "self",

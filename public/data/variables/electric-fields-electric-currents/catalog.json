@@ -35,12 +35,6 @@
     },
     {
       "rel": "related",
-      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Magnetosphere Ionosphere"
-    },
-    {
-      "rel": "related",
       "href": "../../themes/atmosphere/catalog.json",
       "type": "application/json",
       "title": "Theme: Atmosphere"

@@ -80,12 +80,6 @@
       "href": "../../themes/cryosphere/catalog.json",
       "type": "application/json",
       "title": "Theme: Cryosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Magnetosphere Ionosphere"
     }
   ],
   "stac_extensions": [
