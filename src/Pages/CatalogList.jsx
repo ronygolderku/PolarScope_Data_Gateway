@@ -59,7 +59,9 @@ const CatalogList = () => {
               }
 
               const res = await fetch(itemPath);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
               const details = await res.json();
+                console.log("Fetched catalog:", itemPath, "description exists:", !!details.description);
               
               // For themes catalog, add image
               let image = null;
@@ -78,10 +80,15 @@ const CatalogList = () => {
                 image: image,
               };
             } catch (err) {
-              console.error("Error fetching details:", err);
+              console.error("Error fetching details for", link.href, ":", err);
               return {
                 ...link,
+                id: link.id || "",
                 title: link.title,
+                description: link.title || "No description available",
+                region: undefined,
+                extent: undefined,
+                keywords: [],
               };
             }
           }),

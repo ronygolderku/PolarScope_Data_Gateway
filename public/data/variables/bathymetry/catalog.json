@@ -18,12 +18,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/bathymetry-arctic-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Bathymetry_Arctic_Cryosat"
-    },
-    {
-      "rel": "child",
       "href": "../../products/satellite-sar-altimeter-sea-floor-cp4o/collection.json",
       "type": "application/json",
       "title": "Satellite SAR altimeter product_Sea Floor Mapping_Oceania_Cryosat"

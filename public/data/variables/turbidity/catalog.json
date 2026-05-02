@@ -35,12 +35,6 @@
       "title": "Description"
     },
     {
-      "rel": "child",
-      "href": "../../products/l3-turbidity-daily-monthly-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 3 Turbidity, 300m, daily and monthly"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

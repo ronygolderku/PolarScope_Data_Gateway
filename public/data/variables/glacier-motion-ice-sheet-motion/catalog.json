@@ -23,24 +23,6 @@
       "title": "Description"
     },
     {
-      "rel": "child",
-      "href": "../../products/dynamics-of-glacier-lakes-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Dynamics of glacier lakes_SwissAlps_S1/2"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/glacier-surface-flow-velocity-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Glacier surface flow velocity_SwissAlps_S2"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/slope-instabilities-glacier-forefields-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Slope instabilities in glacier forefields_SwissAlps_S1/2"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

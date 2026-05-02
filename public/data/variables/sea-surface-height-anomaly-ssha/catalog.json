@@ -43,28 +43,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/hr-tidal-atlas-arctic-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Arctide2017_High-resolution tidal atlas_Arctic Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "type": "application/json"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/lr-satellite-altimeter-open-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Low Resolution Mode satellite altimeter product _Open Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/rdsar-satellite-sar-altimeter-open-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "RDSAR Satellite SAR altimeter product_Open Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
       "type": "application/json"
     },
     {
@@ -81,27 +59,7 @@
     },
     {
       "rel": "child",
-      "href": "../../products/satellite-altimeter-polar-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite LRM, SAR, SARIN polar altimeter product_Polar Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-sar-altimeter-coastal-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite SAR altimeter product_Coastal Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-sar-altimeter-open-ocean-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite SAR altimeter product_Open Ocean_Cryosat"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-sarin-altimeter-coastal-cp4o/collection.json",
-      "type": "application/json",
-      "title": "Satellite SARIN altimeter product_Coastal Ocean_Cryosat"
+      "type": "application/json"
     },
     {
       "rel": "child",

@@ -17,12 +17,6 @@
       "title": "Description"
     },
     {
-      "rel": "child",
-      "href": "../../products/subglacial-lake-volumes/collection.json",
-      "type": "application/json",
-      "title": "Sublacial Lake Volumes (ESA POLAR+ 4D Greenland Experimantal Dataset"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

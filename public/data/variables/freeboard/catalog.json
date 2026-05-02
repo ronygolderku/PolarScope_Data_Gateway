@@ -48,12 +48,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/sea-ice-thickness-lpf-arcticsummit/collection.json",
-      "type": "application/json",
-      "title": "Sea ice thickness_monthly_Oct 2010-July 2020Arctic_CryoSat-2 Baseline-D observations"
-    },
-    {
-      "rel": "child",
       "href": "../../products/southern-ocean-sit-from-cryosat-2/collection.json",
       "type": "application/json",
       "title": "Southern Ocean sea ice thickness from CryoSat-2"

@@ -18,12 +18,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/snow-depth-europe-alps-alpsnow/collection.json",
-      "type": "application/json",
-      "title": "Snow depth for European Alps_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/southern-ocean-sit-from-cryosat-2/collection.json",
       "type": "application/json",
       "title": "Southern Ocean sea ice thickness from CryoSat-2"

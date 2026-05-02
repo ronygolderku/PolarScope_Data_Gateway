@@ -17,12 +17,6 @@
       "title": "Description"
     },
     {
-      "rel": "child",
-      "href": "../../products/basal-melt-monthly/collection.json",
-      "type": "application/json",
-      "title": "Basal Melt (ESA POLAR+ 4D Greenland Experimental Dataset)"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

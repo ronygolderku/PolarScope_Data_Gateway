@@ -28,11 +28,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/in-situ-sealabio/collection.json",
-      "type": "application/json"
-    },
-    {
-      "rel": "child",
       "type": "application/json"
     },
     {
