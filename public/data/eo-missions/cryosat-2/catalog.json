@@ -58,11 +58,7 @@
       "type": "application/json",
       "title": "Ground Virtual Observatory Data CRYOSAT-2"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
-    },
+  
     {
       "rel": "child",
       "href": "../../products/ice-sheet-antarctica-l1b-spice/collection.json",
