@@ -22,30 +22,12 @@
     },
     {
       "rel": "child",
-      "href": "../../products/basal-melt-monthly/collection.json",
-      "type": "application/json",
-      "title": "Basal Melt (ESA POLAR+ 4D Greenland Experimental Dataset)"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/binary-wet-snow-s14science-snow/collection.json",
-      "type": "application/json",
-      "title": "Binary wet snow extent products"
-    },
-    {
-      "rel": "child",
       "href": "../../products/database-of-labelled-sentinel-1-interferograms-v20/collection.json",
       "type": "application/json",
       "title": "Database of labelled Sentinel-1 interferograms - v.2.0"
     },
     {
       "rel": "child",
-      "href": "../../products/dynamics-of-glacier-lakes-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Dynamics of glacier lakes_SwissAlps_S1/2"
-    },
-    {
-      "rel": "child",
       "type": "application/json"
     },
     {
@@ -55,20 +37,6 @@
     {
       "rel": "child",
       "type": "application/json"
-    },
-    {
-      "rel": "child",
-      "type": "application/json"
-    },
-    {
-      "rel": "child",
-      "type": "application/json"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/ocean-freshwater-flux-arctic-theme3/collection.json",
-      "type": "application/json",
-      "title": "Ocean freshwater fluxes_Arctic_Multimission"
     },
     {
       "rel": "child",
@@ -92,57 +60,17 @@
     },
     {
       "rel": "child",
-      "href": "../../products/slope-instabilities-glacier-forefields-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Slope instabilities in glacier forefields_SwissAlps_S1/2"
+      "type": "application/json"
     },
     {
       "rel": "child",
-      "href": "../../products/sm-based-inversion-approach-ebro-irrigation/collection.json",
-      "type": "application/json",
-      "title": "Regional irrigation water use at high-resolution - EBRO basin"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/sm-based-inversion-approach-murray-darling-irrigation/collection.json",
-      "type": "application/json",
-      "title": "Regional irrigation water use at high-resolution - MURRAY-DARLING basin"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/sm-based-inversion-approach-po-irrigation/collection.json",
-      "type": "application/json",
-      "title": "Regional irrigation water use at high-resolution - PO valley"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/snow-cover-alpglacier/collection.json",
-      "type": "application/json",
-      "title": "Snow cover on glaciers_SwissAlps_S1/2"
+      "type": "application/json"
     },
     {
       "rel": "child",
       "href": "../../products/subglacial-lake-drainage-4dantarctica/collection.json",
       "type": "application/json",
       "title": "Subglacial Lake Drainage and Filling Antarctica Multimission"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/subglacial-melt-maps/collection.json",
-      "type": "application/json",
-      "title": "Subglacial Melt Maps"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/supraglacial-storage-and-drainage-lake-features-mapped-by-sentinel1/collection.json",
-      "type": "application/json",
-      "title": "Supraglacial Storage and Drainage - Lake Features Mapped by Sentinel-1"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/surface-soil-moisture-s1-for-surface-soil-moisture/collection.json",
-      "type": "application/json",
-      "title": "Surface soil moisture time series_1 km resolution_Southern Italy_S1"
     },
     {
       "rel": "child",
@@ -167,18 +95,6 @@
       "href": "../../products/grounding-line-position-antarctica/collection.json",
       "type": "application/json",
       "title": "Grounding line position: MEaSUREs Antarctic Grounding Line from Differential Satellite Radar Interferometry, v.2"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/gmc-training-europe-dsgsd-landslide-subsidence-uplift/collection.json",
-      "type": "application/json",
-      "title": "Training dataset of the feature-based GMC algorithm"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/european-ground-motion-classification-eugmc/collection.json",
-      "type": "application/json",
-      "title": "European Ground Motion Classification dataset (EuGMC)"
     },
     {
       "rel": "child",

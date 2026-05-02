@@ -24,18 +24,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/eddy-census-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Eddy census"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/4dmed-2d-sss/collection.json",
-      "type": "application/json",
-      "title": "ESA 4DMED-SEA - Mediterranean Multivariate Optimal Interpolated Salinity and Density fields"
-    },
-    {
-      "rel": "child",
       "href": "../../products/gross-net-carbon-flux-lpf-vad3emecum/collection.json",
       "type": "application/json",
       "title": "Gross and net Carbon Flux Estimates_Fluxcom2.0 Carbon"
@@ -51,90 +39,6 @@
       "href": "../../products/ice-shelf-antarctica-cryosmos/collection.json",
       "type": "application/json",
       "title": "Ice shelf product_Antarctica_SMOS"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-smos-sss-daily-ascending-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 2 SMOS , Ascending orbit, 0.25°*0.25°, daily averaged produced daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-smos-sss-daily-descending-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 2 SMOS , Descending orbit, 0.25°*0.25°, daily averaged produced daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l3-chla-daily-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 3 Chl-a, 300m daily and monthly"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l3-cryosat2-sea-level-anomaly-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level-3 Cryosat-2 [2011, 2019] along-track 5Hz product, sea level anomaly, ~1km resolution."
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l3-s3-sea-level-anomaly-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level-3 Sentinel-3A [mid 2016, 2018] along-track 5Hz product, sea level anomaly, ~1km resolution"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l3-spm-daily-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 3 Suspended Particulate Matter, 300m, daily and monthly"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l3-sss-9day-average-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 3 SSS, 0.25°*0.25°, 9-day averaged produced daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l3-turbidity-daily-monthly-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 3 Turbidity, 300m, daily and monthly"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4-chla-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 4 Ocean Colour products Chl-a, 300m, daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4-dynamic-topography-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 4, absolute dynamic topography, multi-mission gridded merged products for a period of 1 year, 0.0625°*0.0625°, daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4-geostrophic-currents-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 4, geostrophic currents, multi-mission gridded merged products for a period of 1 year, 0.0625°*0.0625°, daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4-sea-level-anomaly-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 4, sea level anomaly, multi-mission gridded merged products for a period of 1 year, 0.0625°*0.0625°, daily"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4-sss-eo4sibs/collection.json",
-      "type": "application/json",
-      "title": "Level 4 product SSS, 0.05°*0.0505°"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/ocean-freshwater-flux-arctic-theme3/collection.json",
-      "type": "application/json",
-      "title": "Ocean freshwater fluxes_Arctic_Multimission"
     },
     {
       "rel": "child",
@@ -174,21 +78,9 @@
     },
     {
       "rel": "child",
-      "href": "../../products/sea-surface-salinity-europe-smos-med/collection.json",
-      "type": "application/json",
-      "title": "L4 Interpolated Sea Surface Salinity_Europe_SMOS"
-    },
-    {
-      "rel": "child",
       "href": "../../products/sea-surface-salinity-godae-oceanview/collection.json",
       "type": "application/json",
       "title": "Sea Surface Salinity Bias_Global_SMOS"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/smos-l3-africa-smos-vegetation/collection.json",
-      "type": "application/json",
-      "title": "Gridded_Africa_SMOS level 3 products CATDS"
     },
     {
       "rel": "child",
@@ -201,12 +93,6 @@
       "href": "../../products/surface-melting-antarctica-cryosmos/collection.json",
       "type": "application/json",
       "title": "Occurrence of Surface Melting_Antarctica_SMOS"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/vod-africa-smos-vegetation/collection.json",
-      "type": "application/json",
-      "title": "VOD_Africa_SMOS IC products CATDS"
     },
     {
       "rel": "child",

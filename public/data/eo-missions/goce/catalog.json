@@ -40,12 +40,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/geothermal-heat-flow-greenland-3d-earth/collection.json",
-      "type": "application/json",
-      "title": "Geothermal Heat Flow Database and Map_Greenland_GOCE_SWARM"
-    },
-    {
-      "rel": "child",
       "type": "application/json"
     },
     {

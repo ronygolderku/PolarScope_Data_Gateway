@@ -23,12 +23,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/ocean-freshwater-flux-arctic-theme3/collection.json",
-      "type": "application/json",
-      "title": "Ocean freshwater fluxes_Arctic_Multimission"
-    },
-    {
-      "rel": "child",
       "href": "../../products/subglacial-lake-drainage-4dantarctica/collection.json",
       "type": "application/json",
       "title": "Subglacial Lake Drainage and Filling Antarctica Multimission"

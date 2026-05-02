@@ -52,7 +52,6 @@
       "type": "application/json",
       "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
     },
-   
     {
       "rel": "child",
       "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
@@ -124,12 +123,6 @@
       "href": "../../products/monthly-global-total-phytoplankton-carbon-dataset-9-km-oc-cci-v42/collection.json",
       "type": "application/json",
       "title": "Monthly Global Total Phytoplankton Carbon dataset (9 km, OC-CCI v4.2)"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/ocean-freshwater-flux-arctic-theme3/collection.json",
-      "type": "application/json",
-      "title": "Ocean freshwater fluxes_Arctic_Multimission"
     },
     {
       "rel": "child",
