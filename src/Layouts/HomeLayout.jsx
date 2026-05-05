@@ -86,7 +86,7 @@ const HomeLayout = () => {
                 src={aceasLogo}
                 alt="ACEAS Logo"
                 className="w-full max-h-28 h-auto rounded-md object-contain"
-              
+
               />
             </div>
           </Link>
@@ -137,14 +137,14 @@ const HomeLayout = () => {
               </NavLink>
             </li>
 
-            {/* Map */}
+            {/* BGC-Argo */}
             <li>
               <NavLink
                 to="/map"
                 className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
-                <FaGlobe /> Map
+                <FaGlobe /> BGC-Argo
               </NavLink>
             </li>
           </ul>
