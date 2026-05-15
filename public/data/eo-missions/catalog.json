@@ -120,9 +120,9 @@
     },
     {
       "rel": "child",
-      "href": "./envisat/catalog.json",
+      "href": "./multimission/catalog.json",
       "type": "application/json",
-      "title": "ENVISAT"
+      "title": "MULTIMISSION"
     },
     {
       "rel": "child",
