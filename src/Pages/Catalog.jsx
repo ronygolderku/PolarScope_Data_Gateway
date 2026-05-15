@@ -106,7 +106,7 @@ const Catalog = () => {
 
       {/* Description & Metadata Section */}
       <div className="flex flex-col lg:flex-row gap-12">
-        <div className="flex-1">
+        <div className="flex-1 bg-[#143A6A] border border-[#1B457A] rounded-2xl p-6 shadow-sm">
           <h2 className="text-2xl font-bold text-[#F4C542] mb-3">Description</h2>
           <p className="text-[#D6E1F0] leading-relaxed text-justify">
             {catalogInfo?.description || "Loading description..."}
@@ -114,7 +114,7 @@ const Catalog = () => {
         </div>
 
         {/* Metadata Section */}
-        <div className="lg:w-1/3">
+        <div className="lg:w-1/3 bg-[#143A6A] border border-[#1B457A] rounded-2xl p-6 shadow-sm">
           <h2 className="text-2xl font-bold text-[#F4C542] mb-3">Metadata</h2>
           <div>
             <h3 className="font-bold text-[#F8FAFC] mb-2 text-sm">General</h3>
@@ -194,10 +194,10 @@ const Catalog = () => {
             <div
               key={index}
               onClick={() => handleCatalogClick(catalog)}
-              className={`cursor-pointer bg-[#143A6A] border border-[#1B457A] group ${
+              className={`cursor-pointer bg-[#143A6A] border border-[#1B457A] rounded-2xl p-5 group ${
                 viewMode === "list"
-                  ? "flex flex-col md:flex-row gap-6 border-b border-[#1B457A] last:border-0 pb-6 hover:bg-[#1B457A] transition-colors"
-                  : "rounded-lg p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542]"
+                  ? "flex flex-col md:flex-row gap-6 hover:bg-[#1B457A] transition-colors"
+                  : "shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542]"
               }`}
             >
               <div className={`flex-1 ${viewMode === "list" ? "" : ""}`}>
