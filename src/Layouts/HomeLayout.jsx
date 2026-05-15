@@ -140,8 +140,8 @@ const HomeLayout = () => {
             {/* BGC-Argo */}
             <li>
               <NavLink
-                to="/map"
-                className={({ isActive }) => (isActive ? "active" : "")}
+                to="/bgc-argo"
+                className={() => (location.pathname.startsWith("/map") || location.pathname.startsWith("/bgc-argo") ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 <FaGlobe /> BGC-Argo
@@ -151,11 +151,15 @@ const HomeLayout = () => {
 
           {/* Footer Section */}
           <div className="w-full p-4 border-t border-base-300 text-center">
-            <p className="text-xs text-gray-600">
-              © 2026 ACEAS
-            </p>
-            <p className="text-xs text-gray-500 mt-1">
-              PolarScope Data Gateway
+            <p className="text-xs text-gray-600">© 2026 ACEAS</p>
+            <p className="text-xs text-gray-500 mt-1">PolarScope Data Gateway</p>
+            <p className="text-xs text-gray-500 mt-2">
+              <a
+                href="mailto:communications@antarcticscience.utas.edu.au"
+                className="underline"
+              >
+                communications@antarcticscience.utas.edu.au
+              </a>
             </p>
           </div>
         </div>

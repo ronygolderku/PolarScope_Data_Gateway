@@ -69,75 +69,86 @@ const Home = () => {
 
           <div className="mt-8">
             <h1 className="text-3xl md:text-5xl font-bold text-secondary mb-4">
-              Welcome to the Open Science Catalog
+              Welcome to the Southern Ocean Open Science Catalogue
             </h1>
+
             <p className="text-lg text-gray-700 max-w-4xl">
-              A catalog of publicly available geoscience products, datasets and resources developed in the frame of scientific research Projects funded by Asutralian Center of Excellence in Antarctic Science (ACEAS). Products vary in geographical and temporal extent, production methodology, validation and quality. Please refer to the documentation of each product for details
+              The Southern Ocean Open Science Catalogue is a curated gateway to
+              publicly available geoscience datasets, Earth observation products,
+              and scientific resources relevant to the Southern Ocean and Antarctic
+              regions.
             </p>
 
-            <p className="font-bold text-gray-900 my-2">
-              What products can I find here?
-            </p>
-            <p className="text-gray-700">
-              The majority of pages on opensciencedata.esa.int only hold metadata
-              for each product and project. The actual data and its documentation
-              are maintained and accessible at the data providers, outside of
-              esa.int, for the majority of cases. This catalog provides the metadata
-              and links to the data as it exists in those many other locations.
-            </p>
-            <p className="mt-2 text-gray-700 space-x-2">
-              Explore the catalog, consisting of{" "}
-              <Link
-                to="/eo-missions"
-                className="underline font-semibold text-secondary hover:text-primary"
-              >
-                EO Missions
-              </Link>
-              <Link
-                to="/themes"
-                className="underline font-semibold text-secondary hover:text-primary"
-              >
-                Themes
-              </Link>
-              <Link
-                to="/products"
-                className="underline font-semibold text-secondary hover:text-primary"
-              >
-                Products
-              </Link>
-              <Link
-                to="/variables"
-                className="underline font-semibold text-secondary hover:text-primary"
-              >
-                Variables
-              </Link>
-              <Link
-                to="#"
-                className="underline font-semibold text-secondary hover:text-primary"
-              >
-                 BGC Argo
-              </Link>
-            </p>
-            <p className="mt-2 text-gray-700">
-              Choose a theme below to explore available products/projects or
-              programmatically access the catalog via the{" "}
-              <Link
-                to=""
-                className="underline font-semibold text-secondary hover:text-primary"
-              >
-                API Documentation
-              </Link>
-              !
+            <p className="mt-3 text-gray-700 max-w-4xl">
+              This initiative is supported by the Australian Centre for Excellence
+              in Antarctic Science (ACEAS) to improve discovery, accessibility,
+              and visibility of open scientific resources across the Southern
+              Ocean and Antarctic research community. The catalogue brings together
+              metadata and access links from multiple external data providers,
+              research programs, and repositories to support open science and
+              interdisciplinary research.
             </p>
 
-            <p className="mt-2 text-gray-700">
-              To suggest changes and/or contribute to continuously growing number of
-              available products, you can register here, and make your contribution
-              to the catalog!
-            </p>
+            <h3 className="font-bold text-gray-900 mt-6">Explore Available Resources</h3>
+            <p className="text-gray-700">Browse datasets and products by:</p>
+            <ul className="list-disc list-inside text-gray-700 ml-4 space-y-1">
+              <li>
+                <Link to="/eo-missions" className="underline font-semibold text-secondary hover:text-primary">
+                  Satellite Earth Observation Missions
+                </Link>
+              </li>
+              <li>
+                <Link to="/themes" className="underline font-semibold text-secondary hover:text-primary">
+                  Themes
+                </Link>
+              </li>
+              <li>
+                <Link to="/variables" className="underline font-semibold text-secondary hover:text-primary">
+                  Variables
+                </Link>
+              </li>
+              <li>
+                <Link to="/products" className="underline font-semibold text-secondary hover:text-primary">
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/bgc-argo" className="underline font-semibold text-secondary hover:text-primary">
+                  BGC Argo
+                </Link>
+              </li>
+            </ul>
+
+            <h3 className="font-bold text-gray-900 mt-6">About the Catalogue</h3>
             <p className="text-gray-700">
-              If you have any questions or feedback regarding Open Science Catalog,
-              please contact us at{" "}
+              The catalogue primarily provides metadata and links to externally
+              hosted datasets. In most cases, the underlying data products remain
+              maintained and distributed by the original data providers. This
+              platform is intended as a discovery and access portal and does not
+              host or manage any of the datasets listed.
+            </p>
+
+            <h3 className="font-bold text-gray-900 mt-6">Disclaimer</h3>
+            <p className="text-gray-700">
+              Inclusion of a dataset or product in this catalogue does not imply
+              endorsement, ranking, certification, or recommendation by the
+              catalogue team, ACEAS, or participating institutions. The catalogue
+              does not assess which product is "best" for a given scientific or
+              operational application. Products vary in methodology, validation,
+              spatial and temporal coverage, and intended use. Users are
+              encouraged to consult the original dataset documentation and
+              providers for product-specific guidance and suitability.
+            </p>
+
+            <h3 className="font-bold text-gray-900 mt-6">Contribute</h3>
+            <p className="text-gray-700">
+              We welcome community contributions and suggestions for additional
+              datasets and products relevant to the Southern Ocean and Antarctic
+              regions.
+            </p>
+
+            <p className="text-gray-700 mt-3">
+              Contact: 
               <a
                 href="mailto:communications@antarcticscience.utas.edu.au"
                 className="underline font-semibold text-secondary hover:text-primary"
