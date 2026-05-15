@@ -1,5 +1,5 @@
 /* urbanist google font */
- @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 @import "tailwindcss";
 @plugin "daisyui"{
@@ -11,12 +11,21 @@
   default: true;
   --color-primary: #009d9a;
   --color-secondary: #003366;
- } 
+ }
+
+:root {
+  --color-bg-primary: #0F2D57;
+  --color-bg-secondary: #143A6A;
+  --color-bg-tertiary: #1B457A;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #D6E1F0;
+  --color-accent: #F4C542;
+}
  
  body{
-   font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+   font-family: "Inter", sans-serif;
+   background-color: var(--color-bg-primary);
+   color: var(--color-text-primary);
   }  
 
 @keyframes aceasFloat {
@@ -43,7 +52,7 @@
 
 /* Active link styling */
 .menu li > a.active {
-  background-color:  #E5E7EB; 
-  color: #000000  !important; 
-  
+  background-color: var(--color-bg-secondary);
+  color: var(--color-accent) !important;
+  border-left: 3px solid var(--color-accent);
 }

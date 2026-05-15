@@ -53,7 +53,7 @@ const HomeLayout = () => {
       />
       <div className="drawer-content transition-all duration-300 h-screen flex flex-col overflow-hidden">
         {/* Navbar */}
-        <nav className="navbar sticky top-0 z-5 w-full bg-base-300">
+        <nav className="navbar sticky top-0 z-5 w-full bg-[#0F2D57] border-b border-[#1B457A]">
           <button
             aria-label="toggle sidebar"
             className="btn btn-square btn-ghost"
@@ -61,13 +61,13 @@ const HomeLayout = () => {
           >
             {isSidebarOpen ? <FaChevronLeft /> : <FaBars />}
           </button>
-          <div className="px-4 text-3xl font-bold text-secondary">
+          <div className="px-4 text-3xl font-bold text-[#F4C542]">
             PolarScope: Antarctic & Southern Ocean Data Gateway
           </div>
         </nav>
 
         {/* Page content */}
-        <div className="flex-1 min-h-0 overflow-auto">
+        <div className="flex-1 min-h-0 overflow-auto bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F]">
           <Outlet />
         </div>
       </div>
@@ -78,10 +78,10 @@ const HomeLayout = () => {
           className="drawer-overlay"
           onClick={closeSidebar}
         ></label>
-        <div className="flex min-h-full flex-col items-start bg-base-200 w-64">
+        <div className="flex min-h-full flex-col items-start bg-[#0F2D57] border-r border-[#1B457A] w-64 text-[#F8FAFC]">
           {/* Logo Section */}
-          <Link to="/" className="w-full p-3 flex justify-center border-b border-base-300">
-            <div className="w-full  rounded-lg bg-secondary p-1 shadow-sm">
+          <Link to="/" className="w-full p-3 flex justify-center border-b border-[#1B457A]">
+            <div className="w-full rounded-lg bg-[#143A6A] p-1 shadow-sm">
               <img
                 src={aceasLogo}
                 alt="ACEAS Logo"
@@ -150,10 +150,10 @@ const HomeLayout = () => {
           </ul>
 
           {/* Footer Section */}
-          <div className="w-full p-4 border-t border-base-300 text-center">
-            <p className="text-xs text-gray-600">© 2026 ACEAS</p>
-            <p className="text-xs text-gray-500 mt-1">PolarScope Data Gateway</p>
-            <p className="text-xs text-gray-500 mt-2">
+          <div className="w-full p-4 border-t border-[#1B457A] text-center">
+            <p className="text-xs text-[#D6E1F0]">© 2026 ACEAS</p>
+            <p className="text-xs text-[#D6E1F0] mt-1">PolarScope Data Gateway</p>
+            <p className="text-xs text-[#D6E1F0] mt-2">
               <a
                 href="mailto:communications@antarcticscience.utas.edu.au"
                 className="underline"

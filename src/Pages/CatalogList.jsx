@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { motion } from "framer-motion";
 import { useParams, useNavigate, useLocation } from "react-router";
 import {
   FaThLarge,
@@ -147,13 +148,13 @@ const CatalogList = () => {
   }
 
   return (
-    <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">
+    <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC] p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">
       {/* Header Section */}
       <div className="space-y-4">
-        <h1 className="text-3xl md:text-4xl font-bold capitalize text-gray-900 border-l-8 border-primary pl-4">
+        <h1 className="text-3xl md:text-4xl font-bold capitalize text-[#F4C542] border-l-8 border-[#F4C542] pl-4">
           {themeInfo?.title || catalogType}
         </h1>
-        <div className="text-sm text-gray-500 pl-6 flex flex-wrap gap-2 items-center">
+        <div className="text-sm text-[#D6E1F0] pl-6 flex flex-wrap gap-2 items-center">
           <span>
             in{" "}
             <span className="text-primary font-semibold">
@@ -179,10 +180,10 @@ const CatalogList = () => {
       {/* Description Section */}
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1 flex flex-col">
-          <h2 className="text-2xl font-bold text-secondary mb-3">
+          <h2 className="text-2xl font-bold text-[#F4C542] mb-3">
             Description
           </h2>
-          <div className="text-gray-700 leading-relaxed text-justify relative">
+          <div className="text-[#D6E1F0] leading-relaxed text-justify relative">
             <p
               className={`${!isExpanded ? "line-clamp-6 md:line-clamp-[10]" : ""} transition-all duration-300`}
             >
@@ -191,7 +192,7 @@ const CatalogList = () => {
             {themeInfo?.description && themeInfo.description.length > 300 && (
               <button
                 onClick={toggleReadMore}
-                className="text-primary font-bold hover:underline mt-2 text-sm focus:outline-none"
+                className="text-[#F4C542] font-bold hover:underline mt-2 text-sm focus:outline-none"
               >
                 {isExpanded ? "Read Less" : "Read More"}
               </button>
@@ -199,12 +200,12 @@ const CatalogList = () => {
           </div>
 
           <div className="mt-4 order-2 lg:order-none">
-            <h3 className="text-xl font-bold text-secondary mb-2">
+            <h3 className="text-xl font-bold text-[#F4C542] mb-2">
               Additional Resources
             </h3>
             <ul className="list-disc list-inside text-sm pl-2">
               <li>
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text-[#F8FAFC] hover:text-[#F4C542] transition-colors">
                   Description
                 </a>
               </li>
@@ -214,7 +215,7 @@ const CatalogList = () => {
 
         <div className="flex-1 flex flex-col order-3 lg:order-none">
           {themeId && (
-            <div className="bg-gray-100 p-2 border border-gray-200 rounded-md shadow-sm h-full max-h-[400px] overflow-hidden">
+            <div className="bg-[#143A6A] p-2 border border-[#1B457A] rounded-md shadow-sm h-full max-h-[400px] overflow-hidden">
               <img
                 src={getThemeImage()}
                 alt={themeId}
@@ -226,17 +227,17 @@ const CatalogList = () => {
       </div>
 
       {/* Metadata Section */}
-      <div className="border-t border-gray-200 pt-6">
-        <h2 className="text-2xl font-bold text-secondary mb-4">Metadata</h2>
-        <div className="bg-gray-50 p-4 rounded-md border border-gray-200 text-sm">
+      <div className="border-t border-[#1B457A] pt-6">
+        <h2 className="text-2xl font-bold text-[#F4C542] mb-4">Metadata</h2>
+        <div className="bg-[#143A6A] p-4 rounded-md border border-[#1B457A] text-sm">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="font-semibold text-gray-600">General</div>
+            <div className="font-semibold text-[#F4C542]">General</div>
           </div>
-          <div className="divider my-2"></div>
+          <div className="divider my-2 border-[#1B457A]"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-10">
-              <span className="font-semibold w-24">Updated</span>
-              <span>
+              <span className="font-semibold w-24 text-[#F8FAFC]">Updated</span>
+              <span className="text-[#D6E1F0]">
                 {themeInfo?.updated
                   ? new Date(themeInfo.updated).toLocaleString()
                   : "Loading..."}
@@ -250,7 +251,7 @@ const CatalogList = () => {
       <div className="space-y-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex items-center gap-2">
-            <h2 className="text-2xl font-bold text-secondary">Catalogs</h2>
+            <h2 className="text-2xl font-bold text-[#F4C542]">Catalogs</h2>
             <span className="badge badge-neutral">{filteredAndSortedProducts.length}</span>
           </div>
 
@@ -293,13 +294,13 @@ const CatalogList = () => {
           <input
             type="text"
             placeholder="Filter catalogs by title, description or keywords"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0]"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           {catalogType === "products" && !themeId && (
             <select
-              className="select select-bordered w-full md:max-w-xs"
+              className="select select-bordered w-full md:max-w-xs bg-[#143A6A] border-[#1B457A] text-[#F8FAFC]"
               value={selectedKeyword}
               onChange={(e) => setSelectedKeyword(e.target.value)}
             >
@@ -334,20 +335,20 @@ const CatalogList = () => {
               <div
                 key={index}
                 onClick={() => navPath && navigate(navPath, { state: { from: location.pathname } })}
-                className={`${navPath ? 'cursor-pointer' : ''} rounded-lg border border-gray-300 bg-white p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-primary group ${
+                className={`${navPath ? 'cursor-pointer' : ''} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${
                   viewMode === "list" ? "flex flex-col md:flex-row gap-6" : ""
                 }`}
               >
                 <div className="flex-1">
-                  <h3 className="font-bold text-lg mb-2 text-blue-900 group-hover:text-blue-700 capitalize">
+                  <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542] capitalize transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700 line-clamp-3 mb-3">
+                  <p className="text-sm text-[#D6E1F0] line-clamp-3 mb-3">
                     {item.description || "No description available."}
                   </p>
 
                     {(item.extent?.temporal?.interval?.[0] || item.region) && (
-                      <div className="mt-2 flex items-center justify-between gap-3 text-xs text-gray-500">
+                      <div className="mt-2 flex items-center justify-between gap-3 text-xs text-[#D6E1F0]">
                         <div className="min-w-0">
                           {item.extent?.temporal?.interval?.[0] && (
                             <span>
@@ -365,8 +366,8 @@ const CatalogList = () => {
                         </div>
                         {item.region && (
                           <div className="flex-shrink-0 text-right">
-                            <span className="font-semibold text-gray-600"></span>{" "}
-                            <span className="text-gray-700">{item.region}</span>
+                            <span className="font-semibold text-[#F4C542]"></span>{" "}
+                            <span className="text-[#F8FAFC]">{item.region}</span>
                           </div>
                         )}
                       </div>
@@ -375,7 +376,7 @@ const CatalogList = () => {
                 
                 {/* Image for themes in list view */}
                 {viewMode === "list" && item.image && (
-                  <div className="w-full md:w-48 h-32 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
+                  <div className="w-full md:w-48 h-32 flex-shrink-0 bg-[#143A6A] rounded overflow-hidden border border-[#1B457A]">
                     <img
                       src={item.image}
                       alt={item.title}

@@ -45,18 +45,18 @@ const CoverageModal = ({ product, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[100] flex items-center justify-center p-4 font-sans">
-      <div className="bg-white rounded shadow-2xl w-full max-w-5xl flex flex-col max-h-[90vh] overflow-hidden">
+      <div className="bg-[#0F2D57] rounded shadow-2xl w-full max-w-5xl flex flex-col max-h-[90vh] overflow-hidden border border-[#1B457A]">
         {/* Header */}
-        <div className="p-6 border-b border-gray-100 flex justify-between items-start">
+        <div className="p-6 border-b border-[#1B457A] flex justify-between items-start">
           <div className="flex gap-3">
-            <div className="text-[#009d9a] mt-1">
+            <div className="text-[#F4C542] mt-1">
               <FaMapMarkerAlt size={20} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-800 leading-snug">
+              <h3 className="text-xl font-bold text-[#F8FAFC] leading-snug">
                 {product.title}
               </h3>
-              <p className="text-sm text-gray-500 font-semibold mt-1">
+              <p className="text-sm text-[#D6E1F0] font-semibold mt-1">
                 Coverage
               </p>
             </div>
@@ -72,20 +72,20 @@ const CoverageModal = ({ product, onClose }) => {
         {/* Body */}
         <div className="flex flex-col md:flex-row flex-1 min-h-0">
           {/* Left Panel: Products List */}
-          <div className="w-full md:w-1/3 p-6 border-r border-gray-100 overflow-y-auto">
-            <h4 className="text-xs font-bold text-[#009d9a] uppercase mb-4">
+          <div className="w-full md:w-1/3 p-6 border-r border-[#1B457A] overflow-y-auto bg-[#143A6A]">
+            <h4 className="text-xs font-bold text-[#F4C542] uppercase mb-4">
               Products
             </h4>
 
             <div className="space-y-3">
               <div className="group">
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-sm font-semibold text-gray-700 leading-tight group-hover:text-[#009d9a] transition-colors cursor-pointer">
+                  <span className="text-sm font-semibold text-[#F8FAFC] leading-tight group-hover:text-[#F4C542] transition-colors cursor-pointer">
                     {product.title}
                   </span>
-                  <div className="flex items-center gap-2 text-gray-400 shrink-0">
+                  <div className="flex items-center gap-2 text-[#D6E1F0] shrink-0">
                     <FaMapMarkerAlt
-                      className="hover:text-[#009d9a] cursor-pointer"
+                      className="hover:text-[#F4C542] cursor-pointer"
                       size={14}
                     />
                     <a
@@ -94,7 +94,7 @@ const CoverageModal = ({ product, onClose }) => {
                       rel="noreferrer"
                     >
                       <FaExternalLinkAlt
-                        className="hover:text-[#009d9a] cursor-pointer"
+                        className="hover:text-[#F4C542] cursor-pointer"
                         size={12}
                       />
                     </a>
@@ -105,7 +105,7 @@ const CoverageModal = ({ product, onClose }) => {
           </div>
 
           {/* Right Panel: Map */}
-          <div className="w-full md:w-2/3 bg-gray-50 relative h-[280px] sm:h-[360px] md:h-auto md:min-h-[400px]">
+          <div className="w-full md:w-2/3 bg-[#143A6A] relative h-[280px] sm:h-[360px] md:h-auto md:min-h-[400px]">
             <MapContainer
               bounds={bounds}
               style={{ height: "100%", width: "100%" }}
@@ -120,7 +120,7 @@ const CoverageModal = ({ product, onClose }) => {
                 <Rectangle
                   bounds={bounds}
                   pathOptions={{
-                    color: "#009d9a",
+                    color: "#F4C542",
                     weight: 2,
                     fillOpacity: 0.1,
                     dashArray: "5, 5",
@@ -170,13 +170,13 @@ const ProductRow = ({
   const widthPercent = (durationYears / totalYears) * 100;
 
   return (
-    <div className="border-b border-gray-200 hover:bg-gray-50 transition-colors group">
+    <div className="border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group">
       <div className="flex items-stretch h-12">
         {/* Name & Accordion Toggle */}
-        <div className="w-[220px] min-w-[220px] sm:w-[280px] sm:min-w-[280px] lg:w-[350px] lg:min-w-[350px] border-r border-gray-100 p-2 pl-4 flex items-center gap-3 relative bg-white z-10">
+        <div className="w-[220px] min-w-[220px] sm:w-[280px] sm:min-w-[280px] lg:w-[350px] lg:min-w-[350px] border-r border-[#1B457A] p-2 pl-4 flex items-center gap-3 relative bg-[#0F2D57] z-10">
           <button
             onClick={onToggle}
-            className="p-1 rounded hover:bg-gray-200 text-gray-500 transition-colors"
+            className="p-1 rounded hover:bg-[#1B457A] text-[#D6E1F0] transition-colors"
           >
             {isExpanded ? (
               <FaChevronDown size={10} />
@@ -185,7 +185,7 @@ const ProductRow = ({
             )}
           </button>
           <span
-            className="text-sm font-semibold text-gray-700 truncate cursor-pointer hover:text-[#009d9a] hover:underline"
+            className="text-sm font-semibold text-[#F8FAFC] truncate cursor-pointer hover:text-[#F4C542] hover:underline"
             title={product.title}
             onClick={() => navigate(`/products/${product.productPath}`)}
           >
@@ -194,10 +194,10 @@ const ProductRow = ({
         </div>
 
         {/* Timeline Bar Area */}
-        <div className="flex-1 relative bg-white group-hover:bg-gray-50">
+        <div className="flex-1 relative bg-[#0F2D57] group-hover:bg-[#143A6A]">
           {/* The Bar */}
           <div
-            className="absolute h-5 top-1/2 -translate-y-1/2 rounded bg-[#009d9a] hover:bg-[#007d7a] cursor-pointer transition-colors shadow-sm"
+            className="absolute h-5 top-1/2 -translate-y-1/2 rounded bg-[#F4C542] hover:bg-[#FFD700] cursor-pointer transition-colors shadow-sm"
             style={{
               left: `${Math.max(0, leftPercent)}%`,
               width: `${Math.max(0.5, widthPercent)}%`,
@@ -209,9 +209,9 @@ const ProductRow = ({
         </div>
 
         {/* Coverage Icon */}
-        <div className="w-[64px] min-w-[64px] sm:w-[72px] sm:min-w-[72px] lg:w-[80px] lg:min-w-[80px] border-l border-gray-100 flex items-center justify-center bg-white">
+        <div className="w-[64px] min-w-[64px] sm:w-[72px] sm:min-w-[72px] lg:w-[80px] lg:min-w-[80px] border-l border-[#1B457A] flex items-center justify-center bg-[#0F2D57]">
           <button
-            className="text-gray-400 hover:text-[#009d9a] transition-colors p-2"
+            className="text-[#D6E1F0] hover:text-[#F4C542] transition-colors p-2"
             title="View Coverage Map"
             onClick={(e) => {
               e.stopPropagation();
@@ -225,29 +225,29 @@ const ProductRow = ({
 
       {/* Accordion Content */}
       {isExpanded && (
-        <div className="bg-gray-50 p-4 border-t border-gray-100 pl-[40px] shadow-inner">
+        <div className="bg-[#143A6A] p-4 border-t border-[#1B457A] pl-[40px] shadow-inner">
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1 space-y-2">
-              <div className="text-xs font-bold uppercase text-gray-400">
+              <div className="text-xs font-bold uppercase text-[#F4C542]">
                 Description
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed text-justify max-w-2xl">
+              <p className="text-sm text-[#D6E1F0] leading-relaxed text-justify max-w-2xl">
                 {product.description || "No description available."}
               </p>
               <div className="pt-2">
                 <button
                   onClick={() => navigate(`/products/${product.productPath}`)}
-                  className="text-[#009d9a] text-xs font-bold uppercase hover:underline flex items-center gap-1"
+                  className="text-[#F4C542] text-xs font-bold uppercase hover:underline flex items-center gap-1"
                 >
                   View Product Details <FaExternalLinkAlt size={10} />
                 </button>
               </div>
             </div>
             <div className="w-64 space-y-2">
-              <div className="text-xs font-bold uppercase text-gray-400">
+              <div className="text-xs font-bold uppercase text-[#F4C542]">
                 Metadata
               </div>
-              <div className="text-xs text-gray-600 grid grid-cols-2 gap-x-2 gap-y-1">
+              <div className="text-xs text-[#D6E1F0] grid grid-cols-2 gap-x-2 gap-y-1">
                 <span className="font-semibold">Start:</span>{" "}
                 {startDate.toLocaleDateString()}
                 <span className="font-semibold">End:</span>{" "}
@@ -357,17 +357,17 @@ const Metrics = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-white text-gray-800">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC]">
       {/* Header & Filters */}
-      <div className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
+      <div className="sticky top-0 z-30 bg-[#0F2D57] border-b border-[#1B457A] shadow-sm">
         <div className="max-w-[1920px] mx-auto px-4 md:px-8 py-4 space-y-4">
           {/* Title Row */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold uppercase tracking-tight text-[#003049]">
+              <h1 className="text-2xl font-bold uppercase tracking-tight text-[#F4C542]">
                 Metrics
               </h1>
-              <span className="px-2 py-0.5 bg-gray-100 rounded text-xs text-gray-500 font-mono">
+              <span className="px-2 py-0.5 bg-[#143A6A] rounded text-xs text-[#D6E1F0] font-mono">
                 {filteredProducts.length} Products
               </span>
             </div>
@@ -377,10 +377,10 @@ const Metrics = () => {
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
             {/* Search */}
             <div className="relative w-full sm:max-w-sm">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#F4C542]" />
               <input
                 type="text"
-                className="input input-sm pl-10 w-full bg-gray-50 border-gray-300 focus:border-[#009d9a] focus:ring-1 focus:ring-[#009d9a] rounded-sm transition-all"
+                className="input input-sm pl-10 w-full bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0] focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542] rounded-sm transition-all"
                 placeholder="Filter products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -406,7 +406,7 @@ const Metrics = () => {
             </select>
 
             <div className="ml-auto flex items-center gap-2">
-              <button className="btn btn-sm btn-ghost text-xs font-semibold text-gray-500">
+              <button className="btn btn-sm btn-ghost text-xs font-semibold text-[#D6E1F0]">
                 <FaFilter size={10} /> Advanced
               </button>
             </div>
@@ -414,9 +414,9 @@ const Metrics = () => {
         </div>
 
         {/* Timeline Axis Header */}
-        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-gray-100 bg-gray-50 overflow-x-auto">
+        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-[#1B457A] bg-[#143A6A] overflow-x-auto">
           <div className="min-w-[900px]">
-            <div className="flex text-xs font-bold text-gray-500 h-10 items-center">
+            <div className="flex text-xs font-bold text-[#F4C542] h-10 items-center">
               <div className="w-[220px] sm:w-[280px] lg:w-[350px] pl-4">Name</div>
               <div className="flex-1 relative h-full overflow-hidden">
                 {/* Ticks */}
@@ -426,10 +426,10 @@ const Metrics = () => {
                     return (
                       <div
                         key={year}
-                        className="absolute h-full flex flex-col justify-end pb-1 border-l border-gray-200"
+                        className="absolute h-full flex flex-col justify-end pb-1 border-l border-[#1B457A]"
                         style={{ left: `${left}%` }}
                       >
-                        <span className="pl-1 text-[10px] opacity-70">
+                        <span className="pl-1 text-[10px] text-[#F4C542]">
                           {year}
                         </span>
                       </div>
@@ -446,7 +446,7 @@ const Metrics = () => {
       {/* Timeline Content */}
       <div className="flex-1 max-w-[1920px] mx-auto w-full px-4 md:px-8 pb-10 overflow-x-auto">
         {/* Items */}
-        <div className="min-w-[900px] border border-gray-200 border-t-0 rounded-b bg-white relative">
+        <div className="min-w-[900px] border border-[#1B457A] border-t-0 rounded-b bg-[#0F2D57] relative">
           {/* Vertical Grid Lines (Background) */}
           <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-284px)] sm:w-[calc(100%-352px)] lg:w-[calc(100%-430px)] ml-[220px] sm:ml-[280px] lg:ml-[350px]">
             {YEARS_ARRAY.map((year) => {
@@ -454,7 +454,7 @@ const Metrics = () => {
               return (
                 <div
                   key={`grid-${year}`}
-                  className="absolute h-full border-l border-gray-100 border-dashed"
+                  className="absolute h-full border-l border-[#143A6A] border-dashed"
                   style={{ left: `${left}%` }}
                 />
               );

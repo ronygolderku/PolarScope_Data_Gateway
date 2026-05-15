@@ -34,7 +34,7 @@ const MapPage = () => {
   }, []);
 
   return (
-    <div className="h-full w-full bg-white overflow-hidden relative">
+    <div className="h-full w-full min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] overflow-hidden relative">
       {loading && <Loading />}
       <iframe
         src="https://fleetmonitoring.euro-argo.eu/dashboard?Status=Active&Basin=SOUTHERN%20OCEAN&Network=BGC"
