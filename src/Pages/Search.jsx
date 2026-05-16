@@ -57,12 +57,12 @@ const Search = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC] p-4 md:p-6">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Search Header */}
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-gray-900">Search Products</h1>
-          <p className="text-gray-600">
+          <h1 className="text-4xl font-bold text-[#F8FAFC]">Search Products</h1>
+          <p className="text-[#D6E1F0]">
             Find products by title, description, or keywords
           </p>
 
@@ -73,9 +73,9 @@ const Search = () => {
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="input input-bordered w-full pl-12 text-lg h-12 rounded-lg"
+              className="input w-full pl-12 text-lg h-12 rounded-lg bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0]"
             />
-            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[#F4C542]" />
           </form>
         </div>
 
@@ -83,7 +83,7 @@ const Search = () => {
         {(loading || isDataLoading) && <Loading />}
 
         {!loading && !isDataLoading && results.length === 0 && searched && (
-          <div className=" bg-opacity-20 border border-gray-200 text-gray-500 p-6 rounded-lg text-center">
+          <div className="bg-[#143A6A] border border-[#1B457A] text-[#D6E1F0] p-6 rounded-lg text-center">
             <p className="text-lg font-semibold">No products found</p>
             <p className="text-sm mt-2">
               Try different keywords or browse the catalog
@@ -94,7 +94,7 @@ const Search = () => {
         {!loading && !isDataLoading && results.length > 0 && (
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="text-2xl font-bold text-[#F8FAFC]">
                 {searched ? "Search Results" : "All Products"}
               </h2>
               <span className="badge badge-neutral text-base">{results.length}</span>
@@ -105,21 +105,21 @@ const Search = () => {
                 <div
                   key={product.id}
                   onClick={() => navigate(`/products/${product.productPath}`)}
-                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden"
+                  className="bg-[#143A6A] border border-[#1B457A] rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden"
                 >
                   <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 min-w-0">
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl font-bold text-blue-900 group-hover:text-blue-700 mb-2 break-words">
+                      <h3 className="text-xl font-bold text-[#F8FAFC] group-hover:text-[#F4C542] mb-2 break-words">
                         {product.title}
                       </h3>
-                      <p className="text-gray-700 text-sm leading-relaxed line-clamp-2 mb-3 break-words">
+                      <p className="text-[#D6E1F0] text-sm leading-relaxed line-clamp-2 mb-3 break-words">
                         {product.description || "No description available"}
                       </p>
 
                       <div className="space-y-2">
-                        <div className="text-xs text-gray-600">
+                        <div className="text-xs text-[#D6E1F0]">
                           <span className="font-semibold">Theme:</span>{" "}
-                          <span className="badge badge-outline capitalize">
+                          <span className="badge badge-outline capitalize text-[#F8FAFC] border-[#F4C542]">
                             {product.themeName}
                           </span>
                         </div>
@@ -129,13 +129,13 @@ const Search = () => {
                             {product.keywords.slice(0, 3).map((keyword, i) => (
                               <span
                                 key={i}
-                                className="badge badge-sm badge-neutral text-xs max-w-full break-all"
+                                className="badge badge-sm bg-[#1B457A] text-[#F8FAFC] text-xs max-w-full break-all"
                               >
                                 {keyword}
                               </span>
                             ))}
                             {product.keywords.length > 3 && (
-                              <span className="text-xs text-gray-500">
+                              <span className="text-xs text-[#D6E1F0]">
                                 +{product.keywords.length - 3} more
                               </span>
                             )}
@@ -145,7 +145,7 @@ const Search = () => {
                     </div>
 
                     <div className="md:text-right space-y-2 min-w-0">
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-[#D6E1F0]">
                         <span className="font-semibold">Temporal:</span>
                         <br />
                         {product.extent?.temporal?.interval?.[0]
@@ -160,7 +160,7 @@ const Search = () => {
                             }`
                           : "Unknown"}
                       </div>
-                      <button className="btn btn-sm btn-outline rounded-md capitalize">
+                      <button className="btn btn-sm btn-outline rounded-md capitalize text-[#F8FAFC] border-[#1B457A]">
                         View Details
                       </button>
                     </div>
@@ -172,7 +172,7 @@ const Search = () => {
         )}
 
         {!loading && !isDataLoading && allProducts.length === 0 && (
-          <div className="text-center py-12 text-gray-500">
+          <div className="text-center py-12 text-[#D6E1F0]">
             <p className="text-lg">No products available</p>
           </div>
         )}

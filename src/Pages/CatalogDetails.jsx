@@ -123,26 +123,26 @@ const CatalogDetails = () => {
   ];
 
   return (
-    <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC] p-4 md:p-6 max-w-7xl mx-auto space-y-6">
       {/* Header */}
       <div className="space-y-2">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 border-l-8 border-primary pl-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#F4C542] border-l-8 border-[#F4C542] pl-4">
             {data.title}
           </h1>
           <a
             href={data.links?.find((l) => l.rel === "self")?.href || "#"}
             target="_blank"
             rel="noreferrer"
-            className="btn btn-sm btn-outline gap-2"
+            className="btn btn-sm btn-outline gap-2 text-[#F8FAFC] border-[#1B457A]"
           >
             Source
           </a>
         </div>
-        <div className="text-sm text-gray-500 pl-6 flex flex-wrap gap-2 items-center">
+        <div className="text-sm text-[#D6E1F0] pl-6 flex flex-wrap gap-2 items-center">
           <span>
             in{" "}
-            <span className="text-secondary font-semibold">
+            <span className="text-[#F4C542] font-semibold">
               Open Science Catalog
             </span>
           </span>
@@ -180,10 +180,10 @@ const CatalogDetails = () => {
         <div className="flex-1 space-y-8">
           {/* Description */}
           <div>
-            <h2 className="text-xl font-bold text-secondary mb-3">
+            <h2 className="text-xl font-bold text-[#F4C542] mb-3">
               Description
             </h2>
-            <p className="text-gray-700 leading-relaxed text-justify text-sm">
+            <p className="text-[#D6E1F0] leading-relaxed text-justify text-sm">
               {data.description}
             </p>
             {/* Keywords as badges */}
@@ -192,7 +192,7 @@ const CatalogDetails = () => {
                 {data.keywords.map((k, i) => (
                   <span
                     key={i}
-                    className="badge badge-neutral text-xs rounded-sm"
+                    className="badge bg-[#1B457A] text-[#F8FAFC] text-xs rounded-sm border border-[#F4C542]"
                   >
                     {k}
                   </span>
@@ -203,14 +203,14 @@ const CatalogDetails = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mt-4">
             {data.license && (
-              <div>
-                <span className="font-semibold">License</span>:{" "}
+              <div className="text-[#D6E1F0]">
+                <span className="font-semibold text-[#F8FAFC]">License</span>:{" "}
                 {data.license}
               </div>
             )}
             {data.extent?.temporal?.interval?.[0] && (
-              <div>
-                <span className="font-semibold">Temporal Extent</span>:{" "}
+              <div className="text-[#D6E1F0]">
+                <span className="font-semibold text-[#F8FAFC]">Temporal Extent</span>:{" "}
                 {data.extent.temporal.interval[0][0]
                   ? new Date(
                       data.extent.temporal.interval[0][0],
@@ -228,7 +228,7 @@ const CatalogDetails = () => {
 
           {/* Map - only show if spatial extent exists */}
           {data.extent?.spatial?.bbox?.[0] && (
-            <div className="h-[400px] w-full border border-gray-300 rounded shadow-sm relative z-0">
+            <div className="h-[400px] w-full border border-[#1B457A] rounded shadow-sm relative z-0 bg-[#143A6A]">
               <MapContainer
                 bounds={bounds}
                 scrollWheelZoom={false}
@@ -248,14 +248,14 @@ const CatalogDetails = () => {
           )}
 
           <div>
-            <h3 className="text-lg font-bold text-blue-900 mb-2">
+            <h3 className="text-lg font-bold text-[#F4C542] mb-2">
               Related EarthCODE Forum Topics
             </h3>
-            <p className="text-sm text-gray-500 italic">
+            <p className="text-sm text-[#D6E1F0] italic">
               Didn't find what you were looking for?{" "}
               <a
                 href="#"
-                className="font-semibold text-blue-600 hover:underline"
+                className="font-semibold text-[#F4C542] hover:underline"
               >
                 Start a new topic on the EarthCODE forum!
               </a>
@@ -267,19 +267,19 @@ const CatalogDetails = () => {
         <div className="lg:w-1/3 space-y-8">
           {/* Metadata Section */}
           <div>
-            <h2 className="text-xl font-bold text-secondary mb-4">Metadata</h2>
+            <h2 className="text-xl font-bold text-[#F4C542] mb-4">Metadata</h2>
 
             {/* General Table */}
             <div className="mb-6">
-              <h3 className="font-bold text-gray-700 mb-2">General</h3>
-              <div className="overflow-x-auto border border-gray-200 rounded">
-                <table className="table table-xs w-full">
+              <h3 className="font-bold text-[#F8FAFC] mb-2">General</h3>
+              <div className="overflow-x-auto border border-[#1B457A] rounded bg-[#143A6A]">
+                <table className="table table-xs w-full text-[#F8FAFC]">
                   <tbody>
-                    <tr className="bg-gray-50 border-b border-gray-100">
+                    <tr className="bg-[#143A6A] border-b border-[#1B457A]">
                       <td className="font-semibold w-24">Created</td>
                       <td>{formatDate(data.created)}</td>
                     </tr>
-                    <tr className="bg-white">
+                    <tr className="bg-[#0F2D57]">
                       <td className="font-semibold">Updated</td>
                       <td>{formatDate(data.updated)}</td>
                     </tr>
@@ -291,11 +291,11 @@ const CatalogDetails = () => {
             {/* Cf Table - only show if cf:parameter exists */}
             {data["cf:parameter"]?.[0]?.name && (
               <div className="mb-6">
-                <h3 className="font-bold text-gray-700 mb-2">Cf</h3>
-                <div className="overflow-x-auto border border-gray-200 rounded">
-                  <table className="table table-xs w-full">
+                <h3 className="font-bold text-[#F8FAFC] mb-2">Cf</h3>
+                <div className="overflow-x-auto border border-[#1B457A] rounded bg-[#143A6A]">
+                  <table className="table table-xs w-full text-[#F8FAFC]">
                     <tbody>
-                      <tr className="bg-gray-50">
+                      <tr className="bg-[#143A6A]">
                         <td className="font-semibold w-24">Parameter</td>
                         <td className="break-all">
                           {data["cf:parameter"][0].name}
@@ -310,46 +310,46 @@ const CatalogDetails = () => {
             {/* Open Science Catalog Table - only show if osc fields exist */}
             {(data["osc:project"] || data["osc:status"] || data["osc:region"] || data["osc:type"] || data["osc:variables"] || data["osc:missions"]) && (
               <div>
-                <h3 className="font-bold text-gray-700 mb-2">
+                <h3 className="font-bold text-[#F8FAFC] mb-2">
                   Open Science Catalog
                 </h3>
-                <div className="overflow-x-auto border border-gray-200 rounded">
-                  <table className="table table-xs w-full">
+                <div className="overflow-x-auto border border-[#1B457A] rounded bg-[#143A6A]">
+                  <table className="table table-xs w-full text-[#F8FAFC]">
                     <tbody>
                       {data["osc:project"] && (
-                        <tr className="bg-gray-50 border-b border-gray-100">
+                        <tr className="bg-[#143A6A] border-b border-[#1B457A]">
                           <td className="font-semibold w-24">Project</td>
-                          <td className="text-blue-600 font-semibold">
+                          <td className="text-[#F4C542] font-semibold">
                             {data["osc:project"]}
                           </td>
                         </tr>
                       )}
                       {data["osc:status"] && (
-                        <tr className="bg-white border-b border-gray-100">
+                        <tr className="bg-[#0F2D57] border-b border-[#1B457A]">
                           <td className="font-semibold">Status</td>
                           <td>{data["osc:status"]}</td>
                         </tr>
                       )}
                       {data["osc:region"] && (
-                        <tr className="bg-gray-50 border-b border-gray-100">
+                        <tr className="bg-[#143A6A] border-b border-[#1B457A]">
                           <td className="font-semibold">Region</td>
                           <td>{data["osc:region"]}</td>
                         </tr>
                       )}
                       {data["osc:type"] && (
-                        <tr className="bg-white border-b border-gray-100">
+                        <tr className="bg-[#0F2D57] border-b border-[#1B457A]">
                           <td className="font-semibold">Type</td>
                           <td>{data["osc:type"]}</td>
                         </tr>
                       )}
                       {data["osc:variables"] && (
-                        <tr className="bg-gray-50 border-b border-gray-100">
+                        <tr className="bg-[#143A6A] border-b border-[#1B457A]">
                           <td className="font-semibold">Variables</td>
                           <td>{data["osc:variables"].join(", ")}</td>
                         </tr>
                       )}
                       {data["osc:missions"] && (
-                        <tr className="bg-white">
+                        <tr className="bg-[#0F2D57]">
                           <td className="font-semibold">Missions</td>
                           <td>{data["osc:missions"].join(", ")}</td>
                         </tr>
@@ -364,7 +364,7 @@ const CatalogDetails = () => {
           {/* Additional Resources */}
           {(data["osc:project"] || data.themes || data["osc:missions"] || data.links) && (
             <div>
-              <h3 className="text-lg font-bold text-blue-900 mb-2">
+              <h3 className="text-lg font-bold text-[#F4C542] mb-2">
                 Additional Resources
               </h3>
               <div className="text-sm space-y-2">
@@ -373,7 +373,7 @@ const CatalogDetails = () => {
                     <div>
                       <span className="font-semibold">Related resource</span>
                     </div>
-                    <ul className="list-disc list-inside pl-2 text-gray-600">
+                    <ul className="list-disc list-inside pl-2 text-[#D6E1F0]">
                       {data["osc:project"] && (
                         <li>Project: {data["osc:project"]}</li>
                       )}
@@ -394,7 +394,7 @@ const CatalogDetails = () => {
                     <div className="mt-2">
                       <span className="font-semibold">Source metadata</span>
                     </div>
-                    <ul className="list-disc list-inside pl-2 text-gray-600">
+                    <ul className="list-disc list-inside pl-2 text-[#D6E1F0]">
                       {data.links
                         .filter((l) => l.rel === "via" || l.rel === "self")
                         .map((link, idx) => (
@@ -403,7 +403,7 @@ const CatalogDetails = () => {
                               href={link.href}
                               target="_blank"
                               rel="noreferrer"
-                              className="text-blue-600 hover:underline"
+                              className="text-[#F4C542] hover:underline"
                             >
                               {link.title || "Link"}
                             </a>
@@ -460,16 +460,16 @@ const CatalogDetails = () => {
                 <div
                   key={index}
                   onClick={() => navPath && navigate(navPath, { state: { from: location.pathname } })}
-                  className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-gray-300 bg-white p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-primary group`}
+                  className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group`}
                 >
-                  <h3 className="font-bold text-lg mb-2 text-blue-900 group-hover:text-blue-700">
+                  <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542]">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700 line-clamp-3">
+                  <p className="text-sm text-[#D6E1F0] line-clamp-3">
                     {item.description || "No description available."}
                   </p>
                   {(item.extent?.temporal?.interval?.[0] || item.region) && (
-                    <div className="mt-3 flex items-center justify-between text-xs text-gray-500">
+                    <div className="mt-3 flex items-center justify-between text-xs text-[#D6E1F0]">
                       <div className="min-w-0">
                         {item.extent?.temporal?.interval?.[0] && (
                           <span>
@@ -479,8 +479,8 @@ const CatalogDetails = () => {
                       </div>
                       {item.region && (
                         <div className="flex-shrink-0 text-right">
-                          <span className="font-semibold text-gray-600">Region:</span>{" "}
-                          <span className="text-gray-700">{item.region}</span>
+                          <span className="font-semibold text-[#F8FAFC]">Region:</span>{" "}
+                          <span className="text-[#D6E1F0]">{item.region}</span>
                         </div>
                       )}
                     </div>

@@ -41,9 +41,9 @@
     },
     {
       "rel": "related",
-      "href": "../../eo-missions/envisat/catalog.json",
+      "href": "../../eo-missions/multimission/catalog.json",
       "type": "application/json",
-      "title": "EO Mission: ENVISAT"
+      "title": "EO Mission: MULTIMISSION"
     },
     {
       "rel": "related",
@@ -110,7 +110,7 @@
     "chlorophyll-concentration"
   ],
   "osc:missions": [
-    "envisat",
+    "multimission",
     "terra",
     "aqua-eos-pm-1",
     "suomi-npp",

@@ -73,6 +73,10 @@ export const router = createBrowserRouter([
         path: "map",
         Component: MapPage,
       },
+      {
+        path: "bgc-argo",
+        Component: MapPage,
+      },
     ],
   },
 ]);
