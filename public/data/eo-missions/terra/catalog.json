@@ -48,21 +48,15 @@
     },
     {
       "rel": "child",
-      "href": "../../products/global-particulate-organic-carbon-v5-bicep/collection.json",
-      "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
-    },
-    {
-      "rel": "child",
       "href": "../../products/gross-net-carbon-flux-lpf-vad3emecum/collection.json",
       "type": "application/json",
       "title": "Gross and net Carbon Flux Estimates_Fluxcom2.0 Carbon"
     },
     {
       "rel": "child",
-      "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
+      "href": "../../products/monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v4.2)"
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
     },
     {
       "rel": "child",

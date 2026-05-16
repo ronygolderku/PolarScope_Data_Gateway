@@ -1,0 +1,63 @@
+{
+    "type": "Catalog",
+    "id": "inherent-optical-properties",
+    "stac_version": "1.0.0",
+    "description": "Inherent optical properties (IOPs) of seawater, such as absorption and backscattering coefficients. These properties describe how light interacts with water and its constituents.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/",
+            "type": "text/html",
+            "title": "Description"
+        },
+        {
+            "rel": "child",
+            "href": "../../products/global-inherent-optical-properties-iop-4-km-oc-cci-v6/collection.json",
+            "type": "application/json",
+            "title": "Global inherent optical properties (IOP) (4 km, OC-CCI v6.0)"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Variables"
+        },
+        {
+            "rel": "self",
+            "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/inherent-optical-properties/catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                }
+            ]
+        }
+    ],
+    "updated": "2026-05-16T00:00:00Z",
+    "keywords": [
+        "IOP",
+        "inherent optical properties",
+        "OC-CCI v6.0"
+    ],
+    "title": "Inherent Optical Properties"
+}

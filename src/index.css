@@ -1,38 +1,65 @@
 /* urbanist google font */
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 @import "tailwindcss";
-@plugin "daisyui"{
+
+@plugin "daisyui" {
   themes: light --default;
-};
+}
+
+;
 
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #009d9a;
-  --color-secondary: #003366;
- }
+  --color-primary: #3dd6d0;
+  --color-secondary: #0f2d57;
+}
 
 :root {
-  --color-bg-primary: #0F2D57;
-  --color-bg-secondary: #143A6A;
-  --color-bg-tertiary: #1B457A;
-  --color-text-primary: #F8FAFC;
-  --color-text-secondary: #D6E1F0;
-  --color-accent: #F4C542;
+  --color-bg-primary: #071a34;
+  --color-bg-secondary: #0b2748;
+  --color-bg-tertiary: #123f71;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #dcecff;
+  --color-accent: #3dd6d0;
+  --color-accent-warm: #f4c542;
 }
- 
- body{
-   font-family: "Inter", sans-serif;
-   background-color: var(--color-bg-primary);
-   color: var(--color-text-primary);
-  }  
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(61, 214, 208, 0.16) 0%, rgba(61, 214, 208, 0.08) 14%, transparent 40%),
+    radial-gradient(circle at 50% 0%, rgba(220, 235, 255, 0.16) 0%, rgba(220, 235, 255, 0.08) 16%, transparent 44%),
+    radial-gradient(circle at 82% 10%, rgba(244, 197, 66, 0.1) 0%, rgba(244, 197, 66, 0.04) 12%, transparent 30%),
+    radial-gradient(circle at 10% 82%, rgba(27, 79, 140, 0.2) 0%, rgba(27, 79, 140, 0.08) 22%, transparent 46%),
+    linear-gradient(180deg, #06172d 0%, var(--color-bg-primary) 38%, var(--color-bg-secondary) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(61, 214, 208, 0.28);
+  color: var(--color-text-primary);
+}
 
 @keyframes aceasFloat {
+
   0%,
   100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
     transform: translateY(-10px) scale(1.03);
   }
@@ -44,14 +71,14 @@
 
 
 /* Menu styling */
-.menu li > a {
+.menu li>a {
   margin: 5px;
   text-decoration: none;
   transition: all 0.2s;
 }
 
 /* Active link styling */
-.menu li > a.active {
+.menu li>a.active {
   background-color: var(--color-bg-secondary);
   color: var(--color-accent) !important;
   border-left: 3px solid var(--color-accent);

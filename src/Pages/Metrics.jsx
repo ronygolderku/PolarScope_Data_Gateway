@@ -35,13 +35,13 @@ const CoverageModal = ({ product, onClose }) => {
   const bbox = product.extent?.spatial?.bbox?.[0];
   const bounds = bbox
     ? [
-        [bbox[1], bbox[0]],
-        [bbox[3], bbox[2]],
-      ]
+      [bbox[1], bbox[0]],
+      [bbox[3], bbox[2]],
+    ]
     : [
-        [-90, -180],
-        [90, 180],
-      ];
+      [-90, -180],
+      [90, 180],
+    ];
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[100] flex items-center justify-center p-4 font-sans">
@@ -388,18 +388,26 @@ const Metrics = () => {
             </div>
 
             {/* Filters */}
-            <select className="select select-sm select-bordered rounded-sm text-xs w-full sm:w-32 bg-white">
-              <option selected>Global</option>
+            <select className="select select-sm rounded-lg text-sm w-full sm:w-32 bg-[#143A6A] border border-[#1B457A] text-[#F8FAFC] focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm">
+              <option className="bg-[#143A6A] text-[#F8FAFC]" selected>
+                Global
+              </option>
             </select>
 
             <select
-              className="select select-sm select-bordered rounded-sm text-xs w-full sm:w-40 bg-white capitalize"
+              className="select select-sm rounded-lg text-sm w-full sm:w-40 bg-[#143A6A] border border-[#1B457A] text-[#F8FAFC] capitalize focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
               value={selectedTheme}
               onChange={(e) => setSelectedTheme(e.target.value)}
             >
-              <option value="All">All Themes</option>
+              <option value="All" className="bg-[#143A6A] text-[#F8FAFC]">
+                All Themes
+              </option>
               {themes.map((theme) => (
-                <option key={theme.id} value={theme.id} className="capitalize">
+                <option
+                  key={theme.id}
+                  value={theme.id}
+                  className="bg-[#143A6A] text-[#F8FAFC] capitalize"
+                >
                   {theme.title}
                 </option>
               ))}

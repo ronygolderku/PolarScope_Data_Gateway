@@ -29,6 +29,12 @@
       "title": "S2 L2A uncertainty_Surface reflectance estimates_S2"
     },
     {
+      "rel": "child",
+      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Reflectance dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

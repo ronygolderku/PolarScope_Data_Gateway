@@ -23,6 +23,12 @@
       "title": "Description"
     },
     {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-photosynthetically-active-radiation-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Photosynthetically Active Radiation dataset"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

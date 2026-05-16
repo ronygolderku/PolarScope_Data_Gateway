@@ -48,15 +48,9 @@
     },
     {
       "rel": "child",
-      "href": "../../products/global-particulate-organic-carbon-v5-bicep/collection.json",
+      "href": "../../products/monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
-      "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v4.2)"
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
     },
     {
       "rel": "child",

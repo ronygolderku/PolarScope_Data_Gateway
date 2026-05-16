@@ -18,12 +18,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/global-particulate-organic-carbon-v5-bicep/collection.json",
-      "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
-    },
-    {
-      "rel": "child",
       "href": "../../products/high-res-phytoplankton-chl-a-data-at-discrete-light-stations-polarstern-cruise-ps113/collection.json",
       "type": "application/json",
       "title": "High resolution phytoplankton Chl-a data obtained at discrete light stations (POLARSTERN cruise PS113)"
@@ -34,13 +28,17 @@
       "type": "application/json",
       "title": "High resolution phytoplankton Chl-a data obtained by undulating platform towed behind the ship (POLARSTERN cruise PS113)"
     },
- 
-  
     {
       "rel": "child",
-      "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
+      "href": "../../products/monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v4.2)"
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-chlorophyll-a-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Chlorophyll-a dataset"
     },
     {
       "rel": "child",
@@ -54,7 +52,6 @@
       "type": "application/json",
       "title": "Secchi Disk depth_Global Oceans_Multimission"
     },
-   
     {
       "rel": "parent",
       "href": "../catalog.json",

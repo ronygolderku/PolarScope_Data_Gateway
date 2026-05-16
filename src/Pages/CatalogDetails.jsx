@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { MapContainer, TileLayer, Rectangle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Loading from "./Loading";
@@ -213,14 +213,14 @@ const CatalogDetails = () => {
                 <span className="font-semibold text-[#F8FAFC]">Temporal Extent</span>:{" "}
                 {data.extent.temporal.interval[0][0]
                   ? new Date(
-                      data.extent.temporal.interval[0][0],
-                    ).toLocaleDateString()
+                    data.extent.temporal.interval[0][0],
+                  ).toLocaleDateString()
                   : "Unknown"}{" "}
                 -{" "}
                 {data.extent.temporal.interval[0][1]
                   ? new Date(
-                      data.extent.temporal.interval[0][1],
-                    ).toLocaleDateString()
+                    data.extent.temporal.interval[0][1],
+                  ).toLocaleDateString()
                   : "Present"}
               </div>
             )}
@@ -247,20 +247,7 @@ const CatalogDetails = () => {
             </div>
           )}
 
-          <div>
-            <h3 className="text-lg font-bold text-[#F4C542] mb-2">
-              Related EarthCODE Forum Topics
-            </h3>
-            <p className="text-sm text-[#D6E1F0] italic">
-              Didn't find what you were looking for?{" "}
-              <a
-                href="#"
-                className="font-semibold text-[#F4C542] hover:underline"
-              >
-                Start a new topic on the EarthCODE forum!
-              </a>
-            </p>
-          </div>
+          {/* Related EarthCODE Forum Topics removed per request */}
         </div>
 
         {/* Right Column: Metadata */}
@@ -422,7 +409,7 @@ const CatalogDetails = () => {
         <div className="space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold text-secondary">Products</h2>
+              <h2 className="text-2xl font-bold text-[#F8FAFC]">Products</h2>
               <span className="badge badge-neutral text-xs">
                 {filteredChildItems.length}
               </span>
@@ -446,7 +433,7 @@ const CatalogDetails = () => {
           <input
             type="text"
             placeholder="Filter products by title or description"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0]"
             value={childSearchTerm}
             onChange={(e) => setChildSearchTerm(e.target.value)}
           />
@@ -457,10 +444,16 @@ const CatalogDetails = () => {
               const navPath = productId ? `/products/${productId}` : "";
 
               return (
-                <div
+                <Link
                   key={index}
-                  onClick={() => navPath && navigate(navPath, { state: { from: location.pathname } })}
-                  className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group`}
+                  to={navPath}
+                  state={{ from: location.pathname }}
+                  onClick={(event) => {
+                    if (!navPath) {
+                      event.preventDefault();
+                    }
+                  }}
+                  className={`${navPath ? "cursor-pointer" : "pointer-events-none"} block rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group`}
                 >
                   <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542]">
                     {item.title}
@@ -485,7 +478,7 @@ const CatalogDetails = () => {
                       )}
                     </div>
                   )}
-                </div>
+                </Link>
               );
             })}
           </div>

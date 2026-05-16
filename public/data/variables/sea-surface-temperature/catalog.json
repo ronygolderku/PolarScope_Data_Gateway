@@ -23,6 +23,12 @@
       "title": "Description"
     },
     {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-sea-surface-temperature-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Sea Surface Temperature dataset"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

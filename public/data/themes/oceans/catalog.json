@@ -33,7 +33,6 @@
       "type": "application/json",
       "title": "Albedo_Regional_S3A/SLSTR"
     },
-    
     {
       "rel": "child",
       "href": "../../products/cdom-aeolus-innovation-color/collection.json",
@@ -52,8 +51,6 @@
       "type": "application/json",
       "title": "Monthly Global Dissolved Organic Carbon dataset (9 km, OC-CCI v4.2)"
     },
-    
-   
     {
       "rel": "child",
       "href": "../../products/export-production-bicep/collection.json",
@@ -80,13 +77,6 @@
     },
     {
       "rel": "child",
-      "href": "../../products/global-particulate-organic-carbon-v5-bicep/collection.json",
-      "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
-    },
-    
-    {
-      "rel": "child",
       "href": "../../products/high-res-phytoplankton-chl-a-data-at-discrete-light-stations-polarstern-cruise-ps113/collection.json",
       "type": "application/json",
       "title": "High resolution phytoplankton Chl-a data obtained at discrete light stations (POLARSTERN cruise PS113)"
@@ -97,7 +87,6 @@
       "type": "application/json",
       "title": "High resolution phytoplankton Chl-a data obtained by undulating platform towed behind the ship (POLARSTERN cruise PS113)"
     },
-  
     {
       "rel": "child",
       "href": "../../products/mean-spectral-dac-for-320-nm-423nm-in-the-atlantic-ocean/collection.json",
@@ -118,9 +107,75 @@
     },
     {
       "rel": "child",
-      "href": "../../products/monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
+      "href": "../../products/monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v4.2)"
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-global-phytoplankton-primary-production-dataset-4-km-copernicus-globcolour/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Primary Production dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Reflectance dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-global-transparency-dataset-4-km-copernicus-globcolour/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Transparency dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global remote sensing reflectance (Rrs) (4 km, OC-CCI v6.0)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/global-attenuation-coefficient-kd490-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global attenuation coefficient for downwelling irradiance (Kd490) (4 km, OC-CCI v6.0)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/global-inherent-optical-properties-iop-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global inherent optical properties (IOP) (4 km, OC-CCI v6.0)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-chlorophyll-a-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Chlorophyll-a dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-sea-surface-temperature-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Sea Surface Temperature dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-particulate-organic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Organic Carbon dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-particulate-inorganic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Inorganic Carbon dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-photosynthetically-active-radiation-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Photosynthetically Active Radiation dataset"
     },
     {
       "rel": "child",
@@ -218,7 +273,6 @@
       "type": "application/json",
       "title": "Phytoplankton group Chl-a using mean DAC over kdmean of the radiometric profile (Polarstern cruise PS113)"
     },
-    
     {
       "rel": "child",
       "href": "../../products/satellite-sar-altimeter-sea-floor-cp4o/collection.json",
@@ -237,7 +291,6 @@
       "type": "application/json",
       "title": "Atmospherically-forced and chaotic interannual variability of the sea level and its components over 1993-2015 from the OCCIPUT ensemble simulations"
     },
-    
     {
       "rel": "child",
       "href": "../../products/sea-surface-salinity-godae-oceanview/collection.json",
@@ -304,7 +357,6 @@
       "type": "application/json",
       "title": "HYDROCOASTAL Final Product: L2 along-track re-tracked product"
     },
-   
     {
       "rel": "child",
       "href": "../../products/waposal-waves/collection.json",

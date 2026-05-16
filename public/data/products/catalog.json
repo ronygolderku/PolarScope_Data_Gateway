@@ -240,9 +240,57 @@
     },
     {
       "rel": "child",
-      "href": "./global-particulate-organic-carbon-v5-bicep/collection.json",
+      "href": "./monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v5)"
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, OC-CCI v6)"
+    },
+    {
+      "rel": "child",
+      "href": "./global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global remote sensing reflectance (Rrs) (4 km, OC-CCI v6.0)"
+    },
+    {
+      "rel": "child",
+      "href": "./global-attenuation-coefficient-kd490-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global attenuation coefficient for downwelling irradiance (Kd490) (4 km, OC-CCI v6.0)"
+    },
+    {
+      "rel": "child",
+      "href": "./global-inherent-optical-properties-iop-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global inherent optical properties (IOP) (4 km, OC-CCI v6.0)"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-aqua-modis-chlorophyll-a-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Chlorophyll-a dataset"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-aqua-modis-sea-surface-temperature-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Sea Surface Temperature dataset"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-aqua-modis-particulate-organic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Organic Carbon dataset"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-aqua-modis-particulate-inorganic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Inorganic Carbon dataset"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-aqua-modis-photosynthetically-active-radiation-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Photosynthetically Active Radiation dataset"
     },
     {
       "rel": "child",
@@ -408,9 +456,27 @@
     },
     {
       "rel": "child",
-      "href": "./monthly-global-chlorophyll-a-dataset-9-km-oc-cci-v42/collection.json",
+      "href": "./monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Chlorophyll-a dataset (9 km, OC-CCI v4.2)"
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-global-phytoplankton-primary-production-dataset-4-km-copernicus-globcolour/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Primary Production dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "./global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Reflectance dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "./monthly-global-transparency-dataset-4-km-copernicus-globcolour/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Transparency dataset (4 km, Copernicus-GlobColour)"
     },
     {
       "rel": "child",

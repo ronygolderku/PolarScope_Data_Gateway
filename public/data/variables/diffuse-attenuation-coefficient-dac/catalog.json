@@ -47,6 +47,12 @@
       "title": "Mean spectral DAC from 320-917nm from light transmission profiles by an undulating platform towed behind the ship"
     },
     {
+      "rel": "child",
+      "href": "../../products/global-attenuation-coefficient-kd490-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Global attenuation coefficient for downwelling irradiance (Kd490) (4 km, OC-CCI v6.0)"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

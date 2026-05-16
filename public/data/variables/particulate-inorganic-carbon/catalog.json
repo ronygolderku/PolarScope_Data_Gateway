@@ -23,6 +23,12 @@
       "title": "Monthly Global Particulate Inorganic Carbon dataset (9 km, OC-CCI v4.2)"
     },
     {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-particulate-inorganic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Inorganic Carbon dataset"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

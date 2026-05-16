@@ -67,7 +67,7 @@ const HomeLayout = () => {
         </nav>
 
         {/* Page content */}
-        <div className="flex-1 min-h-0 overflow-auto bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F]">
+        <div className="flex-1 min-h-0 overflow-auto bg-transparent">
           <Outlet />
         </div>
       </div>
@@ -158,7 +158,7 @@ const HomeLayout = () => {
                 href="mailto:communications@antarcticscience.utas.edu.au"
                 className="underline"
               >
-                communications@antarcticscience.utas.edu.au
+                Contact us
               </a>
             </p>
           </div>

@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "modis",
   "stac_version": "1.0.0",
-  "description": "MODIS",
+  "description": "MODIS monthly ocean-color products from NASA's OceanColor archive.",
   "links": [
     {
       "rel": "root",
@@ -21,6 +21,36 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "EO Missions"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-chlorophyll-a-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Chlorophyll-a dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-sea-surface-temperature-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Sea Surface Temperature dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-particulate-organic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Organic Carbon dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-particulate-inorganic-carbon-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Particulate Inorganic Carbon dataset"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-aqua-modis-photosynthetically-active-radiation-dataset/collection.json",
+      "type": "application/json",
+      "title": "Monthly Aqua-MODIS Photosynthetically Active Radiation dataset"
     },
     {
       "rel": "self",
