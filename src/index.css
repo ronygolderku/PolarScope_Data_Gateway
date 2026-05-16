@@ -69,6 +69,25 @@ body {
   animation: aceasFloat 6s ease-in-out infinite;
 }
 
+/* Responsive hero title sizing to keep it visually balanced across devices */
+.hero-title {
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  line-height: 1.05;
+}
+
+/* Reduce excessive word-spacing caused by justified text on narrow/wide lines */
+.no-justify {
+  text-align: left !important;
+  text-justify: auto;
+}
+
+/* Prevent mid-word breaks and hyphenation */
+.no-break {
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 
 /* Menu styling */
 .menu li>a {

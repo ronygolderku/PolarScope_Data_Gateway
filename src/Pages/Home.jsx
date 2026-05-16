@@ -92,7 +92,6 @@ const Home = () => {
         <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 flex flex-col gap-12">
           {/* Hero/Header Section */}
           <section className="flex flex-col gap-8">
-            {/* Hero Image */}
             <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 relative group">
               <img
                 src={homepageImg}
@@ -111,22 +110,20 @@ const Home = () => {
             {/* Content Section */}
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <h2 className="w-full text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-balance text-[#F4C542] leading-tight">
-                  <span className="block">Welcome to the Southern Ocean Open</span>
-                  <span className="block">Science Catalogue</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance text-[#F4C542]">
+                  Welcome to the Southern Ocean Open Science Catalogue
                 </h2>
-
               </div>
+
               {/* Intro Paragraphs */}
-              <div className="flex w-full px-6 md:px-8 flex-col gap-4 text-[#D6E1F0]">
-                {/* <h1 className="sr-only">Southern Ocean Open Science Catalogue</h1> */}
-                <p className="text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 lg:leading-8 text-left text-balance hyphens-auto">
+              <div className="flex w-full flex-col gap-4 text-[#D6E1F0] max-w-none">
+                <p className="text-base sm:text-lg leading-relaxed text-left no-justify no-break">
                   The Southern Ocean Open Science Catalogue is a curated gateway to public geoscience datasets,
                   Earth-observation products, and research resources focused on the Southern Ocean and
                   Antarctic regions.
                 </p>
 
-                <p className="text-sm sm:text-xl leading-6 text-justify hyphens-auto">
+                <p className="text-base sm:text-lg leading-relaxed text-left no-justify no-break">
                   This initiative is supported by the Australian Centre for Excellence in Antarctic Science
                   (ACEAS) to improve discovery, accessibility, and visibility of open scientific resources
                   across the Southern Ocean and Antarctic research community. The catalogue brings together
@@ -184,7 +181,7 @@ const Home = () => {
                 {/* About Card */}
                 <div className="bg-[#143A6A] p-6 md:p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-[#1B457A]">
                   <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#F8FAFC] mb-4">About the Catalogue</h3>
-                  <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 sm:leading-8 text-justify text-balance hyphens-auto text-[#D6E1F0]">
+                  <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 sm:leading-8 text-left no-break text-[#D6E1F0]">
                     The catalogue primarily provides metadata and links to externally hosted datasets. In most cases, the underlying
                     data products remain maintained and distributed by the original data providers. This platform is intended as a
                     discovery and access portal and does not host or manage any of the datasets listed.
@@ -194,7 +191,7 @@ const Home = () => {
                 {/* Contribute Card */}
                 <div className="bg-[#143A6A] p-6 md:p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-[#1B457A]">
                   <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#F8FAFC] mb-4">Contribute</h3>
-                  <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 sm:leading-8 text-justify text-balance hyphens-auto text-[#D6E1F0]">
+                  <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 sm:leading-8 text-left no-break text-[#D6E1F0]">
                     We welcome community contributions and suggestions for additional datasets and products relevant to the Southern
                     Ocean and Antarctic regions.
                   </p></div>
@@ -203,7 +200,7 @@ const Home = () => {
               {/* Disclaimer Card */}
               <div className="bg-[#1B457A]/50 p-6 md:p-8 rounded-2xl border-l-4 border-[#F4C542]">
                 <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#F4C542] mb-4">Disclaimer</h3>
-                <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 sm:leading-8 text-justify text-balance hyphens-auto text-[#D6E1F0]">
+                <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 sm:leading-8 text-left no-break text-[#D6E1F0]">
                   Inclusion of a dataset or product in this catalogue does not imply endorsement, ranking, certification, or recommendation by the catalogue
                   team, ACEAS, or participating institutions. The catalogue does not assess which product is "best" for a given scientific or operational
                   application. Products vary in methodology, validation, spatial and temporal coverage, and intended use. Users are encouraged to consult the
@@ -216,7 +213,7 @@ const Home = () => {
                 <p className="text-base sm:text-lg font-semibold tracking-wide text-[#F4C542] mb-2">
                   📧 Get in Touch
                 </p>
-                <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 text-[#D6E1F0]">
+                <p className="text-sm sm:text-base lg:text-[1.05rem] leading-7 no-break text-[#D6E1F0]">
                   Have questions or feedback? Contact us at:
                 </p>
                 <a
@@ -268,7 +265,7 @@ const Home = () => {
                             <div className="w-10 h-10 rounded-full border border-dashed border-white/60 animate-pulse"></div>
                           </div>
 
-                          <h2 className="text-white text-2xl font-black tracking-[0.2em] uppercase drop-shadow-lg">
+                          <h2 className="text-white text-2xl font-black tracking-tight uppercase drop-shadow-lg">
                             {theme.title}
                           </h2>
                         </div>
