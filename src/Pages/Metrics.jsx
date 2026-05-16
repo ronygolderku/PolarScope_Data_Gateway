@@ -173,7 +173,7 @@ const ProductRow = ({
     <div className="border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group">
       <div className="flex items-stretch h-12">
         {/* Name & Accordion Toggle */}
-        <div className="w-[220px] min-w-[220px] sm:w-[280px] sm:min-w-[280px] lg:w-[350px] lg:min-w-[350px] border-r border-[#1B457A] p-2 pl-4 flex items-center gap-3 relative bg-[#0F2D57] z-10">
+        <div className="w-[200px] min-w-[200px] sm:w-[250px] sm:min-w-[250px] lg:w-[320px] lg:min-w-[320px] border-r border-[#1B457A] p-2 pl-4 flex items-center gap-3 relative bg-[#0F2D57] z-10">
           <button
             onClick={onToggle}
             className="p-1 rounded hover:bg-[#1B457A] text-[#D6E1F0] transition-colors"
@@ -209,7 +209,7 @@ const ProductRow = ({
         </div>
 
         {/* Coverage Icon */}
-        <div className="w-[64px] min-w-[64px] sm:w-[72px] sm:min-w-[72px] lg:w-[80px] lg:min-w-[80px] border-l border-[#1B457A] flex items-center justify-center bg-[#0F2D57]">
+        <div className="w-[88px] min-w-[88px] sm:w-[104px] sm:min-w-[104px] lg:w-[120px] lg:min-w-[120px] border-l border-[#1B457A] flex items-center justify-center bg-[#0F2D57]">
           <button
             className="text-[#D6E1F0] hover:text-[#F4C542] transition-colors p-2"
             title="View Coverage Map"
@@ -277,17 +277,15 @@ const Metrics = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedIds, setExpandedIds] = useState(new Set());
   const [selectedTheme, setSelectedTheme] = useState("All");
+  const [selectedRegion, setSelectedRegion] = useState("All");
 
   // Timeline Configuration
   // Start timeline at 1970
   const MIN_YEAR = 1970;
-  const MAX_YEAR = new Date().getFullYear();
+  const MAX_YEAR = 2026;
   const TOTAL_YEARS = MAX_YEAR - MIN_YEAR + 1;
-  // GAP 4 YEARS
-  const YEARS_ARRAY = Array.from(
-    { length: Math.ceil(TOTAL_YEARS / 4) },
-    (_, i) => MIN_YEAR + i * 4,
-  );
+  // 15 equal columns across the timeline (1970..2026, step 4)
+  const YEARS_ARRAY = Array.from({ length: 15 }, (_, i) => MIN_YEAR + i * 4);
 
   useEffect(() => {
     const loadData = async () => {
@@ -348,9 +346,13 @@ const Metrics = () => {
         .includes(searchTerm.toLowerCase());
       const matchesTheme =
         selectedTheme === "All" || p.themeId === selectedTheme;
-      return matchesSearch && matchesTheme;
+      const regionValue = (p["osc:region"] || "").toString().toLowerCase();
+      const regionFilter = selectedRegion.toLowerCase();
+      const matchesRegion =
+        selectedRegion === "All" || regionValue.includes(regionFilter);
+      return matchesSearch && matchesTheme && matchesRegion;
     });
-  }, [products, searchTerm, selectedTheme]);
+  }, [products, searchTerm, selectedTheme, selectedRegion]);
 
   if (loading) {
     return <Loading />;
@@ -388,9 +390,25 @@ const Metrics = () => {
             </div>
 
             {/* Filters */}
-            <select className="select select-sm rounded-lg text-sm w-full sm:w-32 bg-[#143A6A] border border-[#1B457A] text-[#F8FAFC] focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm">
-              <option className="bg-[#143A6A] text-[#F8FAFC]" selected>
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="select select-sm rounded-lg text-sm w-full sm:w-44 bg-[#143A6A] border border-[#1B457A] text-[#F8FAFC] focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
+            >
+              <option className="bg-[#143A6A] text-[#F8FAFC]" value="All">
+                All
+              </option>
+              <option className="bg-[#143A6A] text-[#F8FAFC]" value="Global">
                 Global
+              </option>
+              <option className="bg-[#143A6A] text-[#F8FAFC]" value="Antarctica">
+                Antarctica
+              </option>
+              <option
+                className="bg-[#143A6A] text-[#F8FAFC]"
+                value="Southern Ocean"
+              >
+                Southern Ocean
               </option>
             </select>
 
@@ -425,27 +443,24 @@ const Metrics = () => {
         <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-[#1B457A] bg-[#143A6A] overflow-x-auto">
           <div className="min-w-[900px]">
             <div className="flex text-xs font-bold text-[#F4C542] h-10 items-center">
-              <div className="w-[220px] sm:w-[280px] lg:w-[350px] pl-4">Name</div>
+              <div className="w-[200px] sm:w-[250px] lg:w-[320px] pl-4">Name</div>
               <div className="flex-1 relative h-full overflow-hidden">
-                {/* Ticks */}
-                <div className="absolute inset-0 flex items-center pointer-events-none">
-                  {YEARS_ARRAY.map((year) => {
-                    const left = ((year - MIN_YEAR) / TOTAL_YEARS) * 100;
-                    return (
-                      <div
-                        key={year}
-                        className="absolute h-full flex flex-col justify-end pb-1 border-l border-[#1B457A]"
-                        style={{ left: `${left}%` }}
-                      >
-                        <span className="pl-1 text-[10px] text-[#F4C542]">
-                          {year}
-                        </span>
-                      </div>
-                    );
-                  })}
+                <div className="absolute inset-0 grid grid-cols-[repeat(15,_minmax(0,1fr))]">
+                  {YEARS_ARRAY.map((year, index) => (
+                    <div
+                      key={year}
+                      className={`h-full border-l border-[#1B457A] flex items-end pb-1 ${index === YEARS_ARRAY.length - 1 ? "border-r border-[#1B457A]" : ""}`}
+                    >
+                      <span className="pl-1 text-[10px] text-[#F4C542] whitespace-nowrap">
+                        {year}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="w-[64px] sm:w-[72px] lg:w-[80px] text-center">Cov.</div>
+              <div className="w-[88px] sm:w-[104px] lg:w-[120px] text-center">
+                Coverage
+              </div>
             </div>
           </div>
         </div>
@@ -456,17 +471,15 @@ const Metrics = () => {
         {/* Items */}
         <div className="min-w-[900px] border border-[#1B457A] border-t-0 rounded-b bg-[#0F2D57] relative">
           {/* Vertical Grid Lines (Background) */}
-          <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-284px)] sm:w-[calc(100%-352px)] lg:w-[calc(100%-430px)] ml-[220px] sm:ml-[280px] lg:ml-[350px]">
-            {YEARS_ARRAY.map((year) => {
-              const left = ((year - MIN_YEAR) / TOTAL_YEARS) * 100;
-              return (
+          <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-288px)] sm:w-[calc(100%-354px)] lg:w-[calc(100%-440px)] ml-[200px] sm:ml-[250px] lg:ml-[320px]">
+            <div className="absolute inset-0 grid grid-cols-[repeat(15,_minmax(0,1fr))]">
+              {YEARS_ARRAY.map((year, index) => (
                 <div
                   key={`grid-${year}`}
-                  className="absolute h-full border-l border-[#143A6A] border-dashed"
-                  style={{ left: `${left}%` }}
+                  className={`h-full border-l border-[#143A6A] border-dashed ${index === YEARS_ARRAY.length - 1 ? "border-r border-[#143A6A] border-dashed" : ""}`}
                 />
-              );
-            })}
+              ))}
+            </div>
           </div>
 
           {/* Rows */}
