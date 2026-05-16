@@ -34,36 +34,14 @@
       "type": "application/json",
       "title": "ALOS"
     },
-    {
-      "rel": "child",
-      "href": "./altika/catalog.json",
-      "type": "application/json",
-      "title": "ALtiKa"
-    },
-    {
-      "rel": "child",
-      "href": "./amsr-e/catalog.json",
-      "type": "application/json",
-      "title": "AMSR-E"
-    },
-    {
-      "rel": "child",
-      "href": "./amsr2/catalog.json",
-      "type": "application/json",
-      "title": "AMSR2"
-    },
+
     {
       "rel": "child",
       "href": "./aqua-eos-pm-1/catalog.json",
       "type": "application/json",
       "title": "AQUA (EOS/PM-1)"
     },
-    {
-      "rel": "child",
-      "href": "./ascat/catalog.json",
-      "type": "application/json",
-      "title": "ASCAT"
-    },
+  
     {
       "rel": "child",
       "href": "./aura/catalog.json",
@@ -250,12 +228,7 @@
       "type": "application/json",
       "title": "Limb-Viewing Instruments"
     },
-    {
-      "rel": "child",
-      "href": "./meris/catalog.json",
-      "type": "application/json",
-      "title": "MERIS"
-    },
+  
     {
       "rel": "child",
       "href": "./meteosat/catalog.json",
@@ -298,12 +271,7 @@
       "type": "application/json",
       "title": "OERSTED"
     },
-    {
-      "rel": "child",
-      "href": "./omi/catalog.json",
-      "type": "application/json",
-      "title": "OMI"
-    },
+  
     {
       "rel": "child",
       "href": "./orbview-2/catalog.json",
@@ -334,12 +302,7 @@
       "type": "application/json",
       "title": "SARAL"
     },
-    {
-      "rel": "child",
-      "href": "./seawifs/catalog.json",
-      "type": "application/json",
-      "title": "SeaWiFS"
-    },
+   
     {
       "rel": "child",
       "href": "./sentinel-1/catalog.json",
@@ -430,12 +393,7 @@
       "type": "application/json",
       "title": "TRMM"
     },
-    {
-      "rel": "child",
-      "href": "./viirs/catalog.json",
-      "type": "application/json",
-      "title": "VIIRS"
-    },
+   
     {
       "rel": "child",
       "href": "./windsat/catalog.json",
