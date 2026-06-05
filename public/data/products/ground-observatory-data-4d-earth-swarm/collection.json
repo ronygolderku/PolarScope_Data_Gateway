@@ -1,122 +1,119 @@
 {
-  "type": "Collection",
-  "id": "ground-observatory-data-4d-earth-swarm",
-  "stac_version": "1.0.0",
-  "description": "Consists of 1 month and 4 month mean files, with core field/revised means (Olsen et al., 2014), and SV estimates from annual differences for 1997-2021. These files are provided in the same cdf format as used for the GVO data, further details are given in the associated README file.",
-  "links": [
-    {
-      "rel": "root",
-      "href": "../../catalog.json",
-      "type": "application/json",
-      "title": "Open Science Catalog"
-    },
-    {
-      "rel": "via",
-      "href": "http://www.spacecenter.dk/files/magnetic-models/GO/GO_data.zip",
-      "title": "Access"
-    },
-    {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "Products"
-    },
-    {
-      "rel": "related",
-      "href": "../../projects/the-4d-earth-swarm-project/collection.json",
-      "type": "application/json",
-      "title": "Project: 4D-Earth SWARM"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/solid-earth/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Solid Earth"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Magnetosphere Ionosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../variables/magnetic-fields-magnetic-currents/catalog.json",
-      "type": "application/json",
-      "title": "Variable: Magnetic Fields/Magnetic Currents"
-    },
-    {
-      "rel": "related",
-      "href": "../../variables/geomagnetic-indices/catalog.json",
-      "type": "application/json",
-      "title": "Variable: Geomagnetic Indices"
-    },
-    {
-      "rel": "self",
-      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/ground-observatory-data-4d-earth-swarm/collection.json",
-      "type": "application/json"
-    }
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-  ],
-  "osc:project": "the-4d-earth-swarm-project",
-  "osc:status": "ongoing",
-  "osc:region": "Global",
-  "osc:type": "product",
-  "created": "2021-09-10T00:00:00Z",
-  "cf:parameter": [
-    {
-      "name": "ground_observatory_data"
-    }
-  ],
-  "themes": [
-    {
-      "scheme": "https://github.com/stac-extensions/osc#theme",
-      "concepts": [
-        {
-          "id": "solid-earth"
-        },
-        {
-          "id": "magnetosphere-ionosphere"
-        }
-      ]
-    }
-  ],
-  "osc:variables": [
-    "magnetic-fields-magnetic-currents",
-    "geomagnetic-indices"
-  ],
-  "osc:missions": [],
-  "updated": "2024-09-12T20:32:22.960110Z",
-  "title": "Ground Observatory data",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -180,
-          -90,
-          180,
-          90
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          null,
-          null
-        ]
-      ]
-    }
-  },
-  "license": "proprietary",
-  "keywords": [
-    "Ionosphere/Magnetosphere Dynamics",
-    "Magnetic Fields/Magnetic Currents",
-    "Sun-Earth Interactions",
-    "Geomagnetic Indices"
-  ]
+    "type":  "Collection",
+    "id":  "ground-observatory-data-4d-earth-swarm",
+    "stac_version":  "1.0.0",
+    "description":  "Consists of 1 month and 4 month mean files, with core field/revised means (Olsen et al., 2014), and SV estimates from annual differences for 1997-2021. These files are provided in the same cdf format as used for the GVO data, further details are given in the associated README file.",
+    "links":  [
+                  {
+                      "rel":  "root",
+                      "href":  "../../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Open Science Catalog"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "http://www.spacecenter.dk/files/magnetic-models/GO/GO_data.zip",
+                      "title":  "Access"
+                  },
+                  {
+                      "rel":  "parent",
+                      "href":  "../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Products"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../projects/the-4d-earth-swarm-project/collection.json",
+                      "type":  "application/json",
+                      "title":  "Project: 4D-Earth SWARM"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/solid-earth/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Solid Earth"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/magnetosphere-ionosphere/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Magnetosphere Ionosphere"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/magnetic-fields-magnetic-currents/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Magnetic Fields/Magnetic Currents"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/geomagnetic-indices/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Geomagnetic Indices"
+                  }
+              ],
+    "stac_extensions":  [
+                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+                        ],
+    "osc:project":  "the-4d-earth-swarm-project",
+    "osc:status":  "ongoing",
+    "osc:region":  "Global",
+    "osc:type":  "product",
+    "created":  "2021-09-10T00:00:00Z",
+    "cf:parameter":  [
+                         {
+                             "name":  "ground_observatory_data"
+                         }
+                     ],
+    "themes":  [
+                   {
+                       "scheme":  "https://github.com/stac-extensions/osc#theme",
+                       "concepts":  [
+                                        {
+                                            "id":  "solid-earth"
+                                        },
+                                        {
+                                            "id":  "magnetosphere-ionosphere"
+                                        }
+                                    ]
+                   }
+               ],
+    "osc:variables":  [
+                          "magnetic-fields-magnetic-currents",
+                          "geomagnetic-indices"
+                      ],
+    "osc:missions":  [
+
+                     ],
+    "updated":  "2024-09-12T20:32:22.960110Z",
+    "title":  "Ground Observatory data",
+    "extent":  {
+                   "spatial":  {
+                                   "bbox":  [
+                                                [
+                                                    -180,
+                                                    -90,
+                                                    180,
+                                                    90
+                                                ]
+                                            ]
+                               },
+                   "temporal":  {
+                                    "interval":  [
+                                                     [
+                                                         null,
+                                                         null
+                                                     ]
+                                                 ]
+                                }
+               },
+    "license":  "proprietary",
+    "keywords":  [
+                     "Ionosphere/Magnetosphere Dynamics",
+                     "Magnetic Fields/Magnetic Currents",
+                     "Sun-Earth Interactions",
+                     "Geomagnetic Indices"
+                 ]
 }

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { MapContainer, TileLayer, Rectangle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Loading from "./Loading";
+import { useProductData } from "../context/ProductDataContext";
 
 const CatalogDetails = () => {
   const location = useLocation();
@@ -11,6 +12,14 @@ const CatalogDetails = () => {
   const [childItems, setChildItems] = useState([]);
   const [childSearchTerm, setChildSearchTerm] = useState("");
   const [childSortOrder, setChildSortOrder] = useState("asc");
+  const selectionStack =
+    location.state?.selectionStack || location.state?.returnState?.selectionStack || [];
+  const selectedId =
+    selectionStack[selectionStack.length - 1] ||
+    location.state?.selectedId ||
+    location.state?.returnState?.selectedId;
+
+  const { pushSelection, setSelection, popSelection } = useProductData();
 
   // Detect catalog type and item path from URL
   // e.g., /products/cloud-op-livas or /eo-missions/aeolus or /variables/aerosol
@@ -148,7 +157,27 @@ const CatalogDetails = () => {
           </span>
           <span className="hidden md:inline mx-2">|</span>
           <button
-            onClick={() => navigate(getUpPath())}
+            onClick={() => {
+              const parentReturnState = location.state?.returnState?.parentReturnState;
+
+              if (catalogType === "products") {
+                const listState = location.state?.returnState || location.state;
+                // restore selection stack in context
+                if (listState?.selectionStack) setSelection(listState.selectionStack);
+                navigate(getUpPath(), { state: listState });
+                return;
+              }
+
+              if (parentReturnState) {
+                if (parentReturnState?.selectionStack) setSelection(parentReturnState.selectionStack);
+                navigate(getUpPath(), { state: parentReturnState });
+                return;
+              }
+
+              const fallback = location.state?.returnState || location.state;
+              if (fallback?.selectionStack) setSelection(fallback.selectionStack);
+              navigate(getUpPath(), { state: fallback });
+            }}
             className="btn btn-xs btn-outline rounded-sm"
           >
             Up
@@ -376,14 +405,14 @@ const CatalogDetails = () => {
                     </ul>
                   </>
                 )}
-                {data.links?.filter((l) => l.rel === "via" || l.rel === "self").length > 0 && (
+                {data.links?.filter((l) => l.rel === "via").length > 0 && (
                   <>
                     <div className="mt-2">
-                      <span className="font-semibold">Source metadata</span>
+                      <span className="font-semibold">Data Access</span>
                     </div>
                     <ul className="list-disc list-inside pl-2 text-[#D6E1F0]">
                       {data.links
-                        .filter((l) => l.rel === "via" || l.rel === "self")
+                        .filter((l) => l.rel === "via")
                         .map((link, idx) => (
                           <li key={idx}>
                             <a
@@ -443,17 +472,46 @@ const CatalogDetails = () => {
               const productId = item.id || getProductIdFromHref(item.href);
               const navPath = productId ? `/products/${productId}` : "";
 
+              const isSelected = selectedId === productId;
+              const fromPath = `${location.pathname}${location.search || ""}`;
+              const parentReturnState =
+                location.state?.returnState?.parentReturnState ||
+                location.state?.returnState ||
+                {
+                  selectedId: data.id,
+                  from: location.state?.from || getUpPath(),
+                  selectionStack: [data.id],
+                };
+              const nextStack = [...(parentReturnState.selectionStack || []), productId];
+
               return (
                 <Link
                   key={index}
                   to={navPath}
-                  state={{ from: location.pathname }}
+                  state={{
+                    from: fromPath,
+                    returnState: {
+                      selectedId: productId,
+                      selectionStack: nextStack,
+                      parentReturnState,
+                    },
+                  }}
                   onClick={(event) => {
                     if (!navPath) {
                       event.preventDefault();
+                      return;
+                    }
+                    // persist selection before navigation
+                    try {
+                      setSelection(nextStack);
+                      pushSelection(productId);
+                    } catch (e) {
+                      // ignore
                     }
                   }}
-                  className={`${navPath ? "cursor-pointer" : "pointer-events-none"} block rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group`}
+                  className={`${navPath ? "cursor-pointer" : "pointer-events-none"} block rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${
+                    isSelected ? "ring-2 ring-[#F4C542]" : ""
+                  }`}
                 >
                   <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542]">
                     {item.title}

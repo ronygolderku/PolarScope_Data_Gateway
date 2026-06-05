@@ -1,20 +1,24 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { useNavigate, useSearchParams } from "react-router";
+import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { FaSearch } from "react-icons/fa";
 import Loading from "./Loading";
 import { useProductData } from "../context/ProductDataContext";
 import { useDebounce } from "../hooks/useDebounce";
 
 const Search = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const initialQuery = searchParams.get("q") || "";
 
   const { allProducts, isLoading: isDataLoading, fetchAllProducts } = useProductData();
+  const { setSelection, pushSelection } = useProductData();
   
   const [searchTerm, setSearchTerm] = useState(initialQuery);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+
+  const selectedId = location.state?.selectedId;
   
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
@@ -101,11 +105,31 @@ const Search = () => {
             </div>
 
             <div className="grid gap-4">
-              {results.map((product) => (
+              {results.map((product) => {
+                const isSelected = selectedId === product.id;
+                const searchUrl = searchTerm.trim()
+                  ? `/search?q=${encodeURIComponent(searchTerm)}`
+                  : "/search";
+
+                return (
                 <div
                   key={product.id}
-                  onClick={() => navigate(`/products/${product.productPath}`)}
-                  className="bg-[#143A6A] border border-[#1B457A] rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden"
+                  onClick={() => {
+                    try {
+                      setSelection([product.id]);
+                      pushSelection(product.id);
+                    } catch (e) {}
+                    navigate(`/products/${product.productPath}`, {
+                      state: {
+                        from: searchUrl,
+                        returnState: { selectedId: product.id },
+                      },
+                    });
+                  }
+                  }
+                  className={`bg-[#143A6A] border border-[#1B457A] rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden ${
+                    isSelected ? "ring-2 ring-[#F4C542]" : ""
+                  }`}
                 >
                   <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 min-w-0">
                     <div className="flex-1 min-w-0">
@@ -166,7 +190,8 @@ const Search = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}

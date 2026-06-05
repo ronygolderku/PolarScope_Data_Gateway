@@ -40,12 +40,7 @@
       "type": "application/json",
       "title": "Bedrock topography and/or geothermal heat flux_Antarctica_GOCE"
     },
-    {
-      "rel": "child",
-      "href": "./cdom-aeolus-innovation-color/collection.json",
-      "type": "application/json",
-      "title": "Chromophoric Dissolved Organic Matter (CDOM) absorption_Global_AEOLUS"
-    },
+
     {
       "rel": "child",
       "href": "./chaos-field-model-4d-earth-swarm/collection.json",

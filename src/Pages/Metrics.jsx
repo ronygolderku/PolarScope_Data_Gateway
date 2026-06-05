@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import {
   FaGlobe,
   FaSearch,
@@ -153,8 +153,9 @@ const ProductRow = ({
   isExpanded,
   onToggle,
   onOpenModal,
+  onNavigateToProduct,
+  isSelected,
 }) => {
-  const navigate = useNavigate();
 
   // Calculate Bar Position & Width
   const interval = product.extent?.temporal?.interval?.[0];
@@ -170,7 +171,11 @@ const ProductRow = ({
   const widthPercent = (durationYears / totalYears) * 100;
 
   return (
-    <div className="border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group">
+    <div
+      className={`border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group ${
+        isSelected ? "ring-2 ring-[#F4C542] bg-[#143A6A]" : ""
+      }`}
+    >
       <div className="flex items-stretch h-12">
         {/* Name & Accordion Toggle */}
         <div className="w-[200px] min-w-[200px] sm:w-[250px] sm:min-w-[250px] lg:w-[320px] lg:min-w-[320px] border-r border-[#1B457A] p-2 pl-4 flex items-center gap-3 relative bg-[#0F2D57] z-10">
@@ -187,7 +192,7 @@ const ProductRow = ({
           <span
             className="text-sm font-semibold text-[#F8FAFC] truncate cursor-pointer hover:text-[#F4C542] hover:underline"
             title={product.title}
-            onClick={() => navigate(`/products/${product.productPath}`)}
+            onClick={() => onNavigateToProduct(product)}
           >
             {product.title}
           </span>
@@ -204,7 +209,7 @@ const ProductRow = ({
               minWidth: "4px",
             }}
             title={`${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`}
-            onClick={() => navigate(`/products/${product.productPath}`)}
+            onClick={() => onNavigateToProduct(product)}
           ></div>
         </div>
 
@@ -236,7 +241,7 @@ const ProductRow = ({
               </p>
               <div className="pt-2">
                 <button
-                  onClick={() => navigate(`/products/${product.productPath}`)}
+                  onClick={() => onNavigateToProduct(product)}
                   className="text-[#F4C542] text-xs font-bold uppercase hover:underline flex items-center gap-1"
                 >
                   View Product Details <FaExternalLinkAlt size={10} />
@@ -266,18 +271,23 @@ const ProductRow = ({
 };
 
 const Metrics = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [themes, setThemes] = useState([]);
 
   const { allProducts, isLoading: isDataLoading, hasLoaded, fetchAllProducts } = useProductData();
+  const { setSelection, pushSelection } = useProductData();
 
   // Filters
-  const [searchTerm, setSearchTerm] = useState("");
+  const initialFilters = location.state?.filters || {};
+  const [searchTerm, setSearchTerm] = useState(initialFilters.searchTerm || "");
   const [expandedIds, setExpandedIds] = useState(new Set());
-  const [selectedTheme, setSelectedTheme] = useState("All");
-  const [selectedRegion, setSelectedRegion] = useState("All");
+  const [selectedTheme, setSelectedTheme] = useState(initialFilters.selectedTheme || "All");
+  const [selectedRegion, setSelectedRegion] = useState(initialFilters.selectedRegion || "All");
+  const selectedId = location.state?.selectedId;
 
   // Timeline Configuration
   // Start timeline at 1970
@@ -353,6 +363,27 @@ const Metrics = () => {
       return matchesSearch && matchesTheme && matchesRegion;
     });
   }, [products, searchTerm, selectedTheme, selectedRegion]);
+
+  const handleNavigateToProduct = (product) => {
+    const fromPath = `${location.pathname}${location.search || ""}`;
+    try {
+      setSelection([product.id]);
+      pushSelection(product.id);
+    } catch (e) {}
+    navigate(`/products/${product.productPath}`, {
+      state: {
+        from: fromPath,
+        returnState: {
+          selectedId: product.id,
+          filters: {
+            searchTerm,
+            selectedTheme,
+            selectedRegion,
+          },
+        },
+      },
+    });
+  };
 
   if (loading) {
     return <Loading />;
@@ -494,6 +525,8 @@ const Metrics = () => {
                 isExpanded={expandedIds.has(product.id)}
                 onToggle={() => toggleExpand(product.id)}
                 onOpenModal={setSelectedProduct}
+                onNavigateToProduct={handleNavigateToProduct}
+                isSelected={selectedId === product.id}
               />
             ))}
             {filteredProducts.length === 0 && (

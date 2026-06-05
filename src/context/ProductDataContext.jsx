@@ -14,6 +14,25 @@ export const ProductDataProvider = ({ children }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [selectionStack, setSelectionStack] = useState([]);
+
+  const pushSelection = (id) => {
+    setSelectionStack((s) => {
+      if (!id) return s;
+      const next = [...s, id];
+      return next;
+    });
+  };
+
+  const popSelection = () => {
+    setSelectionStack((s) => {
+      if (s.length === 0) return s;
+      const next = s.slice(0, -1);
+      return next;
+    });
+  };
+
+  const setSelection = (stack) => setSelectionStack(stack || []);
 
   const fetchAllProducts = useCallback(async () => {
     // If already loaded, don't fetch again
@@ -100,6 +119,10 @@ export const ProductDataProvider = ({ children }) => {
         isLoading,
         hasLoaded,
         fetchAllProducts,
+        selectionStack,
+        pushSelection,
+        popSelection,
+        setSelection,
       }}
     >
       {children}

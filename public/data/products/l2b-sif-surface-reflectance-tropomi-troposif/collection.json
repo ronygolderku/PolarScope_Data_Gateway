@@ -1,117 +1,112 @@
 {
-  "type": "Collection",
-  "id": "l2b-sif-surface-reflectance-tropomi-troposif",
-  "stac_version": "1.0.0",
-  "description": "This dataset provides daily ungridded (L2B) SIF and surface reflectance estimates derived from TROPOMI observations covering the period May 2018-March 2021. The TROPOSIF products consists in: SIF estimates at 740 nm derived from a data driven approach based on a linear forward model fitting TOA radiances in the far-red spectral region; SIF data set derived from the 743-758 nm window (baseline SIF product); SIF data set from the extended 735-758 nm window (secondary SIF product); The SIF data from the 735-758 nm window have an enhanced signal-to-noise ratio but a higher sensitivity to atmospheric conditions than the SIF estimates from the 743-758 nm window; Spectral surface reflectance in 7 bands covering the 665-785 nm range.",
-  "links": [
-    {
-      "rel": "root",
-      "href": "../../catalog.json",
-      "type": "application/json",
-      "title": "Open Science Catalog"
-    },
-    {
-      "rel": "via",
-      "href": "http://ftp.sron.nl/open-access-data-2/TROPOMI/tropomi/sif/v2.1/l2b/",
-      "title": "Access"
-    },
-    {
-      "rel": "via",
-      "href": "https://s5p-troposif.noveltis.fr/wp-content/uploads/2021/05/NOV-FE-0956-MU-019_v2.0.pdf",
-      "title": "Documentation"
-    },
-    {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "Products"
-    },
-    {
-      "rel": "related",
-      "href": "../../projects/sentinel-5p-innovation-solar-induced-chlorophyll-fluorescence-sif/collection.json",
-      "type": "application/json",
-      "title": "Project: S5p Inno - SIF"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/atmosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Atmosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../variables/reflectance/catalog.json",
-      "type": "application/json",
-      "title": "Variable: Reflectance"
-    },
-    {
-      "rel": "related",
-      "href": "../../eo-missions/sentinel-5p/catalog.json",
-      "type": "application/json",
-      "title": "EO Mission: Sentinel-5p"
-    },
-    {
-      "rel": "self",
-      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/l2b-sif-surface-reflectance-tropomi-troposif/collection.json",
-      "type": "application/json"
-    }
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-  ],
-  "osc:project": "sentinel-5p-innovation-solar-induced-chlorophyll-fluorescence-sif",
-  "osc:status": "completed",
-  "osc:region": "Global",
-  "osc:type": "product",
-  "created": "2021-12-31T00:00:00Z",
-  "cf:parameter": [
-    {
-      "name": "surface_reflectance_tropomi"
-    }
-  ],
-  "themes": [
-    {
-      "scheme": "https://github.com/stac-extensions/osc#theme",
-      "concepts": [
-        {
-          "id": "atmosphere"
-        }
-      ]
-    }
-  ],
-  "osc:variables": [
-    "reflectance"
-  ],
-  "osc:missions": [
-    "sentinel-5p"
-  ],
-  "updated": "2024-09-12T20:32:06.220108Z",
-  "title": "Daily ungridded (L2B) SIF and surface reflectance estimates derived from TROPOMI",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -180,
-          -90,
-          180,
-          90
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2018-05-01T00:00:00Z",
-          "2021-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "proprietary",
-  "keywords": [
-    "Land Surface",
-    "Surface Radiative Properties"
-  ]
+    "type":  "Collection",
+    "id":  "l2b-sif-surface-reflectance-tropomi-troposif",
+    "stac_version":  "1.0.0",
+    "description":  "This dataset provides daily ungridded (L2B) SIF and surface reflectance estimates derived from TROPOMI observations covering the period May 2018-March 2021. The TROPOSIF products consists in: SIF estimates at 740 nm derived from a data driven approach based on a linear forward model fitting TOA radiances in the far-red spectral region; SIF data set derived from the 743-758 nm window (baseline SIF product); SIF data set from the extended 735-758 nm window (secondary SIF product); The SIF data from the 735-758 nm window have an enhanced signal-to-noise ratio but a higher sensitivity to atmospheric conditions than the SIF estimates from the 743-758 nm window; Spectral surface reflectance in 7 bands covering the 665-785 nm range.",
+    "links":  [
+                  {
+                      "rel":  "root",
+                      "href":  "../../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Open Science Catalog"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "http://ftp.sron.nl/open-access-data-2/TROPOMI/tropomi/sif/v2.1/l2b/",
+                      "title":  "Access"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://s5p-troposif.noveltis.fr/wp-content/uploads/2021/05/NOV-FE-0956-MU-019_v2.0.pdf",
+                      "title":  "Documentation"
+                  },
+                  {
+                      "rel":  "parent",
+                      "href":  "../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Products"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../projects/sentinel-5p-innovation-solar-induced-chlorophyll-fluorescence-sif/collection.json",
+                      "type":  "application/json",
+                      "title":  "Project: S5p Inno - SIF"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/atmosphere/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Atmosphere"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/reflectance/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Reflectance"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../eo-missions/sentinel-5p/catalog.json",
+                      "type":  "application/json",
+                      "title":  "EO Mission: Sentinel-5p"
+                  }
+              ],
+    "stac_extensions":  [
+                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+                        ],
+    "osc:project":  "sentinel-5p-innovation-solar-induced-chlorophyll-fluorescence-sif",
+    "osc:status":  "completed",
+    "osc:region":  "Global",
+    "osc:type":  "product",
+    "created":  "2021-12-31T00:00:00Z",
+    "cf:parameter":  [
+                         {
+                             "name":  "surface_reflectance_tropomi"
+                         }
+                     ],
+    "themes":  [
+                   {
+                       "scheme":  "https://github.com/stac-extensions/osc#theme",
+                       "concepts":  [
+                                        {
+                                            "id":  "atmosphere"
+                                        }
+                                    ]
+                   }
+               ],
+    "osc:variables":  [
+                          "reflectance"
+                      ],
+    "osc:missions":  [
+                         "sentinel-5p"
+                     ],
+    "updated":  "2024-09-12T20:32:06.220108Z",
+    "title":  "Daily ungridded (L2B) SIF and surface reflectance estimates derived from TROPOMI",
+    "extent":  {
+                   "spatial":  {
+                                   "bbox":  [
+                                                [
+                                                    -180,
+                                                    -90,
+                                                    180,
+                                                    90
+                                                ]
+                                            ]
+                               },
+                   "temporal":  {
+                                    "interval":  [
+                                                     [
+                                                         "2018-05-01T00:00:00Z",
+                                                         "2021-12-31T23:59:59Z"
+                                                     ]
+                                                 ]
+                                }
+               },
+    "license":  "proprietary",
+    "keywords":  [
+                     "Land Surface",
+                     "Surface Radiative Properties"
+                 ]
 }

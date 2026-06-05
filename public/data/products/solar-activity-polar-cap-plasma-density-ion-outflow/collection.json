@@ -1,119 +1,114 @@
 {
-  "type": "Collection",
-  "id": "solar-activity-polar-cap-plasma-density-ion-outflow",
-  "stac_version": "1.0.0",
-  "description": "Solar activity- and height-adjusted plasma density measurements in the polar cap (i.e., above 80° latitude in Modified Apex110 coordinates) from the Swarm and CHAMP satellites. covering the entire CHAMP mission period (2002-2009) and the Swarm mission period from launch through February 2020.",
-  "links": [
-    {
-      "rel": "root",
-      "href": "../../catalog.json",
-      "type": "application/json",
-      "title": "Open Science Catalog"
-    },
-    {
-      "rel": "via",
-      "href": "https://zenodo.org/record/3813146#.YaS7fi8w3fY",
-      "title": "Access"
-    },
-    {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5281/zenodo.3813146",
-      "title": "DOI"
-    },
-    {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "Products"
-    },
-    {
-      "rel": "related",
-      "href": "../../projects/swarm-coupling-high-low-atmosphere-interactions-ion-outflow/collection.json",
-      "type": "application/json",
-      "title": "Project: Swarm+ Outflow"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/magnetosphere-ionosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Magnetosphere Ionosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../variables/solar-activity/catalog.json",
-      "type": "application/json",
-      "title": "Variable: Solar Activity"
-    },
-    {
-      "rel": "related",
-      "href": "../../eo-missions/swarm/catalog.json",
-      "type": "application/json",
-      "title": "EO Mission: SWARM"
-    },
-    {
-      "rel": "self",
-      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/solar-activity-polar-cap-plasma-density-ion-outflow/collection.json",
-      "type": "application/json"
-    }
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-  ],
-  "osc:project": "swarm-coupling-high-low-atmosphere-interactions-ion-outflow",
-  "osc:status": "ongoing",
-  "osc:region": "Global",
-  "osc:type": "product",
-  "created": "2020-05-07T00:00:00Z",
-  "sci:doi": "10.5281/zenodo.3813146",
-  "cf:parameter": [
-    {
-      "name": "solar_activity"
-    }
-  ],
-  "themes": [
-    {
-      "scheme": "https://github.com/stac-extensions/osc#theme",
-      "concepts": [
-        {
-          "id": "magnetosphere-ionosphere"
-        }
-      ]
-    }
-  ],
-  "osc:variables": [
-    "solar-activity"
-  ],
-  "osc:missions": [
-    "swarm"
-  ],
-  "updated": "2024-09-12T20:32:06.231108Z",
-  "title": "CHAMP and Swarm solar activity- and height-scaled polar cap plasma density measurements",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -180,
-          -90,
-          180,
-          90
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2002-01-01T00:00:00Z",
-          "2020-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "proprietary",
-  "keywords": [
-    "Sun-Earth Interactions",
-    "Solar Activity"
-  ]
+    "type":  "Collection",
+    "id":  "solar-activity-polar-cap-plasma-density-ion-outflow",
+    "stac_version":  "1.0.0",
+    "description":  "Solar activity- and height-adjusted plasma density measurements in the polar cap (i.e., above 80° latitude in Modified Apex110 coordinates) from the Swarm and CHAMP satellites. covering the entire CHAMP mission period (2002-2009) and the Swarm mission period from launch through February 2020.",
+    "links":  [
+                  {
+                      "rel":  "root",
+                      "href":  "../../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Open Science Catalog"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://zenodo.org/record/3813146#.YaS7fi8w3fY",
+                      "title":  "Access"
+                  },
+                  {
+                      "rel":  "cite-as",
+                      "href":  "https://doi.org/10.5281/zenodo.3813146",
+                      "title":  "DOI"
+                  },
+                  {
+                      "rel":  "parent",
+                      "href":  "../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Products"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../projects/swarm-coupling-high-low-atmosphere-interactions-ion-outflow/collection.json",
+                      "type":  "application/json",
+                      "title":  "Project: Swarm+ Outflow"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/magnetosphere-ionosphere/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Magnetosphere Ionosphere"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/solar-activity/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Solar Activity"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../eo-missions/swarm/catalog.json",
+                      "type":  "application/json",
+                      "title":  "EO Mission: SWARM"
+                  }
+              ],
+    "stac_extensions":  [
+                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+                        ],
+    "osc:project":  "swarm-coupling-high-low-atmosphere-interactions-ion-outflow",
+    "osc:status":  "ongoing",
+    "osc:region":  "Global",
+    "osc:type":  "product",
+    "created":  "2020-05-07T00:00:00Z",
+    "sci:doi":  "10.5281/zenodo.3813146",
+    "cf:parameter":  [
+                         {
+                             "name":  "solar_activity"
+                         }
+                     ],
+    "themes":  [
+                   {
+                       "scheme":  "https://github.com/stac-extensions/osc#theme",
+                       "concepts":  [
+                                        {
+                                            "id":  "magnetosphere-ionosphere"
+                                        }
+                                    ]
+                   }
+               ],
+    "osc:variables":  [
+                          "solar-activity"
+                      ],
+    "osc:missions":  [
+                         "swarm"
+                     ],
+    "updated":  "2024-09-12T20:32:06.231108Z",
+    "title":  "CHAMP and Swarm solar activity- and height-scaled polar cap plasma density measurements",
+    "extent":  {
+                   "spatial":  {
+                                   "bbox":  [
+                                                [
+                                                    -180,
+                                                    -90,
+                                                    180,
+                                                    90
+                                                ]
+                                            ]
+                               },
+                   "temporal":  {
+                                    "interval":  [
+                                                     [
+                                                         "2002-01-01T00:00:00Z",
+                                                         "2020-12-31T23:59:59Z"
+                                                     ]
+                                                 ]
+                                }
+               },
+    "license":  "proprietary",
+    "keywords":  [
+                     "Sun-Earth Interactions",
+                     "Solar Activity"
+                 ]
 }

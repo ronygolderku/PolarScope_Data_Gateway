@@ -33,12 +33,7 @@
       "type": "application/json",
       "title": "Albedo_Regional_S3A/SLSTR"
     },
-    {
-      "rel": "child",
-      "href": "../../products/cdom-aeolus-innovation-color/collection.json",
-      "type": "application/json",
-      "title": "Chromophoric Dissolved Organic Matter (CDOM) absorption_Global_AEOLUS"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/diffuse-attenuation-aeolus-innovation-color/collection.json",

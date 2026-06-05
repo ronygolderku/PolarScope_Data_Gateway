@@ -1,103 +1,98 @@
 {
-    "type": "Collection",
-    "id": "monthly-aqua-modis-chlorophyll-a-dataset",
-    "stac_version": "1.0.0",
-    "description": "Monthly global chlorophyll-a concentration from Aqua-MODIS ocean-colour observations provided through NASA's OceanColor Level 3 and 4 browser. This monthly dataset captures long-term chlorophyll variability over the global ocean.",
-    "links": [
-        {
-            "rel": "root",
-            "href": "../../catalog.json",
-            "type": "application/json",
-            "title": "Open Science Catalog"
-        },
-        {
-            "rel": "via",
-            "href": "https://oceandata.sci.gsfc.nasa.gov/l3/",
-            "title": "Access"
-        },
-        {
-            "rel": "parent",
-            "href": "../catalog.json",
-            "type": "application/json",
-            "title": "Products"
-        },
-        {
-            "rel": "related",
-            "href": "../../themes/oceans/catalog.json",
-            "type": "application/json",
-            "title": "Theme: Oceans"
-        },
-        {
-            "rel": "related",
-            "href": "../../variables/chlorophyll-concentration/catalog.json",
-            "type": "application/json",
-            "title": "Variable: Chlorophyll Concentration"
-        },
-        {
-            "rel": "self",
-            "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/monthly-aqua-modis-chlorophyll-a-dataset/collection.json",
-            "type": "application/json"
-        }
-    ],
-    "stac_extensions": [
-        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-        "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-        "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-    ],
-    "osc:project": "nasa-oceancolor",
-    "osc:status": "ongoing",
-    "osc:region": "Global",
-    "osc:type": "product",
-    "created": "2026-05-16T00:00:00Z",
-    "cf:parameter": [
-        {
-            "name": "mass_concentration_of_chlorophyll_a_in_sea_water"
-        }
-    ],
-    "themes": [
-        {
-            "scheme": "https://github.com/stac-extensions/osc#theme",
-            "concepts": [
-                {
-                    "id": "oceans"
-                }
-            ]
-        }
-    ],
-    "osc:variables": [
-        "chlorophyll-concentration"
-    ],
-    "osc:missions": [
-        "modis"
-    ],
-    "updated": "2026-05-16T00:00:00Z",
-    "title": "Monthly Aqua-MODIS Chlorophyll-a dataset",
-    "extent": {
-        "spatial": {
-            "bbox": [
-                [
-                    -180,
-                    -90,
-                    180,
-                    90
-                ]
-            ]
-        },
-        "temporal": {
-            "interval": [
-                [
-                    "2002-07-01T00:00:00Z",
-                    "2026-05-16T23:59:59Z"
-                ]
-            ]
-        }
-    },
-    "license": "proprietary",
-    "keywords": [
-        "Ocean Colour",
-        "Chlorophyll-a",
-        "MODIS",
-        "Aqua-MODIS",
-        "Monthly"
-    ]
+    "type":  "Collection",
+    "id":  "monthly-aqua-modis-chlorophyll-a-dataset",
+    "stac_version":  "1.0.0",
+    "description":  "Monthly global chlorophyll-a concentration from Aqua-MODIS ocean-colour observations provided through NASA\u0027s OceanColor Level 3 and 4 browser. This monthly dataset captures long-term chlorophyll variability over the global ocean.",
+    "links":  [
+                  {
+                      "rel":  "root",
+                      "href":  "../../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Open Science Catalog"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://oceandata.sci.gsfc.nasa.gov/l3/",
+                      "title":  "Access"
+                  },
+                  {
+                      "rel":  "parent",
+                      "href":  "../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Products"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/oceans/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Oceans"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/chlorophyll-concentration/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Chlorophyll Concentration"
+                  }
+              ],
+    "stac_extensions":  [
+                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+                        ],
+    "osc:project":  "nasa-oceancolor",
+    "osc:status":  "ongoing",
+    "osc:region":  "Global",
+    "osc:type":  "product",
+    "created":  "2026-05-16T00:00:00Z",
+    "cf:parameter":  [
+                         {
+                             "name":  "mass_concentration_of_chlorophyll_a_in_sea_water"
+                         }
+                     ],
+    "themes":  [
+                   {
+                       "scheme":  "https://github.com/stac-extensions/osc#theme",
+                       "concepts":  [
+                                        {
+                                            "id":  "oceans"
+                                        }
+                                    ]
+                   }
+               ],
+    "osc:variables":  [
+                          "chlorophyll-concentration"
+                      ],
+    "osc:missions":  [
+                         "modis"
+                     ],
+    "updated":  "2026-05-16T00:00:00Z",
+    "title":  "Monthly Aqua-MODIS Chlorophyll-a dataset",
+    "extent":  {
+                   "spatial":  {
+                                   "bbox":  [
+                                                [
+                                                    -180,
+                                                    -90,
+                                                    180,
+                                                    90
+                                                ]
+                                            ]
+                               },
+                   "temporal":  {
+                                    "interval":  [
+                                                     [
+                                                         "2002-07-01T00:00:00Z",
+                                                         "2026-05-16T23:59:59Z"
+                                                     ]
+                                                 ]
+                                }
+               },
+    "license":  "proprietary",
+    "keywords":  [
+                     "Ocean Colour",
+                     "Chlorophyll-a",
+                     "MODIS",
+                     "Aqua-MODIS",
+                     "Monthly"
+                 ]
 }

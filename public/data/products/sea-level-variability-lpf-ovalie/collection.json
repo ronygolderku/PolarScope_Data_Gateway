@@ -1,118 +1,115 @@
 {
-  "type": "Collection",
-  "id": "sea-level-variability-lpf-ovalie",
-  "stac_version": "1.0.0",
-  "description": "This data set contains the interannual variability fields for the sea level and its steric and manometric components over 1993-2015 from the OCCIPUT ensemble simulations.",
-  "links": [
-    {
-      "rel": "root",
-      "href": "../../catalog.json",
-      "type": "application/json",
-      "title": "Open Science Catalog"
-    },
-    {
-      "rel": "via",
-      "href": "https://zenodo.org/record/5564399#.YWVwM1yYEXc",
-      "title": "Access"
-    },
-    {
-      "rel": "via",
-      "href": "https://doi.org/10.1029/2020JC017123",
-      "title": "Documentation"
-    },
-    {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5281/zenodo.5564399",
-      "title": "DOI"
-    },
-    {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "Products"
-    },
-    {
-      "rel": "related",
-      "href": "../../projects/ovalie-oceanic-intrinsic-variability-versus-atmospheric-forced-variability-of-sea-level-change/collection.json",
-      "type": "application/json",
-      "title": "Project: (LPF) OVALIE"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/oceans/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Oceans"
-    },
-    {
-      "rel": "related",
-      "href": "../../variables/sea-level-changes/catalog.json",
-      "type": "application/json",
-      "title": "Variable: Sea Level Changes"
-    },
-    {
-      "rel": "self",
-      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/sea-level-variability-lpf-ovalie/collection.json",
-      "type": "application/json"
-    }
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-  ],
-  "osc:project": "ovalie-oceanic-intrinsic-variability-versus-atmospheric-forced-variability-of-sea-level-change",
-  "osc:status": "ongoing",
-  "osc:region": "Global",
-  "osc:type": "product",
-  "created": "2021-10-12T00:00:00Z",
-  "sci:doi": "10.5281/zenodo.5564399",
-  "cf:parameter": [
-    {
-      "name": "sea_level_variability"
-    }
-  ],
-  "themes": [
-    {
-      "scheme": "https://github.com/stac-extensions/osc#theme",
-      "concepts": [
-        {
-          "id": "oceans"
-        }
-      ]
-    }
-  ],
-  "osc:variables": [
-    "sea-level-changes"
-  ],
-  "osc:missions": [],
-  "updated": "2024-09-12T20:32:22.957110Z",
-  "title": "Atmospherically-forced and chaotic interannual variability of the sea level and its components over 1993-2015 from the OCCIPUT ensemble simulations",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -180,
-          -90,
-          180,
-          90
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "1993-01-01T00:00:00Z",
-          "2015-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "proprietary",
-  "keywords": [
-    "Land Surface",
-    "Geomorphic/Landforms Processes",
-    "Coastal Processes",
-    "Sea Level Changes"
-  ]
+    "type":  "Collection",
+    "id":  "sea-level-variability-lpf-ovalie",
+    "stac_version":  "1.0.0",
+    "description":  "This data set contains the interannual variability fields for the sea level and its steric and manometric components over 1993-2015 from the OCCIPUT ensemble simulations.",
+    "links":  [
+                  {
+                      "rel":  "root",
+                      "href":  "../../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Open Science Catalog"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://zenodo.org/record/5564399#.YWVwM1yYEXc",
+                      "title":  "Access"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://doi.org/10.1029/2020JC017123",
+                      "title":  "Documentation"
+                  },
+                  {
+                      "rel":  "cite-as",
+                      "href":  "https://doi.org/10.5281/zenodo.5564399",
+                      "title":  "DOI"
+                  },
+                  {
+                      "rel":  "parent",
+                      "href":  "../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Products"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../projects/ovalie-oceanic-intrinsic-variability-versus-atmospheric-forced-variability-of-sea-level-change/collection.json",
+                      "type":  "application/json",
+                      "title":  "Project: (LPF) OVALIE"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/oceans/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Oceans"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/sea-level-changes/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Sea Level Changes"
+                  }
+              ],
+    "stac_extensions":  [
+                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+                        ],
+    "osc:project":  "ovalie-oceanic-intrinsic-variability-versus-atmospheric-forced-variability-of-sea-level-change",
+    "osc:status":  "ongoing",
+    "osc:region":  "Global",
+    "osc:type":  "product",
+    "created":  "2021-10-12T00:00:00Z",
+    "sci:doi":  "10.5281/zenodo.5564399",
+    "cf:parameter":  [
+                         {
+                             "name":  "sea_level_variability"
+                         }
+                     ],
+    "themes":  [
+                   {
+                       "scheme":  "https://github.com/stac-extensions/osc#theme",
+                       "concepts":  [
+                                        {
+                                            "id":  "oceans"
+                                        }
+                                    ]
+                   }
+               ],
+    "osc:variables":  [
+                          "sea-level-changes"
+                      ],
+    "osc:missions":  [
+
+                     ],
+    "updated":  "2024-09-12T20:32:22.957110Z",
+    "title":  "Atmospherically-forced and chaotic interannual variability of the sea level and its components over 1993-2015 from the OCCIPUT ensemble simulations",
+    "extent":  {
+                   "spatial":  {
+                                   "bbox":  [
+                                                [
+                                                    -180,
+                                                    -90,
+                                                    180,
+                                                    90
+                                                ]
+                                            ]
+                               },
+                   "temporal":  {
+                                    "interval":  [
+                                                     [
+                                                         "1993-01-01T00:00:00Z",
+                                                         "2015-12-31T23:59:59Z"
+                                                     ]
+                                                 ]
+                                }
+               },
+    "license":  "proprietary",
+    "keywords":  [
+                     "Land Surface",
+                     "Geomorphic/Landforms Processes",
+                     "Coastal Processes",
+                     "Sea Level Changes"
+                 ]
 }

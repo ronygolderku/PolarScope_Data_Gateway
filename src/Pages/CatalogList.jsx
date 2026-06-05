@@ -8,6 +8,7 @@ import {
   FaSortAmountUp,
 } from "react-icons/fa";
 import Loading from "./Loading";
+import { useProductData } from "../context/ProductDataContext";
 
 const CatalogList = () => {
   const { themeId } = useParams();
@@ -20,12 +21,25 @@ const CatalogList = () => {
   const [themeInfo, setThemeInfo] = useState(null);
   const [loading, setLoading] = useState(true);
   // 'list' or 'tiles'
-  const [viewMode, setViewMode] = useState("list");
+  const initialFilters = location.state?.filters || {};
+  // read persistent selection stack from context as primary source
+  const { selectionStack: ctxSelectionStack } = useProductData();
+
+  const selectionStack =
+    ctxSelectionStack ||
+    location.state?.selectionStack ||
+    location.state?.returnState?.selectionStack;
+
+  const selectedId =
+    selectionStack?.[selectionStack.length - 1] ||
+    location.state?.selectedId ||
+    location.state?.returnState?.selectedId;
+  const [viewMode, setViewMode] = useState(initialFilters.viewMode || "list");
   // 'asc' or 'desc'
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState(initialFilters.sortOrder || "asc");
   const [isExpanded, setIsExpanded] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedKeyword, setSelectedKeyword] = useState("");
+  const [searchTerm, setSearchTerm] = useState(initialFilters.searchTerm || "");
+  const [selectedKeyword, setSelectedKeyword] = useState(initialFilters.selectedKeyword || "");
 
   useEffect(() => {
     setLoading(true);
@@ -331,13 +345,34 @@ const CatalogList = () => {
               navPath = `/${catalogType}/${item.id}`;
             }
 
+            const isSelected = selectedId === item.id;
+            const fromPath = `${location.pathname}${location.search || ""}`;
+
             return (
               <div
                 key={index}
-                onClick={() => navPath && navigate(navPath, { state: { from: location.pathname } })}
-                className={`${navPath ? 'cursor-pointer' : ''} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${
+                onClick={() =>
+                  navPath &&
+                  navigate(navPath, {
+                    state: {
+                      from: fromPath,
+                      returnState: {
+                        selectedId: item.id,
+                        from: fromPath,
+                        selectionStack: [item.id],
+                        filters: {
+                          viewMode,
+                          sortOrder,
+                          searchTerm,
+                          selectedKeyword,
+                        },
+                      },
+                    },
+                  })
+                }
+                className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${
                   viewMode === "list" ? "flex flex-col md:flex-row gap-6" : ""
-                }`}
+                } ${isSelected ? "ring-2 ring-[#F4C542]" : ""}`}
               >
                 <div className="flex-1">
                   <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542] capitalize transition-colors">

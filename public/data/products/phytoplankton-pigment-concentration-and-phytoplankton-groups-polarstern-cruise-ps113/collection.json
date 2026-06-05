@@ -1,128 +1,123 @@
 {
-  "type": "Collection",
-  "id": "phytoplankton-pigment-concentration-and-phytoplankton-groups-polarstern-cruise-ps113",
-  "stac_version": "1.0.0",
-  "description": "We analysed water samples taken during the Polarstern PS113 cruise with HPLC technique to retrieve phytoplankton pigment concentrations. We further used these data to obtain major phytoplankton groups following the diagnostic pigment analysis. We also measured at discrete light stations (called Lightstations) and from an undulating platform towed behind the ship (called TRIAXUS stations) radiometric underwater light profiles high spectrally resolved. We obtained high resolution phytoplankton group Chl-a data from depth resolved apparent optical properties derived from the underwater radiation data by applying an empirical orthogonal function (EOF) analysis to the spectral data set and developing subsequently regression models using the pigment based phytoplankton group Chla and the selected EOF modes. Results were obtained from using depth resolved transmission data (Transmission) and also from using the mean diffuse attenuation over the first optical depth (kdmean) of the measured radiometric profile. All the details are described in the related publication by Bracher et al. (2020).",
-  "links": [
-    {
-      "rel": "root",
-      "href": "../../catalog.json",
-      "type": "application/json",
-      "title": "Open Science Catalog"
-    },
-    {
-      "rel": "via",
-      "href": "https://doi.pangaea.de/10.1594/PANGAEA.911061?format=html#download",
-      "title": "Access"
-    },
-    {
-      "rel": "via",
-      "href": "https://doi.pangaea.de/10.1594/PANGAEA.911061",
-      "title": "Documentation"
-    },
-    {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "Products"
-    },
-    {
-      "rel": "related",
-      "href": "../../projects/sentinel-5p-innovation-ocean-colour-s5p-i-oc/collection.json",
-      "type": "application/json",
-      "title": "Project: S5p Inno - S5p-I-OC"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/oceans/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Oceans"
-    },
-    {
-      "rel": "related",
-      "href": "../../themes/atmosphere/catalog.json",
-      "type": "application/json",
-      "title": "Theme: Atmosphere"
-    },
-    {
-      "rel": "related",
-      "href": "../../variables/phytoplankton/catalog.json",
-      "type": "application/json",
-      "title": "Variable: Phytoplankton"
-    },
-    {
-      "rel": "related",
-      "href": "../../eo-missions/sentinel-5p/catalog.json",
-      "type": "application/json",
-      "title": "EO Mission: Sentinel-5p"
-    },
-    {
-      "rel": "self",
-      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/phytoplankton-pigment-concentration-and-phytoplankton-groups-polarstern-cruise-ps113/collection.json",
-      "type": "application/json"
-    }
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-  ],
-  "osc:project": "sentinel-5p-innovation-ocean-colour-s5p-i-oc",
-  "osc:status": "completed",
-  "osc:region": "South Atlantic Ocean",
-  "osc:type": "product",
-  "created": "2020-04-21T00:00:00Z",
-  "cf:parameter": [
-    {
-      "name": "phytoplankton_pigment_concentration_and_phytoplankton_groups"
-    }
-  ],
-  "themes": [
-    {
-      "scheme": "https://github.com/stac-extensions/osc#theme",
-      "concepts": [
-        {
-          "id": "oceans"
-        },
-        {
-          "id": "atmosphere"
-        }
-      ]
-    }
-  ],
-  "osc:variables": [
-    "phytoplankton"
-  ],
-  "osc:missions": [
-    "sentinel-5p"
-  ],
-  "updated": "2024-09-12T20:32:06.226108Z",
-  "title": "Phytoplankton pigment concentration and phytoplankton groups measured on water samples (POLARSTERN cruise PS113)",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -60.71218,
-          -47.64596,
-          -0.13706,
-          50.278
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2018-05-10T00:00:00Z",
-          "2018-06-09T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "proprietary",
-  "keywords": [
-    "Ecosystems",
-    "Aquatic Ecosystems",
-    "Plankton",
-    "Phytoplankton"
-  ]
+    "type":  "Collection",
+    "id":  "phytoplankton-pigment-concentration-and-phytoplankton-groups-polarstern-cruise-ps113",
+    "stac_version":  "1.0.0",
+    "description":  "We analysed water samples taken during the Polarstern PS113 cruise with HPLC technique to retrieve phytoplankton pigment concentrations. We further used these data to obtain major phytoplankton groups following the diagnostic pigment analysis. We also measured at discrete light stations (called Lightstations) and from an undulating platform towed behind the ship (called TRIAXUS stations) radiometric underwater light profiles high spectrally resolved. We obtained high resolution phytoplankton group Chl-a data from depth resolved apparent optical properties derived from the underwater radiation data by applying an empirical orthogonal function (EOF) analysis to the spectral data set and developing subsequently regression models using the pigment based phytoplankton group Chla and the selected EOF modes. Results were obtained from using depth resolved transmission data (Transmission) and also from using the mean diffuse attenuation over the first optical depth (kdmean) of the measured radiometric profile. All the details are described in the related publication by Bracher et al. (2020).",
+    "links":  [
+                  {
+                      "rel":  "root",
+                      "href":  "../../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Open Science Catalog"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://doi.pangaea.de/10.1594/PANGAEA.911061?format=html#download",
+                      "title":  "Access"
+                  },
+                  {
+                      "rel":  "via",
+                      "href":  "https://doi.pangaea.de/10.1594/PANGAEA.911061",
+                      "title":  "Documentation"
+                  },
+                  {
+                      "rel":  "parent",
+                      "href":  "../catalog.json",
+                      "type":  "application/json",
+                      "title":  "Products"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../projects/sentinel-5p-innovation-ocean-colour-s5p-i-oc/collection.json",
+                      "type":  "application/json",
+                      "title":  "Project: S5p Inno - S5p-I-OC"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/oceans/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Oceans"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../themes/atmosphere/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Theme: Atmosphere"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/phytoplankton/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Phytoplankton"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../eo-missions/sentinel-5p/catalog.json",
+                      "type":  "application/json",
+                      "title":  "EO Mission: Sentinel-5p"
+                  }
+              ],
+    "stac_extensions":  [
+                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+                        ],
+    "osc:project":  "sentinel-5p-innovation-ocean-colour-s5p-i-oc",
+    "osc:status":  "completed",
+    "osc:region":  "South Atlantic Ocean",
+    "osc:type":  "product",
+    "created":  "2020-04-21T00:00:00Z",
+    "cf:parameter":  [
+                         {
+                             "name":  "phytoplankton_pigment_concentration_and_phytoplankton_groups"
+                         }
+                     ],
+    "themes":  [
+                   {
+                       "scheme":  "https://github.com/stac-extensions/osc#theme",
+                       "concepts":  [
+                                        {
+                                            "id":  "oceans"
+                                        },
+                                        {
+                                            "id":  "atmosphere"
+                                        }
+                                    ]
+                   }
+               ],
+    "osc:variables":  [
+                          "phytoplankton"
+                      ],
+    "osc:missions":  [
+                         "sentinel-5p"
+                     ],
+    "updated":  "2024-09-12T20:32:06.226108Z",
+    "title":  "Phytoplankton pigment concentration and phytoplankton groups measured on water samples (POLARSTERN cruise PS113)",
+    "extent":  {
+                   "spatial":  {
+                                   "bbox":  [
+                                                [
+                                                    -60.71218,
+                                                    -47.64596,
+                                                    -0.13706,
+                                                    50.278
+                                                ]
+                                            ]
+                               },
+                   "temporal":  {
+                                    "interval":  [
+                                                     [
+                                                         "2018-05-10T00:00:00Z",
+                                                         "2018-06-09T23:59:59Z"
+                                                     ]
+                                                 ]
+                                }
+               },
+    "license":  "proprietary",
+    "keywords":  [
+                     "Ecosystems",
+                     "Aquatic Ecosystems",
+                     "Plankton",
+                     "Phytoplankton"
+                 ]
 }
