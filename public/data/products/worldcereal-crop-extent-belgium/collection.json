@@ -2643,11 +2643,6 @@
                       "type":  "application/json"
                   },
                   {
-                      "href":  "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-25020410530548a7aef81c62faebd127/results/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/e60aca71003c1f96928ebe596ad69534?expires=1739274740",
-                      "rel":  "via",
-                      "type":  "application/json"
-                  },
-                  {
                       "href":  "http://ceos.org/ard/files/PFS/SR/v5.0/CARD4L_Product_Family_Specification_Surface_Reflectance-v5.0.pdf",
                       "rel":  "card4l-document",
                       "type":  "application/pdf"
