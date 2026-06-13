@@ -102,9 +102,15 @@
     },
     {
       "rel": "child",
-      "href": "../../products/monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
+      "href": "../../products/monthly-global-chlorophyll-a-dataset-globcolour/collection.json",
       "type": "application/json",
       "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Chlorophyll-a dataset (4 km, OC-CCI v6.0)"
     },
     {
       "rel": "child",

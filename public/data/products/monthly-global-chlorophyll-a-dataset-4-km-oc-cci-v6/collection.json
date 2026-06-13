@@ -2,7 +2,7 @@
     "type":  "Collection",
     "id":  "monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6",
     "stac_version":  "1.0.0",
-    "description":  "Monthly global chlorophyll-a dataset from Copernicus-GlobColour, a multi-sensor merged ocean-colour product at 4 km spatial resolution. This collection provides monthly and interpolated chlorophyll-a concentration fields derived from satellite observations spanning 1997 to ongoing.",
+    "description":  "Monthly global chlorophyll-a dataset from OC-CCI v6.0, a multi-sensor merged ocean-colour product at 4 km spatial resolution. This collection provides monthly and interpolated chlorophyll-a concentration fields derived from satellite observations spanning 1997 to ongoing.",
     "links":  [
                   {
                       "rel":  "root",
@@ -71,7 +71,7 @@
                          "sentinel-3"
                      ],
     "updated":  "2026-05-16T00:00:00Z",
-    "title":  "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)",
+    "title":  "Monthly Global Chlorophyll-a dataset (4 km, OC-CCI v6.0)",
     "extent":  {
                    "spatial":  {
                                    "bbox":  [
@@ -87,7 +87,7 @@
                                     "interval":  [
                                                      [
                                                          "1998-01-01T00:00:00Z",
-                                                         "2026-05-16T23:59:59Z"
+                                                         null
                                                      ]
                                                  ]
                                 }

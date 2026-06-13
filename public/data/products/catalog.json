@@ -451,7 +451,7 @@
     },
     {
       "rel": "child",
-      "href": "./monthly-global-chlorophyll-a-dataset-4-km-oc-cci-v6/collection.json",
+      "href": "./monthly-global-chlorophyll-a-dataset-globcolour/collection.json",
       "type": "application/json",
       "title": "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)"
     },

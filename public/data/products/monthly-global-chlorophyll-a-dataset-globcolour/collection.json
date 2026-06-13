@@ -1,8 +1,8 @@
 {
     "type":  "Collection",
-    "id":  "global-attenuation-coefficient-kd490-4-km-oc-cci-v6",
+    "id":  "monthly-global-chlorophyll-a-dataset-globcolour",
     "stac_version":  "1.0.0",
-    "description":  "Global attenuation coefficient for downwelling irradiance (Kd490) gridded on a geographic projection at 4 km spatial resolution from the ESA Ocean Colour Climate Change Initiative (OC-CCI) Version 6.0.",
+    "description":  "Monthly global chlorophyll-a dataset from Copernicus-GlobColour, a multi-sensor merged ocean-colour product at 4 km spatial resolution. This collection provides monthly and interpolated chlorophyll-a concentration fields derived from satellite observations spanning 1997 to ongoing.",
     "links":  [
                   {
                       "rel":  "root",
@@ -12,7 +12,7 @@
                   },
                   {
                       "rel":  "via",
-                      "href":  "https://data.ceda.ac.uk/neodc/esacci/ocean_colour/data/v6.0-release/geographic/netcdf/kd",
+                      "href":  "https://data.marine.copernicus.eu/product/OCEANCOLOUR_GLO_BGC_L4_MY_009_104/services",
                       "title":  "Access"
                   },
                   {
@@ -26,6 +26,12 @@
                       "href":  "../../themes/oceans/catalog.json",
                       "type":  "application/json",
                       "title":  "Theme: Oceans"
+                  },
+                  {
+                      "rel":  "related",
+                      "href":  "../../variables/chlorophyll-concentration/catalog.json",
+                      "type":  "application/json",
+                      "title":  "Variable: Chlorophyll Concentration"
                   }
               ],
     "stac_extensions":  [
@@ -33,14 +39,14 @@
                             "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
                             "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
                         ],
-    "osc:project":  "ocean-colour-cci",
+    "osc:project":  "copernicus-globcolour",
     "osc:status":  "completed",
     "osc:region":  "Global",
     "osc:type":  "product",
     "created":  "2026-01-19T00:00:00Z",
     "cf:parameter":  [
                          {
-                             "name":  "diffuse_attenuation_coefficient_for_downwelling_irradiance"
+                             "name":  "mass_concentration_of_chlorophyll_a_in_sea_water"
                          }
                      ],
     "themes":  [
@@ -54,7 +60,7 @@
                    }
                ],
     "osc:variables":  [
-                          "diffuse-attenuation-coefficient-dac"
+                          "chlorophyll-concentration"
                       ],
     "osc:missions":  [
                          "multimission",
@@ -64,8 +70,8 @@
                          "orbview-2",
                          "sentinel-3"
                      ],
-    "updated":  "2026-01-19T00:00:00Z",
-    "title":  "Global attenuation coefficient for downwelling irradiance (Kd490) (4 km, OC-CCI v6.0)",
+    "updated":  "2026-05-16T00:00:00Z",
+    "title":  "Monthly Global Chlorophyll-a dataset (4 km, Copernicus-GlobColour)",
     "extent":  {
                    "spatial":  {
                                    "bbox":  [
@@ -81,7 +87,7 @@
                                     "interval":  [
                                                      [
                                                          "1998-01-01T00:00:00Z",
-                                                        null
+                                                         null
                                                      ]
                                                  ]
                                 }
@@ -89,8 +95,9 @@
     "license":  "proprietary",
     "keywords":  [
                      "Ocean Colour",
-                     "Kd490",
-                     "OC-CCI",
-                     "OC-CCI v6.0"
+                     "Chlorophyll",
+                     "Chlorophyll Concentration",
+                     "Copernicus-GlobColour",
+                     "Copernicus Marine"
                  ]
 }
