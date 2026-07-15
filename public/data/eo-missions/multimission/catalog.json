@@ -12,15 +12,15 @@
     },
     {
       "rel": "via",
-      "href": "https://database.eohandbook.com/database/missionsummary.aspx?missionID=2",
+      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v4/collection.json",
       "type": "text/html",
-      "title": "Description"
+      "title": "Monthly Global Reflectance dataset (4 km, OC-CCI v4, Copernicus-GlobColour)"
     },
     {
       "rel": "child",
       "href": "../../products/dissolved-organic-carbon-bicep/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Dissolved Organic Carbon dataset (9 km, OC-CCI v4.2)"
+      "title": "Monthly Global Reflectance dataset (4 km, OC-CCI v6, Copernicus-GlobColour)"
     },
     {
       "rel": "child",
@@ -60,9 +60,9 @@
     },
     {
       "rel": "child",
-      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
+      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v4/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Reflectance dataset (4 km, Copernicus-GlobColour)"
+      "title": "Monthly Global Reflectance dataset (4 km, OC-CCI v4)"
     },
     {
       "rel": "child",
@@ -74,7 +74,7 @@
       "rel": "child",
       "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Global remote sensing reflectance (Rrs) (4 km, OC-CCI v6.0)"
+      "title": "Monthly Global Reflectance dataset (4 km, OC-CCI v6)"
     },
     {
       "rel": "child",

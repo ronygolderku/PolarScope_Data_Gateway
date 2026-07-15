@@ -30,9 +30,15 @@
     },
     {
       "rel": "child",
+      "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v4/collection.json",
+      "type": "application/json",
+      "title": "Monthly Global Reflectance dataset (4 km, OC-CCI v4, Copernicus-GlobColour)"
+    },
+    {
+      "rel": "child",
       "href": "../../products/global-remote-sensing-reflectance-4-km-oc-cci-v6/collection.json",
       "type": "application/json",
-      "title": "Monthly Global Reflectance dataset (4 km, Copernicus-GlobColour)"
+      "title": "Monthly Global Reflectance dataset (4 km, OC-CCI v6, Copernicus-GlobColour)"
     },
     {
       "rel": "parent",

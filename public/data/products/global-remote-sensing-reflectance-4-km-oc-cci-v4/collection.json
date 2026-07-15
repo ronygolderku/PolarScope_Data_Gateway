@@ -1,8 +1,8 @@
 {
     "type":  "Collection",
-    "id":  "global-remote-sensing-reflectance-4-km-oc-cci-v6",
+    "id":  "global-remote-sensing-reflectance-4-km-oc-cci-v4",
     "stac_version":  "1.0.0",
-    "description":  "Monthly global remote sensing reflectance (Rrs) from OC-CCI v6.0, a multi-sensor merged ocean-colour product at 4 km spatial resolution. This collection provides monthly and interpolated reflectance fields derived from satellite observations spanning 1997 to ongoing.",
+    "description":  "Monthly global remote sensing reflectance (Rrs) from OC-CCI v4.0, a multi-sensor merged ocean-colour product at 4 km spatial resolution. This collection provides monthly and interpolated reflectance fields derived from satellite observations spanning 1997 to ongoing.",
     "links":  [
                   {
                       "rel":  "root",
@@ -71,7 +71,7 @@
                          "sentinel-3"
                      ],
     "updated":  "2026-05-16T00:00:00Z",
-    "title":  "Monthly Global Reflectance dataset (4 km, OC-CCI v6, Copernicus-GlobColour)",
+    "title":  "Monthly Global Reflectance dataset (4 km, OC-CCI v4, Copernicus-GlobColour)",
     "extent":  {
                    "spatial":  {
                                    "bbox":  [
@@ -96,7 +96,7 @@
     "keywords":  [
                      "Ocean Colour",
                      "Rrs",
-                     "OC-CCI v6.0",
+                     "OC-CCI v4.0",
                      "Copernicus Marine"
                  ]
 }
