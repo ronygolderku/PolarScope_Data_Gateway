@@ -172,9 +172,8 @@ const ProductRow = ({
 
   return (
     <div
-      className={`border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group ${
-        isSelected ? "ring-2 ring-[#F4C542] bg-[#143A6A]" : ""
-      }`}
+      className={`border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group ${isSelected ? "ring-2 ring-[#F4C542] bg-[#143A6A]" : ""
+        }`}
     >
       <div className="flex items-stretch h-12">
         {/* Name & Accordion Toggle */}
@@ -369,7 +368,7 @@ const Metrics = () => {
     try {
       setSelection([product.id]);
       pushSelection(product.id);
-    } catch (e) {}
+    } catch (e) { }
     navigate(`/products/${product.productPath}`, {
       state: {
         from: fromPath,
@@ -391,29 +390,30 @@ const Metrics = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC]">
-      {/* Header & Filters */}
-      <div className="sticky top-0 z-30 bg-[#0F2D57] border-b border-[#1B457A] shadow-sm">
+      <div className="sticky top-0 z-30 border-b border-white/10 bg-[#0F2D57]/95 shadow-sm backdrop-blur-md">
         <div className="max-w-[1920px] mx-auto px-4 md:px-8 py-4 space-y-4">
-          {/* Title Row */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold uppercase tracking-tight text-[#F4C542]">
-                Metrics
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">Metrics</p>
+              <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                Coverage timeline and product distribution
               </h1>
-              <span className="px-2 py-0.5 bg-[#143A6A] rounded text-xs text-[#D6E1F0] font-mono">
-                {filteredProducts.length} Products
-              </span>
+              <p className="max-w-3xl text-sm sm:text-base leading-6 text-[#D6E1F0]">
+                Inspect products across time, region, and theme to understand catalogue coverage at a glance.
+              </p>
             </div>
+            <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-[#D6E1F0]">
+              {filteredProducts.length} products
+            </span>
           </div>
 
-          {/* Controls Row */}
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4 rounded-2xl border border-white/10 bg-[#143A6A] p-4 shadow-sm">
             {/* Search */}
             <div className="relative w-full sm:max-w-sm">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#F4C542]" />
               <input
                 type="text"
-                className="input input-sm pl-10 w-full bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0] focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542] rounded-sm transition-all"
+                className="input input-sm pl-10 w-full bg-[#0b2748] border-white/10 text-[#F8FAFC] placeholder-[#D6E1F0] focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542] rounded-lg transition-all"
                 placeholder="Filter products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -424,7 +424,7 @@ const Metrics = () => {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="select select-sm rounded-lg text-sm w-full sm:w-44 bg-[#143A6A] border border-[#1B457A] text-[#F8FAFC] focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
+              className="select select-sm rounded-lg text-sm w-full sm:w-44 bg-[#0b2748] border border-white/10 text-[#F8FAFC] focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
             >
               <option className="bg-[#143A6A] text-[#F8FAFC]" value="All">
                 All
@@ -444,7 +444,7 @@ const Metrics = () => {
             </select>
 
             <select
-              className="select select-sm rounded-lg text-sm w-full sm:w-40 bg-[#143A6A] border border-[#1B457A] text-[#F8FAFC] capitalize focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
+              className="select select-sm rounded-lg text-sm w-full sm:w-40 bg-[#0b2748] border border-white/10 text-[#F8FAFC] capitalize focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
               value={selectedTheme}
               onChange={(e) => setSelectedTheme(e.target.value)}
             >
@@ -463,7 +463,7 @@ const Metrics = () => {
             </select>
 
             <div className="ml-auto flex items-center gap-2">
-              <button className="btn btn-sm btn-ghost text-xs font-semibold text-[#D6E1F0]">
+              <button className="btn btn-sm btn-ghost text-xs font-semibold text-[#D6E1F0] hover:bg-white/5">
                 <FaFilter size={10} /> Advanced
               </button>
             </div>
@@ -471,7 +471,7 @@ const Metrics = () => {
         </div>
 
         {/* Timeline Axis Header */}
-        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-[#1B457A] bg-[#143A6A] overflow-x-auto">
+        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-white/10 bg-[#143A6A] overflow-x-auto">
           <div className="min-w-[900px]">
             <div className="flex text-xs font-bold text-[#F4C542] h-10 items-center">
               <div className="w-[200px] sm:w-[250px] lg:w-[320px] pl-4">Name</div>
@@ -500,7 +500,7 @@ const Metrics = () => {
       {/* Timeline Content */}
       <div className="flex-1 max-w-[1920px] mx-auto w-full px-4 md:px-8 pb-10 overflow-x-auto">
         {/* Items */}
-        <div className="min-w-[900px] border border-[#1B457A] border-t-0 rounded-b bg-[#0F2D57] relative">
+        <div className="min-w-[900px] border border-white/10 border-t-0 rounded-b-2xl bg-[#0F2D57] relative overflow-hidden">
           {/* Vertical Grid Lines (Background) */}
           <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-288px)] sm:w-[calc(100%-354px)] lg:w-[calc(100%-440px)] ml-[200px] sm:ml-[250px] lg:ml-[320px]">
             <div className="absolute inset-0 grid grid-cols-[repeat(15,_minmax(0,1fr))]">

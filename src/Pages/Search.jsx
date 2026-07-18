@@ -13,13 +13,13 @@ const Search = () => {
 
   const { allProducts, isLoading: isDataLoading, fetchAllProducts } = useProductData();
   const { setSelection, pushSelection } = useProductData();
-  
+
   const [searchTerm, setSearchTerm] = useState(initialQuery);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
   const selectedId = location.state?.selectedId;
-  
+
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
   // Fetch all products on mount
@@ -63,45 +63,47 @@ const Search = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC] p-4 md:p-6">
       <div className="max-w-5xl mx-auto space-y-8">
-        {/* Search Header */}
-        <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-[#F8FAFC]">Search Products</h1>
-          <p className="text-[#D6E1F0]">
-            Find products by title, description, or keywords
-          </p>
+        <section className="rounded-3xl border border-white/10 bg-[#0b2748] p-6 md:p-8 shadow-[0_18px_60px_rgba(2,10,24,0.2)]">
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">Search</p>
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">Search products</h1>
+            <p className="max-w-2xl text-sm sm:text-base leading-7 text-[#D6E1F0]">
+              Find products by title, description, or keywords.
+            </p>
 
-          {/* Search Form */}
-          <form onSubmit={handleSearch} className="relative">
-            <input
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="input w-full pl-12 text-lg h-12 rounded-lg bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0]"
-            />
-            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[#F4C542]" />
-          </form>
-        </div>
+            <form onSubmit={handleSearch} className="relative pt-2">
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="input w-full pl-12 text-base h-12 rounded-xl bg-[#143A6A] border-white/10 text-[#F8FAFC] placeholder-[#D6E1F0] shadow-sm"
+              />
+              <FaSearch className="absolute left-4 top-[58%] -translate-y-1/2 text-[#F4C542]" />
+            </form>
+          </div>
+        </section>
 
-        {/* Results Section */}
         {(loading || isDataLoading) && <Loading />}
 
         {!loading && !isDataLoading && results.length === 0 && searched && (
-          <div className="bg-[#143A6A] border border-[#1B457A] text-[#D6E1F0] p-6 rounded-lg text-center">
-            <p className="text-lg font-semibold">No products found</p>
+          <div className="rounded-2xl border border-white/10 bg-[#143A6A] p-6 text-center text-[#D6E1F0] shadow-sm">
+            <p className="text-lg font-semibold text-white">No products found</p>
             <p className="text-sm mt-2">
-              Try different keywords or browse the catalog
+              Try different keywords or browse the catalog.
             </p>
           </div>
         )}
 
         {!loading && !isDataLoading && results.length > 0 && (
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold text-[#F8FAFC]">
+          <section className="space-y-4 rounded-3xl border border-white/10 bg-[#0b2748] p-6 md:p-8 shadow-[0_18px_60px_rgba(2,10,24,0.18)]">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="text-2xl font-semibold tracking-tight text-white">
                 {searched ? "Search Results" : "All Products"}
               </h2>
-              <span className="badge badge-neutral text-base">{results.length}</span>
+              <span className="badge badge-neutral text-base px-4 py-3 rounded-full bg-white/5 text-white border border-white/10">
+                {results.length}
+              </span>
             </div>
 
             <div className="grid gap-4">
@@ -112,93 +114,91 @@ const Search = () => {
                   : "/search";
 
                 return (
-                <div
-                  key={product.id}
-                  onClick={() => {
-                    try {
-                      setSelection([product.id]);
-                      pushSelection(product.id);
-                    } catch (e) {}
-                    navigate(`/products/${product.productPath}`, {
-                      state: {
-                        from: searchUrl,
-                        returnState: { selectedId: product.id },
-                      },
-                    });
-                  }
-                  }
-                  className={`bg-[#143A6A] border border-[#1B457A] rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden ${
-                    isSelected ? "ring-2 ring-[#F4C542]" : ""
-                  }`}
-                >
-                  <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 min-w-0">
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-xl font-bold text-[#F8FAFC] group-hover:text-[#F4C542] mb-2 break-words">
-                        {product.title}
-                      </h3>
-                      <p className="text-[#D6E1F0] text-sm leading-relaxed line-clamp-2 mb-3 break-words">
-                        {product.description || "No description available"}
-                      </p>
+                  <div
+                    key={product.id}
+                    onClick={() => {
+                      try {
+                        setSelection([product.id]);
+                        pushSelection(product.id);
+                      } catch (e) { }
+                      navigate(`/products/${product.productPath}`, {
+                        state: {
+                          from: searchUrl,
+                          returnState: { selectedId: product.id },
+                        },
+                      });
+                    }
+                    }
+                    className={`bg-[#143A6A] border border-white/10 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group overflow-hidden ${isSelected ? "ring-2 ring-[#F4C542]" : ""
+                      }`}
+                  >
+                    <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 min-w-0">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-semibold text-white group-hover:text-[#F4C542] mb-2 break-words">
+                          {product.title}
+                        </h3>
+                        <p className="text-[#D6E1F0] text-sm leading-relaxed line-clamp-2 mb-3 break-words">
+                          {product.description || "No description available"}
+                        </p>
 
-                      <div className="space-y-2">
-                        <div className="text-xs text-[#D6E1F0]">
-                          <span className="font-semibold">Theme:</span>{" "}
-                          <span className="badge badge-outline capitalize text-[#F8FAFC] border-[#F4C542]">
-                            {product.themeName}
-                          </span>
-                        </div>
-
-                        {product.keywords && product.keywords.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {product.keywords.slice(0, 3).map((keyword, i) => (
-                              <span
-                                key={i}
-                                className="badge badge-sm bg-[#1B457A] text-[#F8FAFC] text-xs max-w-full break-all"
-                              >
-                                {keyword}
-                              </span>
-                            ))}
-                            {product.keywords.length > 3 && (
-                              <span className="text-xs text-[#D6E1F0]">
-                                +{product.keywords.length - 3} more
-                              </span>
-                            )}
+                        <div className="space-y-2">
+                          <div className="text-xs text-[#D6E1F0]">
+                            <span className="font-semibold">Theme:</span>{" "}
+                            <span className="badge badge-outline capitalize text-[#F8FAFC] border-[#F4C542]">
+                              {product.themeName}
+                            </span>
                           </div>
-                        )}
-                      </div>
-                    </div>
 
-                    <div className="md:text-right space-y-2 min-w-0">
-                      <div className="text-xs text-[#D6E1F0]">
-                        <span className="font-semibold">Temporal:</span>
-                        <br />
-                        {product.extent?.temporal?.interval?.[0]
-                          ? `${new Date(
-                              product.extent.temporal.interval[0][0],
-                            ).toLocaleDateString()} - ${
-                              product.extent.temporal.interval[0][1]
-                                ? new Date(
-                                    product.extent.temporal.interval[0][1],
-                                  ).toLocaleDateString()
-                                : "Present"
-                            }`
-                          : "Unknown"}
+                          {product.keywords && product.keywords.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                              {product.keywords.slice(0, 3).map((keyword, i) => (
+                                <span
+                                  key={i}
+                                  className="badge badge-sm bg-[#1B457A] text-[#F8FAFC] text-xs max-w-full break-all"
+                                >
+                                  {keyword}
+                                </span>
+                              ))}
+                              {product.keywords.length > 3 && (
+                                <span className="text-xs text-[#D6E1F0]">
+                                  +{product.keywords.length - 3} more
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                      <button className="btn btn-sm btn-outline rounded-md capitalize text-[#F8FAFC] border-[#1B457A]">
-                        View Details
-                      </button>
+
+                      <div className="md:text-right space-y-2 min-w-0">
+                        <div className="text-xs text-[#D6E1F0]">
+                          <span className="font-semibold">Temporal:</span>
+                          <br />
+                          {product.extent?.temporal?.interval?.[0]
+                            ? `${new Date(
+                              product.extent.temporal.interval[0][0],
+                            ).toLocaleDateString()} - ${product.extent.temporal.interval[0][1]
+                              ? new Date(
+                                product.extent.temporal.interval[0][1],
+                              ).toLocaleDateString()
+                              : "Present"
+                            }`
+                            : "Unknown"}
+                        </div>
+                        <button className="btn btn-sm btn-outline rounded-md capitalize text-[#F8FAFC] border-white/20 bg-white/5 hover:bg-white/10">
+                          View Details
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
                 );
               })}
             </div>
-          </div>
+          </section>
         )}
 
         {!loading && !isDataLoading && allProducts.length === 0 && (
-          <div className="text-center py-12 text-[#D6E1F0]">
-            <p className="text-lg">No products available</p>
+          <div className="text-center py-12 text-[#D6E1F0] rounded-2xl border border-white/10 bg-[#143A6A]">
+            <p className="text-lg text-white">No products available</p>
           </div>
         )}
       </div>

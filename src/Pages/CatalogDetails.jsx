@@ -1,549 +1,402 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import { MapContainer, TileLayer, Rectangle } from "react-leaflet";
+import { MapContainer, Rectangle, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Loading from "./Loading";
 import { useProductData } from "../context/ProductDataContext";
 
 const CatalogDetails = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [data, setData] = useState(null);
-  const [childItems, setChildItems] = useState([]);
-  const [childSearchTerm, setChildSearchTerm] = useState("");
-  const [childSortOrder, setChildSortOrder] = useState("asc");
-  const selectionStack =
-    location.state?.selectionStack || location.state?.returnState?.selectionStack || [];
-  const selectedId =
-    selectionStack[selectionStack.length - 1] ||
-    location.state?.selectedId ||
-    location.state?.returnState?.selectedId;
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [data, setData] = useState(null);
+    const [childItems, setChildItems] = useState([]);
+    const [childSearchTerm, setChildSearchTerm] = useState("");
+    const [childSortOrder, setChildSortOrder] = useState("asc");
+    const selectionStack = location.state?.selectionStack || location.state?.returnState?.selectionStack || [];
+    const selectedId = selectionStack[selectionStack.length - 1] || location.state?.selectedId || location.state?.returnState?.selectedId;
 
-  const { pushSelection, setSelection, popSelection } = useProductData();
+    const { pushSelection, setSelection } = useProductData();
 
-  // Detect catalog type and item path from URL
-  // e.g., /products/cloud-op-livas or /eo-missions/aeolus or /variables/aerosol
-  const pathParts = location.pathname.split("/").filter(Boolean);
-  const catalogType = pathParts[0]; // products, eo-missions, variables
-  const itemPath = pathParts.slice(1).join("/"); // cloud-op-livas, aeolus, etc.
+    const pathParts = location.pathname.split("/").filter(Boolean);
+    const catalogType = pathParts[0];
+    const itemPath = pathParts.slice(1).join("/");
 
-  useEffect(() => {
-    setData(null);
-    setChildItems([]);
+    useEffect(() => {
+        let cancelled = false;
 
-    // Determine file type based on catalog
-    const fileName = catalogType === "products" ? "collection.json" : "catalog.json";
-    const fetchPath = `/data/${catalogType}/${itemPath}/${fileName}`;
+        const loadDetails = async () => {
+            setData(null);
+            setChildItems([]);
 
-    fetch(fetchPath)
-      .then((res) => res.json())
-      .then(async (json) => {
-        setData(json);
+            const fileName = catalogType === "products" ? "collection.json" : "catalog.json";
+            const fetchPath = `/data/${catalogType}/${itemPath}/${fileName}`;
+
+            try {
+                const response = await fetch(fetchPath);
+                const json = await response.json();
+                if (cancelled) return;
+
+                setData(json);
+
+                if (catalogType === "products") return;
+
+                const childLinks = (json.links || []).filter((link) => link.rel === "child");
+                if (childLinks.length === 0) return;
+
+                const baseUrl = new URL(`/data/${catalogType}/${itemPath}/`, window.location.origin);
+                const itemsWithDetails = await Promise.all(
+                    childLinks.map(async (link) => {
+                        try {
+                            const resolvedPath = new URL(link.href, baseUrl).pathname;
+                            const childRes = await fetch(resolvedPath);
+                            const details = await childRes.json();
+
+                            return {
+                                ...link,
+                                id: details.id,
+                                title: details.title || link.title,
+                                description: details.description,
+                                region: details["osc:region"],
+                                extent: details.extent,
+                            };
+                        } catch (error) {
+                            console.error("Error fetching child details:", error);
+                            return { ...link, title: link.title };
+                        }
+                    }),
+                );
+
+                if (!cancelled) {
+                    setChildItems(itemsWithDetails);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        loadDetails();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [catalogType, itemPath]);
+
+    if (!data) {
+        return <Loading />;
+    }
+
+    const formatDate = (dateStr) => (dateStr ? new Date(dateStr).toLocaleString() : "Unknown");
+
+    const getUpPath = () => {
+        if (location.state?.from) return location.state.from;
 
         if (catalogType === "products") {
-          return;
+            const theme = data?.themes?.[0]?.concepts?.[0]?.id;
+            if (theme) return `/themes/${theme}`;
         }
 
-        const childLinks = (json.links || []).filter((link) => link.rel === "child");
-        if (childLinks.length === 0) {
-          return;
+        return `/${catalogType}`;
+    };
+
+    const sortedChildItems = [...childItems].sort((a, b) => {
+        const aTitle = a.title || "";
+        const bTitle = b.title || "";
+        return childSortOrder === "asc" ? aTitle.localeCompare(bTitle) : bTitle.localeCompare(aTitle);
+    });
+
+    const filteredChildItems = sortedChildItems.filter((item) =>
+        item.title?.toLowerCase().includes(childSearchTerm.toLowerCase()) ||
+        item.description?.toLowerCase().includes(childSearchTerm.toLowerCase()),
+    );
+
+    const getProductIdFromHref = (href = "") => {
+        const match = href.match(/products\/([^/]+)\//);
+        return match?.[1] || "";
+    };
+
+    const bbox = data.extent?.spatial?.bbox?.[0] || [-180, -90, 180, 90];
+    const bounds = [
+        [bbox[1], bbox[0]],
+        [bbox[3], bbox[2]],
+    ];
+
+    const handleUpNavigation = () => {
+        const parentReturnState = location.state?.returnState?.parentReturnState;
+
+        if (catalogType === "products") {
+            const listState = location.state?.returnState || location.state;
+            if (listState?.selectionStack) setSelection(listState.selectionStack);
+            navigate(getUpPath(), { state: listState });
+            return;
         }
 
-        const baseUrl = new URL(`/data/${catalogType}/${itemPath}/`, window.location.origin);
+        if (parentReturnState) {
+            if (parentReturnState?.selectionStack) setSelection(parentReturnState.selectionStack);
+            navigate(getUpPath(), { state: parentReturnState });
+            return;
+        }
 
-        const itemsWithDetails = await Promise.all(
-          childLinks.map(async (link) => {
-            try {
-              const resolvedPath = new URL(link.href, baseUrl).pathname;
-              const childRes = await fetch(resolvedPath);
-              const details = await childRes.json();
+        const fallback = location.state?.returnState || location.state;
+        if (fallback?.selectionStack) setSelection(fallback.selectionStack);
+        navigate(getUpPath(), { state: fallback });
+    };
 
-              return {
-                ...link,
-                id: details.id,
-                title: details.title || link.title,
-                description: details.description,
-                region: details["osc:region"],
-                extent: details.extent,
-              };
-            } catch (err) {
-              console.error("Error fetching child details:", err);
-              return {
-                ...link,
-                title: link.title,
-              };
+    const handleOverviewNavigation = () => {
+        if (catalogType === "products") {
+            const theme = data?.themes?.[0]?.concepts?.[0]?.id;
+            if (theme) {
+                navigate(`/themes/${theme}`);
+                return;
             }
-          }),
-        );
+        }
 
-        setChildItems(itemsWithDetails);
-      })
-      .catch((err) => console.error(err));
-  }, [catalogType, itemPath]);
+        navigate(`/${catalogType}`);
+    };
 
-  if (!data) {
-    return <Loading />;
-  }
-
-  // Helper to get formatted date
-  const formatDate = (dateStr) => {
-    return dateStr ? new Date(dateStr).toLocaleString() : "Unknown";
-  };
-
-  const getUpPath = () => {
-    if (location.state?.from) {
-      return location.state.from;
-    }
-
-    if (catalogType === "products") {
-      const theme = data?.themes?.[0]?.concepts?.[0]?.id;
-      if (theme) {
-        return `/themes/${theme}`;
-      }
-    }
-
-    return `/${catalogType}`;
-  };
-
-  const sortedChildItems = [...childItems].sort((a, b) => {
-    const aTitle = a.title || "";
-    const bTitle = b.title || "";
-    return childSortOrder === "asc"
-      ? aTitle.localeCompare(bTitle)
-      : bTitle.localeCompare(aTitle);
-  });
-
-  const filteredChildItems = sortedChildItems.filter((item) =>
-    item.title?.toLowerCase().includes(childSearchTerm.toLowerCase()) ||
-    item.description?.toLowerCase().includes(childSearchTerm.toLowerCase())
-  );
-
-  const getProductIdFromHref = (href = "") => {
-    const match = href.match(/products\/([^/]+)\//);
-    return match?.[1] || "";
-  };
-
-  // Extract bbox safely
-  const bbox = data.extent?.spatial?.bbox?.[0] || [-180, -90, 180, 90];
-
-  const bounds = [
-    [bbox[1], bbox[0]],
-    [bbox[3], bbox[2]],
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC] p-4 md:p-6 max-w-7xl mx-auto space-y-6">
-      {/* Header */}
-      <div className="space-y-2">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-[#F4C542] border-l-8 border-[#F4C542] pl-4">
-            {data.title}
-          </h1>
-          <a
-            href={data.links?.find((l) => l.rel === "self")?.href || "#"}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-sm btn-outline gap-2 text-[#F8FAFC] border-[#1B457A]"
-          >
-            Source
-          </a>
-        </div>
-        <div className="text-sm text-[#D6E1F0] pl-6 flex flex-wrap gap-2 items-center">
-          <span>
-            in{" "}
-            <span className="text-[#F4C542] font-semibold">
-              Open Science Catalog
-            </span>
-          </span>
-          <span className="hidden md:inline mx-2">|</span>
-          <button
-            onClick={() => {
-              const parentReturnState = location.state?.returnState?.parentReturnState;
-
-              if (catalogType === "products") {
-                const listState = location.state?.returnState || location.state;
-                // restore selection stack in context
-                if (listState?.selectionStack) setSelection(listState.selectionStack);
-                navigate(getUpPath(), { state: listState });
-                return;
-              }
-
-              if (parentReturnState) {
-                if (parentReturnState?.selectionStack) setSelection(parentReturnState.selectionStack);
-                navigate(getUpPath(), { state: parentReturnState });
-                return;
-              }
-
-              const fallback = location.state?.returnState || location.state;
-              if (fallback?.selectionStack) setSelection(fallback.selectionStack);
-              navigate(getUpPath(), { state: fallback });
-            }}
-            className="btn btn-xs btn-outline rounded-sm"
-          >
-            Up
-          </button>
-          <button
-            onClick={() => {
-              // Navigate back based on catalog type
-              if (catalogType === "products") {
-                // Try to find theme from data
-                const theme = data?.themes?.[0]?.concepts?.[0]?.id;
-                if (theme) {
-                  navigate(`/themes/${theme}`);
-                } else {
-                  navigate(`/${catalogType}`);
-                }
-              } else {
-                navigate(`/${catalogType}`);
-              }
-            }}
-            className="btn btn-xs btn-outline rounded-sm"
-          >
-            Overview
-          </button>
-        </div>
-      </div>
-
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Left Column: Description & Map */}
-        <div className="flex-1 space-y-8">
-          {/* Description */}
-          <div>
-            <h2 className="text-xl font-bold text-[#F4C542] mb-3">
-              Description
-            </h2>
-            <p className="text-[#D6E1F0] leading-relaxed text-justify text-sm">
-              {data.description}
-            </p>
-            {/* Keywords as badges */}
-            {data.keywords && (
-              <div className="flex flex-wrap gap-2 mt-4">
-                {data.keywords.map((k, i) => (
-                  <span
-                    key={i}
-                    className="badge bg-[#1B457A] text-[#F8FAFC] text-xs rounded-sm border border-[#F4C542]"
-                  >
-                    {k}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mt-4">
-            {data.license && (
-              <div className="text-[#D6E1F0]">
-                <span className="font-semibold text-[#F8FAFC]">License</span>:{" "}
-                {data.license}
-              </div>
-            )}
-            {data.extent?.temporal?.interval?.[0] && (
-              <div className="text-[#D6E1F0]">
-                <span className="font-semibold text-[#F8FAFC]">Temporal Extent</span>:{" "}
-                {data.extent.temporal.interval[0][0]
-                  ? new Date(
-                    data.extent.temporal.interval[0][0],
-                  ).toLocaleDateString()
-                  : "Unknown"}{" "}
-                -{" "}
-                {data.extent.temporal.interval[0][1]
-                  ? new Date(
-                    data.extent.temporal.interval[0][1],
-                  ).toLocaleDateString()
-                  : "Present"}
-              </div>
-            )}
-          </div>
-
-          {/* Map - only show if spatial extent exists */}
-          {data.extent?.spatial?.bbox?.[0] && (
-            <div className="h-[400px] w-full border border-[#1B457A] rounded shadow-sm relative z-0 bg-[#143A6A]">
-              <MapContainer
-                bounds={bounds}
-                scrollWheelZoom={false}
-                style={{ height: "100%", width: "100%" }}
-                className="z-0"
-              >
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Rectangle
-                  bounds={bounds}
-                  pathOptions={{ color: "blue", weight: 1, fillOpacity: 0.2 }}
-                />
-              </MapContainer>
-            </div>
-          )}
-
-          {/* Related EarthCODE Forum Topics removed per request */}
-        </div>
-
-        {/* Right Column: Metadata */}
-        <div className="lg:w-1/3 space-y-8">
-          {/* Metadata Section */}
-          <div>
-            <h2 className="text-xl font-bold text-[#F4C542] mb-4">Metadata</h2>
-
-            {/* General Table */}
-            <div className="mb-6">
-              <h3 className="font-bold text-[#F8FAFC] mb-2">General</h3>
-              <div className="overflow-x-auto border border-[#1B457A] rounded bg-[#143A6A]">
-                <table className="table table-xs w-full text-[#F8FAFC]">
-                  <tbody>
-                    <tr className="bg-[#143A6A] border-b border-[#1B457A]">
-                      <td className="font-semibold w-24">Created</td>
-                      <td>{formatDate(data.created)}</td>
-                    </tr>
-                    <tr className="bg-[#0F2D57]">
-                      <td className="font-semibold">Updated</td>
-                      <td>{formatDate(data.updated)}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Cf Table - only show if cf:parameter exists */}
-            {data["cf:parameter"]?.[0]?.name && (
-              <div className="mb-6">
-                <h3 className="font-bold text-[#F8FAFC] mb-2">Cf</h3>
-                <div className="overflow-x-auto border border-[#1B457A] rounded bg-[#143A6A]">
-                  <table className="table table-xs w-full text-[#F8FAFC]">
-                    <tbody>
-                      <tr className="bg-[#143A6A]">
-                        <td className="font-semibold w-24">Parameter</td>
-                        <td className="break-all">
-                          {data["cf:parameter"][0].name}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
-
-            {/* Open Science Catalog Table - only show if osc fields exist */}
-            {(data["osc:project"] || data["osc:status"] || data["osc:region"] || data["osc:type"] || data["osc:variables"] || data["osc:missions"]) && (
-              <div>
-                <h3 className="font-bold text-[#F8FAFC] mb-2">
-                  Open Science Catalog
-                </h3>
-                <div className="overflow-x-auto border border-[#1B457A] rounded bg-[#143A6A]">
-                  <table className="table table-xs w-full text-[#F8FAFC]">
-                    <tbody>
-                      {data["osc:project"] && (
-                        <tr className="bg-[#143A6A] border-b border-[#1B457A]">
-                          <td className="font-semibold w-24">Project</td>
-                          <td className="text-[#F4C542] font-semibold">
-                            {data["osc:project"]}
-                          </td>
-                        </tr>
-                      )}
-                      {data["osc:status"] && (
-                        <tr className="bg-[#0F2D57] border-b border-[#1B457A]">
-                          <td className="font-semibold">Status</td>
-                          <td>{data["osc:status"]}</td>
-                        </tr>
-                      )}
-                      {data["osc:region"] && (
-                        <tr className="bg-[#143A6A] border-b border-[#1B457A]">
-                          <td className="font-semibold">Region</td>
-                          <td>{data["osc:region"]}</td>
-                        </tr>
-                      )}
-                      {data["osc:type"] && (
-                        <tr className="bg-[#0F2D57] border-b border-[#1B457A]">
-                          <td className="font-semibold">Type</td>
-                          <td>{data["osc:type"]}</td>
-                        </tr>
-                      )}
-                      {data["osc:variables"] && (
-                        <tr className="bg-[#143A6A] border-b border-[#1B457A]">
-                          <td className="font-semibold">Variables</td>
-                          <td>{data["osc:variables"].join(", ")}</td>
-                        </tr>
-                      )}
-                      {data["osc:missions"] && (
-                        <tr className="bg-[#0F2D57]">
-                          <td className="font-semibold">Missions</td>
-                          <td>{data["osc:missions"].join(", ")}</td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Additional Resources */}
-          {(data["osc:project"] || data.themes || data["osc:missions"] || data.links) && (
-            <div>
-              <h3 className="text-lg font-bold text-[#F4C542] mb-2">
-                Additional Resources
-              </h3>
-              <div className="text-sm space-y-2">
-                {(data["osc:project"] || data.themes || data["osc:missions"]) && (
-                  <>
-                    <div>
-                      <span className="font-semibold">Related resource</span>
-                    </div>
-                    <ul className="list-disc list-inside pl-2 text-[#D6E1F0]">
-                      {data["osc:project"] && (
-                        <li>Project: {data["osc:project"]}</li>
-                      )}
-                      {data.themes?.find((t) => t.concepts?.[0]?.id) && (
-                        <li>
-                          Theme:{" "}
-                          {data.themes.find((t) => t.concepts?.[0]?.id).concepts[0].id}
-                        </li>
-                      )}
-                      {data["osc:missions"]?.[0] && (
-                        <li>EO Mission: {data["osc:missions"][0]}</li>
-                      )}
-                    </ul>
-                  </>
-                )}
-                {data.links?.filter((l) => l.rel === "via").length > 0 && (
-                  <>
-                    <div className="mt-2">
-                      <span className="font-semibold">Data Access</span>
-                    </div>
-                    <ul className="list-disc list-inside pl-2 text-[#D6E1F0]">
-                      {data.links
-                        .filter((l) => l.rel === "via")
-                        .map((link, idx) => (
-                          <li key={idx}>
-                            <a
-                              href={link.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-[#F4C542] hover:underline"
-                            >
-                              {link.title || "Link"}
-                            </a>
-                          </li>
-                        ))}
-                    </ul>
-                  </>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {catalogType !== "products" && childItems.length > 0 && (
-        <div className="space-y-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold text-[#F8FAFC]">Products</h2>
-              <span className="badge badge-neutral text-xs">
-                {filteredChildItems.length}
-              </span>
-            </div>
-            <div className="join">
-              <button
-                className={`btn btn-sm join-item ${childSortOrder === "asc" ? "btn-active" : ""}`}
-                onClick={() => setChildSortOrder("asc")}
-              >
-                A-Z
-              </button>
-              <button
-                className={`btn btn-sm join-item ${childSortOrder === "desc" ? "btn-active" : ""}`}
-                onClick={() => setChildSortOrder("desc")}
-              >
-                Z-A
-              </button>
-            </div>
-          </div>
-
-          <input
-            type="text"
-            placeholder="Filter products by title or description"
-            className="input input-bordered w-full bg-[#143A6A] border-[#1B457A] text-[#F8FAFC] placeholder-[#D6E1F0]"
-            value={childSearchTerm}
-            onChange={(e) => setChildSearchTerm(e.target.value)}
-          />
-
-          <div className="grid grid-cols-1 gap-6">
-            {filteredChildItems.map((item, index) => {
-              const productId = item.id || getProductIdFromHref(item.href);
-              const navPath = productId ? `/products/${productId}` : "";
-
-              const isSelected = selectedId === productId;
-              const fromPath = `${location.pathname}${location.search || ""}`;
-              const parentReturnState =
-                location.state?.returnState?.parentReturnState ||
-                location.state?.returnState ||
-                {
-                  selectedId: data.id,
-                  from: location.state?.from || getUpPath(),
-                  selectionStack: [data.id],
-                };
-              const nextStack = [...(parentReturnState.selectionStack || []), productId];
-
-              return (
-                <Link
-                  key={index}
-                  to={navPath}
-                  state={{
-                    from: fromPath,
-                    returnState: {
-                      selectedId: productId,
-                      selectionStack: nextStack,
-                      parentReturnState,
-                    },
-                  }}
-                  onClick={(event) => {
-                    if (!navPath) {
-                      event.preventDefault();
-                      return;
-                    }
-                    // persist selection before navigation
-                    try {
-                      setSelection(nextStack);
-                      pushSelection(productId);
-                    } catch (e) {
-                      // ignore
-                    }
-                  }}
-                  className={`${navPath ? "cursor-pointer" : "pointer-events-none"} block rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${
-                    isSelected ? "ring-2 ring-[#F4C542]" : ""
-                  }`}
-                >
-                  <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542]">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-[#D6E1F0] line-clamp-3">
-                    {item.description || "No description available."}
-                  </p>
-                  {(item.extent?.temporal?.interval?.[0] || item.region) && (
-                    <div className="mt-3 flex items-center justify-between text-xs text-[#D6E1F0]">
-                      <div className="min-w-0">
-                        {item.extent?.temporal?.interval?.[0] && (
-                          <span>
-                            {new Date(item.extent.temporal.interval[0][0]).toLocaleString()} - {item.extent.temporal.interval[0][1] ? new Date(item.extent.temporal.interval[0][1]).toLocaleString() : 'Present'}
-                          </span>
-                        )}
-                      </div>
-                      {item.region && (
-                        <div className="flex-shrink-0 text-right">
-                          <span className="font-semibold text-[#F8FAFC]">Region:</span>{" "}
-                          <span className="text-[#D6E1F0]">{item.region}</span>
+    return (
+        <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC]">
+            <div className="max-w-7xl mx-auto p-4 md:p-6 space-y-6 md:space-y-8">
+                <section className="rounded-3xl border border-white/10 bg-[#0b2748] p-6 md:p-8 shadow-[0_18px_60px_rgba(2,10,24,0.2)]">
+                    <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+                        <div className="space-y-3 max-w-4xl">
+                            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">Record details</p>
+                            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">{data.title}</h1>
+                            <p className="text-sm sm:text-base leading-7 text-[#D6E1F0]">In the Open Science Catalog</p>
                         </div>
-                      )}
+
+                        <div className="flex flex-wrap gap-3">
+                            <a
+                                href={data.links?.find((link) => link.rel === "self")?.href || "#"}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="btn btn-sm rounded-full border-white/10 bg-white/5 text-[#F8FAFC] hover:bg-white/10"
+                            >
+                                Source
+                            </a>
+                            <button onClick={handleUpNavigation} className="btn btn-sm rounded-full border-white/10 bg-white/5 text-[#F8FAFC] hover:bg-white/10">Up</button>
+                            <button onClick={handleOverviewNavigation} className="btn btn-sm rounded-full border-white/10 bg-white/5 text-[#F8FAFC] hover:bg-white/10">Overview</button>
+                        </div>
                     </div>
-                  )}
-                </Link>
-              );
-            })}
-          </div>
+                </section>
+
+                <section className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                    <div className="xl:col-span-2 space-y-6">
+                        <div className="rounded-3xl border border-white/10 bg-[#143A6A] p-6 md:p-8 shadow-sm">
+                            <h2 className="text-xl font-semibold tracking-tight text-white mb-3">Description</h2>
+                            <p className="text-[#D6E1F0] leading-7 text-left">{data.description}</p>
+
+                            {data.keywords && (
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                    {data.keywords.map((keyword, index) => (
+                                        <span key={index} className="badge rounded-full bg-white/5 text-[#F8FAFC] border border-white/10">
+                                            {keyword}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            {data.license && (
+                                <div className="rounded-2xl border border-white/10 bg-[#143A6A] p-5 shadow-sm text-[#D6E1F0]">
+                                    <span className="block text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">License</span>
+                                    <div className="leading-6">{data.license}</div>
+                                </div>
+                            )}
+
+                            {data.extent?.temporal?.interval?.[0] && (
+                                <div className="rounded-2xl border border-white/10 bg-[#143A6A] p-5 shadow-sm text-[#D6E1F0]">
+                                    <span className="block text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">Temporal extent</span>
+                                    <div className="leading-6">
+                                        {data.extent.temporal.interval[0][0] ? new Date(data.extent.temporal.interval[0][0]).toLocaleDateString() : "Unknown"}
+                                        {" - "}
+                                        {data.extent.temporal.interval[0][1] ? new Date(data.extent.temporal.interval[0][1]).toLocaleDateString() : "Present"}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {data.extent?.spatial?.bbox?.[0] && (
+                            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#143A6A] shadow-sm">
+                                <div className="border-b border-white/10 px-5 py-4">
+                                    <h2 className="text-lg font-semibold tracking-tight text-white">Spatial coverage</h2>
+                                </div>
+                                <div className="h-[380px] w-full">
+                                    <MapContainer bounds={bounds} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }} className="z-0">
+                                        <TileLayer
+                                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                        />
+                                        <Rectangle bounds={bounds} pathOptions={{ color: "#F4C542", weight: 2, fillOpacity: 0.15 }} />
+                                    </MapContainer>
+                                </div>
+                            </div>
+                        )}
+
+                        {(data["osc:project"] || data.themes || data["osc:missions"] || data.links) && (
+                            <div className="rounded-3xl border border-white/10 bg-[#143A6A] p-6 md:p-8 shadow-sm">
+                                <h2 className="text-xl font-semibold tracking-tight text-white mb-4">Additional resources</h2>
+                                <div className="space-y-4 text-sm text-[#D6E1F0]">
+                                    {(data["osc:project"] || data.themes || data["osc:missions"]) && (
+                                        <div>
+                                            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">Related resource</div>
+                                            <ul className="list-disc list-inside space-y-1 pl-1">
+                                                {data["osc:project"] && <li>Project: {data["osc:project"]}</li>}
+                                                {data.themes?.find((theme) => theme.concepts?.[0]?.id) && <li>Theme: {data.themes.find((theme) => theme.concepts?.[0]?.id).concepts[0].id}</li>}
+                                                {data["osc:missions"]?.[0] && <li>EO Mission: {data["osc:missions"][0]}</li>}
+                                            </ul>
+                                        </div>
+                                    )}
+
+                                    {data.links?.filter((link) => link.rel === "via").length > 0 && (
+                                        <div>
+                                            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">Data access</div>
+                                            <ul className="list-disc list-inside space-y-1 pl-1">
+                                                {data.links.filter((link) => link.rel === "via").map((link, index) => (
+                                                    <li key={index}>
+                                                        <a href={link.href} target="_blank" rel="noreferrer" className="text-[#F4C542] hover:underline">
+                                                            {link.title || "Link"}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="space-y-6">
+                        <div className="rounded-3xl border border-white/10 bg-[#143A6A] p-6 md:p-8 shadow-sm">
+                            <h2 className="text-xl font-semibold tracking-tight text-white mb-4">Metadata</h2>
+
+                            <div className="space-y-4 text-sm text-[#D6E1F0]">
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">General</div>
+                                    <div className="space-y-2">
+                                        <div className="flex justify-between gap-4"><span className="font-semibold text-white">Created</span><span>{formatDate(data.created)}</span></div>
+                                        <div className="flex justify-between gap-4"><span className="font-semibold text-white">Updated</span><span>{formatDate(data.updated)}</span></div>
+                                    </div>
+                                </div>
+
+                                {data["cf:parameter"]?.[0]?.name && (
+                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                        <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">Cf</div>
+                                        <div className="break-all">{data["cf:parameter"][0].name}</div>
+                                    </div>
+                                )}
+
+                                {(data["osc:project"] || data["osc:status"] || data["osc:region"] || data["osc:type"] || data["osc:variables"] || data["osc:missions"]) && (
+                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                        <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-3">Open Science Catalog</div>
+                                        <div className="space-y-2">
+                                            {data["osc:project"] && <div className="flex justify-between gap-4"><span className="font-semibold text-white">Project</span><span className="text-[#F4C542] font-semibold text-right">{data["osc:project"]}</span></div>}
+                                            {data["osc:status"] && <div className="flex justify-between gap-4"><span className="font-semibold text-white">Status</span><span className="text-right">{data["osc:status"]}</span></div>}
+                                            {data["osc:region"] && <div className="flex justify-between gap-4"><span className="font-semibold text-white">Region</span><span className="text-right">{data["osc:region"]}</span></div>}
+                                            {data["osc:type"] && <div className="flex justify-between gap-4"><span className="font-semibold text-white">Type</span><span className="text-right">{data["osc:type"]}</span></div>}
+                                            {data["osc:variables"] && <div className="flex justify-between gap-4"><span className="font-semibold text-white">Variables</span><span className="text-right">{data["osc:variables"].join(", ")}</span></div>}
+                                            {data["osc:missions"] && <div className="flex justify-between gap-4"><span className="font-semibold text-white">Missions</span><span className="text-right">{data["osc:missions"].join(", ")}</span></div>}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {catalogType !== "products" && childItems.length > 0 && (
+                    <section className="space-y-4 rounded-3xl border border-white/10 bg-[#0b2748] p-6 md:p-8 shadow-[0_18px_60px_rgba(2,10,24,0.18)]">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div className="flex items-center gap-3">
+                                <h2 className="text-2xl font-semibold tracking-tight text-white">Products</h2>
+                                <span className="badge badge-neutral text-xs rounded-full bg-white/5 text-white border border-white/10">{filteredChildItems.length}</span>
+                            </div>
+                            <div className="join">
+                                <button className={`btn btn-sm join-item ${childSortOrder === "asc" ? "btn-active" : ""}`} onClick={() => setChildSortOrder("asc")}>A-Z</button>
+                                <button className={`btn btn-sm join-item ${childSortOrder === "desc" ? "btn-active" : ""}`} onClick={() => setChildSortOrder("desc")}>Z-A</button>
+                            </div>
+                        </div>
+
+                        <input
+                            type="text"
+                            placeholder="Filter products by title or description"
+                            className="input input-bordered w-full rounded-xl bg-[#143A6A] border-white/10 text-[#F8FAFC] placeholder-[#D6E1F0] shadow-sm"
+                            value={childSearchTerm}
+                            onChange={(e) => setChildSearchTerm(e.target.value)}
+                        />
+
+                        <div className="grid grid-cols-1 gap-4">
+                            {filteredChildItems.map((item, index) => {
+                                const productId = item.id || getProductIdFromHref(item.href);
+                                const navPath = productId ? `/products/${productId}` : "";
+                                const isSelected = selectedId === productId;
+                                const fromPath = `${location.pathname}${location.search || ""}`;
+                                const parentReturnState =
+                                    location.state?.returnState?.parentReturnState ||
+                                    location.state?.returnState ||
+                                    {
+                                        selectedId: data.id,
+                                        from: location.state?.from || getUpPath(),
+                                        selectionStack: [data.id],
+                                    };
+                                const nextStack = [...(parentReturnState.selectionStack || []), productId];
+
+                                return (
+                                    <Link
+                                        key={index}
+                                        to={navPath}
+                                        state={{
+                                            from: fromPath,
+                                            returnState: {
+                                                selectedId: productId,
+                                                selectionStack: nextStack,
+                                                parentReturnState,
+                                            },
+                                        }}
+                                        onClick={(event) => {
+                                            if (!navPath) {
+                                                event.preventDefault();
+                                                return;
+                                            }
+
+                                            try {
+                                                setSelection(nextStack);
+                                                pushSelection(productId);
+                                            } catch {
+                                                // ignore navigation state persistence failures
+                                            }
+                                        }}
+                                        className={`${navPath ? "cursor-pointer" : "pointer-events-none"} block rounded-2xl border border-white/10 bg-[#143A6A] p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-md group ${isSelected ? "ring-2 ring-[#F4C542]" : ""}`}
+                                    >
+                                        <h3 className="text-lg font-semibold text-white group-hover:text-[#F4C542] mb-2">{item.title}</h3>
+                                        <p className="text-sm text-[#D6E1F0] line-clamp-3 leading-6">{item.description || "No description available."}</p>
+                                        {(item.extent?.temporal?.interval?.[0] || item.region) && (
+                                            <div className="mt-3 flex items-center justify-between gap-3 text-xs text-[#D6E1F0]">
+                                                <div className="min-w-0">
+                                                    {item.extent?.temporal?.interval?.[0] && (
+                                                        <span>
+                                                            {new Date(item.extent.temporal.interval[0][0]).toLocaleString()} - {item.extent.temporal.interval[0][1] ? new Date(item.extent.temporal.interval[0][1]).toLocaleString() : "Present"}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                {item.region && (
+                                                    <div className="flex-shrink-0 text-right">
+                                                        <span className="font-semibold text-white">Region:</span>{" "}
+                                                        <span className="text-[#D6E1F0]">{item.region}</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </section>
+                )}
+            </div>
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default CatalogDetails;

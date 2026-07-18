@@ -43,7 +43,7 @@ const HomeLayout = () => {
   };
 
   return (
-    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto h-screen overflow-hidden`}>
+    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto h-screen overflow-hidden bg-[#071a34]`}>
       <input
         id="my-drawer-4"
         type="checkbox"
@@ -53,16 +53,17 @@ const HomeLayout = () => {
       />
       <div className="drawer-content transition-all duration-300 h-screen flex flex-col overflow-hidden">
         {/* Navbar */}
-        <nav className="navbar sticky top-0 z-5 w-full bg-[#0F2D57] border-b border-[#1B457A]">
-          <button
-            aria-label="toggle sidebar"
-            className="btn btn-square btn-ghost"
-            onClick={toggleSidebar}
-          >
+        <nav className="navbar sticky top-0 z-20 w-full border-b border-white/10 bg-[#0F2D57]/95 backdrop-blur-md shadow-sm">
+          <button aria-label="toggle sidebar" className="btn btn-square btn-ghost text-[#F8FAFC]" onClick={toggleSidebar}>
             {isSidebarOpen ? <FaChevronLeft /> : <FaBars />}
           </button>
-          <div className="px-4 text-3xl font-bold text-[#F4C542]">
-            PolarScope: Antarctic & Southern Ocean Data Gateway
+          <div className="px-4 flex flex-col leading-tight">
+            <div className="text-lg sm:text-xl font-semibold text-white">
+              PolarScope Data Gateway
+            </div>
+            <div className="text-xs sm:text-sm text-[#D6E1F0]">
+              Antarctic and Southern Ocean discovery portal
+            </div>
           </div>
         </nav>
 
@@ -78,20 +79,23 @@ const HomeLayout = () => {
           className="drawer-overlay"
           onClick={closeSidebar}
         ></label>
-        <div className="flex min-h-full flex-col items-start bg-[#0F2D57] border-r border-[#1B457A] w-64 text-[#F8FAFC]">
+        <div className="flex min-h-full flex-col items-start bg-[#0F2D57] border-r border-white/10 w-64 text-[#F8FAFC]">
           {/* Logo Section */}
-          <Link to="/" className="w-full p-3 flex justify-center border-b border-[#1B457A]">
-            <div className="w-full rounded-lg bg-[#143A6A] p-1 shadow-sm">
+          <Link to="/" className="w-full p-4 flex justify-center border-b border-white/10">
+            <div className="w-full rounded-2xl bg-white/5 p-3 shadow-sm">
               <img
                 src={aceasLogo}
                 alt="ACEAS Logo"
-                className="w-full max-h-28 h-auto rounded-md object-contain"
+                className="w-full max-h-24 h-auto rounded-md object-contain"
 
               />
             </div>
           </Link>
 
-          <ul className="menu w-full grow">
+          <div className="w-full px-4 pt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#D6E1F0]">
+            Navigate
+          </div>
+          <ul className="menu w-full grow px-2 py-3">
             {/* Home */}
             <li>
               <NavLink
@@ -141,7 +145,9 @@ const HomeLayout = () => {
             <li>
               <NavLink
                 to="/bgc-argo"
-                className={() => (location.pathname.startsWith("/map") || location.pathname.startsWith("/bgc-argo") ? "active" : "")}
+                className={({ isActive }) =>
+                  isActive || location.pathname.startsWith("/map") ? "active" : ""
+                }
                 onClick={handleLinkClick}
               >
                 <FaGlobe /> BGC-Argo
@@ -150,12 +156,12 @@ const HomeLayout = () => {
           </ul>
 
           {/* Footer Section */}
-          <div className="w-full p-4 border-t border-[#1B457A] text-center">
+          <div className="w-full p-4 border-t border-white/10 text-center">
             <p className="text-xs text-[#D6E1F0]">© 2026 ACEAS</p>
             <p className="text-xs text-[#D6E1F0] mt-1">PolarScope Data Gateway</p>
             <p className="text-xs text-[#D6E1F0] mt-2">
               <a
-                href="mailto:communications@antarcticscience.utas.edu.au"
+                href="mailto:ACEAS.Project.Office@utas.edu.au"
                 className="underline"
               >
                 Contact us

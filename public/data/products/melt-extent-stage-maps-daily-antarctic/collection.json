@@ -1,119 +1,119 @@
 {
-    "type":  "Collection",
-    "id":  "melt-extent-stage-maps-daily-antarctic",
-    "stac_version":  "1.0.0",
-    "description":  "The data set contains Antarctic-wide daily melt extent/stage maps (presence of liquid water) from 2007 until 2021 derived from the ASCAT Enhanced Resolution Image Reconstruction (SIR) product. Additionally, based on the melt maps, the annual melt onset, end of the melt season and melt duration are also provided.",
-    "links":  [
-                  {
-                      "rel":  "root",
-                      "href":  "../../catalog.json",
-                      "type":  "application/json",
-                      "title":  "Open Science Catalog"
-                  },
-                  {
-                      "rel":  "child",
-                      "href":  "https://s3.waw4-1.cloudferro.com/EarthCODE/Catalogs/4DANTARCTICA/melt-extent-stage-maps-daily-antarctica/2007/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Daily melt extent/stage maps: 2007"
-                  },
-                  {
-                      "rel":  "via",
-                      "href":  "https://cryoportal.enveo.at/data_files/4DAntarctica_AIS-ASCAT-melt_maps.1.0_20230130.zip",
-                      "title":  "Access"
-                  },
-                  {
-                      "rel":  "via",
-                      "href":  "https://4d-antarctica.org/project-description/",
-                      "title":  "Documentation"
-                  },
-                  {
-                      "rel":  "parent",
-                      "href":  "../catalog.json",
-                      "type":  "application/json",
-                      "title":  "Products"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../projects/4d-antarctica/collection.json",
-                      "type":  "application/json",
-                      "title":  "Project: 4D-ANTARCTICA"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../themes/cryosphere/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Theme: Cryosphere"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../variables/glacier-melt/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Variable: Glacier Melt"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../eo-missions/metop/catalog.json",
-                      "type":  "application/json",
-                      "title":  "EO Mission: MetOp"
-                  }
-              ],
-    "stac_extensions":  [
-                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-                        ],
-    "osc:project":  "4d-antarctica",
-    "osc:status":  "ongoing",
-    "osc:region":  "Antarctica",
-    "osc:type":  "product",
-    "created":  "2023-01-30T00:00:00Z",
-    "cf:parameter":  [
-                         {
-                             "name":  "melt-extent-stage-maps-daily-antarctic"
-                         }
-                     ],
-    "themes":  [
-                   {
-                       "scheme":  "https://github.com/stac-extensions/osc#theme",
-                       "concepts":  [
-                                        {
-                                            "id":  "cryosphere"
-                                        }
-                                    ]
-                   }
-               ],
-    "osc:variables":  [
-                          "glacier-melt"
-                      ],
-    "osc:missions":  [
-                         "metop"
-                     ],
-    "updated":  "2024-09-12T20:32:06.224108Z",
-    "title":  "Antarctic daily melt extent/stage maps from 2007-2021 from the ASCAT",
-    "extent":  {
-                   "spatial":  {
-                                   "bbox":  [
-                                                [
-                                                    -180,
-                                                    -90,
-                                                    180,
-                                                    -60
-                                                ]
-                                            ]
-                               },
-                   "temporal":  {
-                                    "interval":  [
-                                                     [
-                                                         "2007-01-01T00:00:00Z",
-                                                         "2021-12-31T23:59:59Z"
-                                                     ]
-                                                 ]
-                                }
-               },
-    "license":  "proprietary",
-    "keywords":  [
-                     "Glaciers/Ice Sheets",
-                     "Glaciers",
-                     "Glacier Melt"
-                 ]
+    "type": "Collection",
+    "id": "melt-extent-stage-maps-daily-antarctic",
+    "stac_version": "1.0.0",
+    "description": "The data set contains Antarctic-wide daily melt extent/stage maps (presence of liquid water) from 2007 until 2021 derived from the ASCAT Enhanced Resolution Image Reconstruction (SIR) product. Additionally, based on the melt maps, the annual melt onset, end of the melt season and melt duration are also provided.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "child",
+            "href": "https://s3.waw4-1.cloudferro.com/EarthCODE/Catalogs/4DANTARCTICA/melt-extent-stage-maps-daily-antarctica/2007/catalog.json",
+            "type": "application/json",
+            "title": "Daily melt extent/stage maps: 2007"
+        },
+        {
+            "rel": "via",
+            "href": "https://cryoportal.enveo.at/dataset/4DAntarctica_AIS-ASCAT-melt_maps/",
+            "title": "Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://4d-antarctica.org/project-description/",
+            "title": "Documentation"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../projects/4d-antarctica/collection.json",
+            "type": "application/json",
+            "title": "Project: 4D-ANTARCTICA"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/glacier-melt/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Glacier Melt"
+        },
+        {
+            "rel": "related",
+            "href": "../../eo-missions/metop/catalog.json",
+            "type": "application/json",
+            "title": "EO Mission: MetOp"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+    ],
+    "osc:project": "4d-antarctica",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2023-01-30T00:00:00Z",
+    "cf:parameter": [
+        {
+            "name": "melt-extent-stage-maps-daily-antarctic"
+        }
+    ],
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "glacier-melt"
+    ],
+    "osc:missions": [
+        "metop"
+    ],
+    "updated": "2024-09-12T20:32:06.224108Z",
+    "title": "Antarctic daily melt extent/stage maps from 2007-2021 from the ASCAT",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -60
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2007-01-01T00:00:00Z",
+                    "2021-12-31T23:59:59Z"
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Glaciers/Ice Sheets",
+        "Glaciers",
+        "Glacier Melt"
+    ]
 }

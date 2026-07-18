@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "eo-missions",
   "stac_version": "1.0.0",
-  "description": "Earth Observation Satellite Missions by ESA",
+  "description": "Earth observation satellite missions and related platform archives from international space agencies and partners.",
   "links": [
     {
       "rel": "root",
@@ -34,14 +34,12 @@
       "type": "application/json",
       "title": "ALOS"
     },
-
     {
       "rel": "child",
       "href": "./aqua-eos-pm-1/catalog.json",
       "type": "application/json",
       "title": "AQUA (EOS/PM-1)"
     },
-  
     {
       "rel": "child",
       "href": "./aura/catalog.json",
@@ -228,7 +226,6 @@
       "type": "application/json",
       "title": "Limb-Viewing Instruments"
     },
-  
     {
       "rel": "child",
       "href": "./meteosat/catalog.json",
@@ -271,7 +268,6 @@
       "type": "application/json",
       "title": "OERSTED"
     },
-  
     {
       "rel": "child",
       "href": "./orbview-2/catalog.json",
@@ -302,7 +298,6 @@
       "type": "application/json",
       "title": "SARAL"
     },
-   
     {
       "rel": "child",
       "href": "./sentinel-1/catalog.json",
@@ -393,7 +388,6 @@
       "type": "application/json",
       "title": "TRMM"
     },
-   
     {
       "rel": "child",
       "href": "./windsat/catalog.json",

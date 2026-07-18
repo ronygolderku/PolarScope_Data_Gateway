@@ -1,116 +1,116 @@
 {
-    "type":  "Collection",
-    "id":  "surface-melting-antarctica-cryosmos",
-    "stac_version":  "1.0.0",
-    "description":  "The product \"Occurrence of Surface Melting\" includes the melted/not melted status of every pixel each day, as well as the mask which excludes the ocean as well as areas never experiencing melting. Surface melting is retrieved from passive microwave radiometer SMOS using the algorithm described in D5-2. Product details are available at: http://www.ifac.cnr.it/cryosmos/products/CryoSMOS_D8_EDUM_V2.0.pdf.",
-    "links":  [
-                  {
-                      "rel":  "root",
-                      "href":  "../../catalog.json",
-                      "type":  "application/json",
-                      "title":  "Open Science Catalog"
-                  },
-                  {
-                      "rel":  "via",
-                      "href":  "http://www.ifac.cnr.it/cryosmos/products/SM_TEST_OSMDP4_20100401T000000_20190331T000000_100_001_0.nc",
-                      "title":  "Access"
-                  },
-                  {
-                      "rel":  "cite-as",
-                      "href":  "https://doi.org/10.5194/tc-14-539-2020",
-                      "title":  "DOI"
-                  },
-                  {
-                      "rel":  "parent",
-                      "href":  "../catalog.json",
-                      "type":  "application/json",
-                      "title":  "Products"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../projects/cryosmos/collection.json",
-                      "type":  "application/json",
-                      "title":  "Project: CryoSMOS"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../themes/cryosphere/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Theme: Cryosphere"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../variables/ice-growth-melt/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Variable: Ice Growth/Melt"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../eo-missions/smos/catalog.json",
-                      "type":  "application/json",
-                      "title":  "EO Mission: SMOS"
-                  }
-              ],
-    "stac_extensions":  [
-                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-                        ],
-    "osc:project":  "cryosmos",
-    "osc:status":  "ongoing",
-    "osc:region":  "Antarctica",
-    "osc:type":  "product",
-    "created":  "2020-03-19T00:00:00Z",
-    "sci:doi":  "10.5194/tc-14-539-2020",
-    "cf:parameter":  [
-                         {
-                             "name":  "surface_melting"
-                         }
-                     ],
-    "themes":  [
-                   {
-                       "scheme":  "https://github.com/stac-extensions/osc#theme",
-                       "concepts":  [
-                                        {
-                                            "id":  "cryosphere"
-                                        }
-                                    ]
-                   }
-               ],
-    "osc:variables":  [
-                          "ice-growth-melt"
-                      ],
-    "osc:missions":  [
-                         "smos"
-                     ],
-    "updated":  "2024-09-12T20:32:06.233108Z",
-    "title":  "Occurrence of Surface Melting_Antarctica_SMOS",
-    "extent":  {
-                   "spatial":  {
-                                   "bbox":  [
-                                                [
-                                                    -180,
-                                                    -83,
-                                                    180,
-                                                    -60
-                                                ]
-                                            ]
-                               },
-                   "temporal":  {
-                                    "interval":  [
-                                                     [
-                                                         "2013-01-01T00:00:00Z",
-                                                         "2014-12-31T23:59:59Z"
-                                                     ]
-                                                 ]
-                                }
-               },
-    "license":  "proprietary",
-    "keywords":  [
-                     "Snow/Ice",
-                     "Ice Growth/Melt",
-                     "Cryospheric Indicators",
-                     "Sea Ice"
-                 ]
+    "type": "Collection",
+    "id": "surface-melting-antarctica-cryosmos",
+    "stac_version": "1.0.0",
+    "description": "The product \"Occurrence of Surface Melting\" includes the melted/not melted status of every pixel each day, as well as the mask which excludes the ocean as well as areas never experiencing melting. Surface melting is retrieved from passive microwave radiometer SMOS using the algorithm described in D5-2. Product details are available at: http://www.ifac.cnr.it/cryosmos/products/CryoSMOS_D8_EDUM_V2.0.pdf.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.esa.int/Applications/Observing_the_Earth/FutureEO/SMOS",
+            "title": "Access"
+        },
+        {
+            "rel": "cite-as",
+            "href": "https://doi.org/10.5194/tc-14-539-2020",
+            "title": "DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../projects/cryosmos/collection.json",
+            "type": "application/json",
+            "title": "Project: CryoSMOS"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/ice-growth-melt/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Ice Growth/Melt"
+        },
+        {
+            "rel": "related",
+            "href": "../../eo-missions/smos/catalog.json",
+            "type": "application/json",
+            "title": "EO Mission: SMOS"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+    ],
+    "osc:project": "cryosmos",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2020-03-19T00:00:00Z",
+    "sci:doi": "10.5194/tc-14-539-2020",
+    "cf:parameter": [
+        {
+            "name": "surface_melting"
+        }
+    ],
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "ice-growth-melt"
+    ],
+    "osc:missions": [
+        "smos"
+    ],
+    "updated": "2024-09-12T20:32:06.233108Z",
+    "title": "Occurrence of Surface Melting_Antarctica_SMOS",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -83,
+                    180,
+                    -60
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2013-01-01T00:00:00Z",
+                    "2014-12-31T23:59:59Z"
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Ice Growth/Melt",
+        "Cryospheric Indicators",
+        "Sea Ice"
+    ]
 }

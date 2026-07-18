@@ -1,108 +1,108 @@
 {
-    "type":  "Collection",
-    "id":  "bedrock-topography-antarctica-cryosmos",
-    "stac_version":  "1.0.0",
-    "description":  "The Ice Thickness product generation is described in [RD.9] and verified in [RD.10]. The product provides an estimate of the Ice Thickness in an area of East Antarctica where the BEDMAP2 data has an uncertainty of 1000 m. The product consists of a NETCDF file containing data in SMOS L3 format. The spatial coverage is provided as an index map in SMOS L3 coordinates. Both ice thickness estimate as well as ice thickness estimate merged onto the surrounding BEDMAP2 ice thickness data, are proved as maps. For user convenience the latitude and longitude coordinate values are also provided. The filename is \"SMOS_IceThickness_YYYY_vvv.nc\", where YYYY is the year and vvv is the version number. File size is approximately 7 Mbyte. Only year 2015 version 300 is currently provided. Product details are available at: http://www.ifac.cnr.it/cryosmos/products/CryoSMOS_D8_EDUM_V2.0.pdf.",
-    "links":  [
-                  {
-                      "rel":  "root",
-                      "href":  "../../catalog.json",
-                      "type":  "application/json",
-                      "title":  "Open Science Catalog"
-                  },
-                  {
-                      "rel":  "via",
-                      "href":  "http://www.ifac.cnr.it/cryosmos/products/SMOS_IceThickness_2015_300.nc",
-                      "title":  "Access"
-                  },
-                  {
-                      "rel":  "parent",
-                      "href":  "../catalog.json",
-                      "type":  "application/json",
-                      "title":  "Products"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../projects/cryosmos/collection.json",
-                      "type":  "application/json",
-                      "title":  "Project: CryoSMOS"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../themes/cryosphere/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Theme: Cryosphere"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../variables/glacier-thickness-ice-sheet-thickness/catalog.json",
-                      "type":  "application/json",
-                      "title":  "Variable: Glacier Thickness/Ice Sheet Thickness"
-                  },
-                  {
-                      "rel":  "related",
-                      "href":  "../../eo-missions/smos/catalog.json",
-                      "type":  "application/json",
-                      "title":  "EO Mission: SMOS"
-                  }
-              ],
-    "stac_extensions":  [
-                            "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-                            "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
-                        ],
-    "osc:project":  "cryosmos",
-    "osc:status":  "ongoing",
-    "osc:region":  "Antarctica",
-    "osc:type":  "product",
-    "created":  "2020-03-19T00:00:00Z",
-    "cf:parameter":  [
-                         {
-                             "name":  "bedrock_topography"
-                         }
-                     ],
-    "themes":  [
-                   {
-                       "scheme":  "https://github.com/stac-extensions/osc#theme",
-                       "concepts":  [
-                                        {
-                                            "id":  "cryosphere"
-                                        }
-                                    ]
-                   }
-               ],
-    "osc:variables":  [
-                          "glacier-thickness-ice-sheet-thickness"
-                      ],
-    "osc:missions":  [
-                         "smos"
-                     ],
-    "updated":  "2024-09-12T20:32:06.210108Z",
-    "title":  "Bedrock topography and/or geothermal heat flux_Antarctica_GOCE",
-    "extent":  {
-                   "spatial":  {
-                                   "bbox":  [
-                                                [
-                                                    -180,
-                                                    -83,
-                                                    180,
-                                                    -60
-                                                ]
-                                            ]
-                               },
-                   "temporal":  {
-                                    "interval":  [
-                                                     [
-                                                         "2013-01-01T00:00:00Z",
-                                                         "2014-12-31T23:59:59Z"
-                                                     ]
-                                                 ]
-                                }
-               },
-    "license":  "proprietary",
-    "keywords":  [
-                     "Glaciers/Ice Sheets",
-                     "Glacier Thickness/Ice Sheet Thickness",
-                     "Sea Ice"
-                 ]
+    "type": "Collection",
+    "id": "bedrock-topography-antarctica-cryosmos",
+    "stac_version": "1.0.0",
+    "description": "The Ice Thickness product generation is described in [RD.9] and verified in [RD.10]. The product provides an estimate of the Ice Thickness in an area of East Antarctica where the BEDMAP2 data has an uncertainty of 1000 m. The product consists of a NETCDF file containing data in SMOS L3 format. The spatial coverage is provided as an index map in SMOS L3 coordinates. Both ice thickness estimate as well as ice thickness estimate merged onto the surrounding BEDMAP2 ice thickness data, are proved as maps. For user convenience the latitude and longitude coordinate values are also provided. The filename is \"SMOS_IceThickness_YYYY_vvv.nc\", where YYYY is the year and vvv is the version number. File size is approximately 7 Mbyte. Only year 2015 version 300 is currently provided. Product details are available at: http://www.ifac.cnr.it/cryosmos/products/CryoSMOS_D8_EDUM_V2.0.pdf.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "http://cryosmos.ifac.cnr.it/products/SMOS_IceThickness_2015_300.nc",
+            "title": "Access"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../projects/cryosmos/collection.json",
+            "type": "application/json",
+            "title": "Project: CryoSMOS"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/glacier-thickness-ice-sheet-thickness/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Glacier Thickness/Ice Sheet Thickness"
+        },
+        {
+            "rel": "related",
+            "href": "../../eo-missions/smos/catalog.json",
+            "type": "application/json",
+            "title": "EO Mission: SMOS"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+    ],
+    "osc:project": "cryosmos",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2020-03-19T00:00:00Z",
+    "cf:parameter": [
+        {
+            "name": "bedrock_topography"
+        }
+    ],
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "glacier-thickness-ice-sheet-thickness"
+    ],
+    "osc:missions": [
+        "smos"
+    ],
+    "updated": "2024-09-12T20:32:06.210108Z",
+    "title": "Bedrock topography and/or geothermal heat flux_Antarctica_GOCE",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -83,
+                    180,
+                    -60
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2013-01-01T00:00:00Z",
+                    "2014-12-31T23:59:59Z"
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Glaciers/Ice Sheets",
+        "Glacier Thickness/Ice Sheet Thickness",
+        "Sea Ice"
+    ]
 }

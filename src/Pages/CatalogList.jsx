@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { motion } from "framer-motion";
 import { useParams, useNavigate, useLocation } from "react-router";
 import {
   FaThLarge,
@@ -14,7 +13,7 @@ const CatalogList = () => {
   const { themeId } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Detect catalog type from URL path
   const catalogType = themeId ? 'themes' : location.pathname.split("/")[1];
   const [products, setProducts] = useState([]);
@@ -43,12 +42,12 @@ const CatalogList = () => {
 
   useEffect(() => {
     setLoading(true);
-    
+
     // Build catalog path based on type
-    const catalogPath = themeId 
+    const catalogPath = themeId
       ? `/data/themes/${themeId}/catalog.json`
       : `/data/${catalogType}/catalog.json`;
-    
+
     fetch(catalogPath)
       .then((res) => res.json())
       .then(async (data) => {
@@ -60,7 +59,7 @@ const CatalogList = () => {
           childLinks.map(async (link) => {
             try {
               let itemPath;
-              
+
               // Handle different catalog types
               if (themeId) {
                 // Theme products
@@ -74,16 +73,16 @@ const CatalogList = () => {
               }
 
               const res = await fetch(itemPath);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
               const details = await res.json();
-                console.log("Fetched catalog:", itemPath, "description exists:", !!details.description);
-              
+              console.log("Fetched catalog:", itemPath, "description exists:", !!details.description);
+
               // For themes catalog, add image
               let image = null;
               if (catalogType === "themes" && !themeId) {
                 image = `/data/${catalogType}/${details.id}/EO_${details.title}.webp`;
               }
-              
+
               return {
                 ...link,
                 id: details.id,
@@ -163,63 +162,48 @@ const CatalogList = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC] p-4 md:p-6 max-w-7xl mx-auto space-y-6 md:space-y-8">
-      {/* Header Section */}
-      <div className="space-y-4">
-        <h1 className="text-3xl md:text-4xl font-bold capitalize text-[#F4C542] border-l-8 border-[#F4C542] pl-4">
-          {themeInfo?.title || catalogType}
-        </h1>
-        <div className="text-sm text-[#D6E1F0] pl-6 flex flex-wrap gap-2 items-center">
-          <span>
-            in{" "}
-            <span className="text-primary font-semibold">
-              PolarScope Catalog
-            </span>
-          </span>
-          <span className="hidden md:inline mx-2">|</span>
-          <button
-            onClick={() => navigate(themeId ? "/themes" : "/catalog")}
-            className="btn btn-xs btn-outline rounded-sm"
-          >
-            Up
-          </button>
-          <button
-            onClick={() => navigate("/catalog")}
-            className="btn btn-xs btn-outline rounded-sm"
-          >
-            Overview
-          </button>
-        </div>
-      </div>
+      <section className="rounded-3xl border border-white/10 bg-[#0b2748] p-6 md:p-8 shadow-[0_18px_60px_rgba(2,10,24,0.2)]">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="space-y-3 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">Collection view</p>
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white capitalize">
+              {themeInfo?.title || catalogType}
+            </h1>
+            <p className="max-w-3xl text-sm sm:text-base leading-7 text-[#D6E1F0]">
+              Explore the collection summary, then open individual products for detailed metadata and source links.
+            </p>
+          </div>
 
-      {/* Description Section */}
-      <div className="flex flex-col lg:flex-row gap-6">
-        <div className="flex-1 flex flex-col">
-          <h2 className="text-2xl font-bold text-[#F4C542] mb-3">
-            Description
-          </h2>
-          <div className="text-[#D6E1F0] leading-relaxed text-justify relative">
-            <p
-              className={`${!isExpanded ? "line-clamp-6 md:line-clamp-[10]" : ""} transition-all duration-300`}
-            >
+          <div className="flex flex-wrap gap-3">
+            <button onClick={() => navigate(themeId ? "/themes" : "/catalog")} className="btn btn-sm rounded-full border-white/10 bg-white/5 text-[#F8FAFC] hover:bg-white/10">
+              Up
+            </button>
+            <button onClick={() => navigate("/catalog")} className="btn btn-sm rounded-full border-white/10 bg-white/5 text-[#F8FAFC] hover:bg-white/10">
+              Overview
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className={themeId ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : "grid grid-cols-1 gap-6"}>
+        <div className="rounded-3xl border border-white/10 bg-[#143A6A] p-6 md:p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold tracking-tight text-white mb-3">Description</h2>
+          <div className="text-[#D6E1F0] leading-7 text-left relative">
+            <p className={`${!isExpanded ? "line-clamp-6 md:line-clamp-[10]" : ""} transition-all duration-300`}>
               {themeInfo?.description || "Description loading..."}
             </p>
             {themeInfo?.description && themeInfo.description.length > 300 && (
-              <button
-                onClick={toggleReadMore}
-                className="text-[#F4C542] font-bold hover:underline mt-2 text-sm focus:outline-none"
-              >
+              <button onClick={toggleReadMore} className="mt-3 text-sm font-semibold text-[#F4C542] hover:underline focus:outline-none">
                 {isExpanded ? "Read Less" : "Read More"}
               </button>
             )}
           </div>
 
-          <div className="mt-4 order-2 lg:order-none">
-            <h3 className="text-xl font-bold text-[#F4C542] mb-2">
-              Additional Resources
-            </h3>
-            <ul className="list-disc list-inside text-sm pl-2">
+          <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">Additional resources</h3>
+            <ul className="list-disc list-inside text-sm text-[#D6E1F0] pl-1">
               <li>
-                <a href="#" className="text-[#F8FAFC] hover:text-[#F4C542] transition-colors">
+                <a href="#" className="text-white hover:text-[#F4C542] transition-colors">
                   Description
                 </a>
               </li>
@@ -227,46 +211,41 @@ const CatalogList = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col order-3 lg:order-none">
-          {themeId && (
-            <div className="bg-[#143A6A] p-2 border border-[#1B457A] rounded-md shadow-sm h-full max-h-[400px] overflow-hidden">
-              <img
-                src={getThemeImage()}
-                alt={themeId}
-                className="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Metadata Section */}
-      <div className="border-t border-[#1B457A] pt-6">
-        <h2 className="text-2xl font-bold text-[#F4C542] mb-4">Metadata</h2>
-        <div className="bg-[#143A6A] p-4 rounded-md border border-[#1B457A] text-sm">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="font-semibold text-[#F4C542]">General</div>
+        {themeId && (
+          <div className="rounded-3xl border border-white/10 bg-[#143A6A] p-3 md:p-4 shadow-sm overflow-hidden">
+            <img
+              src={getThemeImage()}
+              alt={themeId}
+              className="h-full w-full max-h-[380px] min-h-[240px] object-cover rounded-2xl"
+            />
           </div>
-          <div className="divider my-2 border-[#1B457A]"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-10">
-              <span className="font-semibold w-24 text-[#F8FAFC]">Updated</span>
-              <span className="text-[#D6E1F0]">
-                {themeInfo?.updated
-                  ? new Date(themeInfo.updated).toLocaleString()
-                  : "Loading..."}
-              </span>
+        )}
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="rounded-2xl border border-white/10 bg-[#143A6A] p-6 shadow-sm text-sm text-[#D6E1F0]">
+          <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">General</div>
+          <div className="flex flex-col gap-3">
+            <div className="flex justify-between gap-4">
+              <span className="font-semibold text-white">Updated</span>
+              <span>{themeInfo?.updated ? new Date(themeInfo.updated).toLocaleString() : "Loading..."}</span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Catalogs List Section */}
-      <div className="space-y-4">
+        <div className="rounded-2xl border border-white/10 bg-[#143A6A] p-6 shadow-sm text-sm text-[#D6E1F0]">
+          <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[#F4C542] mb-2">Context</div>
+          <p className="leading-6">
+            This page summarizes the selected collection and its metadata, then links into the underlying products.
+          </p>
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-white/10 bg-[#0b2748] p-6 md:p-8 shadow-[0_18px_60px_rgba(2,10,24,0.18)]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex items-center gap-2">
-            <h2 className="text-2xl font-bold text-[#F4C542]">Catalogs</h2>
-            <span className="badge badge-neutral">{filteredAndSortedProducts.length}</span>
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-semibold tracking-tight text-white">Catalogs</h2>
+            <span className="badge badge-neutral rounded-full bg-white/5 text-white border border-white/10">{filteredAndSortedProducts.length}</span>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -370,9 +349,8 @@ const CatalogList = () => {
                     },
                   })
                 }
-                className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${
-                  viewMode === "list" ? "flex flex-col md:flex-row gap-6" : ""
-                } ${isSelected ? "ring-2 ring-[#F4C542]" : ""}`}
+                className={`${navPath ? "cursor-pointer" : ""} rounded-lg border border-[#1B457A] bg-[#143A6A] p-5 shadow-sm hover:shadow-md transition border-l-4 border-l-transparent hover:border-l-[#F4C542] group ${viewMode === "list" ? "flex flex-col md:flex-row gap-6" : ""
+                  } ${isSelected ? "ring-2 ring-[#F4C542]" : ""}`}
               >
                 <div className="flex-1">
                   <h3 className="font-bold text-lg mb-2 text-[#F8FAFC] group-hover:text-[#F4C542] capitalize transition-colors">
@@ -382,33 +360,33 @@ const CatalogList = () => {
                     {item.description || "No description available."}
                   </p>
 
-                    {(item.extent?.temporal?.interval?.[0] || item.region) && (
-                      <div className="mt-2 flex items-center justify-between gap-3 text-xs text-[#D6E1F0]">
-                        <div className="min-w-0">
-                          {item.extent?.temporal?.interval?.[0] && (
-                            <span>
-                              {new Date(
-                                item.extent.temporal.interval[0][0],
-                              ).toLocaleString()}{" "}
-                              -{" "}
-                              {item.extent.temporal.interval[0][1]
-                                ? new Date(
-                                    item.extent.temporal.interval[0][1],
-                                  ).toLocaleString()
-                                : "Present"}
-                            </span>
-                          )}
-                        </div>
-                        {item.region && (
-                          <div className="flex-shrink-0 text-right">
-                            <span className="font-semibold text-[#F4C542]"></span>{" "}
-                            <span className="text-[#F8FAFC]">{item.region}</span>
-                          </div>
+                  {(item.extent?.temporal?.interval?.[0] || item.region) && (
+                    <div className="mt-2 flex items-center justify-between gap-3 text-xs text-[#D6E1F0]">
+                      <div className="min-w-0">
+                        {item.extent?.temporal?.interval?.[0] && (
+                          <span>
+                            {new Date(
+                              item.extent.temporal.interval[0][0],
+                            ).toLocaleString()}{" "}
+                            -{" "}
+                            {item.extent.temporal.interval[0][1]
+                              ? new Date(
+                                item.extent.temporal.interval[0][1],
+                              ).toLocaleString()
+                              : "Present"}
+                          </span>
                         )}
                       </div>
-                    )}
+                      {item.region && (
+                        <div className="flex-shrink-0 text-right">
+                          <span className="font-semibold text-[#F4C542]"></span>{" "}
+                          <span className="text-[#F8FAFC]">{item.region}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
-                
+
                 {/* Image for themes in list view */}
                 {viewMode === "list" && item.image && (
                   <div className="w-full md:w-48 h-32 flex-shrink-0 bg-[#143A6A] rounded overflow-hidden border border-[#1B457A]">
@@ -426,7 +404,7 @@ const CatalogList = () => {
             );
           })}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
