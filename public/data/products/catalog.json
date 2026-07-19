@@ -41,24 +41,8 @@
       "title": "Bedrock topography and/or geothermal heat flux_Antarctica_GOCE"
     },
 
-    {
-      "rel": "child",
-      "href": "./chaos-field-model-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "CHAOS field model"
-    },
-    {
-      "rel": "child",
-      "href": "./chaos-field-model-core-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "CHAOS field model_Core"
-    },
-    {
-      "rel": "child",
-      "href": "./chaos-field-model-spline-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "CHAOS field model_SplineCoefficients"
-    },
+    
+ 
     {
       "rel": "child",
       "href": "./cliima-cloud-od-livas/collection.json",
@@ -137,36 +121,15 @@
       "type": "application/json",
       "title": "Cloud optical property profiles_Global_CALIPSO"
     },
-    {
-      "rel": "child",
-      "href": "./cluster-swarm-ac-conjunctions-ion-outflow/collection.json",
-      "type": "application/json",
-      "title": "Cluster/Swarm A and C conjunctions"
-    },
-    {
-      "rel": "child",
-      "href": "./cluster-swarm-b-conjunctions-ion-outflow/collection.json",
-      "type": "application/json",
-      "title": "Cluster/Swarm B conjunctions"
-    },
+    
     {
       "rel": "child",
       "href": "./crust-and-upper-mantle-model-3d-earth/collection.json",
       "type": "application/json",
       "title": "Global Model of Crust and Upper Mantle_WINTERC-G_GOCE"
     },
-    {
-      "rel": "child",
-      "href": "./database-of-labelled-sentinel-1-interferograms-v20/collection.json",
-      "type": "application/json",
-      "title": "Database of labelled Sentinel-1 interferograms - v.2.0"
-    },
-    {
-      "rel": "child",
-      "href": "./diffuse-attenuation-aeolus-innovation-color/collection.json",
-      "type": "application/json",
-      "title": "Diffuse attenuation: Kd_Global_AEOLUS"
-    },
+   
+ 
     {
       "rel": "child",
       "href": "./dissolved-organic-carbon-bicep/collection.json",
@@ -197,12 +160,7 @@
       "type": "application/json",
       "title": "Fuelity Fuel Moisture Content Dataset"
     },
-    {
-      "rel": "child",
-      "href": "./geodynamo-simulation-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Geodynamo simulation data_Earth core"
-    },
+    
     {
       "rel": "child",
       "href": "./geothermal-heat-flux-4dantarctica/collection.json",
@@ -299,36 +257,9 @@
       "type": "application/json",
       "title": "Gross and net Carbon Flux Estimates_Fluxcom2.0 Carbon"
     },
-    {
-      "rel": "child",
-      "href": "./ground-observatory-data-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Ground Observatory data"
-    },
-    {
-      "rel": "child",
-      "href": "./ground-virtual-observatory-champ-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Ground Virtual Observatory Data CHAMP"
-    },
-    {
-      "rel": "child",
-      "href": "./ground-virtual-observatory-cryosat2-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Ground Virtual Observatory Data CRYOSAT-2"
-    },
-    {
-      "rel": "child",
-      "href": "./ground-virtual-observatory-oersted-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Ground Virtual Observatory Data OERSTED"
-    },
-    {
-      "rel": "child",
-      "href": "./ground-virtual-observatory-swarm-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Ground Virtual Observatory Data SWARM"
-    },
+    
+    
+    
     {
       "rel": "child",
       "href": "./grounded-eo-database/collection.json",
@@ -599,12 +530,7 @@
       "type": "application/json",
       "title": "S2 L2A uncertainty_Surface reflectance estimates_S2"
     },
-    {
-      "rel": "child",
-      "href": "./satellite-data-chaos-field-model-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Vector and scalar satellite data files as used in the CHAOS field model"
-    },
+    
     {
       "rel": "child",
       "href": "./satellite-sar-altimeter-sea-floor-cp4o/collection.json",
@@ -695,12 +621,7 @@
       "type": "application/json",
       "title": "Subglacial Lake Drainage and Filling Antarctica Multimission"
     },
-    {
-      "rel": "child",
-      "href": "./sudden-stratospheric-warming-vera/collection.json",
-      "type": "application/json",
-      "title": "Sudden Stratospheric Warming (SSW)"
-    },
+    
     {
       "rel": "child",
       "href": "./supraglacial-lakes-west-4dantarctica/collection.json",
@@ -719,12 +640,7 @@
       "type": "application/json",
       "title": "Occurrence of Surface Melting_Antarctica_SMOS"
     },
-    {
-      "rel": "child",
-      "href": "./swarm-eiscat-conjunction-list-ion-outflow/collection.json",
-      "type": "application/json",
-      "title": "Swarm-EISCAT conjunction list (2013-2019)"
-    },
+    
     {
       "rel": "child",
       "href": "./swath-elelvation-antarctic-ice-sheet-cryotop-evolution/collection.json",
@@ -863,42 +779,14 @@
       "type": "application/json",
       "title": "Southern Ocean Sea Surface Salinity Level 3 maps (V.1.0)"
     },
-    {
-      "rel": "child",
-      "href": "./l3_water-level-time-series-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L3 inland water level time series"
-    },
-    {
-      "rel": "child",
-      "href": "./l4_river-discharge-time-series-s3-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L4 river discharge time series"
-    },
-    {
-      "rel": "child",
-      "href": "./l2-along-track-re-tracked-s3-c2-testdataset-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Test Data Set: L2 along-track re-tracked product"
-    },
-    {
-      "rel": "child",
-      "href": "./l2-along-track-re-tracked-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L2 along-track re-tracked product"
-    },
+    
     {
       "rel": "child",
       "href": "./deep-extreme-cubes/collection.json",
       "type": "application/json",
       "title": "DeepExtremeCubes: Earth system spatio-temporal data for assessing compound heatwave and drought impacts"
     },
-    {
-      "rel": "child",
-      "href": "./gpp-sen4gpp/collection.json",
-      "type": "application/json",
-      "title": "Global Gross Primary Productivity (GPP) Dataset, University of Southampton"
-    },
+    
     {
       "rel": "child",
       "href": "./tidal-elevation-cryosat2-2019/collection.json",
@@ -947,12 +835,7 @@
       "type": "application/json",
       "title": "Open Science Catalog"
     },
-    {
-      "rel": "child",
-      "href": "./esa-cci-permafrost/collection.json",
-      "type": "application/json",
-      "title": "esa-cci-permafrost"
-    },
+   
     {
       "rel": "child",
       "href": "./d13c-ch4-signatures-smart-ch4/collection.json",

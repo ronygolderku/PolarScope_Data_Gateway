@@ -16,11 +16,7 @@
       "type": "text/html",
       "title": "Description"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
-    },
+  
     {
       "rel": "parent",
       "href": "../catalog.json",

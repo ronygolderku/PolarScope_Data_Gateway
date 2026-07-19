@@ -16,16 +16,7 @@
       "type": "text/html",
       "title": "Description"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Earth Energy Imballance (EEI)_GRACE/GRACE-FO"
-    },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Global Ocean Heat Content (GOHC)_GRACE/GRACE-FO"
-    },
+   
     {
       "rel": "parent",
       "href": "../catalog.json",

@@ -16,22 +16,14 @@
       "type": "text/html",
       "title": "Description"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Earth Energy Imballance (EEI)_GRACE/GRACE-FO"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/gravity-anomalies-goce-airborne-4dantarctica/collection.json",
       "type": "application/json",
       "title": "Gravity anomalies from GOCE and airborne data"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Global Ocean Heat Content (GOHC)_GRACE/GRACE-FO"
-    },
+    
     {
       "rel": "parent",
       "href": "../catalog.json",

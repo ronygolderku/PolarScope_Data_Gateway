@@ -34,12 +34,7 @@
       "title": "Albedo_Regional_S3A/SLSTR"
     },
    
-    {
-      "rel": "child",
-      "href": "../../products/diffuse-attenuation-aeolus-innovation-color/collection.json",
-      "type": "application/json",
-      "title": "Diffuse attenuation: Kd_Global_AEOLUS"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/dissolved-organic-carbon-bicep/collection.json",
@@ -328,36 +323,11 @@
       "type": "application/json",
       "title": "Southern Ocean Sea Surface Salinity Level 3 maps (V.1.0)"
     },
-    {
-      "rel": "child",
-      "href": "../../products/l3_water-level-time-series-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L3 inland water level time series"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4_river-discharge-time-series-s3-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L4 river discharge time series"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-along-track-re-tracked-s3-c2-testdataset-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Test Data Set: L2 along-track re-tracked product"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l1b-l2-alongtrack-CCN2coastalproducts-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL CCN2 isardSAT coastal product"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-along-track-re-tracked-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L2 along-track re-tracked product"
-    },
+
+   
+  
+    
+   
     {
       "rel": "child",
       "href": "../../products/waposal-waves/collection.json",

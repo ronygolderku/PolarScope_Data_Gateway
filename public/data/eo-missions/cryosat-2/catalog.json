@@ -16,48 +16,23 @@
       "type": "text/html",
       "title": "Description"
     },
-    {
-      "rel": "child",
-      "href": "../../products/chaos-field-model-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "CHAOS field model"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/chaos-field-model-core-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "CHAOS field model_Core"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/chaos-field-model-spline-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "CHAOS field model_SplineCoefficients"
-    },
+   
+    
+   
     {
       "rel": "child",
       "href": "../../products/elevation-and-elevation-change-antarctic-cryotop-evolution/collection.json",
       "type": "application/json",
       "title": "Swath-derived elevation and elevation change_Antarctic ice Sheet_2011-2016_CryoSat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/geodynamo-simulation-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Geodynamo simulation data_Earth core"
-    },
+ 
     {
       "rel": "child",
       "href": "../../products/glacier-elevation-cryosat-mountain-glaciers/collection.json",
       "type": "application/json",
       "title": "Mountain glacier elevation and elevation change_Global_Cryosat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/ground-virtual-observatory-cryosat2-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Ground Virtual Observatory Data CRYOSAT-2"
-    },
+   
   
     {
       "rel": "child",
@@ -71,12 +46,7 @@
       "type": "application/json",
       "title": "Ice Sheets_Antarctica_Sentinel-2 Performance Improvement_Level 3"
     },
-    {
-      "rel": "child",
-      "href": "../../products/satellite-data-chaos-field-model-4d-earth-swarm/collection.json",
-      "type": "application/json",
-      "title": "Vector and scalar satellite data files as used in the CHAOS field model"
-    },
+  
     {
       "rel": "child",
       "href": "../../products/sea-ice-clima-snow-depth-lpf-cassis/collection.json",
@@ -125,30 +95,7 @@
       "type": "application/json",
       "title": "Southern Ocean sea ice thickness from CryoSat-2"
     },
-    {
-      "rel": "child",
-      "href": "../../products/l3_water-level-time-series-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L3 inland water level time series"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4_river-discharge-time-series-s3-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L4 river discharge time series"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-along-track-re-tracked-s3-c2-testdataset-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Test Data Set: L2 along-track re-tracked product"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-along-track-re-tracked-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L2 along-track re-tracked product"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/tidal-elevation-cryosat2-2019/collection.json",

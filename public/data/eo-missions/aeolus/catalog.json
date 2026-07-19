@@ -17,12 +17,7 @@
       "title": "Description"
     },
 
-    {
-      "rel": "child",
-      "href": "../../products/diffuse-attenuation-aeolus-innovation-color/collection.json",
-      "type": "application/json",
-      "title": "Diffuse attenuation: Kd_Global_AEOLUS"
-    },
+   
     {
       "rel": "child",
       "href": "../../products/lidar-aerosol-aeolus-swails/collection.json",
