@@ -58,24 +58,7 @@
       "type": "application/json",
       "title": "GPM+SM2RAIN Rainfall product_v1.0_daily_0.25_quasi-global"
     },
-    {
-      "rel": "child",
-      "href": "../../products/rainfall-prism-0-1-v2-africa-smos-rainfall/collection.json",
-      "type": "application/json",
-      "title": "PrISM SMOS Rainfall product v2.0_3h_0.1_Africa"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/rainfall-prism-0-25-v2-africa-smos-rainfall/collection.json",
-      "type": "application/json",
-      "title": "PrISM SMOS Rainfall product_v2.0_3h_0.25_Africa"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/rainfall-prism-0-25-v4-africa-smos-rainfall/collection.json",
-      "type": "application/json",
-      "title": "PrISM SMOS Rainfall product_v4.0_3h_0.25_Africa"
-    },
+  
     {
       "rel": "child",
       "href": "../../products/sea-surface-salinity-godae-oceanview/collection.json",

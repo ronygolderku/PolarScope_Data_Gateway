@@ -16,12 +16,7 @@
       "type": "text/html",
       "title": "Description"
     },
-    {
-      "rel": "child",
-      "href": "../../products/l1b-l2-alongtrack-CCN2coastalproducts-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL CCN2 isardSAT coastal product"
-    },
+   
     {
       "rel": "parent",
       "href": "../catalog.json",

@@ -62,11 +62,7 @@
       "type": "application/json",
       "title": "Monthly Global Particulate Organic Carbon dataset (9 km, OC-CCI v4.2)"
     },
-    {
-      "rel": "child",
-      "type": "application/json",
-      "title": "Hydrodynamic model data (deviation from Sea Level Mean)_Multimission"
-    },
+    
     {
       "rel": "child",
       "href": "../../products/limb-ozone-lpf-solve/collection.json",
@@ -181,30 +177,8 @@
       "type": "application/json",
       "title": "Surface Elevation Change (SEC) of the Antarctic Ice Sheet"
     },
-    {
-      "rel": "child",
-      "href": "../../products/l3_water-level-time-series-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L3 inland water level time series"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l4_river-discharge-time-series-s3-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L4 river discharge time series"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-along-track-re-tracked-s3-c2-testdataset-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Test Data Set: L2 along-track re-tracked product"
-    },
-    {
-      "rel": "child",
-      "href": "../../products/l2-along-track-re-tracked-s3-c2-final-hydrocoastal/collection.json",
-      "type": "application/json",
-      "title": "HYDROCOASTAL Final Product: L2 along-track re-tracked product"
-    },
+
+   
     {
       "rel": "child",
       "href": "../../products/waposal-waves/collection.json",
