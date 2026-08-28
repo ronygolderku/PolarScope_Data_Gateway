@@ -171,6 +171,12 @@ const Home = () => {
                     Quick access
                   </div>
                   <div className="flex flex-wrap gap-2">
+                    <Link to="/getting-started" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+                      Getting Started
+                    </Link>
+                    <Link to="/tutorials" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+                      Tutorials
+                    </Link>
                     <Link to="/metrics" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
                       Metrics
                     </Link>

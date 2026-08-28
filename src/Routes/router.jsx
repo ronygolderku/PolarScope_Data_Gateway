@@ -7,6 +7,14 @@ import Metrics from "../Pages/Metrics";
 import Catalog from "../Pages/Catalog";
 import Search from "../Pages/Search";
 import BGCArgoPage from "../Pages/BGC-argo";
+import Tutorials from "../Pages/Tutorials";
+import Documentation from "../Pages/Documentation";
+import GettingStarted from "../Pages/GettingStarted";
+import GettingStartedEO from "../Pages/tutorials/GettingStartedEO";
+import AccessingData from "../Pages/tutorials/AccessingData";
+import WorkingWithNetCDF from "../Pages/tutorials/WorkingWithNetCDF";
+import SSTAnalysis from "../Pages/tutorials/SSTAnalysis";
+import SeaIceAnalysis from "../Pages/tutorials/SeaIceAnalysis";
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +84,38 @@ export const router = createBrowserRouter([
       {
         path: "bgc-argo",
         Component: BGCArgoPage,
+      },
+      {
+        path: "tutorials",
+        Component: Tutorials,
+      },
+      {
+        path: "documentation",
+        Component: Documentation,
+      },
+      {
+        path: "getting-started",
+        Component: GettingStarted,
+      },
+      {
+        path: "tutorials/getting-started-eo",
+        Component: GettingStartedEO,
+      },
+      {
+        path: "tutorials/accessing-data",
+        Component: AccessingData,
+      },
+      {
+        path: "tutorials/working-with-netcdf",
+        Component: WorkingWithNetCDF,
+      },
+      {
+        path: "tutorials/sst-analysis",
+        Component: SSTAnalysis,
+      },
+      {
+        path: "tutorials/sea-ice-analysis",
+        Component: SeaIceAnalysis,
       },
     ],
   },

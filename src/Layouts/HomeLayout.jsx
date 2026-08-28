@@ -7,6 +7,9 @@ import {
   FaBars,
   FaChevronLeft,
   FaGlobe,
+  FaGraduationCap,
+  FaFileAlt,
+  FaRocket,
 } from "react-icons/fa";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import aceasLogo from "../assets/ACEAS-Logo.png";
@@ -95,7 +98,7 @@ const HomeLayout = () => {
           <div className="w-full px-4 pt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#D6E1F0]">
             Navigate
           </div>
-          <ul className="menu w-full grow px-2 py-3">
+          <ul className="menu w-full px-2 py-3">
             {/* Home */}
             <li>
               <NavLink
@@ -151,6 +154,44 @@ const HomeLayout = () => {
                 onClick={handleLinkClick}
               >
                 <FaGlobe /> BGC-Argo
+              </NavLink>
+            </li>
+          </ul>
+
+          <div className="w-full px-4 pt-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#D6E1F0]">
+            Learn
+          </div>
+          <ul className="menu w-full grow px-2 py-3">
+            {/* Getting Started */}
+            <li>
+              <NavLink
+                to="/getting-started"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
+              >
+                <FaRocket /> Getting Started
+              </NavLink>
+            </li>
+
+            {/* Tutorials */}
+            <li>
+              <NavLink
+                to="/tutorials"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
+              >
+                <FaGraduationCap /> Tutorials
+              </NavLink>
+            </li>
+
+            {/* Documentation */}
+            <li>
+              <NavLink
+                to="/documentation"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
+              >
+                <FaFileAlt /> Documentation
               </NavLink>
             </li>
           </ul>
