@@ -34,7 +34,7 @@ const GettingStartedEO = () => {
           </section>
 
           {/* Introduction */}
-          <section className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-4">
+          <section className="border-t border-white/10 pt-6 space-y-4">
             <h2 className="text-2xl font-semibold text-white">Introduction</h2>
             <p className="text-[#D6E1F0]">
               Earth Observation data comes from satellites orbiting our planet, continuously monitoring
@@ -51,18 +51,12 @@ const GettingStartedEO = () => {
           {/* Section 1: Understanding Satellite Missions */}
           <section className="space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 mb-2 text-sm font-semibold text-[#F4C542]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">
-                  1
-                </span>
-                STEP ONE
-              </div>
               <h2 className="text-2xl font-semibold text-white">
                 Understanding Satellite Missions and Sensors
               </h2>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-4">
+            <div className="border-t border-white/10 pt-6 space-y-4">
               <h3 className="text-lg font-semibold text-white">What is a satellite mission?</h3>
               <p className="text-[#D6E1F0]">
                 A <strong>satellite mission</strong> is a spacecraft launched to orbit Earth and collect
@@ -149,18 +143,12 @@ const GettingStartedEO = () => {
           {/* Section 2: Common Data Formats */}
           <section className="space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 mb-2 text-sm font-semibold text-[#F4C542]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">
-                  2
-                </span>
-                STEP TWO
-              </div>
               <h2 className="text-2xl font-semibold text-white">
                 Common Data Formats
               </h2>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-6">
+            <div className="border-t border-white/10 pt-6 space-y-6">
               <p className="text-[#D6E1F0]">
                 Satellite data is stored in specialized formats designed for scientific use. Understanding
                 these formats is essential for working with the data.
@@ -177,9 +165,9 @@ const GettingStartedEO = () => {
                   </p>
                   <div className="bg-[#071a34] rounded p-3 mb-3">
                     <p className="text-xs font-mono text-[#D6E1F0]">
-                      # Structure example:<br/>
-                      dimensions: lat=720, lon=1440, time=365<br/>
-                      variables: chlor_a(time, lat, lon), sst(time, lat, lon)<br/>
+                      # Structure example:<br />
+                      dimensions: lat=720, lon=1440, time=365<br />
+                      variables: chlor_a(time, lat, lon), sst(time, lat, lon)<br />
                       attributes: units, valid_range, _FillValue
                     </p>
                   </div>
@@ -256,18 +244,12 @@ const GettingStartedEO = () => {
           {/* Section 3: Spatial and Temporal Coverage */}
           <section className="space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 mb-2 text-sm font-semibold text-[#F4C542]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">
-                  3
-                </span>
-                STEP THREE
-              </div>
               <h2 className="text-2xl font-semibold text-white">
                 Understanding Coverage: Spatial and Temporal
               </h2>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-6">
+            <div className="border-t border-white/10 pt-6 space-y-6">
               <div>
                 <h3 className="text-lg font-semibold text-white mb-3">Spatial Coverage</h3>
                 <p className="text-[#D6E1F0] mb-4">
@@ -337,18 +319,12 @@ const GettingStartedEO = () => {
           {/* Section 4: How to Access Data */}
           <section className="space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 mb-2 text-sm font-semibold text-[#F4C542]">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">
-                  4
-                </span>
-                STEP FOUR
-              </div>
               <h2 className="text-2xl font-semibold text-white">
                 How to Read Data Access Links
               </h2>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-6">
+            <div className="border-t border-white/10 pt-6 space-y-6">
               <p className="text-[#D6E1F0]">
                 Each product in this catalogue includes links to the data provider. Here's how to interpret them:
               </p>
@@ -403,56 +379,51 @@ const GettingStartedEO = () => {
             </div>
           </section>
 
-          {/* Quick Reference */}
-          <section className="rounded-2xl border border-[#F4C542]/30 bg-[#143A6A] p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <FaCheckCircle className="text-[#F4C542] text-xl" />
-              <h2 className="text-xl font-semibold text-white">Quick Reference Checklist</h2>
-            </div>
+          <section className="border-t border-white/10 pt-6">
+            <h2 className="text-xl font-semibold text-white mb-3">Before you use a dataset</h2>
             <p className="text-sm text-[#D6E1F0] mb-4">
-              When evaluating a dataset, ask yourself:
+              Check these details on the product page before you download or analyse it:
             </p>
-            <div className="grid md:grid-cols-2 gap-3">
+            <div className="grid gap-x-8 gap-y-2 md:grid-cols-2">
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Does it cover my region of interest?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Does it span my time period?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Is the spatial resolution adequate?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Is the temporal resolution adequate?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>What format is the data in?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Do I have the tools to read this format?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Do I need to register with the provider?</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-[#D6E1F0]">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
+                <span className="text-[#3dd6d0]">•</span>
                 <span>Can I use it for my purpose (check license)?</span>
               </div>
             </div>
           </section>
 
-          {/* Next Steps */}
-          <section className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0b2748] to-[#143A6A] p-6">
-            <h2 className="text-xl font-semibold text-white mb-3">Next Steps</h2>
+          <section className="border-t border-white/10 pt-6">
+            <h2 className="text-xl font-semibold text-white mb-3">Where to go from here</h2>
             <p className="text-[#D6E1F0] mb-4">
-              Now that you understand EO data basics, you're ready to start working with actual datasets!
+              Continue with data access, or return to the catalogue and search for a product.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link

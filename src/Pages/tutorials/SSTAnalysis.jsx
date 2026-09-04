@@ -167,49 +167,21 @@ const SSTAnalysis = () => {
             </div>
           </section>
 
-          {/* Embedded Notebook */}
           <section className="space-y-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                Complete Working Example
-              </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Interactive Notebook with Code & Outputs
+                Run the analysis
               </h2>
               <p className="mt-2 text-sm text-[#D6E1F0]">
-                View the complete analysis with all code, outputs, and visualizations below. The notebook includes
-                step-by-step implementation, console outputs, and publication-quality figures.
+                The complete notebook contains the code, outputs, and visualisations used in this example. Open it separately so it can use the full width of your screen, or download it to run locally.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] overflow-hidden">
-              <iframe
-                src="https://ronygolderku.github.io/so_sst/"
-                className="w-full"
-                style={{ height: '800px', border: 'none' }}
-                title="SST Analysis Notebook"
-              />
-              <div className="p-4 bg-[#143A6A] border-t border-white/10">
-                <p className="text-sm text-[#D6E1F0] mb-3">
-                  Can't see the notebook? Open it in a new tab or download it:
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="https://ronygolderku.github.io/so_sst/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#F4C542] px-4 py-2 text-sm font-semibold text-[#071a34] transition-colors hover:bg-[#e8ba30]"
-                  >
-                    📓 Open in New Tab
-                  </a>
-                  <a
-                    href="/notebooks/sst_so.ipynb"
-                    download
-                    className="inline-flex items-center gap-2 rounded-lg border border-[#F4C542] bg-transparent px-4 py-2 text-sm font-semibold text-[#F4C542] transition-colors hover:bg-[#F4C542]/10"
-                  >
-                    ⬇️ Download Notebook
-                  </a>
-                </div>
+            <div className="border-y border-white/10 py-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
+              <p className="text-sm text-[#D6E1F0]">NOAA SST analysis notebook with figures and outputs.</p>
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold sm:mt-0">
+                <a href="https://ronygolderku.github.io/so_sst/" target="_blank" rel="noopener noreferrer" className="text-[#F4C542] hover:text-white">Open notebook</a>
+                <a href="/notebooks/sst_so.ipynb" download className="text-[#F4C542] hover:text-white">Download notebook</a>
               </div>
             </div>
           </section>

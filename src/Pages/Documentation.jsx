@@ -183,7 +183,7 @@ const Documentation = () => {
     },
     {
       id: "quality-control",
-      title: "Quality Control &amp; Flags",
+      title: "Quality Control & Flags",
       icon: FaShieldAlt,
       content: [
         {
@@ -220,7 +220,7 @@ const Documentation = () => {
     },
     {
       id: "data-citations",
-      title: "Data Citations &amp; Licensing",
+      title: "Data Citations & Licensing",
       icon: FaKey,
       content: [
         {
@@ -278,67 +278,56 @@ const Documentation = () => {
     <div className="min-h-screen bg-transparent text-[#F8FAFC]">
       <div className="w-full flex justify-center">
         <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 flex flex-col gap-10">
-          {/* Header */}
-          <section className="space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-[#D6E1F0] backdrop-blur-sm">
-              <FaBook className="text-[#F4C542]" />
-              Technical Reference
-            </div>
+          <section className="max-w-3xl space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#F4C542]">
+              Reference for working with the data
+            </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
               Documentation
             </h1>
             <p className="max-w-3xl text-base sm:text-lg leading-7 text-[#D6E1F0]">
-              Technical documentation, data format specifications, access protocols, and reference materials
-              for working with Antarctic and Southern Ocean datasets.
+              Find the formats, access methods, metadata standards, and terms you will encounter in the catalogue.
             </p>
           </section>
 
-          {/* Quick Navigation */}
-          <section className="rounded-2xl border border-white/10 bg-[#143A6A] p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-white mb-4">Quick Navigation</h2>
-            <div className="flex flex-wrap gap-3">
+          <nav aria-label="Documentation sections" className="border-y border-white/10 py-4">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#D6E1F0]">On this page</p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
               {sections.map((section) => (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10 flex items-center gap-2"
+                  className="text-[#F4C542] transition-colors hover:text-white"
                 >
-                  <section.icon className="text-[#F4C542]" />
                   {section.title}
                 </a>
               ))}
-              <a href="#glossary" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10 flex items-center gap-2">
-                <FaQuestionCircle className="text-[#F4C542]" />
+              <a href="#glossary" className="text-[#F4C542] transition-colors hover:text-white">
                 Glossary
               </a>
-              <Link to="/tutorials" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+              <Link to="/tutorials" className="text-[#F4C542] transition-colors hover:text-white">
                 View Tutorials
               </Link>
             </div>
-          </section>
+          </nav>
 
           {/* Main Content Sections */}
-          {sections.map((section, sectionIndex) => (
-            <section key={section.id} id={section.id} className="space-y-6">
+          {sections.map((section) => (
+            <section key={section.id} id={section.id} className="scroll-mt-8 space-y-5 border-b border-white/10 pb-10 last:border-b-0">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F4C542]/10 text-[#F4C542]">
-                  <section.icon className="text-2xl" />
-                </div>
+                <section.icon className="text-xl text-[#F4C542]" />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                    Section {sectionIndex + 1}
-                  </p>
                   <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
                     {section.title}
                   </h2>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {section.content.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
-                    className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 shadow-sm"
+                    className="border-l border-[#3dd6d0]/40 pl-5"
                   >
                     {item.subtitle && (
                       <h3 className="text-lg font-semibold text-white mb-2">
@@ -370,21 +359,16 @@ const Documentation = () => {
           {/* Glossary */}
           <section id="glossary" className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F4C542]/10 text-[#F4C542]">
-                <FaQuestionCircle className="text-2xl" />
-              </div>
+              <FaQuestionCircle className="text-xl text-[#F4C542]" />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                  Reference
-                </p>
                 <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
                   Glossary
                 </h2>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 shadow-sm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <div className="border-t border-white/10 pt-5">
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-5 md:grid-cols-2">
                 {glossary.map((item, index) => (
                   <div key={index} className="space-y-1">
                     <dt className="text-sm font-semibold text-[#F4C542]">
@@ -395,28 +379,19 @@ const Documentation = () => {
                     </dd>
                   </div>
                 ))}
-              </div>
+              </dl>
             </div>
           </section>
 
-          {/* Help Section */}
-          <section className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0b2748] to-[#143A6A] p-6 md:p-8 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-              Questions?
-            </p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">
-              Contact the Project Office
-            </h3>
-            <p className="mt-3 text-sm sm:text-base leading-7 text-[#D6E1F0]">
-              For questions about data formats, access issues, or technical documentation, reach out to ACEAS.
-            </p>
+          <footer className="border-t border-[#3dd6d0]/25 bg-[#123f71] px-5 py-5 text-sm text-[#D6E1F0] sm:flex sm:items-center sm:justify-between sm:gap-4">
+            <p>Questions about formats, access, or metadata?</p>
             <a
               href="mailto:ACEAS.Project.Office@utas.edu.au"
-              className="mt-5 inline-flex items-center justify-center rounded-lg bg-[#F4C542] px-5 py-3 text-sm font-semibold text-[#0F2D57] transition-colors hover:bg-[#e8ba30]"
+              className="mt-2 inline-block font-semibold text-[#F4C542] transition-colors hover:text-white sm:mt-0"
             >
-              ACEAS.Project.Office@utas.edu.au
+              Contact the ACEAS Project Office
             </a>
-          </section>
+          </footer>
         </div>
       </div>
     </div>

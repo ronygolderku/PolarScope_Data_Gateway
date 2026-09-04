@@ -209,59 +209,22 @@ const SeaIceAnalysis = () => {
             </div>
           </section>
 
-          {/* Embedded Notebook */}
           <section className="space-y-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                Complete Working Example
-              </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Interactive Notebook with Code & Outputs
+                Run the analysis
               </h2>
               <p className="mt-2 text-sm text-[#D6E1F0]">
-                Antarctic-focused notebook with monthly and daily sea ice index analysis. This custom notebook
-                includes only Southern Hemisphere data - Arctic content has been removed for clarity.
+                The notebook contains monthly and daily Antarctic sea ice index analysis. Open it separately for the full notebook view, or download it to run with your own data.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0b2748] overflow-hidden">
-              <div className="bg-[#1B457A]/50 p-4 border-b border-white/10">
-                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  📊 Antarctic Sea Ice Index Notebook
-                </h3>
-                <p className="text-sm text-[#D6E1F0]">
-                  Monthly and daily Antarctic sea ice extent analysis with trend calculations (1978-present)
-                </p>
-              </div>
-
-              <iframe
-                src="https://nbviewer.org/github/ronygolderku/PolarScope_Data_Gateway/blob/main/public/notebooks/antarctic_sea_ice_index.ipynb"
-                className="w-full"
-                style={{ height: '800px', border: 'none' }}
-                title="Antarctic Sea Ice Notebook"
-              />
-
-              <div className="p-4 bg-[#143A6A] border-t border-white/10">
-                <p className="text-sm text-[#D6E1F0] mb-3">
-                  Antarctic-focused notebook (Arctic sections removed). Download to run with your own data:
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="/notebooks/antarctic_sea_ice_index.ipynb"
-                    download
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#F4C542] px-4 py-2 text-sm font-semibold text-[#071a34] transition-colors hover:bg-[#e8ba30]"
-                  >
-                    ⬇️ Download Notebook
-                  </a>
-                  <a
-                    href="https://gitlab.eumetsat.int/eumetlab/oceans/ocean-training/sensors/learn-osi-saf-sea-ice/-/tree/main/1_OSI_SAF_sea_ice_introductory"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-[#F4C542] bg-transparent px-4 py-2 text-sm font-semibold text-[#F4C542] transition-colors hover:bg-[#F4C542]/10"
-                  >
-                    🗂️ More EUMETSAT Tutorials
-                  </a>
-                </div>
+            <div className="border-y border-white/10 py-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
+              <p className="text-sm text-[#D6E1F0]">Antarctic sea ice index notebook, covering 1978 to the present.</p>
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold sm:mt-0">
+                <a href="/notebooks/antarctic_sea_ice_index.ipynb" download className="text-[#F4C542] hover:text-white">Download notebook</a>
+                <a href="https://mybinder.org/v2/git/https%3A%2F%2Fgitlab.eumetsat.int%2Feumetlab%2Foceans%2Focean-training%2Fsensors%2Flearn-osi-saf-sea-ice/HEAD?labpath=1_OSI_SAF_sea_ice_introductory%2F1_3f_OSI_SAF_sea_ice_plotting_Ice_Index.ipynb" target="_blank" rel="noopener noreferrer" className="text-[#F4C542] hover:text-white">Run in Binder</a>
+                <a href="https://gitlab.eumetsat.int/eumetlab/oceans/ocean-training/sensors/learn-osi-saf-sea-ice/-/tree/main/1_OSI_SAF_sea_ice_introductory" target="_blank" rel="noopener noreferrer" className="text-[#F4C542] hover:text-white">EUMETSAT tutorials</a>
               </div>
             </div>
           </section>

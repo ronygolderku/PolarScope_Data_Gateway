@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FaBook,
   FaDownload,
   FaCode,
   FaChartLine,
@@ -197,54 +196,47 @@ subset.to_netcdf('antarctic_2022.nc')`,
     <div className="min-h-screen bg-transparent text-[#F8FAFC]">
       <div className="w-full flex justify-center">
         <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 flex flex-col gap-10">
-          {/* Header */}
-          <section className="space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-[#D6E1F0] backdrop-blur-sm">
-              <FaBook className="text-[#F4C542]" />
-              Learning Resources
-            </div>
+          <section className="max-w-3xl space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#F4C542]">
+              Practical examples
+            </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
-              Tutorials &amp; Guides
+              Tutorials and guides
             </h1>
             <p className="max-w-3xl text-base sm:text-lg leading-7 text-[#D6E1F0]">
-              Step-by-step tutorials to help you access, process, and analyze Antarctic and Southern Ocean data.
-              From beginner-friendly introductions to advanced analysis workflows.
+              Follow worked examples for finding, downloading, and analysing Antarctic and Southern Ocean data.
             </p>
           </section>
 
-          {/* Quick Navigation */}
-          <section className="rounded-2xl border border-white/10 bg-[#143A6A] p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-white mb-4">Quick Links</h2>
-            <div className="flex flex-wrap gap-3">
-              <a href="#tutorials" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+          <nav aria-label="Tutorial sections" className="border-y border-white/10 py-4">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#D6E1F0]">On this page</p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+              <a href="#tutorials" className="text-[#F4C542] transition-colors hover:text-white">
                 Tutorials
               </a>
-              <a href="#code-examples" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+              <a href="#code-examples" className="text-[#F4C542] transition-colors hover:text-white">
                 Code Examples
               </a>
-              <a href="#resources" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+              <a href="#resources" className="text-[#F4C542] transition-colors hover:text-white">
                 External Resources
               </a>
-              <Link to="/documentation" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+              <Link to="/documentation" className="text-[#F4C542] transition-colors hover:text-white">
                 Documentation
               </Link>
-              <Link to="/getting-started" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#F8FAFC] transition-colors hover:bg-white/10">
+              <Link to="/getting-started" className="text-[#F4C542] transition-colors hover:text-white">
                 Getting Started Guide
               </Link>
             </div>
-          </section>
+          </nav>
 
           {/* Tutorials */}
           <section id="tutorials" className="space-y-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                Learn by Doing
-              </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Tutorial Library
+                Start with a tutorial
               </h2>
               <p className="mt-2 text-sm sm:text-base text-[#D6E1F0]">
-                Structured tutorials covering common workflows and analysis techniques.
+                Choose the example closest to the work you want to do.
               </p>
             </div>
 
@@ -257,51 +249,22 @@ subset.to_netcdf('antarctic_2022.nc')`,
                   <TutorialCard
                     key={index}
                     {...cardProps}
-                    className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 shadow-sm hover:border-[#F4C542]/30 transition-colors block"
+                    className="group border-b border-white/10 py-6 transition-colors block first:border-t hover:bg-white/[0.03] sm:px-4"
                   >
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F4C542]/10 text-[#F4C542]">
-                          <tutorial.icon className="text-xl" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">
-                            {tutorial.title}
-                          </h3>
-                          <div className="flex items-center gap-2 mt-1">
-                            <span className="text-xs px-2 py-1 rounded-full bg-[#F4C542]/20 text-[#F4C542] font-medium">
-                              {tutorial.level}
-                            </span>
-                            <span className="text-xs text-[#D6E1F0]">
-                              {tutorial.duration}
-                            </span>
-                          </div>
-                        </div>
+                    <div className="flex items-start gap-3 mb-3">
+                      <tutorial.icon className="text-xl text-[#F4C542]" />
+                      <div>
+                        <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-[#F4C542]">
+                          {tutorial.title}
+                        </h3>
                       </div>
                     </div>
                     <p className="text-sm text-[#D6E1F0] mb-4">
                       {tutorial.description}
                     </p>
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#F4C542]">
-                        Topics Covered
-                      </p>
-                      <ul className="space-y-1">
-                        {tutorial.topics.map((topic, idx) => (
-                          <li key={idx} className="text-sm text-[#D6E1F0] flex items-start gap-2">
-                            <span className="text-[#F4C542] mt-1.5">•</span>
-                            <span>{topic}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {tutorial.link && (
-                      <div className="mt-4 pt-4 border-t border-white/10">
-                        <span className="text-sm font-semibold text-[#F4C542]">
-                          Start Tutorial →
-                        </span>
-                      </div>
-                    )}
+                    <p className="text-sm leading-6 text-[#D6E1F0]">
+                      {tutorial.topics.join(" · ")}
+                    </p>
                   </TutorialCard>
                 );
               })}
@@ -311,9 +274,6 @@ subset.to_netcdf('antarctic_2022.nc')`,
           {/* Code Examples */}
           <section id="code-examples" className="space-y-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                Ready to Use
-              </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
                 Code Examples
               </h2>
@@ -326,21 +286,21 @@ subset.to_netcdf('antarctic_2022.nc')`,
               {codeExamples.map((example, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-white/10 bg-[#0b2748] overflow-hidden shadow-sm"
+                  className="border-t border-white/10 overflow-hidden"
                 >
-                  <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#143A6A]">
+                  <div className="flex items-center justify-between py-4 border-b border-white/10">
                     <div className="flex items-center gap-3">
                       <FaCode className="text-[#F4C542]" />
                       <h3 className="text-lg font-semibold text-white">
                         {example.title}
                       </h3>
                     </div>
-                    <span className="text-xs px-3 py-1 rounded-full bg-[#F4C542]/20 text-[#F4C542] font-medium">
+                    <span className="text-xs font-semibold text-[#F4C542]">
                       {example.language}
                     </span>
                   </div>
-                  <div className="p-6">
-                    <pre className="overflow-x-auto text-sm text-[#D6E1F0] bg-[#071a34] p-4 rounded-lg">
+                  <div className="py-5">
+                    <pre className="overflow-x-auto border-l-2 border-[#3dd6d0]/40 bg-[#071a34] p-4 text-sm text-[#D6E1F0]">
                       <code>{example.code}</code>
                     </pre>
                   </div>
@@ -352,9 +312,6 @@ subset.to_netcdf('antarctic_2022.nc')`,
           {/* External Resources */}
           <section id="resources" className="space-y-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-                Learn More
-              </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
                 External Resources
               </h2>
@@ -363,47 +320,41 @@ subset.to_netcdf('antarctic_2022.nc')`,
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="divide-y divide-white/10 border-y border-white/10">
               {externalResources.map((resource, index) => (
                 <a
                   key={index}
                   href={resource.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-white/10 bg-[#143A6A] p-6 shadow-sm hover:border-[#F4C542]/30 transition-colors group"
+                  className="group flex items-start justify-between gap-4 py-5 transition-colors hover:bg-white/[0.03] sm:px-4"
                 >
-                  <div className="flex items-start justify-between">
+                  <div>
                     <h3 className="text-lg font-semibold text-white group-hover:text-[#F4C542] transition-colors">
                       {resource.title}
                     </h3>
-                    <FaExternalLinkAlt className="text-[#D6E1F0] text-sm mt-1 group-hover:text-[#F4C542] transition-colors" />
+                    <p className="mt-2 text-sm leading-6 text-[#D6E1F0]">
+                      {resource.description}
+                    </p>
                   </div>
-                  <p className="mt-3 text-sm text-[#D6E1F0]">
-                    {resource.description}
-                  </p>
+                  <FaExternalLinkAlt className="mt-1 shrink-0 text-[#D6E1F0] text-sm group-hover:text-[#F4C542] transition-colors" />
                 </a>
               ))}
             </div>
           </section>
 
           {/* Help Section */}
-          <section className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0b2748] to-[#143A6A] p-6 md:p-8 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">
-              Need Help?
-            </p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">
-              Get Support
-            </h3>
-            <p className="mt-3 text-sm sm:text-base leading-7 text-[#D6E1F0]">
-              If you have questions about using the data or need help with a specific analysis, contact the ACEAS project office.
+          <footer className="border-t border-[#3dd6d0]/25 bg-[#123f71] px-5 py-5 text-sm text-[#D6E1F0] sm:flex sm:items-center sm:justify-between sm:gap-4">
+            <p className="text-sm sm:text-base leading-7 text-[#D6E1F0]">
+              Questions about a tutorial or analysis workflow?
             </p>
             <a
               href="mailto:ACEAS.Project.Office@utas.edu.au"
-              className="mt-5 inline-flex items-center justify-center rounded-lg bg-[#F4C542] px-5 py-3 text-sm font-semibold text-[#0F2D57] transition-colors hover:bg-[#e8ba30]"
+              className="mt-2 inline-block font-semibold text-[#F4C542] transition-colors hover:text-white sm:mt-0"
             >
-              ACEAS.Project.Office@utas.edu.au
+              Contact the ACEAS Project Office
             </a>
-          </section>
+          </footer>
         </div>
       </div>
     </div>
