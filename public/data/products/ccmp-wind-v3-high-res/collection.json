@@ -1,0 +1,111 @@
+{
+    "type": "Collection",
+    "id": "ccmp-wind-v3-high-res",
+    "stac_version": "1.0.0",
+    "description": "CCMP High-Resolution experimental product provides enhanced spatial detail at 0.125° (~12.5 km) resolution for ocean surface winds. This experimental dataset uses advanced interpolation and data fusion techniques to downscale the standard 0.25° CCMP product while preserving the multi-satellite calibration and quality control of the operational system. The higher resolution is particularly valuable for coastal Southern Ocean applications, mesoscale ocean feature studies around Antarctica, and detailed air-sea flux calculations near the ice edge. While experimental, this product demonstrates improved representation of wind gradients, topographic effects on winds near Antarctic coastal regions, and finer-scale wind patterns associated with polynyas and marginal ice zones. The product maintains 6-hourly temporal resolution and includes the same wind vector components and quality flags as the standard CCMP product.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.remss.com/measurements/ccmp/",
+            "title": "Remote Sensing Systems - Product Page"
+        },
+        {
+            "rel": "via",
+            "href": "https://podaac.jpl.nasa.gov/dataset/CCMP_HIGH_RES",
+            "title": "NASA PO.DAAC - Data Access"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/atmosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Atmosphere"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-ccmp-high-res",
+    "osc:status": "planned",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "2020-01-01T00:00:00Z",
+    "version": "3.0-experimental",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                },
+                {
+                    "id": "atmosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "wind-speed",
+        "wind-direction",
+        "ocean-surface-wind"
+    ],
+    "osc:missions": [
+        "ascat",
+        "metop",
+        "smap"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "CCMP High-Resolution Ocean Surface Wind (0.125°, Experimental)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2020-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Winds",
+        "High Resolution",
+        "Surface Wind",
+        "CCMP",
+        "Experimental",
+        "Southern Ocean",
+        "Coastal Winds",
+        "Antarctica",
+        "Mesoscale",
+        "Ice Edge",
+        "Polynyas"
+    ]
+}

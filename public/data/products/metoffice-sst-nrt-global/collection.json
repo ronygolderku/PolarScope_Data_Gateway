@@ -1,0 +1,111 @@
+{
+    "type": "Collection",
+    "id": "metoffice-sst-nrt-global",
+    "stac_version": "1.0.0",
+    "description": "The UK Met Office Near Real-Time (NRT) sea surface temperature product provides operational SST analysis with very low latency (typically within 24 hours of observation). This product uses the OSTIA system to deliver daily, gap-free SST fields at 0.05° resolution for numerical weather prediction, marine forecasting, and real-time ocean monitoring. The NRT product ingests the latest available satellite observations from multiple infrared and microwave sensors, combined with in situ data from drifting buoys and ship observations. For the Southern Ocean and Antarctic regions, this product is essential for monitoring sea ice formation/melt, polynya detection, and supporting operational marine activities. The product includes quality flags, analysis uncertainty, and sea ice concentration masks optimized for polar applications.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://resources.marine.copernicus.eu/product-detail/SST_GLO_SST_L4_NRT_OBSERVATIONS_010_001",
+            "title": "Copernicus Marine Service - Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.metoffice.gov.uk/research/climate/maps-and-data/data/hadisst/",
+            "title": "UK Met Office - Documentation"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-surface-temperature/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Surface Temperature"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "uk-met-office-ostia-nrt",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "2007-01-01T00:00:00Z",
+    "version": "2.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-surface-temperature",
+        "sea-ice-concentration"
+    ],
+    "osc:missions": [
+        "sentinel-3",
+        "metop",
+        "noaa-20",
+        "suomi-npp",
+        "gcom-w1"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "UK Met Office NRT Global Sea Surface Temperature (< 24h latency)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2007-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Temperature",
+        "Sea Surface Temperature",
+        "SST",
+        "Near Real-Time",
+        "NRT",
+        "Operational",
+        "OSTIA",
+        "Southern Ocean",
+        "Antarctica",
+        "UK Met Office",
+        "Copernicus Marine",
+        "Marine Forecasting",
+        "Low Latency"
+    ]
+}

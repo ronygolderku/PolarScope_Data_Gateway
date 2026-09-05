@@ -1,0 +1,115 @@
+{
+    "type": "Collection",
+    "id": "ostia-sst-daily-global",
+    "stac_version": "1.0.0",
+    "description": "The OSTIA (Operational Sea Surface Temperature and Ice Analysis) system produces daily, gap-free maps of sea surface temperature at 0.05° (~6 km) resolution. OSTIA uses satellite data from infrared and microwave radiometers, combined with in situ observations from drifting and moored buoys. The system employs optimal interpolation to merge these data sources and create a foundation sea surface temperature analysis. This product is specifically optimized for polar regions including the Southern Ocean, with integrated sea ice concentration and quality control flags. OSTIA is widely used for numerical weather prediction, ocean forecasting, and climate monitoring. The dataset provides global coverage with daily updates and includes uncertainty estimates for each grid point.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://resources.marine.copernicus.eu/product-detail/SST_GLO_SST_L4_NRT_OBSERVATIONS_010_001",
+            "title": "Copernicus Marine Service - Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.metoffice.gov.uk/research/climate/maps-and-data/data/hadisst/",
+            "title": "UK Met Office - Documentation"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.48670/moi-00165",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-surface-temperature/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Surface Temperature"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "uk-met-office-ostia",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "2006-01-01T00:00:00Z",
+    "version": "2.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-surface-temperature",
+        "sea-ice-concentration"
+    ],
+    "osc:missions": [
+        "sentinel-3",
+        "metop",
+        "noaa-20",
+        "suomi-npp"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "OSTIA Global Daily Sea Surface Temperature (0.05°, L4)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2006-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Temperature",
+        "Sea Surface Temperature",
+        "SST",
+        "OSTIA",
+        "Southern Ocean",
+        "Antarctica",
+        "Gap-free",
+        "Daily",
+        "Multi-sensor",
+        "UK Met Office",
+        "Copernicus Marine",
+        "Polar Regions",
+        "Foundation SST"
+    ]
+}

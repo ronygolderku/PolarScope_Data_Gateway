@@ -1,0 +1,111 @@
+{
+    "type": "Collection",
+    "id": "icesat2-atl07-sea-ice-height",
+    "stac_version": "1.0.0",
+    "description": "ICESat-2 ATL07 provides sea ice height measurements from the ATLAS laser altimeter at high along-track resolution (~10-25 m). This Level 3A product delivers sea ice surface elevation above the local sea surface, which is fundamental for deriving sea ice freeboard and thickness. ATL07 processes ATLAS photon data specifically for sea ice surfaces, accounting for leads (open water between ice floes) to establish local sea level references. For the Southern Ocean, ATL07 captures the complex sea ice topography including thin ice, deformed ice, pressure ridges, and smooth ice floes. The product includes surface height, height confidence, background photon rate, and quality flags. ATL07 enables detailed studies of sea ice roughness, deformation, and thickness distribution at scales previously impossible with other altimeters. The high spatial resolution reveals fine-scale ice features important for ice dynamics, atmosphere-ice drag, and biological habitats in the marginal ice zone.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/atl07",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/atl07/versions/6",
+            "title": "NSIDC - Documentation"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.5067/ATLAS/ATL07.006",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-elevation/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Elevation"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-icesat2-atl07",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2018-10-14T00:00:00Z",
+    "version": "006",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-elevation",
+        "sea-ice-height"
+    ],
+    "osc:missions": [
+        "icesat-2"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "ICESat-2 ATL07 Sea Ice Height (10-25 m along-track)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -50
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2018-10-14T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Height",
+        "Surface Elevation",
+        "ICESat-2",
+        "ATLAS",
+        "Laser Altimetry",
+        "Antarctica",
+        "Southern Ocean",
+        "Leads",
+        "Ice Roughness",
+        "High Resolution"
+    ]
+}

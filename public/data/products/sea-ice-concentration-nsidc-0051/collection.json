@@ -1,0 +1,106 @@
+{
+    "type": "Collection",
+    "id": "sea-ice-concentration-nsidc-0051",
+    "stac_version": "1.0.0",
+    "description": "Sea ice concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS passive microwave data, 25 km resolution. This dataset provides daily and monthly sea ice concentration grids for both polar regions derived from brightness temperature data. SMMR data spans October 1978 through August 1987, while SSM/I and SSMIS data span July 1987 to the present. The data are gridded on the NSIDC polar stereographic grid with 25 x 25 km resolution and are available via FTP. This is one of the most widely used sea ice concentration datasets for climate studies and validation purposes.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/NSIDC-0051/versions/2",
+            "title": "Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/NSIDC-0051/versions/2",
+            "title": "Documentation"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nsidc-passive-microwave",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "1978-10-26T00:00:00Z",
+    "version": "2.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-concentration"
+    ],
+    "osc:missions": [
+        "nimbus-7",
+        "dmsp"
+    ],
+    "updated": "2026-01-22T00:00:00Z",
+    "title": "Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS (NSIDC-0051)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1978-10-26T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Concentration",
+        "Cryospheric Indicators",
+        "Antarctica",
+        "Southern Ocean",
+        "NSIDC",
+        "Passive Microwave",
+        "SMMR",
+        "SSM/I",
+        "SSMIS",
+        "25km"
+    ]
+}

@@ -849,11 +849,149 @@
       "title": "PolarLakes - Sentinel-1/2 - Antarctica, Bi-weekly/Annually"
     },
     {
+      "rel": "child",
+      "href": "./sea-ice-index-g02135/collection.json",
+      "type": "application/json",
+      "title": "Sea Ice Index, Version 4 (G02135)"
+    },
+    {
+      "rel": "child",
+      "href": "./sea-ice-concentration-nsidc-0051/collection.json",
+      "type": "application/json",
+      "title": "Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS (NSIDC-0051)"
+    },
+    {
+      "rel": "child",
+      "href": "./nsidc-0079-bootstrap-sea-ice-concentration/collection.json",
+      "type": "application/json",
+      "title": "Bootstrap Sea Ice Concentrations (NSIDC-0079, 25 km)"
+    },
+    {
+      "rel": "child",
+      "href": "./nsidc-0192-sea-ice-trends-climatologies/collection.json",
+      "type": "application/json",
+      "title": "Sea Ice Trends and Climatologies (NSIDC G02135 Analysis Products)"
+    },
+    {
+      "rel": "child",
+      "href": "./nsidc-0116-sea-ice-motion/collection.json",
+      "type": "application/json",
+      "title": "Polar Pathfinder Daily Sea Ice Motion Vectors (NSIDC-0116, 25 km)"
+    },
+    {
+      "rel": "child",
+      "href": "./nsidc-0781-cs2smos-sea-ice-thickness/collection.json",
+      "type": "application/json",
+      "title": "CS2SMOS Combined Sea Ice Thickness (NSIDC-0781, 25 km)"
+    },
+    {
+      "rel": "child",
+      "href": "./osi-saf-450-sea-ice-concentration-cdr/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Concentration Climate Data Record (OSI-450-a, 10 km, 1979-2015)"
+    },
+    {
+      "rel": "child",
+      "href": "./osi-saf-430-sea-ice-concentration-interim/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Concentration Interim CDR (OSI-430-b, 10 km, 2016-present)"
+    },
+    {
+      "rel": "child",
+      "href": "./osi-saf-403-sea-ice-edge-type/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Edge and Type (OSI-403-c, 10 km, 1979-present)"
+    },
+    {
+      "rel": "child",
+      "href": "./osi-saf-401-sea-ice-emissivity/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Emissivity (OSI-401-d, SSMIS)"
+    },
+    {
+      "rel": "child",
+      "href": "./icesat2-atl06-land-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL06 Land Ice Height (40 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "./icesat2-atl07-sea-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL07 Sea Ice Height (10-25 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "./icesat2-atl10-sea-ice-freeboard/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL10 Sea Ice Freeboard (10 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "./icesat2-atl20-gridded-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL20 Gridded Land Ice Height Change (100 m grid, Quarterly)"
+    },
+    {
+      "rel": "child",
+      "href": "./pace-oci-chlorophyll-a-global/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Global Chlorophyll-a (1 km, Daily, Hyperspectral)"
+    },
+    {
+      "rel": "child",
+      "href": "./pace-oci-particulate-backscatter/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Particulate Backscatter (1 km, Daily, Hyperspectral)"
+    },
+    {
+      "rel": "child",
+      "href": "./pace-oci-remote-sensing-reflectance/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Remote Sensing Reflectance (1 km, Hyperspectral, 5 nm)"
+    },
+    {
+      "rel": "child",
+      "href": "./ostia-sst-daily-global/collection.json",
+      "type": "application/json",
+      "title": "OSTIA Global Daily Sea Surface Temperature (0.05°, L4)"
+    },
+    {
+      "rel": "child",
+      "href": "./ostia-sst-reprocessed-climate/collection.json",
+      "type": "application/json",
+      "title": "OSTIA Global Reprocessed SST - Climate Data Record (1982-present)"
+    },
+    {
+      "rel": "child",
+      "href": "./metoffice-sst-nrt-global/collection.json",
+      "type": "application/json",
+      "title": "UK Met Office NRT Global Sea Surface Temperature (< 24h latency)"
+    },
+    {
+      "rel": "child",
+      "href": "./ccmp-wind-v3-6hourly-global/collection.json",
+      "type": "application/json",
+      "title": "CCMP Ocean Surface Wind Analysis V3.0 (0.25°, 6-hourly)"
+    },
+    {
+      "rel": "child",
+      "href": "./ccmp-wind-v3-monthly-climatology/collection.json",
+      "type": "application/json",
+      "title": "CCMP Monthly Wind Climatology (1987-present baseline)"
+    },
+    {
+      "rel": "child",
+      "href": "./ccmp-wind-v3-high-res/collection.json",
+      "type": "application/json",
+      "title": "CCMP High-Resolution Ocean Surface Wind (0.125°, Experimental)"
+    },
+    {
       "rel": "self",
       "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/catalog.json",
       "type": "application/json"
     }
   ],
-  "updated": "2024-09-12T20:32:22.975110Z",
+  "updated": "2026-09-05T00:00:00Z",
   "title": "Products"
 }

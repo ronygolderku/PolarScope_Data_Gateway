@@ -180,12 +180,6 @@
     },
     {
       "rel": "child",
-      "href": "./in-situ-observations/catalog.json",
-      "type": "application/json",
-      "title": "In-situ observations"
-    },
-    {
-      "rel": "child",
       "href": "./jason-1/catalog.json",
       "type": "application/json",
       "title": "Jason-1"
@@ -273,6 +267,12 @@
       "href": "./orbview-2/catalog.json",
       "type": "application/json",
       "title": "OrbView-2"
+    },
+    {
+      "rel": "child",
+      "href": "./pace/catalog.json",
+      "type": "application/json",
+      "title": "PACE"
     },
     {
       "rel": "child",

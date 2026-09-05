@@ -1,0 +1,35 @@
+{
+  "type": "Catalog",
+  "id": "sea-ice-height",
+  "stac_version": "1.0.0",
+  "description": "Sea ice height refers to the elevation of the sea ice surface above a reference level, typically measured by satellite altimetry. Unlike freeboard (which is referenced to local sea level), ice height can be referenced to a geodetic datum or ellipsoid. High-resolution altimeters such as ICESat-2's ATLAS laser provide detailed measurements of ice surface topography, revealing features such as pressure ridges, rafted ice, smooth floes, and deformation zones. For Antarctic sea ice, surface height measurements capture the complex three-dimensional structure resulting from dynamic processes like ridging and rafting. These measurements are fundamental for understanding ice roughness, which affects atmospheric drag, heat exchange, and the distribution of snow and melt ponds. Ice height data from laser altimetry also serve as input for freeboard calculations when combined with sea surface height estimates from leads.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/sea-ice-height/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2026-09-05T00:00:00Z",
+  "keywords": [
+    "Sea Ice",
+    "Ice Height",
+    "Surface Elevation",
+    "Altimetry",
+    "Ice Topography",
+    "Antarctica"
+  ],
+  "title": "Sea Ice Height"
+}

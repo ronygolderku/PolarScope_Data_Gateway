@@ -1,0 +1,113 @@
+{
+    "type": "Collection",
+    "id": "ccmp-wind-v3-monthly-climatology",
+    "stac_version": "1.0.0",
+    "description": "CCMP Version 3.0 monthly climatological ocean surface wind fields provide long-term mean wind patterns and variability statistics computed from the full CCMP V3.0 dataset (1987-present). This climatology product includes monthly mean wind vectors, wind speed, wind direction, and inter-annual variability measures at 0.25° resolution. For Southern Ocean research, these climatologies are essential for understanding seasonal wind forcing patterns, westerly wind belt dynamics, and their role in Antarctic Circumpolar Current strength and sea ice distribution. The product enables anomaly calculations, seasonal cycle analysis, and provides baseline reference fields for climate model validation. Monthly standard deviations and percentiles help characterize wind variability and extreme wind events around Antarctica.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.remss.com/measurements/ccmp/",
+            "title": "Remote Sensing Systems - Product Page"
+        },
+        {
+            "rel": "via",
+            "href": "https://podaac.jpl.nasa.gov/dataset/CCMP_CLIMATOLOGY",
+            "title": "NASA PO.DAAC - Data Access"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/atmosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Atmosphere"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-ccmp-climatology",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "2020-01-01T00:00:00Z",
+    "version": "3.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                },
+                {
+                    "id": "atmosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "wind-speed",
+        "wind-direction",
+        "ocean-surface-wind"
+    ],
+    "osc:missions": [
+        "ascat",
+        "metop",
+        "quikscat",
+        "windsat",
+        "smap"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "CCMP Monthly Wind Climatology (1987-present baseline)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1987-01-01T00:00:00Z",
+                    "2020-12-31T23:59:59Z"
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Winds",
+        "Wind Climatology",
+        "Monthly Mean",
+        "CCMP",
+        "Southern Ocean",
+        "Westerly Winds",
+        "Antarctica",
+        "Climate Normals",
+        "Seasonal Cycle",
+        "Wind Forcing",
+        "Anomaly Detection"
+    ]
+}

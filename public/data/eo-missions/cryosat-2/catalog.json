@@ -133,6 +133,12 @@
       "title": "High-resolution WAPOSAL wave period and wave power density from Sentinel-3 A/B, CryoSat-2, and SAMOSA+ retracker"
     },
     {
+      "rel": "child",
+      "href": "../../products/nsidc-0781-cs2smos-sea-ice-thickness/collection.json",
+      "type": "application/json",
+      "title": "CS2SMOS Combined Sea Ice Thickness (NSIDC-0781, 25 km)"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

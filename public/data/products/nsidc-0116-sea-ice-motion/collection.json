@@ -1,0 +1,112 @@
+{
+    "type": "Collection",
+    "id": "nsidc-0116-sea-ice-motion",
+    "stac_version": "1.0.0",
+    "description": "Polar Pathfinder daily 25 km EASE-Grid sea ice motion vectors derived from multiple satellite sensors including AVHRR, SMMR, SSM/I, SSMIS, AMSR-E, and AMSR2. This dataset provides daily ice motion vectors (u and v components) representing the displacement of sea ice over 24-hour periods from 1978 to present. The motion vectors are derived using a combination of satellite imagery cross-correlation, passive microwave brightness temperature tracking, and buoy motion where available. For the Southern Ocean, sea ice drift is crucial for understanding ice export from the continent, the formation and maintenance of polynyas, and the transport of ice-associated properties like freshwater and biological material. The dataset includes quality flags and uncertainty estimates for each motion vector. Sea ice motion is a key parameter for calculating ice area flux, momentum transfer between atmosphere and ocean, and validating sea ice models. The 25 km resolution captures both large-scale circulation patterns and regional drift features around Antarctica.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/nsidc-0116",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/nsidc-0116/versions/4",
+            "title": "NSIDC - Documentation"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-motion/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Motion"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nsidc-polar-pathfinder",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "1978-10-26T00:00:00Z",
+    "version": "4.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-motion",
+        "ice-velocity"
+    ],
+    "osc:missions": [
+        "nimbus-7",
+        "dmsp",
+        "noaa-series",
+        "aqua-eos-pm-1",
+        "gcom-w1"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "Polar Pathfinder Daily Sea Ice Motion Vectors (NSIDC-0116, 25 km)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1978-10-26T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Motion",
+        "Sea Ice Drift",
+        "Ice Velocity",
+        "Motion Vectors",
+        "Antarctica",
+        "Southern Ocean",
+        "NSIDC",
+        "Polar Pathfinder",
+        "Ice Dynamics",
+        "Ice Export",
+        "25km",
+        "Daily"
+    ]
+}

@@ -1,0 +1,112 @@
+{
+    "type": "Collection",
+    "id": "osi-saf-430-sea-ice-concentration-interim",
+    "stac_version": "1.0.0",
+    "description": "The OSI-430-b Global Sea Ice Concentration Interim Climate Data Record provides operational continuation of the OSI-450-a CDR from 2016 to present at 10 km resolution. This product maintains the same algorithm and processing chain as OSI-450-a to ensure temporal consistency across the full time series. Daily sea ice concentration fields are produced with latency suitable for climate monitoring (typically within 1-2 days). The dataset uses SSMIS and AMSR2 brightness temperatures with the same quality control, uncertainty quantification, and masking procedures as the base CDR. For Southern Ocean applications, this product provides near-real-time sea ice concentration data with climate-quality processing, making it suitable for both operational monitoring and extending climate time series. The product includes concentration values, uncertainty estimates, and comprehensive quality flags. When combined with OSI-450-a, users have access to a homogeneous 46+ year sea ice concentration record (1979-present) optimized for Antarctic climate studies.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://osi-saf.eumetsat.int/products/osi-430-b",
+            "title": "OSI SAF - Product Page"
+        },
+        {
+            "rel": "via",
+            "href": "https://thredds.met.no/thredds/catalog/osisaf/met.no/ice/conc/catalog.html",
+            "title": "THREDDS Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.15770/EUM_SAF_OSI_NRT_2004",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-concentration/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Concentration"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "eumetsat-osi-saf-interim",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2016-01-01T00:00:00Z",
+    "version": "2.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-concentration"
+    ],
+    "osc:missions": [
+        "dmsp",
+        "metop",
+        "gcom-w1"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "OSI SAF Sea Ice Concentration Interim CDR (OSI-430-b, 10 km, 2016-present)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2016-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Concentration",
+        "Interim CDR",
+        "OSI SAF",
+        "EUMETSAT",
+        "Antarctica",
+        "Southern Ocean",
+        "Operational",
+        "Climate Monitoring",
+        "10km",
+        "Daily"
+    ]
+}

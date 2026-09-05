@@ -1,0 +1,109 @@
+{
+    "type": "Collection",
+    "id": "pace-oci-chlorophyll-a-global",
+    "stac_version": "1.0.0",
+    "description": "PACE Ocean Color Instrument (OCI) global chlorophyll-a concentration product at 1 km spatial resolution with daily temporal coverage. This hyperspectral product leverages OCI's continuous spectral measurements (340-890 nm at 5 nm resolution) to provide improved chlorophyll-a retrievals compared to multispectral sensors. For the Southern Ocean, the hyperspectral capability enables better atmospheric correction under challenging conditions (high aerosol loading, sun glint, sea ice presence) and improved accuracy in detecting low chlorophyll concentrations typical of the Antarctic Circumpolar Current region. The product includes chlorophyll-a concentration derived using multiple algorithms optimized for different optical water types, along with quality flags and algorithm performance indicators. PACE OCI chlorophyll-a is particularly valuable for detecting phytoplankton blooms in polynyas, monitoring primary productivity around the Antarctic Peninsula, and studying iron-fertilized regions downstream of islands and continental shelves.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://oceancolor.gsfc.nasa.gov/data/pace/",
+            "title": "NASA Ocean Color - PACE Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://pace.oceansciences.org/data.htm",
+            "title": "PACE Data Portal"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/ocean-chlorophyll-concentration/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Ocean Chlorophyll Concentration"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-pace-oci",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "2024-02-08T00:00:00Z",
+    "version": "1.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "ocean-chlorophyll-concentration",
+        "chlorophyll-concentration"
+    ],
+    "osc:missions": [
+        "pace"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "PACE OCI Global Chlorophyll-a (1 km, Daily, Hyperspectral)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2024-02-08T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Color",
+        "Chlorophyll-a",
+        "Chlorophyll",
+        "Chl-a",
+        "Chl",
+        "Phytoplankton",
+        "Hyperspectral",
+        "PACE",
+        "OCI",
+        "Southern Ocean",
+        "Antarctica",
+        "Primary Production",
+        "1km",
+        "Daily",
+        "NASA"
+    ]
+}

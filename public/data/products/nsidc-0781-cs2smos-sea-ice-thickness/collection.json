@@ -1,0 +1,115 @@
+{
+    "type": "Collection",
+    "id": "nsidc-0781-cs2smos-sea-ice-thickness",
+    "stac_version": "1.0.0",
+    "description": "CS2SMOS merged sea ice thickness product combining CryoSat-2 radar altimetry and SMOS L-band radiometry to provide comprehensive Arctic and Antarctic sea ice thickness estimates at 25 km resolution. This innovative product leverages the complementary strengths of both sensors: CryoSat-2 excels at measuring thicker ice (> 1 m) using radar freeboard, while SMOS is sensitive to thin ice (< 1 m) through microwave emission. The merging algorithm provides seamless thickness estimates across the full range of ice conditions, from thin ice in the marginal ice zone to thick multi-year ice. For Antarctic applications, this product is particularly valuable as it captures both the relatively thin seasonal ice that dominates the Southern Ocean and thicker ice in coastal regions and the Weddell Sea. The dataset provides weekly merged thickness fields during the winter season (October-April for Antarctic), along with uncertainty estimates and separate CryoSat-2 and SMOS thickness components. This is one of the most comprehensive sea ice thickness datasets available for the Southern Ocean.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/nsidc-0781",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/nsidc-0781/versions/1",
+            "title": "NSIDC - Documentation"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.5067/SLMG0JSSH4SC",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-thickness/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Thickness"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nsidc-cs2smos",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2010-10-01T00:00:00Z",
+    "version": "1.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-thickness"
+    ],
+    "osc:missions": [
+        "cryosat-2",
+        "smos"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "CS2SMOS Combined Sea Ice Thickness (NSIDC-0781, 25 km)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2010-10-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Thickness",
+        "CryoSat-2",
+        "SMOS",
+        "Radar Altimetry",
+        "L-band Radiometry",
+        "Merged Product",
+        "Antarctica",
+        "Southern Ocean",
+        "NSIDC",
+        "Thin Ice",
+        "Thick Ice",
+        "Ice Volume",
+        "25km",
+        "Weekly"
+    ]
+}

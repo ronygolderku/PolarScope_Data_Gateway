@@ -1,0 +1,113 @@
+{
+    "type": "Collection",
+    "id": "nsidc-0192-sea-ice-trends-climatologies",
+    "stac_version": "1.0.0",
+    "description": "Pre-computed sea ice trends and climatologies derived from the Sea Ice Index (G02135) dataset. This product provides ready-to-use monthly and annual statistics including climatological means, standard deviations, linear trends, and trend significance for sea ice extent and area in both hemispheres. The dataset is specifically designed for educational purposes and Early Career Researchers who need quick access to sea ice trends without performing their own statistical analysis. Products include: monthly climatologies (1981-2010 baseline), linear trend maps, time series of extent/area anomalies, and trend significance maps. For Antarctic applications, this dataset clearly shows the regional variability in sea ice trends, with some sectors showing increases while others show decreases. The pre-computed nature makes it ideal for teaching, quick assessments, and preliminary research planning.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/g02135",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/arcticseaicenews/sea-ice-analysis/",
+            "title": "NSIDC - Sea Ice Analysis Tools"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-concentration/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Concentration"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-extent/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Extent"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nsidc-sea-ice-index-analysis",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "1978-10-26T00:00:00Z",
+    "version": "4.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-concentration",
+        "sea-ice-extent"
+    ],
+    "osc:missions": [
+        "nimbus-7",
+        "dmsp"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "Sea Ice Trends and Climatologies (NSIDC G02135 Analysis Products)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1978-10-26T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Trends",
+        "Sea Ice Climatology",
+        "Climate Change",
+        "Antarctica",
+        "Southern Ocean",
+        "NSIDC",
+        "Time Series",
+        "Anomalies",
+        "Linear Trends",
+        "Educational"
+    ]
+}

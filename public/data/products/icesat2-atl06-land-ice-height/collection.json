@@ -1,0 +1,110 @@
+{
+    "type": "Collection",
+    "id": "icesat2-atl06-land-ice-height",
+    "stac_version": "1.0.0",
+    "description": "ICESat-2 ATL06 provides land ice surface height measurements from the Advanced Topographic Laser Altimeter System (ATLAS) at approximately 40-meter along-track resolution. This Level 3A product delivers precision elevation measurements over ice sheets, ice shelves, and glaciers by processing photon returns from ATLAS's six laser beams. For Antarctica, ATL06 captures ice sheet surface topography, grounding line positions, ice shelf thickness changes, and outlet glacier dynamics with unprecedented spatial resolution and vertical precision (~10 cm). The product includes surface height, height errors, quality flags, and geophysical corrections. ATL06 data are fundamental for measuring ice sheet mass balance, detecting surface elevation changes, monitoring ice stream flow, and understanding ice-ocean interactions at grounding lines. The high-resolution, high-precision measurements enable detection of subtle elevation changes and fine-scale surface features across the Antarctic ice sheet.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/atl06",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/atl06/versions/6",
+            "title": "NSIDC - Documentation"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.5067/ATLAS/ATL06.006",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/glacier-elevation-ice-sheet-elevation/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Ice Sheet Elevation"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-icesat2-atl06",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2018-10-14T00:00:00Z",
+    "version": "006",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "glacier-elevation-ice-sheet-elevation"
+    ],
+    "osc:missions": [
+        "icesat-2"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "ICESat-2 ATL06 Land Ice Height (40 m along-track)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -60
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2018-10-14T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Ice Sheets",
+        "Ice Sheet Elevation",
+        "Surface Height",
+        "ICESat-2",
+        "ATLAS",
+        "Laser Altimetry",
+        "Antarctica",
+        "Ice Shelf",
+        "Grounding Line",
+        "Mass Balance",
+        "High Resolution"
+    ]
+}

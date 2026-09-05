@@ -71,7 +71,7 @@ const Documentation = () => {
           details: [
             "Simple and widely supported",
             "Use wget or curl for automated downloads",
-            "Example: wget https://data.provider.org/file.nc",
+            "Example: wget https://n5eil01u.ecs.nsidc.org/PM/NSIDC-0051.002/sample.nc",
             "May require authentication for some providers",
           ],
         },
@@ -382,16 +382,6 @@ const Documentation = () => {
               </dl>
             </div>
           </section>
-
-          <footer className="border-t border-[#3dd6d0]/25 bg-[#123f71] px-5 py-5 text-sm text-[#D6E1F0] sm:flex sm:items-center sm:justify-between sm:gap-4">
-            <p>Questions about formats, access, or metadata?</p>
-            <a
-              href="mailto:ACEAS.Project.Office@utas.edu.au"
-              className="mt-2 inline-block font-semibold text-[#F4C542] transition-colors hover:text-white sm:mt-0"
-            >
-              Contact the ACEAS Project Office
-            </a>
-          </footer>
         </div>
       </div>
     </div>

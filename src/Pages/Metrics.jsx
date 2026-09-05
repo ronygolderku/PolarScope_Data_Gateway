@@ -172,12 +172,12 @@ const ProductRow = ({
 
   return (
     <div
-      className={`border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group ${isSelected ? "ring-2 ring-[#F4C542] bg-[#143A6A]" : ""
+      className={`border-b border-[#1B457A] hover:bg-[#143A6A] transition-colors group ${isSelected ? "border-[#F4C542] bg-[#143A6A]" : ""
         }`}
     >
       <div className="flex items-stretch h-12">
         {/* Name & Accordion Toggle */}
-        <div className="w-[200px] min-w-[200px] sm:w-[250px] sm:min-w-[250px] lg:w-[320px] lg:min-w-[320px] border-r border-[#1B457A] p-2 pl-4 flex items-center gap-3 relative bg-[#0F2D57] z-10">
+        <div className="w-[200px] min-w-[200px] sm:w-[250px] sm:min-w-[250px] lg:w-[320px] lg:min-w-[320px] border-r border-[#1B457A] p-2 pl-4 flex items-center gap-3 relative bg-transparent z-10">
           <button
             onClick={onToggle}
             className="p-1 rounded hover:bg-[#1B457A] text-[#D6E1F0] transition-colors"
@@ -198,7 +198,7 @@ const ProductRow = ({
         </div>
 
         {/* Timeline Bar Area */}
-        <div className="flex-1 relative bg-[#0F2D57] group-hover:bg-[#143A6A]">
+        <div className="flex-1 relative bg-transparent group-hover:bg-[#0b2748]">
           {/* The Bar */}
           <div
             className="absolute h-5 top-1/2 -translate-y-1/2 rounded bg-[#F4C542] hover:bg-[#FFD700] cursor-pointer transition-colors shadow-sm"
@@ -213,7 +213,7 @@ const ProductRow = ({
         </div>
 
         {/* Coverage Icon */}
-        <div className="w-[88px] min-w-[88px] sm:w-[104px] sm:min-w-[104px] lg:w-[120px] lg:min-w-[120px] border-l border-[#1B457A] flex items-center justify-center bg-[#0F2D57]">
+        <div className="w-[88px] min-w-[88px] sm:w-[104px] sm:min-w-[104px] lg:w-[120px] lg:min-w-[120px] border-l border-[#1B457A] flex items-center justify-center bg-transparent">
           <button
             className="text-[#D6E1F0] hover:text-[#F4C542] transition-colors p-2"
             title="View Coverage Map"
@@ -229,7 +229,7 @@ const ProductRow = ({
 
       {/* Accordion Content */}
       {isExpanded && (
-        <div className="bg-[#143A6A] p-4 border-t border-[#1B457A] pl-[40px] shadow-inner">
+        <div className="bg-[#0b2748] p-4 border-t border-[#1B457A] pl-[40px]">
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1 space-y-2">
               <div className="text-xs font-bold uppercase text-[#F4C542]">
@@ -389,31 +389,31 @@ const Metrics = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0F2D57] to-[#1B3A5F] text-[#F8FAFC]">
-      <div className="sticky top-0 z-30 border-b border-white/10 bg-[#0F2D57]/95 shadow-sm backdrop-blur-md">
-        <div className="max-w-[1920px] mx-auto px-4 md:px-8 py-4 space-y-4">
+    <div className="flex flex-col min-h-screen bg-transparent text-[#F8FAFC]">
+      <div className="sticky top-0 z-30 border-b border-white/10 bg-[#0F2D57]/95 backdrop-blur-md">
+        <div className="max-w-[1920px] mx-auto px-4 md:px-8 py-6 space-y-4">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#F4C542]">Metrics</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#F4C542]">Metrics</p>
               <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
-                Coverage timeline and product distribution
+                Coverage timeline
               </h1>
               <p className="max-w-3xl text-sm sm:text-base leading-6 text-[#D6E1F0]">
-                Inspect products across time, region, and theme to understand catalogue coverage at a glance.
+                View product temporal coverage across time, region, and theme.
               </p>
             </div>
-            <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-[#D6E1F0]">
+            <span className="text-sm text-[#D6E1F0]">
               {filteredProducts.length} products
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4 rounded-2xl border border-white/10 bg-[#143A6A] p-4 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
             {/* Search */}
             <div className="relative w-full sm:max-w-sm">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#F4C542]" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#F4C542] z-10" />
               <input
                 type="text"
-                className="input input-sm pl-10 w-full bg-[#0b2748] border-white/10 text-[#F8FAFC] placeholder-[#D6E1F0] focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542] rounded-lg transition-all"
+                className="pl-10 px-3 py-2 text-sm w-full rounded bg-[#0b2748] border border-white/20 text-[#F8FAFC] placeholder-[#D6E1F0]/60 focus:outline-none focus:border-[#F4C542]"
                 placeholder="Filter products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -424,54 +424,31 @@ const Metrics = () => {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="select select-sm rounded-lg text-sm w-full sm:w-44 bg-[#0b2748] border border-white/10 text-[#F8FAFC] focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
+              className="px-3 py-2 text-sm rounded w-full sm:w-44 bg-[#0b2748] border border-white/20 text-[#F8FAFC] focus:outline-none focus:border-[#F4C542]"
             >
-              <option className="bg-[#143A6A] text-[#F8FAFC]" value="All">
-                All
-              </option>
-              <option className="bg-[#143A6A] text-[#F8FAFC]" value="Global">
-                Global
-              </option>
-              <option className="bg-[#143A6A] text-[#F8FAFC]" value="Antarctica">
-                Antarctica
-              </option>
-              <option
-                className="bg-[#143A6A] text-[#F8FAFC]"
-                value="Southern Ocean"
-              >
-                Southern Ocean
-              </option>
+              <option value="All">All regions</option>
+              <option value="Global">Global</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Southern Ocean">Southern Ocean</option>
             </select>
 
             <select
-              className="select select-sm rounded-lg text-sm w-full sm:w-40 bg-[#0b2748] border border-white/10 text-[#F8FAFC] capitalize focus:outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]/40 shadow-sm"
+              className="px-3 py-2 text-sm rounded w-full sm:w-40 bg-[#0b2748] border border-white/20 text-[#F8FAFC] capitalize focus:outline-none focus:border-[#F4C542]"
               value={selectedTheme}
               onChange={(e) => setSelectedTheme(e.target.value)}
             >
-              <option value="All" className="bg-[#143A6A] text-[#F8FAFC]">
-                All Themes
-              </option>
+              <option value="All">All themes</option>
               {themes.map((theme) => (
-                <option
-                  key={theme.id}
-                  value={theme.id}
-                  className="bg-[#143A6A] text-[#F8FAFC] capitalize"
-                >
+                <option key={theme.id} value={theme.id} className="capitalize">
                   {theme.title}
                 </option>
               ))}
             </select>
-
-            <div className="ml-auto flex items-center gap-2">
-              <button className="btn btn-sm btn-ghost text-xs font-semibold text-[#D6E1F0] hover:bg-white/5">
-                <FaFilter size={10} /> Advanced
-              </button>
-            </div>
           </div>
         </div>
 
         {/* Timeline Axis Header */}
-        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-white/10 bg-[#143A6A] overflow-x-auto">
+        <div className="max-w-[1920px] mx-auto px-4 md:px-8 border-t border-white/10 bg-[#0b2748] overflow-x-auto">
           <div className="min-w-[900px]">
             <div className="flex text-xs font-bold text-[#F4C542] h-10 items-center">
               <div className="w-[200px] sm:w-[250px] lg:w-[320px] pl-4">Name</div>
@@ -500,7 +477,7 @@ const Metrics = () => {
       {/* Timeline Content */}
       <div className="flex-1 max-w-[1920px] mx-auto w-full px-4 md:px-8 pb-10 overflow-x-auto">
         {/* Items */}
-        <div className="min-w-[900px] border border-white/10 border-t-0 rounded-b-2xl bg-[#0F2D57] relative overflow-hidden">
+        <div className="min-w-[900px] border border-white/10 border-t-0 rounded-b-2xl bg-transparent relative overflow-hidden">
           {/* Vertical Grid Lines (Background) */}
           <div className="absolute inset-0 z-0 pointer-events-none w-[calc(100%-288px)] sm:w-[calc(100%-354px)] lg:w-[calc(100%-440px)] ml-[200px] sm:ml-[250px] lg:ml-[320px]">
             <div className="absolute inset-0 grid grid-cols-[repeat(15,_minmax(0,1fr))]">

@@ -1,0 +1,35 @@
+{
+  "type": "Catalog",
+  "id": "sea-ice-drift",
+  "stac_version": "1.0.0",
+  "description": "Sea ice drift refers to the horizontal displacement of sea ice due to wind forcing, ocean currents, and internal ice stresses. Ice drift is typically expressed as velocity vectors (u and v components) representing the speed and direction of ice movement. For the Southern Ocean, sea ice drift plays a crucial role in ice export from the Antarctic continent, the formation and maintenance of coastal polynyas, and the transport of freshwater and biological material. Sea ice drift is derived from satellite observations using feature tracking in sequential imagery, passive microwave brightness temperature patterns, or buoy trajectories. Understanding ice drift is essential for predicting ice concentration changes, calculating ice area and volume flux, and modeling ice-ocean interactions.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Variables"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/variables/sea-ice-drift/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2026-09-05T00:00:00Z",
+  "keywords": [
+    "Sea Ice",
+    "Ice Drift",
+    "Ice Motion",
+    "Ice Velocity",
+    "Ice Dynamics",
+    "Antarctica"
+  ],
+  "title": "Sea Ice Drift"
+}

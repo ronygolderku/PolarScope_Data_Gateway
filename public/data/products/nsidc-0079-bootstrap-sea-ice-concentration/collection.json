@@ -1,0 +1,108 @@
+{
+    "type": "Collection",
+    "id": "nsidc-0079-bootstrap-sea-ice-concentration",
+    "stac_version": "1.0.0",
+    "description": "Sea ice concentrations derived using the Bootstrap algorithm from Nimbus-7 SMMR and DMSP SSM/I-SSMIS passive microwave data at 25 km resolution. The Bootstrap algorithm is an alternative to the NASA Team algorithm and is particularly effective for detecting thin ice and estimating ice concentration during the summer melt season. This dataset provides daily and monthly sea ice concentration grids for both polar regions from October 1978 to the present. The Bootstrap algorithm uses different frequency channels and polarizations compared to NASA Team, resulting in different sensitivity to thin ice, melt ponds, and atmospheric effects. For Antarctic applications, the Bootstrap algorithm often provides better performance near the ice edge and in regions with significant thin ice or marginal ice zones. The dataset is widely used for climate studies, model validation, and understanding long-term sea ice variability in the Southern Ocean.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/nsidc-0079",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/nsidc-0079/versions/4",
+            "title": "NSIDC - Documentation"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-concentration/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Concentration"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nsidc-bootstrap-algorithm",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "1978-10-26T00:00:00Z",
+    "version": "4.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-concentration"
+    ],
+    "osc:missions": [
+        "nimbus-7",
+        "dmsp"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "Bootstrap Sea Ice Concentrations (NSIDC-0079, 25 km)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1978-10-26T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Concentration",
+        "Bootstrap Algorithm",
+        "Passive Microwave",
+        "SMMR",
+        "SSM/I",
+        "SSMIS",
+        "Antarctica",
+        "Southern Ocean",
+        "NSIDC",
+        "Thin Ice",
+        "Marginal Ice Zone",
+        "25km"
+    ]
+}

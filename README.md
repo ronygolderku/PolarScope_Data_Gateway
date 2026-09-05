@@ -88,9 +88,33 @@ The catalogue organizes Antarctic and Southern Ocean satellite observations and 
 
 (Coming soon)
 
-## Contributing
+## Community & Contributing
 
-We welcome contributions from the Antarctic and Southern Ocean research community. Please see our contributing guidelines for more information.
+### 💬 Join the Discussion
+
+Connect with Antarctic and Southern Ocean researchers:
+
+- **[GitHub Discussions](https://github.com/ronygolderku/PolarScope_Data_Gateway/discussions)** - Ask questions, share insights, find collaborators
+- **Q&A** - Get help with datasets and analysis methods
+- **Show and Tell** - Share your research using PolarScope data
+- **Ideas** - Propose new features or datasets
+
+### 🤝 How to Contribute
+
+We welcome contributions from the community!
+
+- **📚 Submit Tutorials** - Share your analysis workflows
+- **🗃️ Suggest Datasets** - Request missing Antarctic/Southern Ocean datasets
+- **🐛 Report Issues** - Found a bug? Let us know
+- **📝 Improve Documentation** - Help make PolarScope more accessible
+
+See our **[Contributing Guide](CONTRIBUTING.md)** for detailed instructions.
+
+### 🔗 Quick Links
+
+- [Report a Bug](https://github.com/ronygolderku/PolarScope_Data_Gateway/issues/new?template=bug-report.md)
+- [Request a Dataset](https://github.com/ronygolderku/PolarScope_Data_Gateway/issues/new?template=dataset-request.md)
+- [Suggest a Feature](https://github.com/ronygolderku/PolarScope_Data_Gateway/issues/new?template=feature-request.md)
 
 ## License
 

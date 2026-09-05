@@ -8,6 +8,7 @@ import Catalog from "../Pages/Catalog";
 import Search from "../Pages/Search";
 import BGCArgoPage from "../Pages/BGC-argo";
 import Tutorials from "../Pages/Tutorials";
+import NotebookViewer from "../Pages/NotebookViewer";
 import Documentation from "../Pages/Documentation";
 import GettingStarted from "../Pages/GettingStarted";
 import GettingStartedEO from "../Pages/tutorials/GettingStartedEO";
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
       {
         path: "tutorials",
         Component: Tutorials,
+      },
+      {
+        path: "notebook-viewer",
+        Component: NotebookViewer,
       },
       {
         path: "documentation",

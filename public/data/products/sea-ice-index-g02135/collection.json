@@ -1,0 +1,104 @@
+{
+    "type": "Collection",
+    "id": "sea-ice-index-g02135",
+    "stac_version": "1.0.0",
+    "description": "The Sea Ice Index provides a quick look at Arctic and Antarctic sea ice conditions with respect to the long-term average. It includes monthly data on sea ice extent, concentration, and trends from 1978 to the present, derived from satellite passive microwave data. The Sea Ice Index provides monthly data for scientists, educators, and the general public interested in sea ice conditions and the state of the cryosphere. This dataset includes monthly sea ice extent and concentration maps for both polar regions, along with time series data and trend analyses.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/g02135/versions/4",
+            "title": "Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/g02135/versions/4",
+            "title": "Documentation"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nsidc-sea-ice-index",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "1978-10-26T00:00:00Z",
+    "version": "4.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-concentration",
+        "sea-ice-extent"
+    ],
+    "osc:missions": [
+        "nimbus-7",
+        "dmsp"
+    ],
+    "updated": "2026-01-22T00:00:00Z",
+    "title": "Sea Ice Index, Version 4 (G02135)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1978-10-26T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Concentration",
+        "Sea Ice Extent",
+        "Cryospheric Indicators",
+        "Antarctica",
+        "Southern Ocean",
+        "NSIDC",
+        "Passive Microwave"
+    ]
+}

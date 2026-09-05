@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/3d18c62185ee82746907f855396b52a5?family=Nexus+Sans+Pro');
 
 @import "tailwindcss";
 
@@ -29,18 +30,27 @@ body,
   min-height: 100%;
 }
 
-body {
-  font-family: "Inter", sans-serif;
-  position: relative;
-  background:
-    radial-gradient(circle at top left, rgba(244, 197, 66, 0.08) 0%, transparent 30%),
-    radial-gradient(circle at top right, rgba(61, 214, 208, 0.05) 0%, transparent 24%),
-    linear-gradient(180deg, #06172d 0%, var(--color-bg-primary) 42%, var(--color-bg-secondary) 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+body,
+.polar-atmosphere {
+  font-family: "Nexus Sans Pro", "Inter", Arial, Helvetica, sans-serif;
   color: var(--color-text-primary);
   min-height: 100vh;
+  background-color: #020810;
+  background-image:
+    /* Strong dark navy overlay — keeps text readable over bright ice */
+    linear-gradient(to bottom, rgba(2, 8, 20, 0.88) 0%, rgba(4, 14, 34, 0.80) 35%, rgba(3, 10, 25, 0.91) 100%),
+    /* Centre darkening vignette to tame bright white ice core */
+    radial-gradient(ellipse 70% 60% at 50% 42%, rgba(0, 0, 0, 0.30) 0%, transparent 80%),
+    /* Soft auroral cyan accent glow */
+    radial-gradient(circle 700px at 5% 60%, rgba(61, 214, 208, 0.08) 0%, transparent 65%),
+    /* Soft amber top-right glow */
+    radial-gradient(circle 500px at 95% 15%, rgba(244, 197, 66, 0.07) 0%, transparent 65%),
+    /* NASA Antarctic altimetry satellite image (SVS) */
+    url("/antarctic-bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover, cover, cover, cover, cover;
+  background-position: center, center, center, center, center 30%;
 }
 
 ::selection {

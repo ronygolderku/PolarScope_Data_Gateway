@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router";
 import { FaArrowRight } from "react-icons/fa";
 
-const ResourceCard = ({ to, title, description, icon: Icon }) => {
+const ResourceCard = ({ to, title, description, tooltip, icon: Icon }) => {
     return (
         <Link
             to={to}
-            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#143A6A] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-[#1B457A] hover:shadow-lg"
+            title={tooltip}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0F2D57]/75 backdrop-blur-md p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#3dd6d0]/30 hover:bg-[#133868]/85 hover:shadow-xl hover:shadow-[#040e1e]/50"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="relative flex items-start gap-4">

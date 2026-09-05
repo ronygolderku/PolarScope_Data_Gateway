@@ -264,6 +264,90 @@
       "title": "PolarLakes - Sentinel-1/2 - Antarctica, Bi-weekly/Annually"
     },
     {
+      "rel": "child",
+      "href": "../../products/sea-ice-index-g02135/collection.json",
+      "type": "application/json",
+      "title": "Sea Ice Index, Version 4 (G02135)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/sea-ice-concentration-nsidc-0051/collection.json",
+      "type": "application/json",
+      "title": "Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS (NSIDC-0051)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/nsidc-0079-bootstrap-sea-ice-concentration/collection.json",
+      "type": "application/json",
+      "title": "Bootstrap Sea Ice Concentrations (NSIDC-0079, 25 km)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/nsidc-0192-sea-ice-trends-climatologies/collection.json",
+      "type": "application/json",
+      "title": "Sea Ice Trends and Climatologies (NSIDC G02135 Analysis Products)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/nsidc-0116-sea-ice-motion/collection.json",
+      "type": "application/json",
+      "title": "Polar Pathfinder Daily Sea Ice Motion Vectors (NSIDC-0116, 25 km)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/nsidc-0781-cs2smos-sea-ice-thickness/collection.json",
+      "type": "application/json",
+      "title": "CS2SMOS Combined Sea Ice Thickness (NSIDC-0781, 25 km)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/osi-saf-450-sea-ice-concentration-cdr/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Concentration Climate Data Record (OSI-450-a, 10 km, 1979-2015)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/osi-saf-430-sea-ice-concentration-interim/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Concentration Interim CDR (OSI-430-b, 10 km, 2016-present)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/osi-saf-403-sea-ice-edge-type/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Edge and Type (OSI-403-c, 10 km, 1979-present)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/osi-saf-401-sea-ice-emissivity/collection.json",
+      "type": "application/json",
+      "title": "OSI SAF Sea Ice Emissivity (OSI-401-d, SSMIS)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl06-land-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL06 Land Ice Height (40 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl07-sea-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL07 Sea Ice Height (10-25 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl10-sea-ice-freeboard/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL10 Sea Ice Freeboard (10 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl20-gridded-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL20 Gridded Land Ice Height Change (100 m grid, Quarterly)"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -275,7 +359,7 @@
       "type": "application/json"
     }
   ],
-  "updated": "2024-08-27T17:27:42.199831Z",
+  "updated": "2026-05-09T00:00:00Z",
   "keywords": [],
   "title": "Cryosphere"
 }

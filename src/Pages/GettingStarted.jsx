@@ -86,13 +86,6 @@ const GettingStarted = () => {
                         <Link to="/bgc-argo" className="text-[#F4C542] transition-colors hover:text-white">BGC-Argo observations <span aria-hidden="true">→</span></Link>
                     </div>
                 </section>
-
-                <footer className="border-t border-[#3dd6d0]/25 bg-[#123f71] px-5 py-5 text-sm text-[#D6E1F0] sm:flex sm:items-center sm:justify-between sm:gap-4">
-                    <p>Questions about the catalogue?</p>
-                    <a href="mailto:ACEAS.Project.Office@utas.edu.au" className="mt-2 inline-block font-semibold text-[#F4C542] hover:text-white sm:mt-0">
-                        Contact the ACEAS Project Office
-                    </a>
-                </footer>
             </div>
         </main>
     );

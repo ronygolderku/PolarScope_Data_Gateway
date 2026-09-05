@@ -1,0 +1,120 @@
+{
+    "type": "Collection",
+    "id": "ccmp-wind-v3-6hourly-global",
+    "stac_version": "1.0.0",
+    "description": "The Cross-Calibrated Multi-Platform (CCMP) ocean surface wind analysis Version 3.0 provides consistent, gap-free global wind fields at 6-hourly temporal resolution and 0.25° (~25 km) spatial resolution. CCMP combines observations from multiple satellite scatterometers (QuikSCAT, ASCAT, WindSat) and radiometers with numerical weather prediction model data to produce a unified Level-3 wind product. The analysis uses a variational analysis method (VAM) to optimally blend these data sources while accounting for their different error characteristics. For Southern Ocean applications, CCMP provides reliable wind forcing for ocean circulation studies, air-sea interaction research, and sea ice dynamics. The product includes zonal (u) and meridional (v) wind components, wind speed, and wind direction with quality flags and uncertainty estimates.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.remss.com/measurements/ccmp/",
+            "title": "Remote Sensing Systems - Product Page"
+        },
+        {
+            "rel": "via",
+            "href": "https://podaac.jpl.nasa.gov/dataset/CCMP_MEASURES_ATLAS_L4_OW_L3_5A_6HOURLY_WIND_VECTORS_FLK",
+            "title": "NASA PO.DAAC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.5067/CCMP-ATBD-01",
+            "title": "Algorithm Theoretical Basis Document"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/atmosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Atmosphere"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-ccmp",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "1987-07-01T00:00:00Z",
+    "version": "3.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                },
+                {
+                    "id": "atmosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "wind-speed",
+        "wind-direction",
+        "ocean-surface-wind"
+    ],
+    "osc:missions": [
+        "ascat",
+        "metop",
+        "quikscat",
+        "windsat",
+        "smap"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "CCMP Ocean Surface Wind Analysis V3.0 (0.25°, 6-hourly)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1987-07-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Winds",
+        "Surface Wind",
+        "Wind Speed",
+        "Wind Direction",
+        "CCMP",
+        "Scatterometer",
+        "Multi-satellite",
+        "Southern Ocean",
+        "Antarctica",
+        "Remote Sensing Systems",
+        "NASA",
+        "Air-Sea Interaction",
+        "Wind Forcing"
+    ]
+}

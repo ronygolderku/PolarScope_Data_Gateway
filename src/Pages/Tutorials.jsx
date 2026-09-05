@@ -1,360 +1,398 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import {
   FaDownload,
-  FaCode,
-  FaChartLine,
   FaMap,
   FaDatabase,
-  FaLightbulb,
   FaPython,
   FaExternalLinkAlt,
+  FaSearch,
+  FaArrowRight,
+  FaEye,
 } from "react-icons/fa";
 import { Link } from "react-router";
+import CodeBlock from "../components/CodeBlock";
 
-const Tutorials = () => {
-  const tutorials = [
-    {
-      title: "Getting Started with Earth Observation Data",
-      icon: FaLightbulb,
-      level: "Beginner",
-      duration: "15 min",
-      description: "Learn the basics of EO data, common formats, and how to access datasets from this catalogue.",
-      link: "/tutorials/getting-started-eo",
-      topics: [
-        "Understanding satellite missions and sensors",
-        "Common data formats (NetCDF, HDF5, GeoTIFF)",
-        "Spatial and temporal coverage concepts",
-        "How to read data access links",
-      ],
-    },
-    {
-      title: "Accessing and Downloading Data",
-      icon: FaDownload,
-      level: "Beginner",
-      duration: "20 min",
-      description: "Step-by-step guide to accessing datasets from different providers and download methods.",
-      link: "/tutorials/accessing-data",
-      topics: [
-        "Understanding data access protocols (HTTP, FTP, OPeNDAP)",
-        "Using wget and curl for bulk downloads",
-        "Navigating THREDDS data servers",
-        "Authentication and registration requirements",
-      ],
-    },
-    {
-      title: "Working with NetCDF Files in Python",
-      icon: FaPython,
-      level: "Intermediate",
-      duration: "30 min",
-      description: "Practical guide to reading, processing, and visualizing NetCDF data using Python libraries.",
-      link: "/tutorials/working-with-netcdf",
-      topics: [
-        "Installing required libraries (xarray, netCDF4, matplotlib)",
-        "Opening and exploring NetCDF files",
-        "Subsetting data by time and space",
-        "Creating basic visualizations",
-      ],
-    },
-    {
-      title: "Analyzing Sea Surface Temperature",
-      icon: FaChartLine,
-      level: "Intermediate",
-      duration: "45 min",
-      description: "Complete workflow analyzing 32 years of NOAA SST data for the Southern Ocean with real-world examples.",
-      link: "/tutorials/sst-analysis",
-      topics: [
-        "Download and process NOAA satellite SST data",
-        "Create Antarctic projection maps with oceanic fronts",
-        "Calculate long-term temperature trends",
-        "Regional time series analysis and interpretation",
-      ],
-    },
-    {
-      title: "Antarctic Sea Ice Extent Analysis",
-      icon: FaMap,
-      level: "Intermediate",
-      duration: "40 min",
-      description: "Analyze Antarctic sea ice concentration and extent using NSIDC passive microwave data.",
-      link: "/tutorials/sea-ice-analysis",
-      topics: [
-        "Download and process NSIDC Antarctic sea ice data",
-        "Calculate sea ice extent and area metrics (15% threshold)",
-        "Create South Polar projection maps",
-        "Analyze seasonal cycles, trends, and regional variations",
-      ],
-    },
-    {
-      title: "Integrating BGC-Argo Float Data",
-      icon: FaDatabase,
-      level: "Advanced",
-      duration: "50 min",
-      description: "Combine in-situ BGC-Argo measurements with satellite observations.",
-      topics: [
-        "Accessing BGC-Argo data from GDAC",
-        "Matching satellite pixels with float profiles",
-        "Quality control for BGC-Argo data",
-        "Satellite-float data validation workflows",
-      ],
-    },
-  ];
+const categories = ["All", "Sea Ice", "Ocean", "Data Access"];
 
-  const codeExamples = [
-    {
-      title: "Quick Start: Load NetCDF Data",
-      language: "Python",
-      code: `import xarray as xr
+const tutorials = [
+  {
+    title: "Sea Surface Temperature - Southern Ocean",
+    description: "Load and visualize NOAA OISST data for the Southern Ocean. Covers basic NetCDF handling with xarray and polar projections.",
+    notebook: "sst_so.ipynb",
+    category: "Ocean",
+    tags: ["SST", "xarray", "Cartopy"],
+  },
+  {
+    title: "Antarctic Sea Ice Index",
+    description: "Calculate sea ice extent and area from concentration data. Learn to work with NSIDC datasets and polar stereographic grids.",
+    notebook: "antarctic_sea_ice_index.ipynb",
+    category: "Sea Ice",
+    tags: ["NSIDC", "Sea Ice", "Extent"],
+  },
+  {
+    title: "OSI SAF - Data Access via FTP",
+    description: "Download OSI SAF sea ice products using automated FTP access. Essential for building data pipelines.",
+    notebook: "1_1a_OSI_SAF_sea_ice_FTP_data_access.ipynb",
+    category: "Data Access",
+    tags: ["OSI SAF", "FTP", "Download"],
+  },
+  {
+    title: "OSI SAF - Mapping Ice Concentration",
+    description: "Visualize sea ice concentration from OSI SAF products. Create publication-quality maps with polar projections.",
+    notebook: "1_3a_OSI_SAF_sea_ice_mapping_Ice_Concentration.ipynb",
+    category: "Sea Ice",
+    tags: ["OSI SAF", "Concentration", "Mapping"],
+  },
+  {
+    title: "OSI SAF - Ice Drift Analysis",
+    description: "Analyze sea ice motion vectors. Understand ice transport patterns and seasonal dynamics.",
+    notebook: "1_3d_OSI_SAF_sea_ice_mapping_Ice_Drift.ipynb",
+    category: "Sea Ice",
+    tags: ["OSI SAF", "Drift", "Motion"],
+  },
+  {
+    title: "OSI SAF - Monthly Concentration Anomalies",
+    description: "Calculate and analyze sea ice concentration anomalies. Detect trends and interannual variability.",
+    notebook: "2_1_OSI_SAF_sea_ice_Monthly_concentration_anomalies.ipynb",
+    category: "Sea Ice",
+    tags: ["OSI SAF", "Anomalies", "Trends"],
+  },
+  {
+    title: "Southern Ocean Chlorophyll Overview",
+    description: "Explore chlorophyll-a distributions in the Southern Ocean. Work with ocean color satellite data.",
+    notebook: "01_southern_ocean_chlorophyll_overview.ipynb",
+    category: "Ocean",
+    tags: ["Chlorophyll", "Ocean Color", "Phytoplankton"],
+  },
+  {
+    title: "Wind Visualization - Southern Ocean",
+    description: "Visualize wind patterns using CCMP data. Understand Southern Ocean wind forcing.",
+    notebook: "02_wind_visualization.ipynb",
+    category: "Ocean",
+    tags: ["Wind", "CCMP", "Forcing"],
+  },
+  {
+    title: "Multi-Variable Southern Ocean Analysis",
+    description: "Combine multiple datasets (SST, chlorophyll, ice, wind) for integrated Southern Ocean analysis.",
+    notebook: "08_multi_variable_southern_ocean_analysis.ipynb",
+    category: "Ocean",
+    tags: ["Multi-variable", "Integration", "Analysis"],
+  },
+];
+
+const codeExamples = [
+  {
+    title: "Load Southern Ocean SST Data",
+    language: "Python",
+    code: `import xarray as xr
 import matplotlib.pyplot as plt
-
-# Open a NetCDF file
-ds = xr.open_dataset('chlorophyll_data.nc')
-
-# View dataset structure
-print(ds)
-
-# Select Southern Ocean region (south of 40°S)
-southern = ds.sel(lat=slice(-90, -40))
-
-# Plot a map for a specific date
-southern['chlor_a'].sel(time='2023-01-15').plot()
-plt.title('Chlorophyll-a Concentration')
-plt.show()`,
-    },
-    {
-      title: "Download Data with Python",
-      language: "Python",
-      code: `import requests
-from pathlib import Path
-
-# Download a file from a data provider
-url = "https://data.provider.org/dataset/file.nc"
-output_path = Path("downloads/file.nc")
-
-# Create directory if it doesn't exist
-output_path.parent.mkdir(parents=True, exist_ok=True)
-
-# Download with progress
-response = requests.get(url, stream=True)
-with open(output_path, 'wb') as f:
-    for chunk in response.iter_content(chunk_size=8192):
-        f.write(chunk)
-
-print(f"Downloaded to {output_path}")`,
-    },
-    {
-      title: "Subset Data by Region and Time",
-      language: "Python",
-      code: `import xarray as xr
+import cartopy.crs as ccrs
 
 # Open dataset
-ds = xr.open_dataset('data.nc')
+ds = xr.open_dataset('sst.mon.mean.nc')
 
-# Define Antarctic region
-lat_min, lat_max = -80, -60
-lon_min, lon_max = -180, 180
+# Subset Southern Ocean (south of 40°S)
+so_sst = ds['sst'].sel(lat=slice(-40, -90), time=slice('2020', '2023'))
 
-# Subset spatially and temporally
-subset = ds.sel(
-    lat=slice(lat_min, lat_max),
-    lon=slice(lon_min, lon_max),
-    time=slice('2022-01-01', '2022-12-31')
-)
+# Calculate mean and plot
+mean_sst = so_sst.mean(dim='time')
 
-# Save subset to new file
-subset.to_netcdf('antarctic_2022.nc')`,
-    },
-  ];
+fig, ax = plt.subplots(figsize=(8, 8),
+                       subplot_kw={'projection': ccrs.SouthPolarStereo()})
+ax.set_extent([-180, 180, -90, -45], ccrs.PlateCarree())
+ax.coastlines(resolution='50m')
 
-  const externalResources = [
-    {
-      title: "Xarray Documentation",
-      url: "https://docs.xarray.dev/",
-      description: "Official documentation for xarray - the primary library for working with labeled multi-dimensional arrays",
-    },
-    {
-      title: "Cartopy Tutorial",
-      url: "https://scitools.org.uk/cartopy/docs/latest/",
-      description: "Cartopy is a Python package for geospatial data processing and map projections",
-    },
-    {
-      title: "OPeNDAP User Guide",
-      url: "https://www.opendap.org/support/user-documentation",
-      description: "Learn how to access remote datasets without downloading entire files",
-    },
-    {
-      title: "BGC-Argo Data Access",
-      url: "https://biogeochemical-argo.org/data-access.php",
-      description: "Official guide to accessing BGC-Argo float data",
-    },
-    {
-      title: "NASA Earthdata Search",
-      url: "https://search.earthdata.nasa.gov/",
-      description: "Search and access NASA Earth observation data",
-    },
-  ];
+mean_sst.plot(ax=ax, transform=ccrs.PlateCarree(), cmap='coolwarm',
+              cbar_kwargs={'label': 'SST (°C)'})
+plt.show()`,
+  },
+  {
+    title: "Calculate Sea Ice Extent",
+    language: "Python",
+    code: `import xarray as xr
+
+# Open sea ice concentration dataset
+ds = xr.open_dataset('seaice_conc_daily.nc')
+sic = ds['ice_conc']  # Concentration in %
+
+# Grid cell area (25 km x 25 km)
+CELL_AREA = 625.0  # km²
+
+# Calculate extent (>= 15% threshold)
+ice_extent = (sic >= 15).sum(dim=['x', 'y']) * CELL_AREA / 1e6
+
+# Calculate area (actual ice coverage)
+ice_area = (sic / 100.0).sum(dim=['x', 'y']) * CELL_AREA / 1e6
+
+print(f"Latest extent: {float(ice_extent.isel(time=-1)):.2f} M km²")
+print(f"Latest area: {float(ice_area.isel(time=-1)):.2f} M km²")`,
+  },
+  {
+    title: "Download with wget",
+    language: "Bash",
+    code: `# Setup credentials in ~/.netrc
+# machine urs.earthdata.nasa.gov login USER password PASS
+
+# Bulk download with resume capability
+wget --load-cookies ~/.urs_cookies \\
+     --save-cookies ~/.urs_cookies \\
+     --keep-session-cookies \\
+     --continue \\
+     --input-file=urls.txt`,
+  },
+];
+
+const Tutorials = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredTutorials = useMemo(() => {
+    return tutorials.filter((tutorial) => {
+      const matchesCat =
+        selectedCategory === "All" || tutorial.category === selectedCategory;
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        tutorial.title.toLowerCase().includes(q) ||
+        tutorial.description.toLowerCase().includes(q) ||
+        tutorial.tags.some((t) => t.toLowerCase().includes(q));
+      return matchesCat && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
 
   return (
     <div className="min-h-screen bg-transparent text-[#F8FAFC]">
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 flex flex-col gap-10">
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex flex-col gap-10">
+
+          {/* Header */}
           <section className="max-w-3xl space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#F4C542]">
-              Practical examples
+              Jupyter Notebooks
             </p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
-              Tutorials and guides
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+              Antarctic Data Tutorials
             </h1>
-            <p className="max-w-3xl text-base sm:text-lg leading-7 text-[#D6E1F0]">
-              Follow worked examples for finding, downloading, and analysing Antarctic and Southern Ocean data.
+            <p className="text-base sm:text-lg leading-relaxed text-[#D6E1F0]">
+              Step-by-step notebooks for working with polar datasets. Download and run locally, or use as reference for your own analysis.
             </p>
           </section>
 
-          <nav aria-label="Tutorial sections" className="border-y border-white/10 py-4">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#D6E1F0]">On this page</p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <a href="#tutorials" className="text-[#F4C542] transition-colors hover:text-white">
-                Tutorials
-              </a>
-              <a href="#code-examples" className="text-[#F4C542] transition-colors hover:text-white">
-                Code Examples
-              </a>
-              <a href="#resources" className="text-[#F4C542] transition-colors hover:text-white">
-                External Resources
-              </a>
-              <Link to="/documentation" className="text-[#F4C542] transition-colors hover:text-white">
-                Documentation
-              </Link>
-              <Link to="/getting-started" className="text-[#F4C542] transition-colors hover:text-white">
-                Getting Started Guide
-              </Link>
-            </div>
+          {/* Quick Navigation */}
+          <nav className="border-y border-white/10 py-4 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+            <a href="#tutorials" className="text-[#F4C542] hover:text-white">
+              Notebooks ({filteredTutorials.length})
+            </a>
+            <a href="#code-examples" className="text-[#D6E1F0] hover:text-[#F4C542]">
+              Code Snippets
+            </a>
+            <Link to="/documentation" className="text-[#D6E1F0] hover:text-[#F4C542]">
+              Documentation
+            </Link>
           </nav>
 
-          {/* Tutorials */}
+          {/* Tutorials Section */}
           <section id="tutorials" className="space-y-6">
-            <div>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Start with a tutorial
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Available Notebooks
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-[#D6E1F0]">
-                Choose the example closest to the work you want to do.
-              </p>
+
+              {/* Search */}
+              <div className="relative w-full md:w-72">
+                <FaSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#F4C542] text-xs" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Filter notebooks..."
+                  className="w-full rounded-xl border border-white/15 bg-[#071a34] pl-9 pr-4 py-2 text-sm text-white placeholder-[#D6E1F0]/60 outline-none focus:border-[#F4C542] focus:ring-1 focus:ring-[#F4C542]"
+                />
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {tutorials.map((tutorial, index) => {
-                const TutorialCard = tutorial.link ? Link : 'div';
-                const cardProps = tutorial.link ? { to: tutorial.link } : {};
-
-                return (
-                  <TutorialCard
-                    key={index}
-                    {...cardProps}
-                    className="group border-b border-white/10 py-6 transition-colors block first:border-t hover:bg-white/[0.03] sm:px-4"
-                  >
-                    <div className="flex items-start gap-3 mb-3">
-                      <tutorial.icon className="text-xl text-[#F4C542]" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-[#F4C542]">
-                          {tutorial.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <p className="text-sm text-[#D6E1F0] mb-4">
-                      {tutorial.description}
-                    </p>
-                    <p className="text-sm leading-6 text-[#D6E1F0]">
-                      {tutorial.topics.join(" · ")}
-                    </p>
-                  </TutorialCard>
-                );
-              })}
+            {/* Category Filters */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`rounded-full px-3.5 py-1 text-xs font-semibold transition-all ${
+                    selectedCategory === cat
+                      ? "bg-[#F4C542] text-[#071a34]"
+                      : "border border-white/15 bg-white/5 text-[#D6E1F0] hover:bg-white/10"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
+
+            {/* Tutorial Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {filteredTutorials.map((tutorial, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl border border-white/10 bg-[#0b2748]/80 p-5 hover:border-[#F4C542]/50 hover:bg-[#0f325c] transition-all"
+                >
+                  <h3 className="text-lg font-bold text-white mb-3">
+                    {tutorial.title}
+                  </h3>
+
+                  <p className="text-sm text-[#D6E1F0] mb-4 leading-relaxed">
+                    {tutorial.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {tutorial.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-xs text-[#3dd6d0] bg-[#3dd6d0]/10 px-2 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="pt-4 border-t border-white/10 flex items-center gap-4">
+                    <Link
+                      to={`/notebook-viewer?file=${tutorial.notebook}`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#F4C542] hover:text-white transition-colors"
+                    >
+                      <FaEye />
+                      View notebook
+                    </Link>
+                    <a
+                      href={`/notebooks/${tutorial.notebook}`}
+                      download
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#D6E1F0] hover:text-[#F4C542] transition-colors"
+                    >
+                      <FaDownload />
+                      Download
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {filteredTutorials.length === 0 && (
+              <div className="text-center py-12 rounded-xl border border-dashed border-white/20 bg-white/5">
+                <p className="text-white">No notebooks found matching "{searchQuery}"</p>
+                <button
+                  onClick={() => { setSelectedCategory("All"); setSearchQuery(""); }}
+                  className="mt-3 text-xs font-semibold text-[#F4C542] hover:underline"
+                >
+                  Reset filters
+                </button>
+              </div>
+            )}
           </section>
 
-          {/* Code Examples */}
-          <section id="code-examples" className="space-y-6">
+          {/* Code Snippets */}
+          <section id="code-examples" className="space-y-6 pt-4">
             <div>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Code Examples
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#F4C542] mb-2">
+                <FaPython /> Quick Reference
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Common Code Patterns
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-[#D6E1F0]">
-                Copy-paste code snippets to get started quickly with common tasks.
+              <p className="mt-1 text-sm text-[#D6E1F0]">
+                Copy-paste these snippets into your own scripts.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6">
-              {codeExamples.map((example, index) => (
-                <div
-                  key={index}
-                  className="border-t border-white/10 overflow-hidden"
-                >
-                  <div className="flex items-center justify-between py-4 border-b border-white/10">
-                    <div className="flex items-center gap-3">
-                      <FaCode className="text-[#F4C542]" />
-                      <h3 className="text-lg font-semibold text-white">
-                        {example.title}
-                      </h3>
-                    </div>
-                    <span className="text-xs font-semibold text-[#F4C542]">
-                      {example.language}
-                    </span>
-                  </div>
-                  <div className="py-5">
-                    <pre className="overflow-x-auto border-l-2 border-[#3dd6d0]/40 bg-[#071a34] p-4 text-sm text-[#D6E1F0]">
-                      <code>{example.code}</code>
-                    </pre>
-                  </div>
+            <div className="space-y-6">
+              {codeExamples.map((example, idx) => (
+                <div key={idx} className="rounded-xl border border-white/10 bg-[#0b2748] p-5">
+                  <h3 className="text-base font-semibold text-white mb-3">
+                    {example.title}
+                  </h3>
+                  <CodeBlock
+                    code={example.code}
+                    language={example.language}
+                  />
                 </div>
               ))}
             </div>
           </section>
 
           {/* External Resources */}
-          <section id="resources" className="space-y-6">
-            <div>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                External Resources
-              </h2>
-              <p className="mt-2 text-sm sm:text-base text-[#D6E1F0]">
-                Curated links to official documentation and learning materials.
-              </p>
-            </div>
+          <section className="space-y-4 pt-4">
+            <h2 className="text-2xl font-bold text-white">
+              External Resources
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <a
+                href="https://pangeo.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-white/10 bg-[#0b2748]/60 p-4 hover:border-[#F4C542]/40 hover:bg-[#0f325c] transition-all"
+              >
+                <div className="flex items-start justify-between">
+                  <h3 className="text-base font-semibold text-white group-hover:text-[#F4C542]">
+                    Pangeo
+                  </h3>
+                  <FaExternalLinkAlt className="text-[#D6E1F0] text-xs" />
+                </div>
+                <p className="mt-2 text-sm text-[#D6E1F0]">
+                  Community platform for big data geoscience with xarray and Dask.
+                </p>
+              </a>
 
-            <div className="divide-y divide-white/10 border-y border-white/10">
-              {externalResources.map((resource, index) => (
-                <a
-                  key={index}
-                  href={resource.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-start justify-between gap-4 py-5 transition-colors hover:bg-white/[0.03] sm:px-4"
-                >
-                  <div>
-                    <h3 className="text-lg font-semibold text-white group-hover:text-[#F4C542] transition-colors">
-                      {resource.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-[#D6E1F0]">
-                      {resource.description}
-                    </p>
-                  </div>
-                  <FaExternalLinkAlt className="mt-1 shrink-0 text-[#D6E1F0] text-sm group-hover:text-[#F4C542] transition-colors" />
-                </a>
-              ))}
+              <a
+                href="https://github.com/nsidc/earthaccess"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-white/10 bg-[#0b2748]/60 p-4 hover:border-[#F4C542]/40 hover:bg-[#0f325c] transition-all"
+              >
+                <div className="flex items-start justify-between">
+                  <h3 className="text-base font-semibold text-white group-hover:text-[#F4C542]">
+                    earthaccess (Python)
+                  </h3>
+                  <FaExternalLinkAlt className="text-[#D6E1F0] text-xs" />
+                </div>
+                <p className="mt-2 text-sm text-[#D6E1F0]">
+                  Python library for searching and downloading NASA polar datasets.
+                </p>
+              </a>
+
+              <a
+                href="https://scitools.org.uk/cartopy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-white/10 bg-[#0b2748]/60 p-4 hover:border-[#F4C542]/40 hover:bg-[#0f325c] transition-all"
+              >
+                <div className="flex items-start justify-between">
+                  <h3 className="text-base font-semibold text-white group-hover:text-[#F4C542]">
+                    Cartopy
+                  </h3>
+                  <FaExternalLinkAlt className="text-[#D6E1F0] text-xs" />
+                </div>
+                <p className="mt-2 text-sm text-[#D6E1F0]">
+                  Python library for polar projections and Antarctic mapping.
+                </p>
+              </a>
+
+              <a
+                href="https://biogeochemical-argo.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-white/10 bg-[#0b2748]/60 p-4 hover:border-[#F4C542]/40 hover:bg-[#0f325c] transition-all"
+              >
+                <div className="flex items-start justify-between">
+                  <h3 className="text-base font-semibold text-white group-hover:text-[#F4C542]">
+                    BGC-Argo
+                  </h3>
+                  <FaExternalLinkAlt className="text-[#D6E1F0] text-xs" />
+                </div>
+                <p className="mt-2 text-sm text-[#D6E1F0]">
+                  Access protocols and quality-control guidelines for float data.
+                </p>
+              </a>
             </div>
           </section>
 
-          {/* Help Section */}
-          <footer className="border-t border-[#3dd6d0]/25 bg-[#123f71] px-5 py-5 text-sm text-[#D6E1F0] sm:flex sm:items-center sm:justify-between sm:gap-4">
-            <p className="text-sm sm:text-base leading-7 text-[#D6E1F0]">
-              Questions about a tutorial or analysis workflow?
-            </p>
-            <a
-              href="mailto:ACEAS.Project.Office@utas.edu.au"
-              className="mt-2 inline-block font-semibold text-[#F4C542] transition-colors hover:text-white sm:mt-0"
-            >
-              Contact the ACEAS Project Office
-            </a>
-          </footer>
         </div>
       </div>
     </div>

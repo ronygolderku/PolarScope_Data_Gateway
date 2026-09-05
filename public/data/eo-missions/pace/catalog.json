@@ -1,0 +1,64 @@
+{
+  "type": "Catalog",
+  "id": "pace",
+  "stac_version": "1.0.0",
+  "description": "The Plankton, Aerosol, Cloud, ocean Ecosystem (PACE) mission is NASA's next-generation ocean color satellite launched in February 2024. PACE carries the Ocean Color Instrument (OCI), a hyperspectral radiometer that measures across the visible and near-infrared spectrum (340-890 nm) with 5 nm resolution, providing unprecedented spectral detail for ocean biology and biogeochemistry studies. For the Southern Ocean, PACE enables improved detection of phytoplankton functional types, harmful algal blooms, and ocean productivity under challenging conditions like high sun glints and variable atmospheric conditions. The hyperspectral capability allows discrimination between different phytoplankton groups (diatoms, coccolithophores, cryptophytes) which is crucial for understanding Southern Ocean ecosystem dynamics and carbon cycling. PACE also carries two polarimeters (HARP2 and SPEXone) for aerosol and cloud characterization.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://pace.oceansciences.org/",
+      "title": "PACE Mission Website"
+    },
+    {
+      "rel": "via",
+      "href": "https://oceancolor.gsfc.nasa.gov/data/pace/",
+      "title": "NASA Ocean Color - PACE Data"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/pace-oci-chlorophyll-a-global/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Global Chlorophyll-a (1 km, Daily, Hyperspectral)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/pace-oci-particulate-backscatter/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Particulate Backscatter (1 km, Daily, Hyperspectral)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/pace-oci-remote-sensing-reflectance/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Remote Sensing Reflectance (1 km, Hyperspectral, 5 nm)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "EO Missions"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/eo-missions/pace/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "updated": "2026-09-05T00:00:00Z",
+  "keywords": [
+    "Ocean Color",
+    "Hyperspectral",
+    "Phytoplankton",
+    "Ocean Ecosystem",
+    "PACE",
+    "OCI",
+    "NASA"
+  ],
+  "title": "PACE (Plankton, Aerosol, Cloud, ocean Ecosystem)"
+}

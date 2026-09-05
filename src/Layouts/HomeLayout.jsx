@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import aceasLogo from "../assets/ACEAS-Logo.png";
+import SiteFooter from "../components/SiteFooter";
 
 const HomeLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 1024);
@@ -46,7 +47,7 @@ const HomeLayout = () => {
   };
 
   return (
-    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto h-screen overflow-hidden bg-[#071a34]`}>
+    <div className={`drawer ${isSidebarOpen ? "lg:drawer-open" : ""} mx-auto h-screen overflow-hidden polar-atmosphere text-[#F8FAFC]`}>
       <input
         id="my-drawer-4"
         type="checkbox"
@@ -71,8 +72,11 @@ const HomeLayout = () => {
         </nav>
 
         {/* Page content */}
-        <div className="flex-1 min-h-0 overflow-auto bg-transparent">
-          <Outlet />
+        <div className="flex-1 min-h-0 overflow-auto bg-transparent flex flex-col">
+          <div className="flex-1">
+            <Outlet />
+          </div>
+          <SiteFooter />
         </div>
       </div>
 

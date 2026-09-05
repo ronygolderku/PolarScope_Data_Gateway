@@ -335,6 +335,60 @@
       "title": "High-resolution WAPOSAL wave period and wave power density from Sentinel-3 A/B, CryoSat-2, and SAMOSA+ retracker"
     },
     {
+      "rel": "child",
+      "href": "../../products/ostia-sst-daily-global/collection.json",
+      "type": "application/json",
+      "title": "OSTIA Global Daily Sea Surface Temperature (0.05°, L4)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/ostia-sst-reprocessed-climate/collection.json",
+      "type": "application/json",
+      "title": "OSTIA Global Reprocessed SST - Climate Data Record (1982-present)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/metoffice-sst-nrt-global/collection.json",
+      "type": "application/json",
+      "title": "UK Met Office NRT Global Sea Surface Temperature (< 24h latency)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/ccmp-wind-v3-6hourly-global/collection.json",
+      "type": "application/json",
+      "title": "CCMP Ocean Surface Wind Analysis V3.0 (0.25°, 6-hourly)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/ccmp-wind-v3-monthly-climatology/collection.json",
+      "type": "application/json",
+      "title": "CCMP Monthly Wind Climatology (1987-present baseline)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/ccmp-wind-v3-high-res/collection.json",
+      "type": "application/json",
+      "title": "CCMP High-Resolution Ocean Surface Wind (0.125°, Experimental)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/pace-oci-chlorophyll-a-global/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Global Chlorophyll-a (1 km, Daily, Hyperspectral)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/pace-oci-particulate-backscatter/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Particulate Backscatter (1 km, Daily, Hyperspectral)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/pace-oci-remote-sensing-reflectance/collection.json",
+      "type": "application/json",
+      "title": "PACE OCI Remote Sensing Reflectance (1 km, Hyperspectral, 5 nm)"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",

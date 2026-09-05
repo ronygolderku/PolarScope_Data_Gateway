@@ -1,0 +1,115 @@
+{
+    "type": "Collection",
+    "id": "ostia-sst-reprocessed-climate",
+    "stac_version": "1.0.0",
+    "description": "The OSTIA reprocessed sea surface temperature product provides a consistent, climate-quality data record spanning from 1982 to present. This dataset uses the same OSTIA analysis system as the operational product but applies it to reprocessed satellite observations and quality-controlled in situ data. The reprocessing ensures temporal consistency and homogeneity, making it ideal for climate studies, trend analysis, and long-term monitoring of Southern Ocean temperatures. The product maintains 0.05° spatial resolution and daily temporal resolution throughout the entire record. This Climate Data Record (CDR) is particularly valuable for studying Antarctic sea ice-ocean interactions, marine heatwave detection, and validating climate models over multi-decadal timescales.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://resources.marine.copernicus.eu/product-detail/SST_GLO_SST_L4_REP_OBSERVATIONS_010_011",
+            "title": "Copernicus Marine Service - Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://www.metoffice.gov.uk/research/climate/maps-and-data/data/hadisst/",
+            "title": "UK Met Office - Documentation"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.48670/moi-00168",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-surface-temperature/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Surface Temperature"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "uk-met-office-ostia-cdr",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "1982-01-01T00:00:00Z",
+    "version": "2.1",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-surface-temperature"
+    ],
+    "osc:missions": [
+        "sentinel-3",
+        "metop",
+        "noaa-series",
+        "envisat"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "OSTIA Global Reprocessed SST - Climate Data Record (1982-present)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1982-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Temperature",
+        "Sea Surface Temperature",
+        "SST",
+        "OSTIA",
+        "Climate Data Record",
+        "CDR",
+        "Southern Ocean",
+        "Antarctica",
+        "Long-term",
+        "Reprocessed",
+        "UK Met Office",
+        "Copernicus Marine",
+        "Climate Change",
+        "Trend Analysis"
+    ]
+}

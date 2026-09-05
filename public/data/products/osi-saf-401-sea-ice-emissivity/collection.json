@@ -1,0 +1,99 @@
+{
+    "type": "Collection",
+    "id": "osi-saf-401-sea-ice-emissivity",
+    "stac_version": "1.0.0",
+    "description": "The OSI-401-d product provides daily sea ice surface emissivity at microwave frequencies derived from SSMIS observations. This specialized dataset characterizes the microwave emission properties of sea ice surfaces, which are fundamental to passive microwave remote sensing. Sea ice emissivity varies with ice type, surface roughness, snow cover, moisture content, and temperature. Understanding emissivity is crucial for improving sea ice concentration algorithms, validating radiative transfer models, and interpreting brightness temperature observations. For Antarctic applications, this product helps characterize the unique emission properties of Southern Ocean sea ice, including the effects of wet snow, flooding, and thin ice on microwave signatures. The dataset provides emissivity at multiple microwave frequencies and polarizations, enabling studies of ice surface properties and their temporal evolution. This is particularly valuable for algorithm development, sensor inter-calibration, and understanding the physical basis of passive microwave sea ice retrievals.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://osi-saf.eumetsat.int/products/osi-401-d",
+            "title": "OSI SAF - Product Page"
+        },
+        {
+            "rel": "via",
+            "href": "https://thredds.met.no/thredds/catalog/osisaf/met.no/ice/emissivity/catalog.html",
+            "title": "THREDDS Data Access"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "eumetsat-osi-saf-emissivity",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2007-01-01T00:00:00Z",
+    "version": "2.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "emissivity"
+    ],
+    "osc:missions": [
+        "dmsp"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "OSI SAF Sea Ice Emissivity (OSI-401-d, SSMIS)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2007-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Emissivity",
+        "Microwave",
+        "Passive Microwave",
+        "SSMIS",
+        "OSI SAF",
+        "EUMETSAT",
+        "Antarctica",
+        "Surface Properties",
+        "Radiative Transfer",
+        "Algorithm Development"
+    ]
+}

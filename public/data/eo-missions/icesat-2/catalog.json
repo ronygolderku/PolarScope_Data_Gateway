@@ -17,6 +17,30 @@
       "title": "Description"
     },
     {
+      "rel": "child",
+      "href": "../../products/icesat2-atl06-land-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL06 Land Ice Height (40 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl07-sea-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL07 Sea Ice Height (10-25 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl10-sea-ice-freeboard/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL10 Sea Ice Freeboard (10 m along-track)"
+    },
+    {
+      "rel": "child",
+      "href": "../../products/icesat2-atl20-gridded-ice-height/collection.json",
+      "type": "application/json",
+      "title": "ICESat-2 ATL20 Gridded Land Ice Height Change (100 m grid, Quarterly)"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -28,7 +52,7 @@
       "type": "application/json"
     }
   ],
-  "updated": "2024-08-27T17:27:42.173831Z",
+  "updated": "2026-09-05T00:00:00Z",
   "keywords": [],
   "title": "ICESat-2"
 }

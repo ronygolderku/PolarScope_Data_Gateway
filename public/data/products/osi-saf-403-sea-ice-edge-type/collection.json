@@ -1,0 +1,111 @@
+{
+    "type": "Collection",
+    "id": "osi-saf-403-sea-ice-edge-type",
+    "stac_version": "1.0.0",
+    "description": "The OSI-403-c product provides daily sea ice edge location and sea ice type classification at 10 km resolution from 1979 to present. This dataset identifies the transition zone between open water and sea ice (the ice edge), and classifies sea ice into categories based on age and physical properties. For the Southern Ocean, the product distinguishes between first-year ice (ice that has not survived a summer melt season) and older ice categories. The ice edge is defined as the 15% concentration contour and includes multiple edge definitions (maximum ice edge, climatological edge, etc.). Sea ice type information is crucial for understanding ice dynamics, thickness distribution, and ecosystem implications, as first-year and multi-year ice have very different properties. The product combines passive microwave data with scatterometer observations to improve type discrimination. Ice edge location is essential for navigation, climate monitoring, and validating numerical models. This is one of the few long-term sea ice type datasets available for Antarctic research.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://osi-saf.eumetsat.int/products/osi-403-c",
+            "title": "OSI SAF - Product Page"
+        },
+        {
+            "rel": "via",
+            "href": "https://thredds.met.no/thredds/catalog/osisaf/met.no/ice/edge/catalog.html",
+            "title": "THREDDS Data Access"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/sea-ice-type/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Sea Ice Type"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "eumetsat-osi-saf-edge-type",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "1979-01-01T00:00:00Z",
+    "version": "2.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "sea-ice-type",
+        "sea-ice-edge"
+    ],
+    "osc:missions": [
+        "nimbus-7",
+        "dmsp",
+        "metop",
+        "ascat"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "OSI SAF Sea Ice Edge and Type (OSI-403-c, 10 km, 1979-present)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -40
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "1979-01-01T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Sea Ice",
+        "Sea Ice Edge",
+        "Sea Ice Type",
+        "Ice Classification",
+        "First-Year Ice",
+        "Multi-Year Ice",
+        "OSI SAF",
+        "EUMETSAT",
+        "Antarctica",
+        "Southern Ocean",
+        "Marginal Ice Zone",
+        "10km",
+        "Daily"
+    ]
+}

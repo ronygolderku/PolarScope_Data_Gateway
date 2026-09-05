@@ -1,0 +1,106 @@
+{
+    "type": "Collection",
+    "id": "pace-oci-particulate-backscatter",
+    "stac_version": "1.0.0",
+    "description": "PACE Ocean Color Instrument particulate backscattering coefficient (bbp) at 1 km resolution, derived from hyperspectral remote sensing reflectance. Particulate backscatter is a key inherent optical property that relates to particle concentration, size distribution, and composition in the water column. For the Southern Ocean, bbp is particularly useful for detecting coccolithophore blooms (which have high backscatter due to calcium carbonate plates), quantifying suspended particle loads, and estimating particulate organic carbon concentrations. The hyperspectral OCI measurements enable retrieval of bbp at multiple wavelengths (typically 443, 490, 555, 670 nm), allowing characterization of particle size distribution through spectral slopes. This product is valuable for studying biogeochemical processes, validating ocean color algorithms, and monitoring changes in particle composition associated with ecosystem shifts in Antarctic waters.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://oceancolor.gsfc.nasa.gov/data/pace/",
+            "title": "NASA Ocean Color - PACE Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://pace.oceansciences.org/data.htm",
+            "title": "PACE Data Portal"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/oceans/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Oceans"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/particulate-backscattering-coefficient/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Particulate Backscattering Coefficient"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-pace-oci-iop",
+    "osc:status": "ongoing",
+    "osc:region": "Global",
+    "osc:type": "product",
+    "created": "2024-02-08T00:00:00Z",
+    "version": "1.0",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "oceans"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "particulate-backscattering-coefficient"
+    ],
+    "osc:missions": [
+        "pace"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "PACE OCI Particulate Backscatter (1 km, Daily, Hyperspectral)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    90
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2024-02-08T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Ocean Color",
+        "Particulate Backscatter",
+        "Inherent Optical Properties",
+        "bbp",
+        "Hyperspectral",
+        "PACE",
+        "OCI",
+        "Southern Ocean",
+        "Coccolithophores",
+        "Particle Size",
+        "1km",
+        "Daily",
+        "NASA"
+    ]
+}

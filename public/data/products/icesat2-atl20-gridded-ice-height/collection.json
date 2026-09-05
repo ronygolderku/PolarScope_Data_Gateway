@@ -1,0 +1,110 @@
+{
+    "type": "Collection",
+    "id": "icesat2-atl20-gridded-ice-height",
+    "stac_version": "1.0.0",
+    "description": "ICESat-2 ATL20 provides gridded land ice surface height change over Antarctica at 100-meter spatial resolution. This Level 3B product aggregates along-track ATL06 measurements into regular grids, enabling regional and ice sheet-wide analyses of elevation change. ATL20 delivers quarterly elevation maps and elevation change rates by differencing repeat observations in each grid cell. For Antarctic applications, this product reveals ice sheet dynamic thinning, mass balance patterns, and the response of outlet glaciers to climate forcing. The 100-m resolution captures outlet glacier centerlines, ice stream margins, and grounding zone dynamics with far greater detail than previous satellite altimetry. ATL20 includes elevation, elevation change rate, uncertainty estimates, and data quality metrics for each grid cell. The gridded format facilitates comparison with models, integration with other datasets, and rapid assessment of regional elevation trends. This product is essential for monitoring Antarctic ice sheet contribution to sea level rise and understanding ice sheet stability.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json",
+            "title": "Open Science Catalog"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/atl20",
+            "title": "NSIDC - Data Access"
+        },
+        {
+            "rel": "via",
+            "href": "https://nsidc.org/data/atl20/versions/1",
+            "title": "NSIDC - Documentation"
+        },
+        {
+            "rel": "via",
+            "href": "https://doi.org/10.5067/ATLAS/ATL20.001",
+            "title": "Product DOI"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json",
+            "title": "Products"
+        },
+        {
+            "rel": "related",
+            "href": "../../themes/cryosphere/catalog.json",
+            "type": "application/json",
+            "title": "Theme: Cryosphere"
+        },
+        {
+            "rel": "related",
+            "href": "../../variables/glacier-elevation-ice-sheet-elevation/catalog.json",
+            "type": "application/json",
+            "title": "Variable: Ice Sheet Elevation"
+        }
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    ],
+    "osc:project": "nasa-icesat2-atl20",
+    "osc:status": "ongoing",
+    "osc:region": "Antarctica",
+    "osc:type": "product",
+    "created": "2018-10-14T00:00:00Z",
+    "version": "001",
+    "themes": [
+        {
+            "scheme": "https://github.com/stac-extensions/osc#theme",
+            "concepts": [
+                {
+                    "id": "cryosphere"
+                }
+            ]
+        }
+    ],
+    "osc:variables": [
+        "glacier-elevation-ice-sheet-elevation"
+    ],
+    "osc:missions": [
+        "icesat-2"
+    ],
+    "updated": "2026-09-05T00:00:00Z",
+    "title": "ICESat-2 ATL20 Gridded Land Ice Height Change (100 m grid, Quarterly)",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180,
+                    -90,
+                    180,
+                    -60
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2018-10-14T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "license": "proprietary",
+    "keywords": [
+        "Snow/Ice",
+        "Ice Sheets",
+        "Ice Sheet Elevation",
+        "Elevation Change",
+        "Gridded",
+        "ICESat-2",
+        "ATLAS",
+        "Antarctica",
+        "Mass Balance",
+        "Sea Level Rise",
+        "100m",
+        "Quarterly"
+    ]
+}

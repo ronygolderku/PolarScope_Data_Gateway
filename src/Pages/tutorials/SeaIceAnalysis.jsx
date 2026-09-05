@@ -1,297 +1,340 @@
-import React from "react";
-import { FaArrowLeft, FaCheckCircle, FaSnowflake } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaArrowLeft,
+  FaCheckCircle,
+  FaSnowflake,
+  FaDownload,
+  FaExternalLinkAlt,
+  FaGitlab,
+  FaBookOpen,
+  FaRocket,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 import { Link } from "react-router";
+import CodeBlock from "../../components/CodeBlock";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import RelatedDatasets from "../../components/RelatedDatasets";
 
 const SeaIceAnalysis = () => {
+  const [showIframe, setShowIframe] = useState(false);
+
+  const datasets = [
+    {
+      name: "NSIDC Sea Ice Index (G02135)",
+      description: "Passive microwave sea ice concentration and extent (1978–present).",
+      to: "/search?q=sea+ice",
+      provider: "NASA NSIDC",
+      format: "NetCDF-4 / GeoTIFF",
+      resolution: "25 km polar grid",
+    },
+    {
+      name: "EUMETSAT OSI SAF Sea Ice Concentration",
+      description: "Global ocean sea ice concentration climate data record (OSI-450 / OSI-430).",
+      to: "/search?q=osi+saf",
+      provider: "EUMETSAT",
+      format: "NetCDF-4",
+      resolution: "12.5–25 km grid",
+    },
+  ];
+
+  const loadSicCode = `import xarray as xr
+import numpy as np
+
+# Load daily/monthly passive microwave sea ice concentration
+# NetCDF array indexed by [time, y, x] in South Polar Stereographic (EPSG:3412)
+ds = xr.open_dataset('data/antarctic_seaice_index.nc')
+
+# Ice concentration variable (SIC) is typically 0% to 100%
+sic = ds['ice_conc']
+
+# Inspect coordinate metadata
+print(f"Temporal span: {str(sic.time.values[0])[:10]} to {str(sic.time.values[-1])[:10]}")
+print(f"Grid dimensions: {sic.shape[1]} x {sic.shape[2]} cells")`;
+
+  const extentCalcCode = `# Grid cell area for NSIDC 25km South Polar Stereographic grid
+# Standard cell area = 25 km x 25 km = 625 km² (accounting for map distortion)
+GRID_CELL_AREA_KM2 = 625.0
+
+# 1. Calculate Sea Ice Extent:
+# Cumulative area of all ocean grid cells having >= 15% sea ice concentration
+# (15% is the universal international threshold established in climate literature)
+is_ice = (sic >= 15.0).astype(float)
+extent_km2 = is_ice.sum(dim=['x', 'y']) * GRID_CELL_AREA_KM2
+
+# 2. Calculate Sea Ice Area:
+# Cumulative area of actual ice coverage (sum of cell area * concentration fraction)
+area_km2 = (sic / 100.0).where(sic >= 15.0).sum(dim=['x', 'y']) * GRID_CELL_AREA_KM2
+
+# Convert to millions of square kilometers (M km²)
+extent_million_km2 = extent_km2 / 1e6
+area_million_km2 = area_km2 / 1e6
+
+print(f"Annual Max Extent (September): ~{float(extent_million_km2.max()):.2f} M km²")
+print(f"Annual Min Extent (February):  ~{float(extent_million_km2.min()):.2f} M km²")`;
+
+  const sectorAnalysisCode = `# Define longitudinal boundaries for the 5 Antarctic Sea Ice Sectors
+# Sector coordinates based on Parkinson & Cavalieri (NASA Goddard):
+SECTORS = {
+    'Weddell Sea':               (-60, 20),
+    'Indian Ocean':              (20, 90),
+    'Western Pacific':           (90, 160),
+    'Ross Sea':                  (160, -130), # Spans 180° date line
+    'Bellingshausen-Amundsen':   (-130, -60),
+}
+
+# Regional mask using longitude coordinates
+def calculate_sector_extent(ds_sic, lon_min, lon_max, cell_area=625.0):
+    lon = ds_sic.lon
+    if lon_min < lon_max:
+        mask = (lon >= lon_min) & (lon < lon_max)
+    else: # Handles wrapping across 180° meridian (e.g. Ross Sea)
+        mask = (lon >= lon_min) | (lon < lon_max)
+    
+    sector_ice = (ds_sic >= 15.0).where(mask)
+    return (sector_ice.sum(dim=['x', 'y']) * cell_area) / 1e6
+
+# Calculate time series for each sector
+sector_extents = {}
+for name, (lmin, lmax) in SECTORS.items():
+    sector_extents[name] = calculate_sector_extent(sic, lmin, lmax)
+    print(f"{name}: Mean extent = {float(sector_extents[name].mean()):.2f} M km²")`;
+
   return (
     <div className="min-h-screen bg-transparent text-[#F8FAFC]">
       <div className="w-full flex justify-center">
         <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 flex flex-col gap-8">
-          {/* Back Button */}
-          <Link
-            to="/tutorials"
-            className="inline-flex items-center gap-2 text-sm text-[#F4C542] hover:text-[#e8ba30] transition-colors"
-          >
-            <FaArrowLeft />
-            Back to Tutorials
-          </Link>
+          
+          {/* Breadcrumbs & Back */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+            <Breadcrumbs items={[{ label: "Antarctic Sea Ice Extent Analysis" }]} />
+            <Link
+              to="/tutorials"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#F4C542] hover:text-white transition-colors"
+            >
+              <FaArrowLeft />
+              Back to Tutorials
+            </Link>
+          </div>
 
           {/* Header */}
           <section className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="text-xs px-3 py-1 rounded-full bg-[#F4C542]/20 text-[#F4C542] font-medium">
+              <span className="text-xs px-3 py-1 rounded-full bg-[#F4C542]/20 text-[#F4C542] font-semibold">
                 Intermediate
               </span>
-              <span className="text-xs text-[#D6E1F0]">40 min</span>
+              <span className="text-xs text-[#D6E1F0]">40 min read</span>
+              <span className="text-xs px-3 py-1 rounded-full bg-[#3dd6d0]/20 text-[#3dd6d0] font-semibold">
+                Cryosphere
+              </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white flex items-center gap-3">
-              <FaSnowflake className="text-[#F4C542]" />
-              Antarctic Sea Ice Extent Analysis
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white flex items-center gap-3">
+              <FaSnowflake className="text-[#3dd6d0]" />
+              Antarctic Sea Ice Extent & Concentration Analysis
             </h1>
-            <p className="text-lg text-[#D6E1F0]">
-              Analyze Antarctic sea ice concentration and extent using satellite passive microwave observations.
-              Learn to process NSIDC and OSI SAF data, calculate ice metrics, and visualize seasonal patterns.
+            <p className="text-lg text-[#D6E1F0] leading-relaxed">
+              Analyze Southern Ocean sea ice dynamics using passive microwave satellite records (1978–present). Learn to apply the 15% extent threshold, decompose extreme seasonal swings, and quantify anomalies across the 5 Antarctic sectors.
             </p>
           </section>
 
-          {/* Introduction */}
+          {/* Related Datasets */}
+          <RelatedDatasets datasets={datasets} />
+
+          {/* Quick Action Bar */}
+          <section className="rounded-2xl border border-white/15 bg-gradient-to-r from-[#0b2748] to-[#143A6A] p-5 shadow-lg">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h2 className="text-base font-bold text-white flex items-center gap-2">
+                  <FaRocket className="text-[#F4C542]" /> Jupyter Notebook Artifacts
+                </h2>
+                <p className="text-xs text-[#D6E1F0] mt-0.5">
+                  Complete Antarctic-focused sea ice index notebook (Arctic sections removed for clarity).
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <a
+                  href="https://colab.research.google.com/github/ronygolderku/PolarScope_Data_Gateway/blob/main/public/notebooks/antarctic_sea_ice_index.ipynb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-[#F4C542] px-3.5 py-2 text-xs font-bold text-[#071a34] hover:bg-[#e8ba30] transition-colors shadow-sm"
+                >
+                  <FaRocket /> Run in Colab
+                </a>
+                <a
+                  href="/notebooks/antarctic_sea_ice_index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-3.5 py-2 text-xs font-semibold text-white hover:bg-white/20 transition-colors"
+                >
+                  <FaBookOpen /> HTML Report
+                </a>
+                <a
+                  href="/notebooks/antarctic_sea_ice_index.ipynb"
+                  download
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#3dd6d0]/40 bg-[#3dd6d0]/10 px-3.5 py-2 text-xs font-semibold text-[#3dd6d0] hover:bg-[#3dd6d0]/20 transition-colors"
+                >
+                  <FaDownload /> .ipynb File
+                </a>
+                <a
+                  href="https://gitlab.eumetsat.int/eumetlab/oceans/ocean-training/sensors/learn-osi-saf-sea-ice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/5 px-3 py-2 text-xs font-semibold text-[#D6E1F0] hover:text-white transition-colors"
+                >
+                  <FaGitlab /> EUMETSAT Training
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* Scientific Context: The Extreme Seasonal Swing */}
           <section className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">Introduction</h2>
-            <p className="text-[#D6E1F0]">
-              Antarctic sea ice is a critical component of Earth's climate system, moderating heat exchange between
-              ocean and atmosphere and providing crucial habitat for polar ecosystems. This tutorial demonstrates
-              how to analyze sea ice concentration data, calculate extent metrics, and examine seasonal and
-              interannual variability in the Southern Ocean.
+            <h2 className="text-xl font-bold text-white">Antarctic Sea Ice Seasonality</h2>
+            <p className="text-sm leading-relaxed text-[#D6E1F0]">
+              Unlike the Arctic (an ocean enclosed by land), Antarctic sea ice surrounds a frozen continent and is free to expand outward into open ocean waters. This results in one of the most extreme annual seasonal cycles on Earth:
             </p>
-
-            <div className="bg-[#1B457A]/50 p-4 rounded-lg border-l-4 border-[#F4C542]">
-              <p className="text-sm font-semibold text-[#F4C542] mb-2">
-                🌊 Antarctic Focus
-              </p>
-              <p className="text-sm text-[#D6E1F0]">
-                This tutorial specifically covers <strong>Antarctic</strong> sea ice in the Southern Ocean
-                (south of 40°S), not Arctic sea ice. Analysis techniques apply to NSIDC and OSI SAF products.
-              </p>
-            </div>
-
-            <div className="bg-[#143A6A] rounded-lg p-4">
-              <h3 className="font-semibold text-white mb-3">What You'll Learn</h3>
-              <ul className="space-y-2 text-sm text-[#D6E1F0]">
-                <li className="flex gap-2">
-                  <span className="text-[#F4C542]">•</span>
-                  <span>Process passive microwave sea ice concentration data</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#F4C542]">•</span>
-                  <span>Calculate sea ice extent and area using the 15% threshold</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#F4C542]">•</span>
-                  <span>Create Antarctic polar projection maps</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#F4C542]">•</span>
-                  <span>Analyze seasonal cycles and regional variations</span>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Data & Methods */}
-          <section className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-6">
-            <h2 className="text-2xl font-semibold text-white">Data & Methodology</h2>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Primary Data Sources</h3>
-              <div className="space-y-3">
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <h4 className="font-semibold text-white mb-2">NSIDC Sea Ice Index (Recommended)</h4>
-                  <ul className="space-y-1 text-sm text-[#D6E1F0]">
-                    <li><strong>Resolution:</strong> 25 km polar stereographic grid</li>
-                    <li><strong>Coverage:</strong> Daily and monthly, 1978-present</li>
-                    <li><strong>Sensors:</strong> SMMR, SSM/I, SSMIS passive microwave</li>
-                    <li><strong>URL:</strong> nsidc.org/data/G02135</li>
-                  </ul>
-                </div>
-
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <h4 className="font-semibold text-white mb-2">OSI SAF Sea Ice Concentration</h4>
-                  <ul className="space-y-1 text-sm text-[#D6E1F0]">
-                    <li><strong>Resolution:</strong> 10-25 km grid</li>
-                    <li><strong>Coverage:</strong> Daily, 1978-present</li>
-                    <li><strong>Products:</strong> OSI-401, OSI-450, OSI-430</li>
-                    <li><strong>URL:</strong> osi-saf.eumetsat.int</li>
-                  </ul>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div className="rounded-xl border border-white/10 bg-[#143A6A]/60 p-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-rose-300">Austral Summer Minimum (February)</span>
+                <div className="text-2xl font-bold text-white mt-1">~2 to 3 Million km²</div>
+                <p className="text-xs text-[#D6E1F0] mt-1">Ice contracts primarily to the western Weddell Sea and coastal embayments in the Ross and Bellingshausen seas.</p>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Analysis Workflow</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">1</span>
-                    <h4 className="font-semibold text-white">Data Access</h4>
-                  </div>
-                  <p className="text-sm text-[#D6E1F0]">Download NSIDC or OSI SAF sea ice concentration NetCDF files</p>
-                </div>
-
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">2</span>
-                    <h4 className="font-semibold text-white">Metric Calculation</h4>
-                  </div>
-                  <p className="text-sm text-[#D6E1F0]">Calculate extent (15% threshold) and area from concentration grids</p>
-                </div>
-
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">3</span>
-                    <h4 className="font-semibold text-white">Visualization</h4>
-                  </div>
-                  <p className="text-sm text-[#D6E1F0]">Create Antarctic maps with South Polar Stereographic projection</p>
-                </div>
-
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">4</span>
-                    <h4 className="font-semibold text-white">Time Series</h4>
-                  </div>
-                  <p className="text-sm text-[#D6E1F0]">Analyze seasonal cycles, trends, and regional sector variations</p>
-                </div>
+              <div className="rounded-xl border border-white/10 bg-[#143A6A]/60 p-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-300">Austral Winter Maximum (September)</span>
+                <div className="text-2xl font-bold text-white mt-1">~18 to 19 Million km²</div>
+                <p className="text-xs text-[#D6E1F0] mt-1">Ice expands northward past 60°S, covering an area larger than the Antarctic continent itself (~14M km²).</p>
               </div>
             </div>
           </section>
 
-          {/* Key Concepts */}
-          <section className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-6">
-            <h2 className="text-2xl font-semibold text-white">Key Concepts</h2>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Sea Ice Metrics</h3>
-              <div className="space-y-3">
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <h4 className="font-semibold text-white text-sm mb-2">Sea Ice Concentration (SIC)</h4>
-                  <p className="text-sm text-[#D6E1F0]">
-                    Percentage of ocean area covered by ice (0-100%). Retrieved from passive microwave
-                    brightness temperatures using algorithms like Bootstrap or NASA Team.
-                  </p>
-                </div>
-
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <h4 className="font-semibold text-white text-sm mb-2">Sea Ice Extent</h4>
-                  <p className="text-sm text-[#D6E1F0]">
-                    Total area of ocean with ≥15% ice concentration. Standard metric for trend analysis
-                    and climate monitoring. The 15% threshold is used across all scientific literature.
-                  </p>
-                </div>
-
-                <div className="bg-[#143A6A] rounded-lg p-4">
-                  <h4 className="font-semibold text-white text-sm mb-2">Sea Ice Area</h4>
-                  <p className="text-sm text-[#D6E1F0]">
-                    Actual ice-covered area accounting for concentration (extent × concentration).
-                    More precise than extent but less commonly used for climate comparisons.
-                  </p>
-                </div>
-              </div>
+          {/* Workflow Step 1: Loading Microwave Data */}
+          <section className="space-y-4">
+            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#F4C542]">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">1</span>
+              Passive Microwave Data
             </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Antarctic Sea Ice Characteristics</h3>
-              <div className="bg-[#143A6A] rounded-lg p-4 space-y-2 text-sm text-[#D6E1F0]">
-                <p>
-                  <strong>Seasonal Cycle:</strong> Maximum extent in September-October (~18-19 million km²),
-                  minimum in February-March (~2-3 million km²)
-                </p>
-                <p>
-                  <strong>Regional Sectors:</strong> Five main sectors (Weddell, Indian, West Pacific, Ross,
-                  Amundsen-Bellingshausen) exhibit different behaviors due to local conditions
-                </p>
-                <p>
-                  <strong>Recent Trends:</strong> Complex patterns with regional increases and decreases;
-                  dramatic decline since 2016 following record maximum in 2014
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Antarctic Sectors</h3>
-              <div className="bg-[#143A6A] rounded-lg p-4">
-                <ul className="space-y-2 text-sm text-[#D6E1F0]">
-                  <li><strong>Weddell Sea:</strong> 60°W to 20°E (largest ice reservoir)</li>
-                  <li><strong>Indian Ocean:</strong> 20°E to 90°E</li>
-                  <li><strong>West Pacific:</strong> 90°E to 160°E</li>
-                  <li><strong>Ross Sea:</strong> 160°E to 130°W (second largest)</li>
-                  <li><strong>Amundsen-Bellingshausen:</strong> 130°W to 60°W (highest variability)</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="space-y-6">
-            <div>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Run the analysis
-              </h2>
-              <p className="mt-2 text-sm text-[#D6E1F0]">
-                The notebook contains monthly and daily Antarctic sea ice index analysis. Open it separately for the full notebook view, or download it to run with your own data.
-              </p>
-            </div>
-
-            <div className="border-y border-white/10 py-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
-              <p className="text-sm text-[#D6E1F0]">Antarctic sea ice index notebook, covering 1978 to the present.</p>
-              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold sm:mt-0">
-                <a href="/notebooks/antarctic_sea_ice_index.ipynb" download className="text-[#F4C542] hover:text-white">Download notebook</a>
-                <a href="https://mybinder.org/v2/git/https%3A%2F%2Fgitlab.eumetsat.int%2Feumetlab%2Foceans%2Focean-training%2Fsensors%2Flearn-osi-saf-sea-ice/HEAD?labpath=1_OSI_SAF_sea_ice_introductory%2F1_3f_OSI_SAF_sea_ice_plotting_Ice_Index.ipynb" target="_blank" rel="noopener noreferrer" className="text-[#F4C542] hover:text-white">Run in Binder</a>
-                <a href="https://gitlab.eumetsat.int/eumetlab/oceans/ocean-training/sensors/learn-osi-saf-sea-ice/-/tree/main/1_OSI_SAF_sea_ice_introductory" target="_blank" rel="noopener noreferrer" className="text-[#F4C542] hover:text-white">EUMETSAT tutorials</a>
-              </div>
-            </div>
-          </section>
-
-          {/* Key Points */}
-          <section className="rounded-2xl border border-white/10 bg-[#0b2748] p-6">
-            <h2 className="text-xl font-semibold text-white mb-4">Key Points</h2>
-            <ul className="space-y-3 text-[#D6E1F0]">
-              <li className="flex items-start gap-2">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
-                <span>
-                  <strong>Standard Threshold:</strong> 15% concentration threshold is universally used
-                  for extent calculations to enable consistent comparisons
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
-                <span>
-                  <strong>Seasonal Amplitude:</strong> Antarctic sea ice exhibits extreme seasonality
-                  with ~6-fold variation between minimum and maximum extent
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
-                <span>
-                  <strong>Regional Variability:</strong> Weddell and Ross Seas dominate ice extent,
-                  while Amundsen-Bellingshausen sector shows highest interannual variability
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <FaCheckCircle className="text-[#F4C542] mt-1 flex-shrink-0" />
-                <span>
-                  <strong>Passive Microwave Algorithms:</strong> Bootstrap and NASA Team algorithms
-                  produce slightly different concentration estimates but consistent extent metrics
-                </span>
-              </li>
-            </ul>
-          </section>
-
-          {/* Next Steps */}
-          <section className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0b2748] to-[#143A6A] p-6">
-            <h2 className="text-xl font-semibold text-white mb-3">Further Analysis</h2>
-            <p className="text-[#D6E1F0] mb-4">
-              Extend this analysis with advanced techniques:
+            <h2 className="text-2xl font-bold text-white">Loading Sea Ice Concentration (SIC)</h2>
+            <p className="text-sm text-[#D6E1F0]">
+              Passive microwave sensors (SMMR, SSM/I, SSMIS, AMSR2) detect brightness temperature differences between open water and sea ice. The resulting grid values represent Sea Ice Concentration from 0% to 100%:
             </p>
-            <ul className="space-y-1 text-sm text-[#D6E1F0] mb-4">
-              <li>• Seasonal cycle decomposition and anomaly analysis</li>
-              <li>• Correlation with climate modes (SAM, ENSO)</li>
-              <li>• Regional sector time series and trend analysis</li>
-              <li>• Ice-ocean interaction studies with SST data</li>
-              <li>• Comparison between NSIDC and OSI SAF products</li>
-            </ul>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/search?q=sea+ice"
-                className="inline-flex items-center gap-2 rounded-lg bg-[#F4C542] px-4 py-2 text-sm font-semibold text-[#0F2D57] transition-colors hover:bg-[#e8ba30]"
+            <CodeBlock code={loadSicCode} language="Python" title="load_sea_ice.py" />
+          </section>
+
+          {/* Workflow Step 2: 15% Extent vs Area Calculation */}
+          <section className="space-y-4">
+            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#F4C542]">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">2</span>
+              Metric Calculation
+            </div>
+            <h2 className="text-2xl font-bold text-white">Applying the 15% Extent Threshold</h2>
+            <div className="rounded-xl border border-[#3dd6d0]/30 bg-[#3dd6d0]/10 p-4 text-xs sm:text-sm text-[#D6E1F0] leading-relaxed">
+              <strong className="text-[#3dd6d0]">Extent vs Area:</strong> <strong>Sea Ice Extent</strong> counts any ocean grid cell with concentration ≥15% as 100% ice-covered (minimizing algorithm sensor noise at the ice edge). <strong>Sea Ice Area</strong> integrates the true fraction of ice coverage.
+            </div>
+            <CodeBlock code={extentCalcCode} language="Python" title="calculate_extent.py" />
+          </section>
+
+          {/* Workflow Step 3: Five Sector Regional Analysis */}
+          <section className="space-y-4">
+            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#F4C542]">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F4C542] text-[#071a34] text-xs font-bold">3</span>
+              Regional Breakdown
+            </div>
+            <h2 className="text-2xl font-bold text-white">Analyzing the 5 Antarctic Sectors</h2>
+            <p className="text-sm text-[#D6E1F0]">
+              Antarctic sea ice trends vary significantly by sector due to regional wind forcing (e.g. Amundsen Sea Low) and bathymetry:
+            </p>
+            <CodeBlock code={sectorAnalysisCode} language="Python" title="sector_breakdown.py" />
+          </section>
+
+          {/* Sector Overview Grid */}
+          <section className="rounded-2xl border border-white/10 bg-[#0b2748] p-6 space-y-4">
+            <h2 className="text-xl font-bold text-white">The Five Antarctic Sea Ice Sectors</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-[#D6E1F0]">
+              <div className="border border-white/10 rounded-xl p-3.5 bg-[#143A6A]/60">
+                <span className="font-bold text-white">Weddell Sea (60°W–20°E)</span>
+                <p className="mt-1">Largest ice reservoir; contains substantial multi-year sea ice surviving austral summer melting.</p>
+              </div>
+              <div className="border border-white/10 rounded-xl p-3.5 bg-[#143A6A]/60">
+                <span className="font-bold text-white">Ross Sea (160°E–130°W)</span>
+                <p className="mt-1">Wind-driven coastal polynyas produce vast volumes of sea ice and dense Antarctic Bottom Water (AABW).</p>
+              </div>
+              <div className="border border-white/10 rounded-xl p-3.5 bg-[#143A6A]/60">
+                <span className="font-bold text-white">Bellingshausen-Amundsen (130°W–60°W)</span>
+                <p className="mt-1">Highest interannual variability, strongly modulated by atmospheric circulation and ENSO teleconnections.</p>
+              </div>
+              <div className="border border-white/10 rounded-xl p-3.5 bg-[#143A6A]/60">
+                <span className="font-bold text-white">Indian Ocean (20°E–90°E)</span>
+                <p className="mt-1">Narrow meridional ice band with rapid seasonal retreat during spring.</p>
+              </div>
+              <div className="border border-white/10 rounded-xl p-3.5 bg-[#143A6A]/60">
+                <span className="font-bold text-white">Western Pacific (90°E–160°E)</span>
+                <p className="mt-1">Dynamic pack ice interacting directly with East Antarctic glacier tongues (e.g. Mertz Glacier).</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Collapsible Interactive Notebook Preview */}
+          <section className="rounded-2xl border border-white/10 bg-[#0b2748] overflow-hidden">
+            <div className="p-5 flex items-center justify-between border-b border-white/10">
+              <div>
+                <h3 className="text-base font-bold text-white">Complete Interactive Notebook Output</h3>
+                <p className="text-xs text-[#D6E1F0]">
+                  Full Antarctic-focused notebook with monthly and daily trend charts.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowIframe(!showIframe)}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-white/20 transition-all"
               >
-                Find More Sea Ice Datasets
+                {showIframe ? (
+                  <>
+                    <FaChevronUp /> Hide Viewer
+                  </>
+                ) : (
+                  <>
+                    <FaChevronDown /> Expand Full Viewer
+                  </>
+                )}
+              </button>
+            </div>
+
+            {showIframe && (
+              <div>
+                <iframe
+                  src="/notebooks/antarctic_sea_ice_index.html"
+                  className="w-full border-none bg-white"
+                  style={{ height: "750px" }}
+                  title="Antarctic Sea Ice Notebook"
+                />
+              </div>
+            )}
+          </section>
+
+          {/* Next Steps Banner */}
+          <section className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0b2748] to-[#143A6A] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div>
+              <h3 className="text-xl font-bold text-white">Explore In-Situ Observations</h3>
+              <p className="text-sm text-[#D6E1F0] mt-1">
+                See how satellite sea ice concentration aligns with autonomous BGC-Argo profiling floats.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link
+                to="/bgc-argo"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#F4C542] px-5 py-3 text-sm font-semibold text-[#071a34] hover:bg-[#e8ba30] transition-colors"
+              >
+                BGC-Argo Portal →
               </Link>
               <Link
                 to="/tutorials"
-                className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white hover:bg-white/15 transition-colors"
               >
-                Back to Tutorials
+                All Tutorials
               </Link>
             </div>
           </section>
+
         </div>
       </div>
     </div>
